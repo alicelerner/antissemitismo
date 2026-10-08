@@ -116,4 +116,71 @@ These are counterpoints to weigh before copying the reference one to one.
 - **The pinned stats scene fits the lethality data** (axis 4). Every animated number must keep its source visible next to it; count-up must not outrun the citation.
 - **Font licence.** Beausite Classic is commercial. Choose an alternative or budget the licence.
 - **Reduced motion.** Not checked on the reference. Our build must ship a `prefers-reduced-motion` path for every scroll-linked effect.
-- **Mobile.** Mapped desktop only. The reference has separate mobile variants (Framer breakpoints); ours needs the same, not a scaled-down desktop.
+- **Mobile.** The reference has a separate mobile layout (Framer breakpoints), not a scaled-down desktop. Ours needs the same. See section 7.
+
+## 7. Mobile (375 x 812)
+
+Mapped 2026-10-08 at 375x812 with Android Chrome emulation (touch, mobile UA), by DOM inspection plus screenshots. Page height is about 10,700px. Same measured/inferred convention as above.
+
+### 7.1 The main finding
+
+On mobile the reference **drops both sticky scenes**. The stats block and the chapter slides are plain stacked sections (measured `position: relative`, no transforms while scrolling). What survives is the intro video, count-up numbers, the quote's author fade, the horizontal carousel, and a persistent nav. Mobile is a reading page with a cinematic opening, not a scroll-driven piece.
+
+### 7.2 Page skeleton (mobile)
+
+| # | Section | Height | Change from desktop |
+|---|---|---|---|
+| 1 | Hero | 812px (100vh) | Same 4s intro video (measured: same `webm`, 4.0s, no loop, full width). Ends on the black "Ai in Design / 2026" block centred. Scrolling reveals subtitle, H1, byline and "Scroll to read". H1 is 50px and **does not bleed** off the edge (measured right edge 359 of 375). |
+| 2 | Partners | ~720px | Logos in a 2-column grid, 7 logos in 4 rows, instead of a single row |
+| 3 | Statement | ~350px | 40px text, wraps to 6 lines |
+| 4 | Stats | ~840px | **Not pinned, no motion** (measured `position: relative`). Photo full width (343 x 309) on top, lilac block, then sage block underneath. Numbers stay at 85px and still count up (seen at 899, settled at 900). |
+| 5 | Intro text | ~750px | Single column, 24px lead, 16px body |
+| 6 | Quote | ~785px | Sage block with quote glyph and 40px quote, then a black block with a small square avatar, name and mono role. Author block still scroll-linked (measured `translateY` 34 to 0 to -14px, opacity 0.57 to 1, spring overshoot visible). |
+| 7 | Chapters | 3 x ~850px | **Not stacked** (measured `position: relative`, no transform on the title). Same colour fields in sequence. "01 Tools" with a 40px number and 48px title on one line, 24px subtitle, list rows, black CTA bar, then a 100px looping dithered video strip at the bottom of each slide. |
+| 8 | Case studies | ~800px | Native horizontal scroll (measured `overflow-x: auto`, **no scroll-snap**). Cards 267px wide, 16px gap, so the next card peeks about 90px. Prev/next arrows stay top-right (left at opacity 0.5). 16px orange accent bar under each thumbnail. Card title 24px, meta 14px, question 15px. |
+| 9 | Coming soon | ~700px | Video thumbnail with play button on top, 26px title, text and link below |
+| 10 | Subscribe | ~680px | Black with dithered background video, centred 40px heading, email input + orange Submit side by side |
+| 11 | Methodology | ~600px | 4 columns become a vertical list split by hairlines. Numbers drop from 120 to 72px. |
+| 12 | Footer | ~900px | Full-width wordmark, two link columns (partners / report), "2026" right-aligned, legal line, partner logos |
+
+### 7.3 Navigation (mobile)
+
+- Fixed bar, 56px tall (measured): black "AiiD 26" logo block left, orange "Menu +" block filling the rest of the width.
+- With real scroll gestures the bar stayed visible scrolling both up and down. In screenshots taken after programmatic jumps it was absent. So I could not pin down exactly when it appears (inferred: it shows once you pass the hero). This answers the open question in 2.7: the global nav is the mobile and tablet nav.
+- "Menu +" opens a **full-screen orange sheet**. The label changes to "Close x". Three 48px rows sit at the bottom of the screen, within thumb reach: Report Chapters / Case Studies / About, split by hairlines. A small legal line sits underneath.
+- Tapping a row pushes a sub-panel in from the right, like an iOS navigation stack (measured: sub-panels sit at `x = 391`, off-screen right, before entering). The sub-panel has "<- Back" and rows such as "Tools 01 / Craft 02 / Teams 03" with a superscript index. Case Studies lists seven companies the same way.
+
+### 7.4 Type scale (mobile, measured)
+
+| Role | Desktop | Mobile |
+|---|---|---|
+| Hero H1 | 120 | 50 (line-height 0.95, tracking -3px = -6%) |
+| Pinned / stat numbers | 85 | 85 (unchanged) |
+| Methodology numbers | 120 | 72 |
+| Chapter title | 80 | 48 (number beside it at 40) |
+| Statement, quote, subscribe heading | 32 | 40 (larger than desktop: the column is narrower, so the size goes up to keep the moment) |
+| Chapter subtitle, lead, card title | 40 / 26 | 24 |
+| Section headline ("Seven companies...") | n/a | 26 |
+| Body | 16 | 16 (line-height 1.4, tracking -1%) |
+| Card meta | 14 | 14 |
+| UI (Menu, Scroll to read) | 18 | 18 |
+| Mono labels | 13 | 13 (hero byline 10) |
+| Menu rows | n/a | 48 |
+
+Tracking keeps the same proportional rule as desktop (about -4% at 24 to 48px).
+
+### 7.5 Layout (mobile)
+
+- 16px side gutter, content width 343px. Same as desktop's 16px gutter, so the gutter does not scale.
+- Every section keeps the hairline rule + mono label header.
+- Images go full content width. No bleed and no off-screen cropping, except the carousel peek.
+
+### 7.6 What this means for our build
+
+- **Copy the restraint.** Our audience reads on phones, much of it arriving from WhatsApp. The reference's own mobile choice (no pinning, no stacked slides) supports dropping scroll-jacking on mobile. Scroll-linked sticky scenes on mobile Safari fight the collapsing URL bar and momentum scroll.
+- **The narrative arc still works as stacked colour fields.** The chapter slides keep their colour sectioning without sticky. Each axis of `research/00-narrative.md` becomes a full-width coloured block.
+- **Lethality numbers:** keep count-up, but on mobile the source line must sit directly under the number in the same block. Nothing should be pinned that would separate them.
+- **The intro is still 4s on mobile in the reference.** The counterpoint in section 6 stands: on phones over mobile data it is the most expensive moment on the page. Ours should be shorter or skippable.
+- **The menu is the best mobile pattern to borrow.** A full-screen sheet with large rows at the bottom, in thumb reach, and a push-in sub-panel maps cleanly onto "chapters / sources / about".
+- **Carousel without snap** feels loose on touch. If we use one, add `scroll-snap-type: x mandatory` (a deliberate improvement over the reference).
+- **Not verified:** `prefers-reduced-motion` handling, tablet breakpoint (768 to 1279), real iOS Safari behaviour (this was Chrome emulation). Check on a real phone before committing to motion.
