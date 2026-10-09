@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<meta name="theme-color" content="#ffffff">
+<title>Depoimento ilustrado</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Wireframe: grayscale, low fidelity. Palette and tone are not settled. */
+:root {
+  --paper: #ffffff;
+  --block: #f3f1f1;
+  --ink: #0d0d0d;
+  --unread: #c8c3c3;
+  --muted: #6f6b6b;
+  --soft: #c9c4c4;
+  --font: "Inter", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  --gutter: 16px;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+}
+@media (min-width: 700px) { :root { --gutter: 48px; } }
+* { box-sizing: border-box; }
+html { -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); }
+button { font: inherit; color: inherit; touch-action: manipulation; user-select: none; -webkit-user-select: none; }
+a { color: inherit; }
+
+.page { display: grid; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .page { grid-template-columns: 1fr 1fr; } }
+
+/* Left: the testimony on the warm gray block, as in the sketch */
+.left { background: var(--block); padding: calc(28px + env(safe-area-inset-top, 0px)) var(--gutter) 0; min-width: 0; }
+.kicker { font: 500 12px/1.4 var(--mono); text-transform: uppercase; letter-spacing: .04em; color: var(--muted); display: flex; justify-content: space-between; gap: 16px; }
+.intro { min-height: 42svh; display: grid; align-content: end; padding-bottom: 40px; }
+
+.testimony { font-size: clamp(28px, 3.3vw, 50px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.1; max-width: 22ch; text-wrap: pretty; }
+.testimony p { margin: 0 0 1.1em; }
+/* Karaoke: every word starts unread; the reading line paints it. Tied to scroll, so no duration. */
+.w { color: var(--unread); }
+.w.r { color: var(--ink); }
+.kw { text-decoration: underline; text-decoration-thickness: .07em; text-underline-offset: .12em; text-decoration-color: var(--unread); cursor: pointer; border-radius: 2px; }
+.kw.r-all { text-decoration-color: var(--ink); }
+.kw.gap { text-decoration-style: dashed; }
+.kw.cur { background: rgba(0,0,0,.06); }
+.kw:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+.sign { padding: 8px 0 52svh; font: 500 14px/1.4 var(--mono); text-transform: uppercase; letter-spacing: .04em; }
+
+/* Right: sticky evidence panel */
+.right { position: relative; min-width: 0; }
+.stick { position: sticky; top: 0; height: 100svh; height: 100dvh; padding: calc(28px + env(safe-area-inset-top, 0px)) var(--gutter) 28px; display: grid; }
+.ev { grid-area: 1 / 1; align-self: start; justify-self: end; width: min(420px, 100%); max-height: calc(100svh - 96px); overflow: auto; overscroll-behavior: contain; display: grid; gap: 16px; opacity: 0; transform: translateY(8px); transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out); pointer-events: none; }
+.ev.on { opacity: 1; transform: none; pointer-events: auto; }
+.ev.idle { justify-self: center; align-self: center; text-align: center; color: var(--muted); font: 500 13px/1.5 var(--mono); text-transform: uppercase; max-width: 30ch; }
+.media { position: relative; background: repeating-linear-gradient(135deg, #d2cdcd 0 1px, #e4e0e0 1px 10px); display: grid; place-items: center; font: 500 11px/1.4 var(--mono); text-transform: uppercase; color: #555; text-align: center; padding: 16px; }
+.media.video { aspect-ratio: 16 / 9; }
+.media.print { aspect-ratio: 4 / 5; max-height: 40svh; justify-self: end; width: 100%; }
+.media.video::before { content: ""; width: 0; height: 0; border-left: 22px solid var(--ink); border-top: 14px solid transparent; border-bottom: 14px solid transparent; margin-bottom: 8px; }
+.media span { display: block; max-width: 30ch; }
+.ev .meta { display: flex; flex-wrap: wrap; gap: 6px; font: 500 11px/1 var(--mono); text-transform: uppercase; }
+.ev .meta span { background: #ececec; padding: 5px 7px; }
+.ev h2 { margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+.ev p { margin: 0; font-size: 15px; font-weight: 500; line-height: 1.45; }
+.ev .note { font: 400 12px/1.5 var(--mono); color: var(--muted); border-left: 2px solid var(--ink); padding-left: 10px; }
+.ev .note b { display: block; color: var(--ink); font-weight: 500; text-transform: uppercase; margin-bottom: 4px; }
+.ev ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--soft); }
+.ev li { border-bottom: 1px solid var(--soft); padding: 8px 0; font-size: 13px; display: flex; justify-content: space-between; gap: 12px; }
+.ev li small { font: 500 10px/1.6 var(--mono); color: var(--muted); white-space: nowrap; }
+.ev.gap .media { background: none; border: 1.5px dashed var(--ink); }
+
+/* Phones: no right half. The current evidence docks at the bottom; a tap opens it as a sheet. */
+.dock, .sheet, .scrim { display: none; }
+@media (max-width: 899px) {
+  .right { display: none; }
+  .testimony { font-size: clamp(26px, 7.4vw, 34px); max-width: none; }
+  .sign { padding-bottom: 60svh; }
+  .dock { display: grid; position: fixed; left: var(--gutter); right: var(--gutter); bottom: max(12px, env(safe-area-inset-bottom)); z-index: 10; grid-template-columns: 56px minmax(0, 1fr); gap: 12px; align-items: center; background: var(--paper); padding: 10px; border: 0; text-align: left; box-shadow: 0 2px 16px rgba(0,0,0,.12); opacity: 0; transform: translateY(8px); transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out); pointer-events: none; }
+  .dock.on { opacity: 1; transform: none; pointer-events: auto; }
+  .dock:active { transform: scale(0.98); }
+  .dock .th { aspect-ratio: 4 / 5; background: repeating-linear-gradient(135deg, #d2cdcd 0 1px, #e4e0e0 1px 8px); }
+  .dock .tx { display: grid; gap: 4px; min-width: 0; }
+  .dock .tx b { font-size: 15px; line-height: 1.25; letter-spacing: -0.01em; }
+  .dock .tx small { font: 500 10px/1.2 var(--mono); text-transform: uppercase; color: var(--muted); }
+  .scrim { display: block; position: fixed; inset: 0; z-index: 20; background: rgba(0,0,0,.2); opacity: 0; pointer-events: none; transition: opacity 250ms ease; }
+  .scrim.on { opacity: 1; pointer-events: auto; }
+  .sheet { display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 21; max-height: 86svh; overflow: auto; overscroll-behavior: contain; background: var(--paper); padding: 16px var(--gutter) max(28px, env(safe-area-inset-bottom)); transform: translateY(100%); transition: transform 300ms var(--ease-drawer); }
+  .sheet.on { transform: none; }
+  .sheet .ev { opacity: 1; transform: none; width: 100%; pointer-events: auto; }
+  .sheet .close { display: block; margin-left: auto; margin-bottom: 12px; border: 0; background: #ececec; padding: 8px 12px; font: 500 12px/1 var(--mono); text-transform: uppercase; }
+  .sheet .close:active { transform: scale(0.97); }
+}
+@media (hover: hover) and (pointer: fine) { .kw:hover { background: rgba(0,0,0,.06); } }
+@media (prefers-reduced-motion: reduce) {
+  .ev, .ev.on, .dock, .dock.on { transform: none; }
+  .sheet { transition: opacity 200ms ease; opacity: 0; transform: none; pointer-events: none; }
+  .sheet.on { opacity: 1; pointer-events: auto; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <section class="left">
+    <div class="kicker"><span>Depoimento</span><span>Lia Vainer Schucman</span></div>
+    <div class="intro" aria-hidden="true"></div>
+    <article class="testimony" id="t" aria-label="Depoimento de Lia Vainer Schucman"></article>
+    <div class="sign">Lia Vainer Schucman</div>
+  </section>
+  <aside class="right" aria-live="polite">
+    <div class="stick" id="panel"></div>
+  </aside>
+</div>
+<button class="dock" id="dock" aria-label="Ver evidência"></button>
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Evidência"></div>
+
+<script src="data.js"></script>
+<script>
+(() => {
+const { paragraphs, anchors } = window.TESTIMONY;
+const isGap = (a) => a.status !== 'verified';
+const t = document.getElementById('t');
+const phone = matchMedia('(max-width: 899px)');
+const dock = document.getElementById('dock'), sheet = document.getElementById('sheet'), scrim = document.getElementById('scrim');
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+/* ---------- Text → word spans, with anchors wrapped around their phrases ---------- */
+paragraphs.forEach((para) => {
+  const p = document.createElement('p');
+  // Mark anchor ranges inside this paragraph.
+  const ranges = [];
+  anchors.forEach((a, i) => { const at = para.text.indexOf(a.phrase); if (at > -1) ranges.push({ s: at, e: at + a.phrase.length, i }); });
+  ranges.sort((x, y) => x.s - y.s);
+  let html = '', pos = 0;
+  const words = (s) => s.split(/(\s+)/).map(w => /^\s+$/.test(w) || !w ? w : `<span class="w">${esc(w)}</span>`).join('');
+  ranges.forEach(r => {
+    if (r.s < pos) return;
+    html += words(para.text.slice(pos, r.s));
+    const a = anchors[r.i];
+    html += `<span class="kw${isGap(a) ? ' gap' : ''}" tabindex="0" role="button" data-a="${r.i}" aria-label="${esc(a.phrase)}: ver evidência">${words(para.text.slice(r.s, r.e))}</span>`;
+    pos = r.e;
+  });
+  html += words(para.text.slice(pos));
+  p.innerHTML = html;
+  t.append(p);
+});
+
+/* ---------- Evidence panels ---------- */
+function evHTML(a) {
+  const e = a.evidence;
+  const gap = isGap(a);
+  const kind = /vídeo|video/i.test(e?.media_hint ?? '') ? 'video' : 'print';
+  return `
+    <div class="media ${kind}"><span>${esc(e?.media_hint ?? 'sem evidência no dossiê')}</span></div>
+    ${e?.date ? `<div class="meta"><span>${esc(fmtDate(e.date))}</span></div>` : ''}
+    <h2>${esc(e?.title_pt ?? a.phrase)}</h2>
+    <p>${esc(e?.caption_pt ?? a.claim)}</p>
+    ${gap ? `<p class="note"><b>Nota interna: por que não está 100% verificado</b>${esc(a.match_note)}</p>` : ''}
+    ${e?.sources?.length ? `<ul>${e.sources.map(s => `<li>${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.outlet)}</a>` : esc(s.outlet)}<small>tier ${s.tier}</small></li>`).join('')}</ul>` : ''}`;
+}
+const panel = document.getElementById('panel');
+const idle = document.createElement('div');
+idle.className = 'ev idle on';
+idle.textContent = 'Passe o mouse num trecho sublinhado.';
+panel.append(idle);
+const evs = anchors.map((a, i) => {
+  const d = document.createElement('div');
+  d.className = 'ev' + (isGap(a) ? ' gap' : '');
+  d.innerHTML = evHTML(a);
+  panel.append(d);
+  return d;
+});
+
+/* What the right half shows: the hovered/focused anchor if any, else the last anchor the reader passed. */
+let hovered = null, passed = null, shown = undefined;
+function show() {
+  const i = hovered ?? passed;
+  if (i === shown) return;
+  shown = i;
+  idle.classList.toggle('on', i == null);
+  evs.forEach((d, j) => d.classList.toggle('on', j === i));
+  document.querySelectorAll('.kw.cur').forEach(k => k.classList.remove('cur'));
+  if (i != null) document.querySelectorAll(`.kw[data-a="${i}"]`).forEach(k => k.classList.add('cur'));
+  updateDock(i);
+}
+t.addEventListener('pointerover', (e) => { const k = e.target.closest('.kw'); if (k && e.pointerType === 'mouse') { hovered = +k.dataset.a; show(); } });
+t.addEventListener('pointerout', (e) => { const k = e.target.closest('.kw'); if (k && e.pointerType === 'mouse' && !k.contains(e.relatedTarget)) { hovered = null; show(); } });
+t.addEventListener('focusin', (e) => { const k = e.target.closest('.kw'); if (k) { hovered = +k.dataset.a; show(); } });
+t.addEventListener('focusout', () => { hovered = null; show(); });
+t.addEventListener('click', (e) => { const k = e.target.closest('.kw'); if (k && phone.matches) openSheet(+k.dataset.a); });
+t.addEventListener('keydown', (e) => { const k = e.target.closest('.kw'); if (k && (e.key === 'Enter' || e.key === ' ') && phone.matches) { e.preventDefault(); openSheet(+k.dataset.a); } });
+
+/* ---------- Karaoke: a reading line at 62% of the viewport paints every word above it ---------- */
+const words = [...t.querySelectorAll('.w')];
+const kws = [...t.querySelectorAll('.kw')];
+let wTop = [], kTop = [];
+function measure() {
+  const y = scrollY;
+  wTop = words.map(w => w.getBoundingClientRect().top + y + w.offsetHeight * .5);
+  kTop = kws.map(k => k.getBoundingClientRect().top + y + 4);
+}
+let raf = 0;
+function paint() {
+  raf = 0;
+  const line = scrollY + innerHeight * .62;
+  let n = 0;
+  for (let i = 0; i < words.length; i++) { const r = wTop[i] < line; words[i].classList.toggle('r', r); if (r) n++; }
+  let last = null;
+  kws.forEach((k, i) => { const all = [...k.querySelectorAll('.w')].every(w => w.classList.contains('r')); k.classList.toggle('r-all', all); if (kTop[i] < line) last = +k.dataset.a; });
+  passed = last;
+  show();
+}
+const schedule = () => { if (!raf) raf = requestAnimationFrame(paint); };
+addEventListener('scroll', schedule, { passive: true });
+let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => { measure(); paint(); }, 100); });
+document.fonts?.ready.then(() => { measure(); paint(); });
+measure(); paint();
+
+/* ---------- Phones: dock + sheet ---------- */
+function updateDock(i) {
+  if (i == null) { dock.classList.remove('on'); return; }
+  const a = anchors[i];
+  dock.dataset.a = i;
+  dock.innerHTML = `<span class="th"></span><span class="tx"><small>${esc(a.evidence?.date?.slice(0, 4) ?? '')} · ver evidência</small><b>${esc(a.evidence?.title_pt ?? a.phrase)}</b></span>`;
+  dock.classList.add('on');
+}
+dock.addEventListener('click', () => openSheet(+dock.dataset.a));
+function openSheet(i) {
+  const a = anchors[i];
+  sheet.innerHTML = `<button class="close" id="sClose">Fechar</button><div class="ev on${isGap(a) ? ' gap' : ''}">${evHTML(a)}</div>`;
+  sheet.classList.add('on'); scrim.classList.add('on');
+  document.getElementById('sClose').addEventListener('click', closeSheet);
+  sheet.scrollTop = 0;
+}
+function closeSheet() { sheet.classList.remove('on'); scrim.classList.remove('on'); }
+scrim.addEventListener('click', closeSheet);
+addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSheet(); });
+
+function fmtDate(d) { const [y, m, dd] = d.split('-'); const M = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez']; return dd ? `${+dd} ${M[m - 1]} ${y}` : m ? `${M[m - 1]} ${y}` : y; }
+})();
+</script>
+</body>
+</html>
