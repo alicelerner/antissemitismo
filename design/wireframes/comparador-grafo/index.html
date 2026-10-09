@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+<meta name="theme-color" content="#ececec">
+<title>Comparador em grafo</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Wireframe: grayscale, low fidelity. Palette and tone are not settled. */
+:root {
+  --paper: #ececec;
+  --ink: #0d0d0d;
+  --muted: #7a7a7a;
+  --soft: #b9b9b9;
+  --field: #dedcdc;
+  --chip: #cfcfcf;
+  --card: #f7f7f7;
+  --line-known: #a8a8a8;
+  --font: "Inter", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  --gutter: 16px;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+}
+@media (min-width: 700px) { :root { --gutter: 40px; } }
+* { box-sizing: border-box; }
+html { -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; }
+html, body { margin: 0; height: 100%; overscroll-behavior: none; }
+body { background: var(--paper); color: var(--ink); font-family: var(--font); overflow: hidden; }
+/* Controls are not content: no long-press selection or callout, no double-tap wait. */
+button, .dot, .card, .hub { touch-action: manipulation; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+button { transition: transform 100ms var(--ease-out); }
+button:active { transform: scale(0.97); }
+button { font: inherit; color: inherit; }
+
+/* Header */
+.top { position: fixed; inset: 0 0 auto 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: calc(20px + env(safe-area-inset-top, 0px)) var(--gutter) 20px; pointer-events: none; }
+.top > * { pointer-events: auto; }
+.top h1 { margin: 0; font-size: clamp(18px, 2.4vw, 30px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; }
+.tabs { position: relative; display: grid; grid-template-columns: 1fr 1fr; background: var(--chip); padding: 6px; flex: none; }
+.tabs button { position: relative; z-index: 1; border: 0; background: none; cursor: pointer; padding: 10px 18px; min-width: 76px; font-size: clamp(15px, 1.6vw, 22px); font-weight: 700; letter-spacing: -0.02em; color: var(--muted); transition: color 200ms ease; }
+.tabs button[aria-selected="true"] { color: var(--paper); }
+.tabs .ind { position: absolute; top: 6px; bottom: 6px; left: 6px; width: calc(50% - 6px); background: var(--ink); transition: transform 200ms var(--ease-in-out); }
+.tabs[data-active="flavio"] .ind { transform: translateX(100%); }
+
+/* Stage */
+#stage { position: fixed; inset: 0; touch-action: manipulation; }
+#stage.swap { opacity: 0; transition: opacity 150ms ease; }
+#stage.in { opacity: 1; transition: opacity 250ms var(--ease-out); }
+svg#net { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.edge { stroke: var(--ink); stroke-width: 1; fill: none; opacity: 0; transition: opacity 200ms ease, stroke 200ms ease; }
+.edge.known { opacity: 1; stroke: var(--line-known); }
+.edge.active { opacity: 1; stroke: var(--ink); }
+.dot { cursor: pointer; }
+.dot circle.hit { fill: transparent; }
+.dot .m { transition: r 150ms var(--ease-out); }
+.dot.negativo .m { fill: var(--ink); }
+.dot.positivo .m { fill: var(--paper); stroke: var(--ink); stroke-width: 1.6; }
+.dot.neutro .m { fill: var(--soft); }
+.dot.seen .m { r: 6.5; }
+.dot:focus { outline: none; }
+.dot:focus-visible .m { stroke: var(--ink); stroke-width: 3; }
+
+/* Hubs: relation nodes, hidden until one of their episodes is found */
+.hub { position: absolute; transform: translate(-50%, -50%); font: 500 11px/1 var(--mono); text-transform: uppercase; letter-spacing: .04em; background: var(--chip); padding: 6px 8px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 250ms ease; }
+.hub.known { opacity: 1; }
+.hub.active { background: var(--ink); color: var(--paper); }
+
+/* Central field */
+.field { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(720px, calc(100% - 2 * var(--gutter))); min-height: 104px; background: var(--field); padding: 24px 28px; display: grid; align-content: center; gap: 6px; z-index: 5; }
+.field .path { font: 500 11px/1.3 var(--mono); text-transform: uppercase; letter-spacing: .04em; color: var(--muted); min-height: 14px; }
+.field .line { font-size: clamp(20px, 2.6vw, 34px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.12; text-wrap: balance; }
+.field .who { color: var(--ink); margin-right: .3em; }
+.field .what { color: var(--muted); display: inline; }
+.field .txt { display: block; transition: opacity 250ms var(--ease-out), transform 250ms var(--ease-out); }
+.field .txt.out { opacity: 0; transform: translateY(-6px); transition-duration: 150ms; }
+.field .txt.pre { opacity: 0; transform: translateY(6px); transition: none; }
+
+/* Episode cards: revealed on hover/tap near a dot */
+.card { position: absolute; width: 150px; background: var(--card); padding: 8px; display: grid; gap: 6px; z-index: 6; cursor: pointer; opacity: 0; transform: scale(.96); transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out); box-shadow: 0 1px 0 rgba(0,0,0,.06); }
+.card.on { opacity: 1; transform: scale(1); }
+.card.fading { opacity: 0; transition: opacity 300ms ease; }
+.card .ph { aspect-ratio: 4 / 5; background: repeating-linear-gradient(135deg, #cdcdcd 0 1px, #dadada 1px 9px); display: grid; align-content: space-between; padding: 6px; font: 500 10px/1.25 var(--mono); color: #555; text-transform: uppercase; }
+.card .ph b { font-weight: 500; background: var(--card); padding: 2px 4px; justify-self: start; }
+.card .t { font-size: 12px; font-weight: 500; line-height: 1.25; letter-spacing: -0.01em; }
+.card .k { font: 500 10px/1 var(--mono); text-transform: uppercase; color: var(--muted); }
+
+/* Phones: no hover, so the episode docks at the bottom like Kunumi's featured card,
+   one at a time, instead of floating over dots the thumb needs to reach. */
+@media (max-width: 699px) {
+  .field { min-height: 0; padding: 16px 18px; }
+  .field .line { font-size: 21px; }
+  .card.docked { position: fixed; left: var(--gutter); right: var(--gutter); top: auto !important; bottom: calc(68px + env(safe-area-inset-bottom, 0px)); width: auto; grid-template-columns: 64px minmax(0, 1fr); grid-template-rows: auto 1fr; column-gap: 12px; align-items: start; transform: translateY(8px); padding: 10px; }
+  .card.docked.on { transform: none; }
+  .card.docked .ph { grid-row: 1 / 3; aspect-ratio: 4 / 5; font-size: 0; }
+  .card.docked .ph b { font-size: 9px; }
+  .card.docked .t { font-size: 15px; }
+  .card.docked .t::after { content: "  Ver detalhes →"; font: 500 11px/1 var(--mono); text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+  .bar { left: 0; right: 0; transform: none; justify-content: center; padding: 10px var(--gutter) max(14px, env(safe-area-inset-bottom)); bottom: 0; background: var(--paper); }
+  .hub { font-size: 10px; padding: 5px 6px; }
+}
+/* Bottom bar */
+.bar { position: fixed; left: 50%; bottom: max(20px, env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 20; display: flex; gap: 6px; align-items: center; }
+.bar button { border: 0; background: var(--chip); padding: 10px 14px; font: 500 12px/1 var(--mono); text-transform: uppercase; letter-spacing: .04em; cursor: pointer; }
+.bar .count { font: 500 12px/1 var(--mono); color: var(--muted); padding: 0 8px; white-space: nowrap; }
+.legend { position: fixed; left: var(--gutter); bottom: max(22px, env(safe-area-inset-bottom)); z-index: 20; display: grid; gap: 6px; font: 500 11px/1 var(--mono); text-transform: uppercase; color: var(--muted); }
+.legend span { display: flex; align-items: center; gap: 8px; }
+.legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.legend .n { background: var(--ink); } .legend .p { border: 1.6px solid var(--ink); } .legend .z { background: var(--soft); }
+@media (max-width: 699px) { .legend { display: none; } }
+
+/* Detail drawer (bottom sheet on phones) */
+.scrim { position: fixed; inset: 0; z-index: 30; background: rgba(0,0,0,.18); opacity: 0; pointer-events: none; transition: opacity 250ms ease; }
+.scrim.on { opacity: 1; pointer-events: auto; }
+.drawer { position: fixed; z-index: 31; background: var(--card); overflow: auto; overscroll-behavior: contain; padding: 28px var(--gutter) 40px; display: grid; gap: 18px; align-content: start;
+  right: 0; top: 0; bottom: 0; width: min(480px, 100%); transform: translateX(100%); transition: transform 300ms var(--ease-drawer); }
+.drawer.on { transform: none; }
+@media (max-width: 699px) { .drawer { top: auto; left: 0; width: 100%; max-height: 82svh; transform: translateY(100%); padding-bottom: max(40px, env(safe-area-inset-bottom)); } }
+.drawer .close { justify-self: end; border: 0; background: var(--chip); padding: 8px 12px; font: 500 12px/1 var(--mono); text-transform: uppercase; cursor: pointer; }
+.drawer .meta { display: flex; flex-wrap: wrap; gap: 6px; font: 500 11px/1 var(--mono); text-transform: uppercase; }
+.drawer .meta span { background: var(--chip); padding: 5px 7px; }
+.drawer .meta span.dark { background: var(--ink); color: var(--paper); }
+.drawer h2 { margin: 0; font-size: clamp(24px, 3vw, 32px); letter-spacing: -0.03em; line-height: 1.1; text-wrap: balance; }
+.drawer .chain { font: 500 12px/1.5 var(--mono); color: var(--muted); }
+.drawer .chain b { color: var(--ink); font-weight: 500; }
+.drawer .ph { aspect-ratio: 16 / 9; background: repeating-linear-gradient(135deg, #cdcdcd 0 1px, #dadada 1px 9px); display: grid; place-items: center; font: 500 11px/1 var(--mono); text-transform: uppercase; color: #555; }
+.drawer p { margin: 0; font-size: 17px; line-height: 1.45; }
+.drawer ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--soft); }
+.drawer li { border-bottom: 1px solid var(--soft); padding: 10px 0; font-size: 14px; display: flex; justify-content: space-between; gap: 12px; }
+.drawer li a { color: var(--ink); }
+.drawer li small { font: 500 10px/1.6 var(--mono); color: var(--muted); white-space: nowrap; }
+.drawer .ref { font: 400 11px/1.4 var(--mono); color: var(--muted); }
+
+/* List mode: the same episodes, in date order (Kunumi's "Linear") */
+.list { position: fixed; inset: 0; z-index: 15; background: var(--paper); overflow: auto; overscroll-behavior: contain; padding: calc(100px + env(safe-area-inset-top, 0px)) var(--gutter) 100px; opacity: 0; pointer-events: none; transition: opacity 200ms ease; }
+.list.on { opacity: 1; pointer-events: auto; }
+.list ol { list-style: none; margin: 0 auto; padding: 0; max-width: 860px; }
+.list li { border-top: 1px solid var(--soft); }
+.list li button { width: 100%; border: 0; background: none; text-align: left; padding: 14px 0; cursor: pointer; display: grid; grid-template-columns: 92px 14px minmax(0, 1fr); gap: 12px; align-items: baseline; }
+.list li .d { font: 500 12px/1 var(--mono); color: var(--muted); }
+.list li .m { width: 10px; height: 10px; border-radius: 50%; align-self: center; }
+.list li .m.negativo { background: var(--ink); } .list li .m.positivo { border: 1.6px solid var(--ink); } .list li .m.neutro { background: var(--soft); }
+.list li .x { font-size: 17px; font-weight: 500; letter-spacing: -0.01em; line-height: 1.3; }
+@media (max-width: 699px) { .list li button { grid-template-columns: 14px minmax(0, 1fr); row-gap: 6px; } .list li .d { grid-column: 2; } .list li .m { grid-row: 2; } }
+.list li .x small { display: block; font: 500 11px/1.5 var(--mono); text-transform: uppercase; color: var(--muted); margin-top: 2px; }
+@media (hover: hover) and (pointer: fine) { .list li button:hover .x { text-decoration: underline; } .bar button:hover, .drawer .close:hover { background: var(--soft); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .field .txt, .field .txt.out, .field .txt.pre { transform: none; }
+  .card, .card.on { transform: none; }
+  .drawer { transition: opacity 200ms ease; opacity: 0; }
+  .drawer.on { opacity: 1; }
+  .tabs .ind { transition: none; }
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>Comparador de antissemitismo</h1>
+  <div class="tabs" role="tablist" aria-label="Candidato" data-active="lula">
+    <span class="ind" aria-hidden="true"></span>
+    <button role="tab" aria-selected="true" data-cand="lula">lula</button>
+    <button role="tab" aria-selected="false" data-cand="flavio">flávio</button>
+  </div>
+</header>
+
+<main id="stage" aria-label="Rede de episódios">
+  <svg id="net" aria-hidden="false"><g id="edges"></g><g id="dots"></g></svg>
+  <div id="hubs"></div>
+  <div id="cards"></div>
+  <div class="field" aria-live="polite">
+    <div class="path" id="fpath"></div>
+    <div class="line"><span class="txt" id="ftxt"></span></div>
+  </div>
+</main>
+
+<div class="legend" aria-hidden="true">
+  <span><i class="n"></i>contra</span>
+  <span><i class="p"></i>a favor</span>
+  <span><i class="z"></i>ambíguo</span>
+</div>
+
+<nav class="bar">
+  <span class="count" id="count"></span>
+  <button id="listBtn" aria-pressed="false">Lista</button>
+</nav>
+
+<section class="list" id="list" aria-label="Todos os episódios em ordem de data"><ol id="listItems"></ol></section>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" tabindex="-1"></aside>
+
+<script src="data.js"></script>
+<script>
+(() => {
+const NAMES = { lula: 'lula', flavio: 'flávio' };
+const FULL = { lula: 'Lula', flavio: 'Flávio Bolsonaro' };
+const LEDGER = { negativo: 'contra', positivo: 'a favor', neutro: 'ambíguo' };
+const RELATION = { direto: 'em pessoa', família: 'família', governo: 'governo', aliado: 'aliado', partido: 'partido' };
+const narrow = matchMedia('(max-width: 699px)');
+const coarse = matchMedia('(pointer: coarse)');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
+
+/* ---------- Relation chains → hub nodes ----------
+   Each episode's `via` is the dossier's chain of actors between the candidate and the act.
+   Chains are normalised so recurring actors become shared hubs; one-off actors stay as text. */
+function chainOf(ep, cand) {
+  let v = ep.via.slice();
+  if (cand === 'lula') {
+    v = v.flatMap(x => {
+      if (/Itamaraty|FAB/.test(x)) return ['Itamaraty'];
+      if (/^PT|filiado ao PT/.test(x)) return ['PT'];
+      if (/Celso Amorim/.test(x)) return ['Governo', 'Celso Amorim'];
+      if (x === 'Governo Lula') return ['Governo'];
+      if (ep.relation === 'governo') return ['Governo', x];
+      return [x];
+    });
+  } else {
+    v = v.map(x => x.replace(/^Beatrix von Storch \/ AfD$/, 'AfD').replace(/\s*\(.*\)$/, ''));
+    const e = v.indexOf('Eduardo Bolsonaro');
+    if (e > -1 && e < v.length - 1) v = v.filter(x => x !== 'Jair Bolsonaro');
+    else if (e > 0) v = v.slice(0, e);
+  }
+  return [...new Set(v)];
+}
+
+function build(cand) {
+  const eps = window.EPISODES[cand].map(ep => ({ ...ep, chain: chainOf(ep, cand) }));
+  const freq = {};
+  eps.forEach(ep => ep.chain.forEach(h => freq[h] = (freq[h] || 0) + 1));
+  eps.forEach(ep => ep.hubs = ep.chain.filter(h => freq[h] >= 2));
+  const hubs = {};
+  eps.forEach(ep => ep.hubs.forEach((h, i) => {
+    hubs[h] ??= { name: h, parent: ep.hubs[i - 1] ?? null, n: 0 };
+    hubs[h].n++;
+  }));
+  return { eps, hubs };
+}
+
+/* ---------- Layout (deterministic) ---------- */
+function rng(seed) { let a = 0; for (const c of seed) a = (a * 31 + c.charCodeAt(0)) | 0; return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+
+function layout(model, W, H, fieldBox) {
+  const cx = W / 2, cy = H / 2;
+  const rx = W / 2 - 40, ry = H / 2 - 90;
+  const roots = Object.values(model.hubs).filter(h => !h.parent).sort((a, b) => b.n - a.n);
+  const direct = model.eps.filter(e => !e.hubs.length);
+  // Angular sectors: one per root hub sized by its episodes, plus one slice for direct episodes.
+  const total = model.eps.length;
+  let a0 = -Math.PI / 2 + 0.35;
+  const sector = (n) => { const s = a0, w = (n / total) * Math.PI * 2; a0 += w; return [s, w]; };
+  const P = {};
+  const [ds, dw] = sector(direct.length);
+  roots.forEach(h => { const [s, w] = sector(h.n); h.a = s + w / 2; h.w = w; h.r = 0.66; });
+  Object.values(model.hubs).filter(h => h.parent).forEach(h => {
+    const p = model.hubs[h.parent];
+    const sibs = Object.values(model.hubs).filter(x => x.parent === h.parent);
+    const i = sibs.indexOf(h);
+    h.a = p.a + (sibs.length > 1 ? (i / (sibs.length - 1) - .5) * p.w * .7 : 0);
+    h.r = 0.9; h.w = p.w / Math.max(sibs.length, 1);
+  });
+  Object.values(model.hubs).forEach(h => { P['hub:' + h.name] = { x: cx + Math.cos(h.a) * rx * h.r, y: cy + Math.sin(h.a) * ry * h.r, hub: true }; });
+  model.eps.forEach(ep => {
+    const r = rng(ep.id);
+    let a, rad;
+    if (!ep.hubs.length) { a = ds + r() * dw; rad = 0.3 + r() * 0.62; }
+    else {
+      const h = model.hubs[ep.hubs[ep.hubs.length - 1]];
+      a = h.a + (r() - .5) * Math.max(h.w, .5) * .9;
+      rad = Math.min(h.r + 0.1 + r() * 0.3, 1);
+    }
+    P[ep.id] = { x: cx + Math.cos(a) * rx * rad, y: cy + Math.sin(a) * ry * rad };
+  });
+  // Relax: keep dots apart, out of the central field and inside the frame.
+  const ids = Object.keys(P);
+  const pad = 26, top = 92 + (narrow.matches ? 8 : 0), bottom = H - (narrow.matches ? 176 : 70);
+  for (let it = 0; it < 160; it++) {
+    for (let i = 0; i < ids.length; i++) for (let j = i + 1; j < ids.length; j++) {
+      const p = P[ids[i]], q = P[ids[j]];
+      const min = (p.hub || q.hub) ? 64 : 30;
+      let dx = q.x - p.x, dy = q.y - p.y, d = Math.hypot(dx, dy) || .01;
+      if (d < min) { const k = (min - d) / d / 2; p.x -= dx * k; p.y -= dy * k; q.x += dx * k; q.y += dy * k; }
+    }
+    ids.forEach(id => {
+      const p = P[id];
+      const b = fieldBox, m = p.hub ? 40 : 22;
+      if (p.x > b.l - m && p.x < b.r + m && p.y > b.t - m && p.y < b.b + m) {
+        const up = p.y - (b.t - m), dn = (b.b + m) - p.y;
+        if (up < dn) p.y = b.t - m; else p.y = b.b + m;
+      }
+      p.x = Math.min(Math.max(p.x, pad), W - pad);
+      p.y = Math.min(Math.max(p.y, top), bottom);
+    });
+  }
+  return P;
+}
+
+/* ---------- State ---------- */
+const state = { cand: 'lula', models: {}, seen: { lula: new Set(), flavio: new Set() }, pos: null, focus: null, auto: null, idleT: null, cards: new Map() };
+const $ = (s) => document.querySelector(s);
+const stage = $('#stage'), edgesG = $('#edges'), dotsG = $('#dots'), hubsEl = $('#hubs'), cardsEl = $('#cards');
+const fpath = $('#fpath'), ftxt = $('#ftxt');
+const SVGNS = 'http://www.w3.org/2000/svg';
+
+function model() { return state.models[state.cand] ??= build(state.cand); }
+function fieldBox() { const r = document.querySelector('.field').getBoundingClientRect(); return { l: r.left, r: r.right, t: r.top, b: r.bottom }; }
+
+function anchorOnField(x, y) {
+  // Point where the line from the field centre towards (x, y) leaves the field rectangle.
+  const b = fieldBox(), cx = (b.l + b.r) / 2, cy = (b.t + b.b) / 2;
+  const dx = x - cx, dy = y - cy;
+  const s = Math.min(Math.abs((b.r - cx) / (dx || 1e-6)), Math.abs((b.b - cy) / (dy || 1e-6)));
+  return { x: cx + dx * s, y: cy + dy * s };
+}
+
+function render() {
+  const m = model();
+  const W = innerWidth, H = innerHeight;
+  state.pos = layout(m, W, H, fieldBox());
+  edgesG.replaceChildren(); dotsG.replaceChildren(); hubsEl.replaceChildren(); cardsEl.replaceChildren(); state.cards.clear();
+
+  Object.values(m.hubs).forEach(h => {
+    const el = document.createElement('div');
+    el.className = 'hub'; el.textContent = h.name; el.dataset.hub = h.name;
+    hubsEl.append(el);
+  });
+  // Edges: hub→parent hub (or field), and episode→its deepest hub (or field).
+  const mkEdge = (key) => { const l = document.createElementNS(SVGNS, 'line'); l.setAttribute('class', 'edge'); l.dataset.key = key; edgesG.append(l); return l; };
+  Object.values(m.hubs).forEach(h => mkEdge('hub:' + h.name));
+  m.eps.forEach(ep => mkEdge(ep.id));
+
+  m.eps.forEach(ep => {
+    const g = document.createElementNS(SVGNS, 'g');
+    g.setAttribute('class', `dot ${ep.ledger}`);
+    g.setAttribute('tabindex', '0');
+    g.setAttribute('role', 'button');
+    g.setAttribute('aria-label', `${ep.date.slice(0, 4)}: ${ep.title_pt}`);
+    g.dataset.id = ep.id;
+    const hit = document.createElementNS(SVGNS, 'circle'); hit.setAttribute('class', 'hit'); hit.setAttribute('r', coarse.matches ? 22 : 16);
+    const mk = document.createElementNS(SVGNS, 'circle'); mk.setAttribute('class', 'm'); mk.setAttribute('r', 5);
+    g.append(hit, mk);
+    g.addEventListener('focus', () => reveal(ep.id, true));
+    g.addEventListener('click', (e) => { e.stopPropagation(); finePointer.matches ? openDetail(ep.id) : (state.focus === ep.id ? openDetail(ep.id) : reveal(ep.id, true)); });
+    g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openDetail(ep.id); } });
+    dotsG.append(g);
+  });
+  state.seen[state.cand].forEach(id => markKnown(id));
+  updateCount();
+  showField(null);
+  tick(performance.now());
+}
+
+/* ---------- Drift: slow, small, constant; frozen while exploring and under reduced motion ---------- */
+let raf = 0, frozen = false, tFrozen = 0, tOffset = 0;
+function offset(id, t) {
+  if (reduce.matches) return { x: 0, y: 0 };
+  const r = rng(id), px = 14000 + r() * 8000, py = 16000 + r() * 8000, ph = r() * 6.28;
+  return { x: Math.sin(t / px * 6.28 + ph) * 4, y: Math.cos(t / py * 6.28 + ph) * 4 };
+}
+function at(key, t) { const p = state.pos[key]; if (!p) return null; const o = p.hub ? { x: 0, y: 0 } : offset(key, t); return { x: p.x + o.x, y: p.y + o.y }; }
+function tick(now) {
+  cancelAnimationFrame(raf);
+  if (frozen) { if (!tFrozen) tFrozen = now; } else if (tFrozen) { tOffset += now - tFrozen; tFrozen = 0; }
+  const t = (tFrozen || now) - tOffset;
+  const m = model();
+  dotsG.childNodes.forEach(g => { const p = at(g.dataset.id, t); g.setAttribute('transform', `translate(${p.x.toFixed(1)} ${p.y.toFixed(1)})`); });
+  hubsEl.childNodes.forEach(el => { const p = state.pos['hub:' + el.dataset.hub]; el.style.left = p.x + 'px'; el.style.top = p.y + 'px'; });
+  edgesG.childNodes.forEach(l => {
+    const key = l.dataset.key;
+    let a, b;
+    if (key.startsWith('hub:')) {
+      const h = m.hubs[key.slice(4)]; a = at(key, t);
+      b = h.parent ? at('hub:' + h.parent, t) : anchorOnField(a.x, a.y);
+    } else {
+      const ep = m.eps.find(e => e.id === key); a = at(key, t);
+      b = ep.hubs.length ? at('hub:' + ep.hubs[ep.hubs.length - 1], t) : anchorOnField(a.x, a.y);
+    }
+    l.setAttribute('x1', a.x); l.setAttribute('y1', a.y); l.setAttribute('x2', b.x); l.setAttribute('y2', b.y);
+  });
+  state.cards.forEach((c, id) => placeCard(c.el, id, t));
+  if (!reduce.matches && !document.hidden) raf = requestAnimationFrame(tick);
+}
+
+/* ---------- Reveal ---------- */
+const LINGER = 4000;
+function ep(id) { return model().eps.find(e => e.id === id); }
+
+function markKnown(id) {
+  const e = ep(id);
+  dotsG.querySelector(`[data-id="${id}"]`)?.classList.add('seen');
+  edgesG.querySelector(`[data-key="${id}"]`)?.classList.add('known');
+  e.hubs.forEach(h => {
+    hubsEl.querySelector(`[data-hub="${CSS.escape(h)}"]`)?.classList.add('known');
+    edgesG.querySelector(`[data-key="hub:${CSS.escape(h)}"]`)?.classList.add('known');
+  });
+}
+function setActive(id) {
+  edgesG.querySelectorAll('.active').forEach(x => x.classList.remove('active'));
+  hubsEl.querySelectorAll('.active').forEach(x => x.classList.remove('active'));
+  if (!id) return;
+  const e = ep(id);
+  edgesG.querySelector(`[data-key="${id}"]`)?.classList.add('active');
+  e.hubs.forEach(h => {
+    hubsEl.querySelector(`[data-hub="${CSS.escape(h)}"]`)?.classList.add('active');
+    edgesG.querySelector(`[data-key="hub:${CSS.escape(h)}"]`)?.classList.add('active');
+  });
+}
+
+function reveal(id, byUser) {
+  if (byUser) pauseAuto();
+  state.focus = id;
+  state.seen[state.cand].add(id);
+  markKnown(id); setActive(id); updateCount(); showField(id);
+  let c = state.cards.get(id);
+  if (!c) {
+    const e = ep(id);
+    const el = document.createElement('div');
+    el.className = 'card';
+    el.innerHTML = `<div class="ph"><b>${esc(e.sources[0]?.outlet.split(',')[0] ?? '')}</b><span>print da matéria</span></div><div class="k">${e.date.slice(0, 4)} · ${LEDGER[e.ledger]}</div><div class="t">${esc(e.title_pt)}</div>`;
+    el.addEventListener('click', (ev) => { ev.stopPropagation(); openDetail(id); });
+    el.addEventListener('pointerenter', () => { clearTimeout(c.t); frozen = true; showField(id); setActive(id); });
+    el.addEventListener('pointerleave', () => schedule(id));
+    cardsEl.append(el);
+    c = { el }; state.cards.set(id, c);
+    placeCard(el, id, performance.now() - tOffset);
+    requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('on')));
+  } else { c.el.classList.remove('fading'); c.el.classList.add('on'); }
+  cardsEl.append(c.el); // newest on top
+  schedule(id);
+  // Keep at most three cards on screen: exploring leaves a short trail, not a pile.
+  [...state.cards.keys()].slice(0, narrow.matches ? -1 : -3).forEach(dismiss);
+}
+function schedule(id) {
+  const c = state.cards.get(id); if (!c) return;
+  clearTimeout(c.t);
+  // On phones the docked card is being read, not skimmed: it stays until the next pick.
+  if (!narrow.matches) c.t = setTimeout(() => dismiss(id), LINGER);
+}
+function dismiss(id) {
+  const c = state.cards.get(id); if (!c) return;
+  clearTimeout(c.t);
+  c.el.classList.add('fading');
+  setTimeout(() => { if (c.el.classList.contains('fading')) { c.el.remove(); state.cards.delete(id); } }, 300);
+  if (state.focus === id) { state.focus = null; setActive(null); frozen = false; tick(performance.now()); }
+}
+function placeCard(el, id, t) {
+  el.classList.toggle('docked', narrow.matches);
+  if (narrow.matches) { el.style.left = ''; el.style.transformOrigin = ''; return; }
+  const p = at(id, t); if (!p) return;
+  const w = 150, h = el.offsetHeight || 230, W = innerWidth, H = innerHeight;
+  // Try beside the dot (outward first), then above/below; never cover the central field.
+  const b = fieldBox(), g = 16;
+  const out = p.x > W / 2;
+  const cx = Math.min(Math.max(p.x - w / 2, 8), W - w - 8);
+  const tries = [
+    [out ? p.x + g : p.x - w - g, p.y - h / 2, out ? 'left center' : 'right center'],
+    [out ? p.x - w - g : p.x + g, p.y - h / 2, out ? 'right center' : 'left center'],
+    [cx, p.y < b.t ? p.y - h - g : p.y + g, p.y < b.t ? 'center bottom' : 'center top'],
+    [cx, p.y < b.t ? p.y + g : p.y - h - g, p.y < b.t ? 'center top' : 'center bottom'],
+  ];
+  const fit = ([x, y]) => x >= 8 && x + w <= W - 8 && y >= 84 && y + h <= H - 64;
+  // Overlap with the field; when no position is clear, take the one that covers it least.
+  const over = ([x, y]) => Math.max(0, Math.min(x + w, b.r + 8) - Math.max(x, b.l - 8)) * Math.max(0, Math.min(y + h, b.b + 8) - Math.max(y, b.t - 8));
+  const fits = tries.filter(fit);
+  let [x, y, o] = fits.length ? fits.reduce((a, c) => over(c) < over(a) ? c : a) : tries[0];
+  x = Math.min(Math.max(x, 8), W - w - 8); y = Math.min(Math.max(y, 84), H - h - 64);
+  el.style.left = x + 'px'; el.style.top = y + 'px';
+  el.style.transformOrigin = o;
+}
+
+/* Proximity: the nearest dot within reach of the cursor opens, as on kunuminst. */
+stage.addEventListener('pointermove', (e) => {
+  if (e.pointerType !== 'mouse' || e.target.closest('.card,.field')) return;
+  const t = (tFrozen || performance.now()) - tOffset;
+  let best = null, bd = 56;
+  model().eps.forEach(x => { const p = at(x.id, t); const d = Math.hypot(p.x - e.clientX, p.y - e.clientY); if (d < bd) { bd = d; best = x.id; } });
+  if (best) { frozen = true; if (best !== state.focus) reveal(best, true); else pauseAuto(); }
+  else if (state.focus) { frozen = false; schedule(state.focus); }
+});
+stage.addEventListener('pointerleave', () => { frozen = false; });
+stage.addEventListener('click', (e) => {
+  if (e.target.closest('.dot,.card,.field')) return;
+  if (e.pointerType !== 'mouse') {
+    const t = (tFrozen || performance.now()) - tOffset;
+    let best = null, bd = 44;
+    model().eps.forEach(x => { const p = at(x.id, t); const d = Math.hypot(p.x - e.clientX, p.y - e.clientY); if (d < bd) { bd = d; best = x.id; } });
+    if (best) { reveal(best, true); return; }
+  }
+  state.cards.forEach((_, id) => dismiss(id)); showField(null);
+});
+
+/* ---------- Central field ---------- */
+function showField(id) {
+  const who = NAMES[state.cand];
+  let path = '', what = '';
+  if (id) {
+    const e = ep(id);
+    path = e.chain.length ? 'via ' + e.chain.join(' → ') : 'em pessoa';
+    what = e.title_pt;
+  } else {
+    const n = model().eps.length;
+    what = `${n} episódios. Passe o mouse pelos pontos.`;
+    if (!finePointer.matches) what = `${n} episódios. Toque nos pontos.`;
+  }
+  const html = `<span class="who">${who}</span><span class="what">${esc(what)}</span>`;
+  if (ftxt.innerHTML === html) return;
+  fpath.textContent = path;
+  ftxt.classList.add('out');
+  clearTimeout(showField.t);
+  showField.t = setTimeout(() => {
+    ftxt.innerHTML = html;
+    ftxt.classList.remove('out'); ftxt.classList.add('pre');
+    requestAnimationFrame(() => requestAnimationFrame(() => ftxt.classList.remove('pre')));
+  }, ftxt.innerHTML ? 150 : 0);
+}
+
+/* ---------- Idle autoplay: the field walks through episodes on its own until the user takes over ---------- */
+function startAuto() {
+  stopAuto();
+  const order = [...model().eps].sort((a, b) => a.date.localeCompare(b.date));
+  let i = order.findIndex(e => e.id === (state.cand === 'lula' ? 'L23' : 'F01'));
+  const step = () => { if (document.querySelector('.drawer.on, .list.on')) return; reveal(order[i % order.length].id, false); i = (i + 7) % order.length; };
+  state.auto = setInterval(step, 3600);
+  state.kick = setTimeout(step, 900);
+}
+function stopAuto() { clearInterval(state.auto); clearTimeout(state.kick); state.auto = null; }
+function pauseAuto() { stopAuto(); clearTimeout(state.idleT); state.idleT = setTimeout(startAuto, 15000); }
+
+/* ---------- Detail drawer ---------- */
+const drawer = $('#drawer'), scrim = $('#scrim');
+let lastFocus = null;
+function openDetail(id) {
+  pauseAuto(); stopAuto(); clearTimeout(state.idleT);
+  const e = ep(id);
+  lastFocus = document.activeElement;
+  const chain = [FULL[state.cand], ...e.chain].map((x, i, a) => i === a.length - 1 ? `<b>${esc(x)}</b>` : esc(x)).join(' → ');
+  drawer.innerHTML = `
+    <button class="close" id="dClose">Fechar</button>
+    <div class="meta"><span>${fmtDate(e.date)}</span><span class="${e.ledger === 'negativo' ? 'dark' : ''}">${LEDGER[e.ledger]}</span><span>${RELATION[e.relation] ?? e.relation}</span></div>
+    <h2 id="dTitle">${e.relation === 'direto' ? esc(FULL[state.cand]) + ' ' : ''}${esc(e.title_pt)}</h2>
+    <div class="chain">${chain}</div>
+    <div class="ph">print da matéria</div>
+    <p>${esc(e.summary_pt)}</p>
+    <ul>${e.sources.map(s => `<li>${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.outlet)}</a>` : esc(s.outlet)}<small>tier ${s.tier}</small></li>`).join('')}</ul>
+    <div class="ref">dossiê: ${esc(e.dossier_ref)}</div>`;
+  drawer.classList.add('on'); scrim.classList.add('on');
+  $('#dClose').addEventListener('click', closeDetail);
+  drawer.focus();
+}
+function closeDetail() {
+  drawer.classList.remove('on'); scrim.classList.remove('on');
+  lastFocus?.focus?.({ preventScroll: true });
+  pauseAuto();
+}
+scrim.addEventListener('click', closeDetail);
+addEventListener('keydown', (e) => { if (e.key === 'Escape') { if (drawer.classList.contains('on')) closeDetail(); else if ($('#list').classList.contains('on')) toggleList(false); } });
+
+/* ---------- List mode ---------- */
+function renderList() {
+  const items = [...model().eps].sort((a, b) => b.date.localeCompare(a.date));
+  $('#listItems').innerHTML = items.map(e => `<li><button data-id="${e.id}"><span class="d">${fmtDate(e.date)}</span><span class="m ${e.ledger}"></span><span class="x">${esc(e.title_pt)}<small>${e.chain.length ? 'via ' + esc(e.chain.join(' → ')) : 'em pessoa'} · ${LEDGER[e.ledger]}</small></span></button></li>`).join('');
+}
+function toggleList(on) {
+  $('#list').classList.toggle('on', on);
+  $('#listBtn').setAttribute('aria-pressed', on);
+  $('#listBtn').textContent = on ? 'Grafo' : 'Lista';
+  if (on) { renderList(); stopAuto(); } else pauseAuto();
+}
+$('#listBtn').addEventListener('click', () => toggleList(!$('#list').classList.contains('on')));
+$('#listItems').addEventListener('click', (e) => { const b = e.target.closest('button'); if (b) openDetail(b.dataset.id); });
+
+/* ---------- Tabs ---------- */
+document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => {
+  const cand = b.dataset.cand; if (cand === state.cand) return;
+  document.querySelectorAll('.tabs button').forEach(x => x.setAttribute('aria-selected', x === b));
+  $('.tabs').dataset.active = cand;
+  stopAuto();
+  stage.classList.remove('in'); stage.classList.add('swap');
+  setTimeout(() => {
+    state.cand = cand; state.focus = null; frozen = false;
+    render();
+    if ($('#list').classList.contains('on')) renderList();
+    stage.classList.remove('swap'); stage.classList.add('in');
+    pauseAuto();
+  }, reduce.matches ? 0 : 150);
+}));
+
+function updateCount() { $('#count').textContent = `${state.seen[state.cand].size} de ${model().eps.length} descobertos`; }
+function fmtDate(d) { const [y, m, dd] = d.split('-'); const M = ['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez']; return dd ? `${+dd} ${M[m - 1]} ${y}` : m ? `${M[m - 1]} ${y}` : y; }
+function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
+
+let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(render, 120); });
+document.addEventListener('visibilitychange', () => { if (!document.hidden) tick(performance.now()); });
+reduce.addEventListener('change', () => tick(performance.now()));
+
+render();
+startAuto();
+})();
+</script>
+</body>
+</html>
