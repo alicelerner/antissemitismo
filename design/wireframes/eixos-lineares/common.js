@@ -24,7 +24,7 @@ function mountChrome(current) {
   const chapters = window.CHAPTERS;
 
   const bar = el("div", { class: "wf-bar" },
-    el("span", {}, "Wireframe · Opção 1 · Eixos lineares"),
+    el("span", {}, "Eixos lineares"),
     el("a", { href: "../index.html" }, "Todas as opções")
   );
 

@@ -9,7 +9,7 @@
 <style>
 /* Cover, after the reference hero: collage band on top, then two columns.
    Left: small subtitle at the top, mono byline at the bottom. Right: big title at the top, "Role para ler" along the bottom. */
-.hero { height: max(600px, calc(100svh - 56px - 30px)); display: grid; grid-template-rows: 54% minmax(0, 1fr); }
+.hero { height: max(600px, calc(100svh - 56px - var(--bar-h))); display: grid; grid-template-rows: 54% minmax(0, 1fr); }
 .collage { position: relative; background: var(--field-b); overflow: hidden; }
 .collage .ph { position: absolute; min-height: 0; border: 1px solid var(--paper); }
 .collage .t1 { left: 5%; top: 29%; width: 18%; height: 71%; }
@@ -31,14 +31,13 @@
   .cover-text .scroll { grid-column: 2; grid-row: 2; }
 }
 
-/* Axis covers: on desktop each one sticks under the nav and the next slides over it, as in the reference.
-   On phones they are plain stacked sections, as the reference does on mobile. */
+/* Axis covers: each one sticks under the nav and the next slides over it, as in the reference.
+   Phones too, at Alice's request (2026-10-09), though the reference stacks them plainly on mobile. */
 .chapter:nth-child(3n+1) { background: var(--field-a); }
 .chapter:nth-child(3n+2) { background: var(--field-b); }
 .chapter:nth-child(3n) { background: var(--field-c); }
-@media (min-width: 900px) {
-  .chapter { position: sticky; top: 56px; height: calc(100vh - 56px); overflow: hidden; }
-}
+.chapter { position: sticky; top: calc(var(--bar-h) + 56px); min-height: calc(100svh - var(--bar-h) - 56px); }
+@media (min-width: 900px) { .chapter { height: calc(100vh - var(--bar-h) - 56px); overflow: hidden; } }
 </style>
 </head>
 <body>
@@ -76,6 +75,15 @@ document.getElementById("chapters").append(...C.map((c, i) =>
   el("section", { class: "chapter cover", id: "cap-" + c.id, "aria-label": "Eixo " + chapterNum(i) },
     buildCover(c, i, { rows: 5, cta: true }))
 ));
+// A cover taller than the screen sticks only once its bottom reaches the bottom of the screen,
+// so the whole card is read before the next one slides over it.
+function pinCovers() {
+  const navBottom = document.querySelector(".nav").getBoundingClientRect().height + document.querySelector(".wf-bar").offsetHeight;
+  document.querySelectorAll(".chapter").forEach(c => { c.style.top = Math.min(navBottom, innerHeight - c.offsetHeight) + "px"; });
+}
+pinCovers();
+addEventListener("resize", pinCovers);
+document.fonts?.ready.then(pinCovers);
 if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
 </script>
 </body>

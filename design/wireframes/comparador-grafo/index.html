@@ -20,7 +20,8 @@
   --font: "Inter", system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
   --gutter: 16px;
-  --bar: calc(29px + env(safe-area-inset-top, 0px));
+  --bar-h: calc(32px + env(safe-area-inset-top, 0px));
+  --bar: var(--bar-h);
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
   --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
@@ -36,8 +37,9 @@ button { transition: transform 100ms var(--ease-out); }
 button:active { transform: scale(0.97); }
 button { font: inherit; color: inherit; }
 
-/* Wireframe meta bar: outside the design, for reviewers (same as option 1) */
-.wf-bar { position: fixed; inset: 0 0 auto 0; z-index: 25; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: calc(8px + env(safe-area-inset-top, 0px)) var(--gutter) 8px; background: repeating-linear-gradient(-45deg, #2a2a2a 0 10px, #222 10px 20px); color: #e9e9e6; font: 400 11px/1.3 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; }
+/* Global wireframe bar: option name + link back to the hub, pinned to the top. Same on all three options. */
+.wf-bar { position: fixed; inset: 0 0 auto 0; z-index: 40; box-sizing: border-box; height: var(--bar-h); padding: env(safe-area-inset-top, 0px) var(--gutter) 0; display: flex; justify-content: space-between; align-items: center; gap: 12px; background: repeating-linear-gradient(-45deg, #2a2a2a 0 10px, #222 10px 20px); color: #e9e9e6; font: 400 11px/1 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; }
+.wf-bar span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .wf-bar a { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; white-space: nowrap; }
 
 /* Header */
@@ -162,7 +164,7 @@ svg#net { position: absolute; inset: 0; width: 100%; height: 100%; overflow: vis
 </style>
 </head>
 <body>
-<div class="wf-bar"><span>Wireframe · Opção 2 · Comparador em grafo</span><a href="../index.html">Todas as opções</a></div>
+<div class="wf-bar"><span>Comparador em grafo</span><a href="../index.html">Todas as opções</a></div>
 <header class="top">
   <h1>Comparador de antissemitismo</h1>
   <div class="tabs" role="tablist" aria-label="Candidato" data-active="lula">

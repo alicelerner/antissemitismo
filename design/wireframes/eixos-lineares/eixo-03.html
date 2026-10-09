@@ -9,10 +9,10 @@
 <link rel="stylesheet" href="wf.css">
 <style>
 .ch-head { background: var(--field-a); }
-@media (min-width: 900px) { .ch-head { min-height: calc(100vh - 56px); } }
+@media (min-width: 900px) { .ch-head { min-height: calc(100vh - var(--bar-h) - 56px); } }
 
 .layout { display: grid; gap: 32px; padding-inline: var(--gutter); padding-block: 40px 72px; }
-@media (min-width: 1000px) { .layout { grid-template-columns: 240px minmax(0, 1fr); gap: 56px; } .side { position: sticky; top: 72px; align-self: start; } }
+@media (min-width: 1000px) { .layout { grid-template-columns: 240px minmax(0, 1fr); gap: 56px; } .side { position: sticky; top: calc(var(--bar-h) + 72px); align-self: start; } }
 .side ol { list-style: none; margin: 8px 0 0; padding: 0; }
 .side li button {
   width: 100%; text-align: left; background: none; border: 0; border-top: 1px solid var(--soft-line);
@@ -21,7 +21,7 @@
 .side li button:hover { text-decoration: underline; }
 
 .content { display: grid; gap: 64px; min-width: 0; max-width: 960px; }
-.sec { display: grid; gap: 24px; scroll-margin-top: 72px; }
+.sec { display: grid; gap: 24px; scroll-margin-top: calc(var(--bar-h) + 72px); }
 .sec h2 { margin: 0; font-size: clamp(28px, 3.4vw, 44px); letter-spacing: -0.04em; line-height: 1.05; text-wrap: balance; }
 .sec.lens, .sec.limit { border: 1.5px dashed var(--ink); padding: 20px; }
 .sec .kind { justify-self: start; background: var(--ink); color: var(--paper); padding: 3px 8px; }
