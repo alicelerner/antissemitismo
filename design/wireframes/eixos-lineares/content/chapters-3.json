@@ -1,0 +1,975 @@
+[
+ {
+  "id": "v",
+  "numeral": "V",
+  "title": "A companhia que ele escolhe",
+  "dek": "Aliados da família Bolsonaro, um por um: o contato, o episódio do próprio aliado e quem o condenou.",
+  "summary": "Milei mostra que apoio a Israel e aliança com a direita radical podem andar juntos. Por isso este eixo não fala da direita em geral. Fala de aliados específicos da família Bolsonaro. Para cada um, três registros: o contato com os Bolsonaro, um episódio do próprio aliado e quem o condenou. A AfD alemã foi recebida no Planalto, e a CONIB e a ADL condenaram o próprio encontro. Flávio chama essa rede de sua.",
+  "highlights": [
+   {
+    "date": "26 jul 2021",
+    "text": "Jair Bolsonaro recebe no Planalto a vice-líder da AfD. A CONIB e a ADL condenam o encontro em si, não apenas o partido.",
+    "ref": "03 pair 6"
+   },
+   {
+    "date": "17 fev 2022",
+    "text": "Em Budapeste, Jair diz a Viktor Orbán: «Considero o seu país o nosso pequeno grande irmão.»",
+    "ref": "03 pair 1"
+   },
+   {
+    "date": "18 jan 2026",
+    "text": "Flávio sobre o irmão Eduardo, que coordena sua agenda internacional: «temos um craque em casa nessa parte de relações internacionais».",
+    "ref": "06 §2.1"
+   }
+  ],
+  "toc": [
+   "Milei, o contraexemplo",
+   "Nas palavras de Flávio",
+   "AfD, Alemanha",
+   "Viktor Orbán, Hungria",
+   "Donald Trump, Estados Unidos",
+   "Steve Bannon, Estados Unidos",
+   "Elon Musk, Estados Unidos"
+  ],
+  "sections": [
+   {
+    "heading": "Milei, o contraexemplo",
+    "intro": "Javier Milei é aliado da família Bolsonaro e defensor declarado de Israel. Nenhuma instituição judaica o acusa de nada. O argumento deste eixo precisa resistir a esse exemplo.",
+    "kind": "counterexample",
+    "items": [
+     {
+      "role": "contato",
+      "date": "8-10 dez 2023",
+      "actor": "Jair Bolsonaro",
+      "quote": "",
+      "lang": "pt",
+      "context": "Jair encontra Milei em Buenos Aires antes da posse e vai à cerimônia com uma comitiva. Foi seu primeiro grande ato público depois da derrota de 2022.",
+      "reaction": null,
+      "source": "Poder360",
+      "url": "https://www.poder360.com.br/brasil/bolsonaro-encontra-milei-na-argentina-antes-da-posse/",
+      "ref": "03 7a.1",
+      "media": "texto"
+     },
+     {
+      "role": "contato",
+      "date": "6-7 jul 2024",
+      "actor": "Jair Bolsonaro e Javier Milei",
+      "quote": "",
+      "lang": "pt",
+      "context": "Reunião bilateral e aparição conjunta na CPAC Brasil, em Balneário Camboriú. A CPAC Brasil aparece aqui como lugar de encontro, não como prova de nada.",
+      "reaction": null,
+      "source": "O Povo",
+      "url": "https://www.opovo.com.br/noticias/politica/2024/07/08/cpac-brasil-bolsonarismo-elege-porta-vozes-para-diversificar-publico-e-milei-poupa-lula.html",
+      "ref": "03 7a.2",
+      "media": "texto"
+     },
+     {
+      "role": "",
+      "date": "6 fev 2024",
+      "actor": "Javier Milei",
+      "quote": "",
+      "lang": "pt",
+      "context": "Visita Israel como presidente e promete levar a embaixada argentina para Jerusalém.",
+      "reaction": null,
+      "source": "Semafor",
+      "url": "https://www.semafor.com/article/02/06/2024/javier-milei-visits-israel-pledges-to-move-argentine-embassy-to-jerusalem",
+      "ref": "03 7b.1",
+      "media": "texto"
+     },
+     {
+      "role": "",
+      "date": "14 jan 2025",
+      "actor": "Genesis Prize Foundation",
+      "quote": "President Milei is a true hero of the Jewish people.",
+      "lang": "en",
+      "context": "Milei recebe o Prêmio Genesis de 2025. É o primeiro não judeu e o primeiro chefe de Estado premiado.",
+      "reaction": null,
+      "source": "JNS",
+      "url": "https://www.jns.org/jewish-nobel-recognizes-mileis-support-for-israel/",
+      "ref": "03 7b.2",
+      "media": "texto"
+     }
+    ]
+   },
+   {
+    "heading": "Nas palavras de Flávio",
+    "intro": "Os episódios abaixo são dos aliados, não de Flávio. O que é dele é o vínculo com essa rede, dito com as próprias palavras.",
+    "kind": "default",
+    "items": [
+     {
+      "role": "contato",
+      "date": "18 jan 2026",
+      "actor": "Flávio Bolsonaro",
+      "quote": "Graças a Deus, temos um craque em casa nessa parte de relações internacionais",
+      "lang": "pt",
+      "context": "Flávio fala do irmão Eduardo, que coordena dos Estados Unidos a agenda internacional da pré-candidatura.",
+      "reaction": null,
+      "source": "Gazeta do Povo",
+      "url": "https://www.gazetadopovo.com.br/eleicoes/em-primeira-viagem-internacional-da-pre-candidatura-flavio-bolsonaro-vai-a-israel/",
+      "ref": "06 §2.1",
+      "media": "texto"
+     },
+     {
+      "role": "contato",
+      "date": "28 mar 2026",
+      "actor": "Flávio Bolsonaro",
+      "quote": "",
+      "lang": "pt",
+      "context": "Flávio discursa na CPAC em Grapevine, no Texas, apresentado por Eduardo. Pede pressão diplomática dos Estados Unidos sobre a eleição brasileira.",
+      "reaction": null,
+      "source": "Congresso em Foco",
+      "url": "https://www.congressoemfoco.com.br/noticia/117674/na-cpac-flavio-pede-pressao-dos-eua-sobre-eleicoes-no-brasil",
+      "ref": "06 §0; §2.5",
+      "media": "vídeo"
+     },
+     {
+      "role": "contato",
+      "date": "13 mai 2026",
+      "actor": "Flávio Bolsonaro",
+      "quote": "É alguém que joga no nosso time. Uma pessoa muito competente e jovem, com uma capacidade que dá inveja ao lado de lá",
+      "lang": "pt",
+      "context": "Flávio sobre o deputado Nikolas Ferreira, que em agosto entra formalmente na campanha.",
+      "reaction": null,
+      "source": "Itatiaia",
+      "url": "https://www.itatiaia.com.br/politica/flavio-bolsoanro-evita-definir-palanque-em-mg-e-exalta-nikolas-grande-referencia/",
+      "ref": "06 §2.3",
+      "media": "texto"
+     },
+     {
+      "role": "contato",
+      "date": "25 jul 2026",
+      "actor": "Javier Milei",
+      "quote": "",
+      "lang": "pt",
+      "context": "Milei vai pessoalmente à convenção do PL que oficializa a candidatura de Flávio, no Pacaembu.",
+      "reaction": null,
+      "source": "Agência Brasil",
+      "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-07/pl-oficializa-candidatura-de-flavio-bolsonaro-presidencia",
+      "ref": "06 §2.4",
+      "media": "texto"
+     }
+    ]
+   },
+   {
+    "heading": "AfD, Alemanha",
+    "intro": "O par mais forte do dossiê. Aqui a condenação das instituições judaicas é do encontro com os Bolsonaro, não apenas do aliado.",
+    "kind": "pair",
+    "items": [
+     {
+      "role": "contato",
+      "date": "26 jul 2021",
+      "actor": "Jair Bolsonaro, Eduardo Bolsonaro e Bia Kicis",
+      "quote": "Em um momento em que a esquerda está promovendo sua ideologia por meio de suas redes e organizações internacionais em nível global, nós, conservadores, devemos nos unir.",
+      "lang": "pt",
+      "context": "Beatrix von Storch, vice-líder da AfD e neta do ministro das Finanças de Hitler, é recebida por Eduardo e Bia Kicis e depois por Jair no Planalto. A frase é dela.",
+      "reaction": null,
+      "source": "Correio Braziliense",
+      "url": "https://www.correiobraziliense.com.br/politica/2021/07/4939769-bolsonaro-se-encontra-com-deputada-de-partido-neonazista-da-alemanha.html",
+      "ref": "03 6a.1; 01 §8d",
+      "media": "foto"
+     },
+     {
+      "role": "reação",
+      "date": "jul 2021",
+      "actor": "CONIB",
+      "quote": "um partido xenófobo, alheio aos ideais de tolerância, diversidade e pluralidade e cujos líderes minimizam as atrocidades do Holocausto",
+      "lang": "pt",
+      "context": "A CONIB lamentou a recepção no Planalto. O Museu do Holocausto de Curitiba também lamentou o encontro.",
+      "reaction": null,
+      "source": "Correio Braziliense",
+      "url": "https://www.correiobraziliense.com.br/politica/2021/07/4939769-bolsonaro-se-encontra-com-deputada-de-partido-neonazista-da-alemanha.html",
+      "ref": "01 §8d",
+      "media": "texto"
+     },
+     {
+      "role": "reação",
+      "date": "jul 2021",
+      "actor": "ADL",
+      "quote": "Neither Bolsonaro nor any elected official should welcome an AfD politician. Germany's far-right AfD party accepts Holocaust trivialization & denial.",
+      "lang": "en",
+      "context": "A Liga Antidifamação, dos Estados Unidos, se manifestou no Twitter sobre o encontro.",
+      "reaction": null,
+      "source": "JTA",
+      "url": "https://www.jta.org/quick-reads/jewish-groups-slam-brazilian-presidents-warm-welcome-to-granddaughter-of-hitlers-finance-minister",
+      "ref": "03 6a.1",
+      "media": "texto"
+     },
+     {
+      "role": "episódio",
+      "date": "17 jan 2017",
+      "actor": "Björn Höcke, líder da AfD na Turíngia",
+      "quote": "The Germans are the only people in the world who have planted a monument of shame in the heart of their capital.",
+      "lang": "en",
+      "context": "Em Dresden, Höcke chama o Memorial do Holocausto de Berlim de monumento da vergonha. O original é em alemão. Von Storch não é autora da frase.",
+      "reaction": {
+       "who": "Josef Schuster, Conselho Central dos Judeus na Alemanha",
+       "quote": "After the statements of individual officials I consider it necessary to monitor parts of the AfD – if necessary also through the Verfassungsschutz.",
+       "date": "25 jan 2017"
+      },
+      "source": "Tagesspiegel",
+      "url": "https://www.tagesspiegel.de/politik/zentralrat-der-juden-will-teile-der-afd-vom-verfassungsschutz-beobachten-lassen-5489233.html",
+      "ref": "03 6b.1",
+      "media": "vídeo"
+     },
+     {
+      "role": "episódio",
+      "date": "2 mai 2025",
+      "actor": "Serviço federal de inteligência interna da Alemanha (BfV)",
+      "quote": "The ethnic-ancestry-based understanding of the people prevailing in the party is incompatible with the free democratic basic order.",
+      "lang": "en",
+      "context": "O BfV reclassifica a AfD inteira como esforço extremista de direita comprovado, com base num relatório de cerca de 1.100 páginas. A classificação estava em disputa judicial em 2025.",
+      "reaction": null,
+      "source": "ZDF heute",
+      "url": "https://www.zdfheute.de/politik/deutschland/afd-verfassungsschutz-rechtsextremistisch-100.html",
+      "ref": "03 6b.3",
+      "media": "documento"
+     },
+     {
+      "role": "reação",
+      "date": "2 mai 2025",
+      "actor": "Josef Schuster, Conselho Central dos Judeus na Alemanha",
+      "quote": "We have long warned against the AfD as the parliamentary arm of the growing extreme right in Germany",
+      "lang": "en",
+      "context": "A AfD se diz pró-Israel e tem um grupo de judeus filiados. A posição do Conselho Central continua a mesma.",
+      "reaction": null,
+      "source": "JTA",
+      "url": "https://www.jta.org/2025/05/02/global/germany-formally-classifies-far-right-afd-party-as-extremist-in-blow-to-nazi-linked-populist-movement",
+      "ref": "03 6b.3",
+      "media": "texto"
+     }
+    ]
+   },
+   {
+    "heading": "Viktor Orbán, Hungria",
+    "intro": "Orbán é aliado próximo de Netanyahu. O registro aqui não é sobre Israel. É sobre episódios condenados pela federação judaica da Hungria.",
+    "kind": "pair",
+    "items": [
+     {
+      "role": "contato",
+      "date": "17 fev 2022",
+      "actor": "Jair Bolsonaro",
+      "quote": "Considero o seu país o nosso pequeno grande irmão.",
+      "lang": "pt",
+      "context": "Visita oficial a Budapeste, um dia depois de encontrar Putin em Moscou.",
+      "reaction": null,
+      "source": "Poder360",
+      "url": "https://www.poder360.com.br/internacional/bolsonaro-chama-orban-de-irmao-e-exalta-conservadorismo/",
+      "ref": "03 1a.1",
+      "media": "vídeo"
+     },
+     {
+      "role": "contato",
+      "date": "12-14 fev 2024",
+      "actor": "Jair Bolsonaro",
+      "quote": "",
+      "lang": "pt",
+      "context": "Quatro dias depois de a Polícia Federal apreender seu passaporte, Jair passa duas noites na embaixada da Hungria em Brasília. O New York Times revelou o caso com imagens das câmeras da própria embaixada.",
+      "reaction": null,
+      "source": "Poder360",
+      "url": "https://www.poder360.com.br/brasil/leia-a-linha-do-tempo-da-ida-de-bolsonaro-a-embaixada-da-hungria/",
+      "ref": "03 1a.2",
+      "media": "foto"
+     },
+     {
+      "role": "episódio",
+      "date": "jul 2017",
+      "actor": "Governo Orbán",
+      "quote": "",
+      "lang": "pt",
+      "context": "Campanha nacional de outdoors contra George Soros, financista judeu nascido na Hungria, com seu retrato sorrindo. O governo húngaro diz que a campanha tratava de imigração.",
+      "reaction": null,
+      "source": "Times of Israel/JTA",
+      "url": "https://www.timesofisrael.com/israel-envoy-urges-hungary-to-halt-anti-soros-campaign",
+      "ref": "03 1b.1",
+      "media": "foto"
+     },
+     {
+      "role": "reação",
+      "date": "jul 2017",
+      "actor": "András Heisler, presidente da Mazsihisz (federação das comunidades judaicas da Hungria)",
+      "quote": "these poisonous messages harm the whole of Hungary.",
+      "lang": "en",
+      "context": "Heisler escreveu a Orbán pedindo o fim da campanha. O embaixador de Israel em Budapeste também pediu.",
+      "reaction": null,
+      "source": "Times of Israel/JTA",
+      "url": "https://www.timesofisrael.com/israel-envoy-urges-hungary-to-halt-anti-soros-campaign",
+      "ref": "03 1b.1",
+      "media": "texto"
+     }
+    ]
+   },
+   {
+    "heading": "Donald Trump, Estados Unidos",
+    "intro": "Trump levou a embaixada americana para Jerusalém e é visto em Israel como o presidente mais pró-Israel da história dos Estados Unidos. Os episódios abaixo foram condenados mesmo assim.",
+    "kind": "pair",
+    "items": [
+     {
+      "role": "contato",
+      "date": "mar 2025 em diante",
+      "actor": "Eduardo Bolsonaro",
+      "quote": "reforçam o compromisso do presidente Donald Trump",
+      "lang": "pt",
+      "context": "Eduardo se licencia da Câmara e se muda para os Estados Unidos para pedir sanções contra o ministro Alexandre de Moraes. Comemora as sanções aplicadas em julho e setembro de 2025.",
+      "reaction": null,
+      "source": "Poder360",
+      "url": "https://www.poder360.com.br/poder-congresso/eduardo-comemora-uso-da-lei-magnitsky-contra-mulher-de-moraes/",
+      "ref": "03 4a.1",
+      "media": "texto"
+     },
+     {
+      "role": "contato",
+      "date": "9 jul 2025",
+      "actor": "Donald Trump",
+      "quote": "A forma como o Brasil tem tratado o ex-presidente Bolsonaro [...] é uma vergonha internacional. Esse julgamento não deveria estar ocorrendo. É uma caça às bruxas que deve acabar IMEDIATAMENTE!",
+      "lang": "pt",
+      "context": "Carta a Lula que anuncia tarifa de 50% sobre todas as exportações brasileiras. O primeiro motivo citado é o julgamento de Bolsonaro.",
+      "reaction": null,
+      "source": "Carta de Trump, tradução publicada pelo Poder360",
+      "url": "https://static.poder360.com.br/2025/07/Carta-Trump-Brasil-portugues.pdf",
+      "ref": "03 4a.2",
+      "media": "documento"
+     },
+     {
+      "role": "episódio",
+      "date": "20-21 ago 2019",
+      "actor": "Donald Trump",
+      "quote": "either a total lack of knowledge or great disloyalty",
+      "lang": "en",
+      "context": "Trump diz que judeus que votam no Partido Democrata mostram falta de conhecimento ou deslealdade.",
+      "reaction": null,
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2019/8/21/trump-slammed-for-saying-jews-disloyal-if-they-vote-for-democrats",
+      "ref": "03 4b.2",
+      "media": "texto"
+     },
+     {
+      "role": "reação",
+      "date": "ago 2019",
+      "actor": "Jonathan Greenblatt, ADL",
+      "quote": "It's unclear who @POTUS is claiming Jews would be 'disloyal' to, but charges of disloyalty have long been used to attack Jews.",
+      "lang": "en",
+      "context": "",
+      "reaction": null,
+      "source": "Al Jazeera",
+      "url": "https://www.aljazeera.com/news/2019/8/21/trump-slammed-for-saying-jews-disloyal-if-they-vote-for-democrats",
+      "ref": "03 4b.2",
+      "media": "texto"
+     },
+     {
+      "role": "episódio",
+      "date": "22 nov 2022",
+      "actor": "Donald Trump",
+      "quote": "",
+      "lang": "pt",
+      "context": "Jantar em Mar-a-Lago com Kanye West e Nick Fuentes, que a ADL descreve como supremacista branco e negador do Holocausto. Trump disse que não sabia quem era Fuentes e não o condenou.",
+      "reaction": null,
+      "source": "JNS",
+      "url": "https://www.jns.org/antisemitism/jewish-ngos-call-on-trump-to-condemn-ye-fuentes",
+      "ref": "03 4b.3",
+      "media": "texto"
+     },
+     {
+      "role": "reação",
+      "date": "nov 2022",
+      "actor": "David Friedman, ex-embaixador de Trump em Israel",
+      "quote": "I urge you to throw those bums out, disavow them and relegate them to the dustbin of history.",
+      "lang": "en",
+      "context": "A ADL e a Coalizão Judaica Republicana também cobraram Trump.",
+      "reaction": null,
+      "source": "JNS",
+      "url": "https://www.jns.org/antisemitism/jewish-ngos-call-on-trump-to-condemn-ye-fuentes",
+      "ref": "03 4b.3",
+      "media": "texto"
+     }
+    ]
+   },
+   {
+    "heading": "Steve Bannon, Estados Unidos",
+    "intro": "Bannon se declara pró-Israel e nega as acusações. As palavras da ADL e a negativa dele aparecem lado a lado.",
+    "kind": "pair",
+    "items": [
+     {
+      "role": "contato",
+      "date": "fev 2019",
+      "actor": "Steve Bannon e Eduardo Bolsonaro",
+      "quote": "What I try to do, especially with Eduardo, is talk about how [to develop] a populist nationalist movement in Latin America.",
+      "lang": "en",
+      "context": "Bannon nomeia Eduardo representante na América do Sul do The Movement, sua aliança de partidos nacionalistas. A frase é de Bannon à BBC, em 2022.",
+      "reaction": null,
+      "source": "Agência Pública",
+      "url": "https://apublica.org/2023/08/eduardo-bolsonaro-teve-125-reunioes-com-membros-da-extrema-direita-do-continente/",
+      "ref": "03 2a.1",
+      "media": "texto"
+     },
+     {
+      "role": "episódio",
+      "date": "22 ago 2016",
+      "actor": "Steve Bannon",
+      "quote": "We're the platform for the alt-right.",
+      "lang": "en",
+      "context": "Então presidente do Breitbart, Bannon descreve o site à revista Mother Jones durante a convenção republicana.",
+      "reaction": null,
+      "source": "Mother Jones",
+      "url": "https://www.motherjones.com/politics/2016/08/stephen-bannon-donald-trump-alt-right-breitbart-news/",
+      "ref": "03 2b.1",
+      "media": "texto"
+     },
+     {
+      "role": "episódio",
+      "date": "20 fev 2025",
+      "actor": "Steve Bannon",
+      "quote": "a wave like I did all the time",
+      "lang": "en",
+      "context": "Na CPAC americana, Bannon estende o braço direito com a palma aberta. A AP descreveu o gesto como semelhante à saudação historicamente ligada aos nazistas. Bannon diz que foi um aceno.",
+      "reaction": {
+       "who": "Jordan Bardella, Rassemblement National (França)",
+       "quote": "one of the speakers allowed himself, out of provocation, a gesture referring to Nazi ideology. As a consequence, I made the immediate decision to cancel my speech.",
+       "date": "fev 2025"
+      },
+      "source": "AP, via Click2Houston",
+      "url": "https://www.click2houston.com/news/politics/2025/02/21/steve-bannon-is-accused-of-doing-a-straight-arm-nazi-salute-at-cpac-but-says-it-was-just-a-wave/",
+      "ref": "03 2b.2",
+      "media": "vídeo"
+     },
+     {
+      "role": "reação",
+      "date": "fev 2025",
+      "actor": "ADL",
+      "quote": "Steve Bannon's long and disturbing history of stoking antisemitism and hate, threatening violence, and empowering extremists is well documented by ADL and others. We are not surprised, but are concerned about the normalization of this behavior.",
+      "lang": "en",
+      "context": "",
+      "reaction": null,
+      "source": "AP, via Click2Houston",
+      "url": "https://www.click2houston.com/news/politics/2025/02/21/steve-bannon-is-accused-of-doing-a-straight-arm-nazi-salute-at-cpac-but-says-it-was-just-a-wave/",
+      "ref": "03 2b.2",
+      "media": "texto"
+     }
+    ]
+   },
+   {
+    "heading": "Elon Musk, Estados Unidos",
+    "intro": "O vínculo de Musk com os Bolsonaro é político: o apoio contra o Supremo. Musk visitou Auschwitz em 2024 e nega as acusações.",
+    "kind": "pair",
+    "items": [
+     {
+      "role": "contato",
+      "date": "20 mai 2022",
+      "actor": "Jair Bolsonaro",
+      "quote": "",
+      "lang": "pt",
+      "context": "Encontro com Musk em Porto Feliz (SP) para tratar de internet via satélite na Amazônia. Jair o chama de mito da liberdade.",
+      "reaction": null,
+      "source": "Poder360",
+      "url": "https://www.poder360.com.br/governo/musk-chega-ao-brasil-leia-detalhes-do-encontro-com-bolsonaro/",
+      "ref": "03 8a.1",
+      "media": "foto"
+     },
+     {
+      "role": "contato",
+      "date": "21 abr 2024",
+      "actor": "Jair Bolsonaro",
+      "quote": "É o homem que teve a coragem de mostrar – já com algumas provas, outras virão com toda certeza – para onde a nossa democracia estava indo.",
+      "lang": "pt",
+      "context": "No ato de Copacabana, depois dos ataques de Musk a Moraes, Jair pede à plateia que aplauda Musk.",
+      "reaction": null,
+      "source": "Poder360",
+      "url": "https://www.poder360.com.br/brasil/veja-imagens-do-ato-de-bolsonaro-em-copacabana-no-rio/",
+      "ref": "03 8a.2",
+      "media": "vídeo"
+     },
+     {
+      "role": "episódio",
+      "date": "15 nov 2023",
+      "actor": "Elon Musk",
+      "quote": "You have said the actual truth",
+      "lang": "en",
+      "context": "No X, Musk responde assim a um post que acusava comunidades judaicas de promover ódio contra brancos.",
+      "reaction": {
+       "who": "Casa Branca (Andrew Bates)",
+       "quote": "It is unacceptable to repeat the hideous lie behind the most fatal act of Antisemitism in American history at any time, let alone one month after the deadliest day for the Jewish people since the Holocaust.",
+       "date": "nov 2023"
+      },
+      "source": "Jerusalem Post",
+      "url": "https://www.jpost.com/diaspora/article-773800",
+      "ref": "03 8b.1",
+      "media": "texto"
+     },
+     {
+      "role": "reação",
+      "date": "nov 2023",
+      "actor": "Jonathan Greenblatt, ADL",
+      "quote": "At a time when antisemitism is exploding in America and surging around the world, it is indisputably dangerous to use one's influence to validate and promote antisemitic theories.",
+      "lang": "en",
+      "context": "",
+      "reaction": null,
+      "source": "NBC Washington",
+      "url": "https://www.nbcwashington.com/news/business/money-report/white-house-slams-musk-antisemitic-rhetoric-but-says-foolish-to-drop-spacex-contracts/3475914/",
+      "ref": "03 8b.1",
+      "media": "texto"
+     },
+     {
+      "role": "episódio",
+      "date": "20-23 jan 2025",
+      "actor": "Elon Musk",
+      "quote": "",
+      "lang": "pt",
+      "context": "Na posse de Trump, Musk estende o braço duas vezes. A ADL disse que não foi uma saudação. Três dias depois, Musk publica piadas com temas nazistas, e aí a ADL e o AJC o condenam.",
+      "reaction": {
+       "who": "ADL",
+       "quote": "the Holocaust was a singularly evil event, and it is inappropriate and offensive to make light of it. [@elonmusk], the Holocaust is not a joke.",
+       "date": "23 jan 2025"
+      },
+      "source": "Jewish Insider",
+      "url": "https://jewishinsider.com/2025/01/after-holding-fire-major-jewish-groups-condemn-musks-latest-nazi-commentary/",
+      "ref": "03 8b.2",
+      "media": "vídeo"
+     }
+    ]
+   }
+  ],
+  "closing": "Flávio chama essa rede de sua. Os episódios dela foram condenados por instituições judaicas, pelo nome.",
+  "gaps": [
+   "Vox / Carta de Madrid (03 pair 3) is verified but not cited in 00-narrative movement V; left out. Editor's call whether to add it.",
+   "Gauland 'Vogelschiss' (03 6b.2) and Orbán's Horthy praise and race speech (03 1b.2, 1b.3) are verified but not named in the narrative; left out to keep one episode per pair. Available if the full chapter page wants more.",
+   "Höcke and Schuster (03 6b.1, 6b.3) and the BfV wording: originals are German; the schema only allows pt/en, so the file's English renderings are used with lang 'en'. Consider adding 'de' and the German originals.",
+   "Trump, Charlottesville 'very fine people' (03 4b.1): verified quote but the ADL condemnation was never located (03 open lead 1); left out because the pair needs a condemnation.",
+   "Trump, Sep 2024 'Jewish people would really have a lot to do with that' (03 4b.4): URJ reaction needs-second-source; left out.",
+   "Jason Miller 'O nosso próximo presidente. Já ganhou!' at CPAC 2026 (03 4a.3): needs-second-source; left out.",
+   "Trump greeting Eduardo from the CPAC stage, 22 Feb 2025 (03 4a.4), and Eduardo's presence at the CPAC where Bannon made the gesture: no Tier 2 source; left out.",
+   "Bannon 'that election was stolen' video reposted by Eduardo, Oct 2022 (03 2a.2): needs-second-source; left out. Bannon's Jan 2023 'freedom fighters' remark is verified but only in Portuguese rendering of an English statement; left out to avoid a translated quote.",
+   "Bannon 'platform for the alt-right' (03 2b.1): no institutional condemnation of that specific remark in the file (ADL backgrounder not fetched); kept as an episode with reaction null.",
+   "Flávio: White House meeting 26 May 2026, Olivos meeting with Milei 29 Jun 2026, any Flávio-Orbán contact: all needs-second-source or not found; left out.",
+   "Flávio's CPAC 2026 quotes (06 §2.5) were left out of quote marks because it is unclear whether the speech was delivered in English and the Portuguese is a rendering; the fact is stated in context.",
+   "Le Pen (03 pair 9) and CPAC Brasil (03 pair 5) not used as evidence, per narrative; CPAC Brasil appears only as the venue of the Milei meeting.",
+   "Gazeta do Povo is flagged in 06 as usable only for direct quotes; it is the sole source for 'um craque em casa'."
+  ],
+  "label": "A companhia"
+ },
+ {
+  "id": "vi",
+  "numeral": "VI",
+  "title": "O governo que dizia ser amigo",
+  "dek": "Oito episódios em que o nazismo e o Holocausto viraram metáfora política, cada um com a reação e a resposta do governo.",
+  "summary": "Entre 2020 e 2023, o Holocausto e o nazismo apareceram várias vezes no governo Bolsonaro e no seu entorno como metáfora política. Um secretário de Cultura leu um trecho quase idêntico a Goebbels. Um ministro falou em Noite dos Cristais. Outro secretário usou A Lista de Schindler. Na maioria dos casos, uma instituição judaica respondeu por escrito. O governo também respondeu, e as duas respostas estão aqui. O último episódio é do próprio Flávio.",
+  "highlights": [
+   {
+    "date": "16-17 jan 2020",
+    "text": "Roberto Alvim lê um texto quase idêntico a um discurso de Goebbels. A CONIB: «inaceitável o uso de discurso nazista». Jair o demite no dia seguinte.",
+    "ref": "01 §2a"
+   },
+   {
+    "date": "28 mai 2020",
+    "text": "O ministro da Educação chama uma operação da PF de «a Noite dos Cristais brasileira». A CONIB diz que a comparação minimiza aqueles acontecimentos.",
+    "ref": "01 §8b"
+   },
+   {
+    "date": "26 set 2023",
+    "text": "Flávio diz que as prisões do 8 de janeiro foram feitas «nos moldes nazistas». O Instituto Brasil-Israel responde por escrito.",
+    "ref": "06 §1.2"
+   }
+  ],
+  "toc": [
+   "Oito episódios, de Alvim a Flávio",
+   "O outro lado do registro",
+   "Os números",
+   "Contexto: o livro de 2017"
+  ],
+  "sections": [
+   {
+    "heading": "Alvim e Goebbels",
+    "intro": "",
+    "kind": "default",
+    "items": [
+     {
+      "role": "episódio",
+      "date": "16 jan 2020",
+      "actor": "Roberto Alvim, secretário especial da Cultura",
+      "quote": "A arte brasileira da próxima década será heroica e será nacional. Será dotada de grande capacidade de envolvimento emocional e será igualmente imperativa, posto que profundamente vinculada às aspirações urgentes do nosso povo, ou então não será nada.",
+      "lang": "pt",
+      "context": "Em vídeo nos canais oficiais da Secretaria, ao som de Lohengrin, de Wagner, Alvim reproduz quase palavra por palavra um discurso de Goebbels de 8 de maio de 1933.",
+      "reaction": {
+       "who": "CONIB",
+       "quote": "Uma pessoa com esse pensamento não pode dirigir a cultura do nosso país e deve ser afastada imediatamente do cargo.",
+       "date": "17 jan 2020"
+      },
+      "source": "Metrópoles",
+      "url": "https://www.metropoles.com/brasil/politica-br/secretario-de-cultura-cita-ministro-de-hitler-e-provoca-revolta",
+      "ref": "01 §2a",
+      "media": "vídeo"
+     },
+     {
+      "role": "resposta do governo",
+      "date": "17 jan 2020",
+      "actor": "Jair Bolsonaro",
+      "quote": "Manifestamos também nosso total e irrestrito apoio à comunidade judaica, da qual somos amigos e compartilhamos valores em comum.",
+      "lang": "pt",
+      "context": "Jair demite Alvim em menos de um dia, em nota publicada no Twitter.",
+      "reaction": null,
+      "source": "A Gazeta/Estadão Conteúdo",
+      "url": "https://www.agazeta.com.br/brasil/bolsonaro-confirma-demissao-de-roberto-alvim-apos-uso-de-frase-de-nazista-0120",
+      "ref": "01 §2a",
+      "media": "foto"
+     }
+    ]
+   },
+   {
+    "heading": "O slogan da Secom",
+    "intro": "",
+    "kind": "default",
+    "items": [
+     {
+      "role": "episódio",
+      "date": "11 mai 2020",
+      "actor": "Secretaria de Comunicação Social da Presidência (Secom)",
+      "quote": "O trabalho, a união e a verdade libertarão o Brasil.",
+      "lang": "pt",
+      "context": "Frase final de um vídeo institucional sobre as medidas do governo na pandemia, também compartilhado pelas contas de Jair.",
+      "reaction": {
+       "who": "CONIB",
+       "quote": "É conhecidíssima a relação desse mote com a mais infame instituição do Holocausto, o campo de extermínio de Auschwitz.",
+       "date": "11-12 mai 2020"
+      },
+      "source": "Poder360/DW",
+      "url": "https://www.poder360.com.br/midia/confederacao-israelita-repudia-mensagem-do-governo-que-remete-a-lema-nazista-dw/",
+      "ref": "01 §2b",
+      "media": "vídeo"
+     },
+     {
+      "role": "resposta do governo",
+      "date": "11 mai 2020",
+      "actor": "Fabio Wajngarten, secretário de Comunicação",
+      "quote": "Abomino esse tipo de ilação canalha, sobretudo nos tempos difíceis pelos quais estamos passando.",
+      "lang": "pt",
+      "context": "Wajngarten, que é judeu, diz que a frase é uma expressão comum em português.",
+      "reaction": null,
+      "source": "Diário de Notícias/Lusa",
+      "url": "https://www.dnoticias.pt/2020/5/11/52714-comunicacao-do-governo-brasileiro-defende-se-de-polemica-com-slogan-nazi/",
+      "ref": "01 §2b",
+      "media": "texto"
+     }
+    ]
+   },
+   {
+    "heading": "Weintraub e a Noite dos Cristais",
+    "intro": "",
+    "kind": "default",
+    "items": [
+     {
+      "role": "episódio",
+      "date": "27-28 mai 2020",
+      "actor": "Abraham Weintraub, ministro da Educação",
+      "quote": "a Noite dos Cristais brasileira",
+      "lang": "pt",
+      "context": "Weintraub, que é judeu, compara uma operação da PF no inquérito das fake news ao pogrom de 1938 e publica uma foto do Gueto de Varsóvia. Diz ter crescido ouvindo histórias da perseguição nazista à família.",
+      "reaction": {
+       "who": "CONIB",
+       "quote": "A comparação feita pelo ministro (...) é, portanto, totalmente descabida e inoportuna, minimizando de forma inaceitável aqueles terríveis acontecimentos.",
+       "date": "28 mai 2020"
+      },
+      "source": "Poder360",
+      "url": "https://www.poder360.com.br/governo/weintraub-chama-operacao-da-pf-de-noite-dos-cristais-brasileira/",
+      "ref": "01 §8b",
+      "media": "foto"
+     }
+    ]
+   },
+   {
+    "heading": "Frias e A Lista de Schindler",
+    "intro": "",
+    "kind": "default",
+    "items": [
+     {
+      "role": "episódio",
+      "date": "11 mar 2021",
+      "actor": "Mario Frias, secretário especial da Cultura",
+      "quote": "O setor de eventos clama para poder levar o pão para dentro de casa, para poder sustentar a própria família. Até quando um burocrata arrogante irá dizer que ele não é essencial?",
+      "lang": "pt",
+      "context": "Legenda de uma cena de A Lista de Schindler, a liquidação do gueto de Cracóvia, publicada contra as restrições da Covid.",
+      "reaction": {
+       "who": "CONIB",
+       "quote": "mais uma vez comparações completamente indevidas do momento atual com os trágicos episódios do nazismo que culminaram no extermínio de 6 milhões de judeus durante o Holocausto",
+       "date": "12 mar 2021"
+      },
+      "source": "A Gazeta/Estadão Conteúdo",
+      "url": "https://www.agazeta.com.br/brasil/confederacao-israelita-repudia-comparacao-com-nazismo-feita-por-mario-frias-0321",
+      "ref": "01 §8c",
+      "media": "vídeo"
+     }
+    ]
+   },
+   {
+    "heading": "Martins no Senado",
+    "intro": "",
+    "kind": "default",
+    "items": [
+     {
+      "role": "episódio",
+      "date": "24 mar 2021",
+      "actor": "Filipe G. Martins, assessor especial da Presidência",
+      "quote": "",
+      "lang": "pt",
+      "context": "Sentado atrás do presidente do Senado, diante das câmeras, Martins faz com a mão um sinal que a ADL lista entre os apropriados por supremacistas brancos. Foi absolvido em 2021, a absolvição caiu em 2023 e ele foi condenado em primeira instância em dezembro de 2024. Cabe recurso.",
+      "reaction": {
+       "who": "12ª Vara Federal Criminal do DF, sentença",
+       "quote": "significado incontestavelmente discriminatório, porque afirma a supremacia das pessoas da raça branca sobre as demais",
+       "date": "16-17 dez 2024"
+      },
+      "source": "InfoMoney/Estadão Conteúdo",
+      "url": "https://www.infomoney.com.br/?p=2706123",
+      "ref": "01 §8a",
+      "media": "vídeo"
+     },
+     {
+      "role": "resposta do governo",
+      "date": "mar 2021",
+      "actor": "Filipe G. Martins",
+      "quote": "Um aviso aos palhaços que desejam emplacar a tese de que eu, um judeu, sou simpático ao 'supremacismo branco'...",
+      "lang": "pt",
+      "context": "Martins diz que estava ajeitando a lapela e que é alvo de perseguição política.",
+      "reaction": null,
+      "source": "Poder360",
+      "url": "https://www.poder360.com.br/congresso/filipe-martins-fez-gesto-com-conotacao-racista-no-senado-conclui-investigacao/",
+      "ref": "01 §8a",
+      "media": "texto"
+     }
+    ]
+   },
+   {
+    "heading": "Von Storch no Planalto",
+    "intro": "O encontro está no eixo 05. Aqui, a reação.",
+    "kind": "default",
+    "items": [
+     {
+      "role": "episódio",
+      "date": "26 jul 2021",
+      "actor": "Jair Bolsonaro",
+      "quote": "",
+      "lang": "pt",
+      "context": "Jair recebe no Planalto Beatrix von Storch, vice-líder da AfD. Bia Kicis escreveu depois à CONIB dizendo que recebeu a deputada por recomendação de amigos, inclusive da comunidade judaica.",
+      "reaction": {
+       "who": "CONIB",
+       "quote": "um partido xenófobo, alheio aos ideais de tolerância, diversidade e pluralidade e cujos líderes minimizam as atrocidades do Holocausto",
+       "date": "jul 2021"
+      },
+      "source": "Correio Braziliense",
+      "url": "https://www.correiobraziliense.com.br/politica/2021/07/4939769-bolsonaro-se-encontra-com-deputada-de-partido-neonazista-da-alemanha.html",
+      "ref": "01 §8d",
+      "media": "foto"
+     }
+    ]
+   },
+   {
+    "heading": "Hitler no portão do Alvorada",
+    "intro": "A conversa inteira, para o leitor julgar.",
+    "kind": "default",
+    "items": [
+     {
+      "role": "episódio",
+      "date": "23 nov 2021",
+      "actor": "Apoiador não identificado",
+      "quote": "A gente via que Hitler trabalhava muito com as crianças. Nosso Ministério da Educação já poderia estar fazendo também um trabalho com as crianças para voltar à conscientização?",
+      "lang": "pt",
+      "context": "Conversa de rotina com apoiadores no portão do Palácio da Alvorada, filmada e publicada por eles.",
+      "reaction": null,
+      "source": "A Gazeta/Folhapress",
+      "url": "https://www.agazeta.com.br/brasil/apoiador-sugere-educacao-implantada-por-hitler-e-bolsonaro-nao-o-reprime-1121",
+      "ref": "01 §6c",
+      "media": "vídeo"
+     },
+     {
+      "role": "resposta do governo",
+      "date": "23 nov 2021",
+      "actor": "Jair Bolsonaro",
+      "quote": "Você não consegue... Tem ministério que é um transatlântico. Não dá para dar um cavalo de pau. Eu gostaria de imediatamente botar educação moral e cívica...",
+      "lang": "pt",
+      "context": "Jair não endossa Hitler. Também não corrige o apoiador e segue para a própria pauta.",
+      "reaction": null,
+      "source": "A Gazeta/Folhapress",
+      "url": "https://www.agazeta.com.br/brasil/apoiador-sugere-educacao-implantada-por-hitler-e-bolsonaro-nao-o-reprime-1121",
+      "ref": "01 §6c",
+      "media": "vídeo"
+     }
+    ]
+   },
+   {
+    "heading": "Flávio na CPMI do 8 de janeiro",
+    "intro": "Aqui o padrão chega ao candidato.",
+    "kind": "default",
+    "items": [
+     {
+      "role": "episódio",
+      "date": "26 set 2023",
+      "actor": "Flávio Bolsonaro, senador",
+      "quote": "As prisões das milhares de pessoas nos dias 8 e 9 de janeiro foram feitas nos moldes nazistas.",
+      "lang": "pt",
+      "context": "Na sessão com o ex-ministro Augusto Heleno, Flávio descreve judeus atraídos a estações de trem e mortos com gás e diz que foi muito parecido com o que aconteceu em Brasília.",
+      "reaction": {
+       "who": "Instituto Brasil-Israel",
+       "quote": "é um caso clássico de banalização do Holocausto",
+       "date": "27 set 2023"
+      },
+      "source": "O Povo",
+      "url": "https://www.opovo.com.br/noticias/politica/2023/09/27/flavio-bolsonaro-compara-prisoes-do-8-de-janeiro-a-holocausto-instituto-brasil-israel-repudia.html",
+      "ref": "06 §1.2",
+      "media": "vídeo"
+     }
+    ]
+   },
+   {
+    "heading": "O outro lado do registro",
+    "intro": "Jair também condenou o nazismo por escrito, em fevereiro de 2022.",
+    "kind": "counterweight",
+    "items": [
+     {
+      "role": "resposta do governo",
+      "date": "9-10 fev 2022",
+      "actor": "Jair Bolsonaro",
+      "quote": "A ideologia nazista deve ser repudiada de forma incondicional e permanente, sem ressalvas que permitam seu florescimento, assim como TODA ideologia totalitária que coloque em risco direitos fundamentais dos povos e indivíduos, como o direito à vida e à liberdade.",
+      "lang": "pt",
+      "context": "Publicada depois que um podcaster defendeu um partido nazista legalizado no Brasil. Na mesma nota, Jair pede que o comunismo também seja combatido por lei.",
+      "reaction": null,
+      "source": "Poder360",
+      "url": "https://www.poder360.com.br/governo/bolsonaro-fala-em-criminalizar-nazismo-e-comunismo/",
+      "ref": "01 §6f",
+      "media": "texto"
+     }
+    ]
+   },
+   {
+    "heading": "Os números",
+    "intro": "Contagens de células online e de denúncias, não um censo oficial. Os números continuam subindo depois de 2022, já no governo Lula.",
+    "kind": "data",
+    "items": [
+     {
+      "role": "",
+      "date": "fim de 2019 a jun 2020",
+      "actor": "Adriana Dias, antropóloga da Unicamp",
+      "quote": "É como se parte do país tivesse perdido completamente o contato com a civilização.",
+      "lang": "pt",
+      "context": "As células de inspiração nazista mapeadas por ela passam de 331, com cerca de 5 mil integrantes, para 349, com cerca de 7 mil.",
+      "reaction": null,
+      "source": "Poder360/DW",
+      "url": "https://www.poder360.com.br/brasil/dados-indicam-crescimento-do-neonazismo-no-brasil-dw/",
+      "ref": "01 §5a",
+      "media": "dado"
+     },
+     {
+      "role": "",
+      "date": "9 nov 2020",
+      "actor": "Adriana Dias",
+      "quote": "Com Bolsonaro, de um crescimento destes movimentos de 8% ao ano passámos a aumentos na ordem dos 16% a cada trimestre.",
+      "lang": "pt",
+      "context": "Entrevista ao Diário de Notícias, de Lisboa, que publicou a frase em português de Portugal.",
+      "reaction": null,
+      "source": "Diário de Notícias",
+      "url": "https://www.dn.pt/mundo/nazismo-no-brasil-multiplica-se-durante-governo-de-bolsonaro-13006445.html",
+      "ref": "01 §5a",
+      "media": "dado"
+     },
+     {
+      "role": "",
+      "date": "mai 2021",
+      "actor": "Adriana Dias",
+      "quote": "",
+      "lang": "pt",
+      "context": "530 células e cerca de 10 mil pessoas. Alta de 270,6% desde janeiro de 2019.",
+      "reaction": null,
+      "source": "O Popular/Estadão Conteúdo",
+      "url": "https://opopular.com.br/cidades/grupos-neonazistas-se-espalham-pelo-brasil-e-crescem-270-em-3-anos-1.2387927",
+      "ref": "01 §5a",
+      "media": "dado"
+     },
+     {
+      "role": "",
+      "date": "jun 2019 a jun 2020",
+      "actor": "Safernet",
+      "quote": "a retórica violenta e discriminatória",
+      "lang": "pt",
+      "context": "Denúncias na categoria neonazismo: 31 em junho de 2019, 3.616 em junho de 2020. Para a Safernet, a alta de 2020 veio da retórica do governo.",
+      "reaction": null,
+      "source": "Poder360/DW",
+      "url": "https://www.poder360.com.br/brasil/dados-indicam-crescimento-do-neonazismo-no-brasil-dw/",
+      "ref": "01 §5b",
+      "media": "dado"
+     },
+     {
+      "role": "",
+      "date": "2024-2025",
+      "actor": "Safernet",
+      "quote": "",
+      "lang": "pt",
+      "context": "Denúncias na categoria neonazismo: 814 em 2024 e 1.341 em 2025, alta de 64,7%. A Safernet não atribuiu essa alta a nenhum governo.",
+      "reaction": null,
+      "source": "Safernet, Indicadores 2025",
+      "url": "https://arquivos.safernet.org.br/pdfs/INDICADORES-DenunciasSaferNet2025.pdf",
+      "ref": "01 §5b",
+      "media": "dado"
+     },
+     {
+      "role": "",
+      "date": "2020-2024",
+      "actor": "Polícia Federal",
+      "quote": "",
+      "lang": "pt",
+      "context": "Registros de apologia ao nazismo: 19 em 2020, 12 em 2021, 82 em 2023 (recorde) e 65 em 2024. São 198 no período.",
+      "reaction": null,
+      "source": "Metrópoles",
+      "url": "https://www.metropoles.com/brasil/casos-de-apologia-ao-nazismo-cresceram-mais-de-242-nos-ultimos-5-anos",
+      "ref": "01 §5c; 04 §1.8.4",
+      "media": "dado"
+     },
+     {
+      "role": "",
+      "date": "31 out 2025",
+      "actor": "Ministério Público de Santa Catarina",
+      "quote": "estrutura hierárquica, recrutamento organizado e divisão de funções",
+      "lang": "pt",
+      "context": "Operação Nuremberg: 21 mandados de busca em dez cidades de SP, PR, SC e SE contra um grupo que planejava ataques. Depois, 14 pessoas foram denunciadas.",
+      "reaction": null,
+      "source": "CNN Brasil",
+      "url": "https://www.cnnbrasil.com.br/nacional/grupo-que-planejava-ataques-neonazistas-no-brasil-e-alvo-de-operacao/",
+      "ref": "01 §5c",
+      "media": "dado"
+     }
+    ]
+   },
+   {
+    "heading": "Contexto: o livro de 2017",
+    "intro": "Não é um argumento sobre judeus. É sobre a relação do projeto com o autoritarismo.",
+    "kind": "context",
+    "items": [
+     {
+      "role": "",
+      "date": "2017 (revelado em 2 out 2026)",
+      "actor": "Flávio Bolsonaro, autor",
+      "quote": "um homem correto, íntegro, que cumpriu seu papel de defender a pátria",
+      "lang": "pt",
+      "context": "No livro sobre o pai, Flávio descreve assim o coronel Ustra. No mesmo livro, nega que 1964 tenha sido golpe.",
+      "reaction": null,
+      "source": "Jornal O Sul",
+      "url": "https://www.osul.com.br/em-livro-sobre-bolsonaro-flavio-nega-golpe-militar-elogia-ustra-e-questiona-urnas-eletronicas/",
+      "ref": "06 §1.1",
+      "media": "documento"
+     }
+    ]
+   }
+  ],
+  "closing": "O último episódio desta lista tem o nome do candidato.",
+  "gaps": [
+   "Alvim: Jair's 17 Jan 2020 note has a transcription discrepancy between outlets ('deslizamento'/'desligamento', 'ilação'/'alusão'); the sentence used here is unaffected, but the full note must be checked against the original image before publication (01 §2a).",
+   "Alvim: Alcolumbre and STF ministers' wording needs-second-source; Israeli Embassy reaction is verified but not used.",
+   "Weintraub: Israeli Embassy reaction is verified but not used; no government answer beyond his personal defence, which has no full verbatim in the file.",
+   "Martins: appeal outcome (2025-2026) is an open lead; the item must be updated before launch.",
+   "Von Storch: the government did not answer CONIB in the record; Bia Kicis's letter is summarised in context (she is a deputy, not government).",
+   "Hitler at the gate: no institutional reaction found in the file; reaction null.",
+   "Flávio at the CPMI: no CONIB statement exists; only the Instituto Brasil-Israel. The full train/gas passage needs the TV Senado recording or notas taquigráficas before it can be quoted (06 open lead 2).",
+   "Neo-Nazi data: Dias's 2018 and 2022 (1,117) figures, her El País quotes, and Safernet's full June 2020 sentence ('É inegável que...') are needs-second-source; left out. Only the fragment 'a retórica violenta e discriminatória' is used.",
+   "CNDH report to the UN (2024): verified in 04 §1.8.4 (Jornal do Brasil) but needs-second-source in 01 §5d, and the JB URL in 04 is truncated; left out until reconciled.",
+   "Operação Nuremberg: verified in 01 §5c (CNN Brasil) but marked needs-second-source in 04 §1.10.3 (O Imparcial). Used from 01; reconcile the two files.",
+   "'Gestapo do Lula' (06 §1.3) is needs-second-source and is not cited in the narrative for VI; left out.",
+   "Off-page per narrative and kept out: São Miguel do Oeste, the May 2020 Alvorada gesture, Nazi iconography on 8 January, the Zambelli image.",
+   "All URLs in both chapters are archive: pending (Save Page Now pass before launch)."
+  ],
+  "label": "O governo"
+ }
+]

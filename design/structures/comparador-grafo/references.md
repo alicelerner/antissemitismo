@@ -26,3 +26,12 @@ Entries in the order received. Files live in `references/`.
   - **Linear.** The dots fly into a single horizontal row; vertical scroll moves the row sideways. Each item becomes a card (image cards and text-only cards alternate). "Back" at the bottom. It is the same set as the field, read in order.
   - **Mobile.** Same field and pill, no hover. A tap anywhere jumps straight to the filtered list.
   - **Accessibility.** Floating accessibility button bottom right with a panel (contrast, text size, pause particles, reduce motion and others).
+
+<!--
+## NN. Short name
+- Source: URL or references/NN-slug.ext
+- Received: YYYY-MM-DD
+- Take: what Alice wants from it
+- Ignore: what to leave out
+- Notes:
+-->
