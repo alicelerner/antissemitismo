@@ -5,7 +5,7 @@ Three candidate structures for the phase 2 site, drawn as wireframes for team fe
 | Option | Folder | Wireframe | Status |
 |---|---|---|---|
 | Eixos lineares | `eixos-lineares/` | `design/wireframes/eixos-lineares/` | wireframe drafted |
-| Comparador em grafo | `comparador-grafo/` | `design/wireframes/comparador-grafo.html` | waiting for brief |
+| Comparador em grafo | `comparador-grafo/` | `design/wireframes/comparador-grafo/` | wireframe drafted |
 | Depoimento ilustrado | `depoimento-ilustrado/` | `design/wireframes/depoimento-ilustrado.html` | waiting for brief |
 
 Status moves through: `waiting for brief` → `brief received` → `wireframe drafted` → `in feedback` → `chosen` / `dropped`.
