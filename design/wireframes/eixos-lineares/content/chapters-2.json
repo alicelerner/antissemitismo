@@ -1,0 +1,836 @@
+[
+ {
+  "id": "iv",
+  "numeral": "IV",
+  "title": "O que o projeto diz quando fala de si mesmo",
+  "dek": "Antes de perguntar o que Flávio pensa dos judeus, vale ouvir o que o projeto diz sobre o Estado, a fé e as minorias.",
+  "summary": "Nos anos 1930, a Ação Integralista Brasileira marchou sob o lema «Deus, Pátria e Família», e o chefe de suas milícias publicou a primeira tradução brasileira dos Protocolos dos Sábios de Sião. O lema voltou aos palanques de Jair e de Flávio Bolsonaro. Este eixo mostra o que pai e filho dizem sobre Estado e religião, o que as pesquisas associam ao nacionalismo cristão, onde esse argumento tem limite e o que a Folha chamou de «filossemitismo estratégico».",
+  "highlights": [
+   {
+    "date": "1936",
+    "text": "Gustavo Barroso, chefe das milícias integralistas, publica a primeira tradução brasileira dos Protocolos. A historiadora Tucci Carneiro o chama de «o mais convicto teórico anti-semita brasileiro».",
+    "ref": "04 §1.8.1"
+   },
+   {
+    "date": "8 fev 2017",
+    "text": "Em Campina Grande, Jair Bolsonaro, então deputado e pré-candidato, diz: «O estado é cristão e a minoria que for contra, que se mude.»",
+    "ref": "02 §A2"
+   },
+   {
+    "date": "23 ago 2026",
+    "text": "Flávio Bolsonaro promete, como um de seus primeiros atos, «decretar que o Brasil é do Senhor Jesus Cristo». Após a crítica dos bispos, a campanha chama a frase de simbólica.",
+    "ref": "02 §A5"
+   }
+  ],
+  "toc": [
+   "Anos 1930: o sigma e o lema",
+   "O lema de volta, de 2018 a 2026",
+   "De pai para filho",
+   "O que os dados e a história mostram",
+   "O limite deste argumento",
+   "«Filossemitismo estratégico», nas palavras da Folha"
+  ],
+  "sections": [
+   {
+    "heading": "Anos 1930: o sigma e o lema",
+    "intro": "A Ação Integralista Brasileira foi o movimento fascista de massa do Brasil. Marchava de camisa verde, sob o sigma e o lema «Deus, Pátria e Família».",
+    "kind": "default",
+    "items": [
+     {
+      "date": "7 out 1932",
+      "actor": "Ação Integralista Brasileira",
+      "quote": "Vestindo camisas verdes com o Sigma estampado e gritando Anauê em defesa do lema 'Deus, pátria e família', o movimento alcançou números expressivos",
+      "lang": "pt",
+      "context": "A AIB foi fundada por Plínio Salgado em 1932 e banida após o putsch de maio de 1938. Os historiadores registram que o próprio Salgado não era um antissemita racial.",
+      "reaction": null,
+      "source": "Gabriela Santi Pacheco e Leandro Pereira Gonçalves, Historiæ (FURG), v.12 n.2, 2021",
+      "url": "https://periodicos.furg.br/hist/article/download/13344/9375",
+      "ref": "02 §B1",
+      "media": "documento"
+     },
+     {
+      "date": "1934",
+      "actor": "Gustavo Barroso",
+      "quote": "Além de Plínio Salgado, a AIB contava com a liderança e ação do destacado intelectual Gustavo Barroso, que no integralismo foi nomeado comandante-geral das milícias e um dos principais difusores do antissemitismo no Brasil (MAIO, 1992).",
+      "lang": "pt",
+      "context": "Barroso assumiu o comando das milícias integralistas em 1934. Seu antissemitismo associava judaísmo e comunismo.",
+      "reaction": null,
+      "source": "Pacheco e Gonçalves, Historiæ (FURG), 2021",
+      "url": "https://periodicos.furg.br/hist/article/download/13344/9375",
+      "ref": "02 §B1",
+      "media": "documento"
+     },
+     {
+      "date": "1936",
+      "actor": "Gustavo Barroso",
+      "quote": "o mais convicto teórico anti-semita brasileiro",
+      "lang": "pt",
+      "context": "Em 1936, Barroso publicou a primeira tradução em português dos Protocolos dos Sábios de Sião. A frase é da historiadora Maria Luiza Tucci Carneiro (USP). Em 1989, a Editora Revisão reeditou a tradução em homenagem ao centenário de Barroso.",
+      "reaction": null,
+      "source": "Maria Luiza Tucci Carneiro, resenha de Marcos Chor Maio, Revista de História (USP), n. 129-131, 1993-94",
+      "url": "http://revistas.usp.br/revhistoria/article/download/18736/20799/22267",
+      "ref": "04 §1.8.1; 04 §3",
+      "media": "livro"
+     }
+    ]
+   },
+   {
+    "heading": "O lema de volta, de 2018 a 2026",
+    "intro": "O site não diz que Bolsonaro é integralista. Mostra o lema e de onde ele vem, segundo a própria imprensa e os próprios integralistas.",
+    "kind": "default",
+    "items": [
+     {
+      "date": "16 dez 2019",
+      "actor": "Frente Integralista Brasileira",
+      "quote": "esse lema, Deus, Pátria e Família",
+      "lang": "pt",
+      "context": "Os neointegralistas reclamaram nas redes que o partido que Bolsonaro tentava criar, a Aliança pelo Brasil, usava o lema deles.",
+      "reaction": null,
+      "source": "Folha de S.Paulo, «Com lema copiado por Bolsonaro, integralismo tem raro…», 16 dez 2019",
+      "url": "",
+      "ref": "02 §A8",
+      "media": "texto"
+     },
+     {
+      "date": "17 fev 2022",
+      "actor": "Jornal Nacional (TV Globo)",
+      "quote": "Não foi a primeira vez que Bolsonaro usou o lema que tem origem no fascismo italiano, também usado no Brasil pelo Movimento Integralista e em Portugal pela ditadura salazarista. Na citação desta quinta-feira (17), Bolsonaro acrescentou a palavra liberdade.",
+      "lang": "pt",
+      "context": "Em Budapeste, ao lado de Viktor Orbán, Jair Bolsonaro citou «Deus, pátria, família e liberdade» como valores em comum. Em 29 out 2022, repetiu o lema no último debate da campanha.",
+      "reaction": null,
+      "source": "G1 / Jornal Nacional, 17 fev 2022",
+      "url": "https://g1.globo.com/jornal-nacional/noticia/2022/02/17/bolsonaro-chama-de-irmao-o-primeiro-ministro-da-hungria-conhecido-por-ataques-a-democracia.ghtml",
+      "ref": "02 §A8",
+      "media": "vídeo"
+     },
+     {
+      "date": "23 ago 2026",
+      "actor": "Flávio Bolsonaro",
+      "quote": "Deus, pátria, família e liberdade",
+      "lang": "pt",
+      "context": "No vídeo em que explicou a ausência no debate da Band, Flávio apresentou o lema como base prática de seu governo.",
+      "reaction": null,
+      "source": "Poder360, «Após não ir a debate, Flávio divulga propostas e critica Lula», 23 ago 2026; vídeo no Instagram do candidato",
+      "url": "",
+      "ref": "02 §A8",
+      "media": "vídeo"
+     }
+    ]
+   },
+   {
+    "heading": "De pai para filho",
+    "intro": "Três frases, de 2017 a 2026, sobre quem define o Estado. Ao lado de cada uma, a reação e a correção que vieram depois.",
+    "kind": "default",
+    "items": [
+     {
+      "date": "8 fev 2017",
+      "actor": "Jair Bolsonaro, então deputado e pré-candidato",
+      "quote": "Deus acima de tudo. Não tem essa historinha de laico, não. O estado é cristão e a minoria que for contra, que se mude. As minorias tem que se curvar para as maiorias.",
+      "lang": "pt",
+      "context": "Discurso em Campina Grande (PB), antes de ser presidente. Foi dito como pré-candidato, não como chefe de governo.",
+      "reaction": null,
+      "source": "Sul21 (reproduzindo Revista Fórum), 11 fev 2017; também IstoÉ, 24 set 2018",
+      "url": "https://sul21.com.br/ultimas-noticiaspolitica/2017/02/em-fala-publica-bolsonaro-diz-que-vai-dar-fuzis-para-homens-de-bem-contra-o-mst/",
+      "ref": "02 §A2",
+      "media": "texto"
+     },
+     {
+      "date": "10 jul 2019",
+      "actor": "Jair Bolsonaro, presidente",
+      "quote": "O Estado é laico, mas somos cristãos e, entre as duas vagas que terei direito a indicar para o STF, um será terrivelmente evangélico.",
+      "lang": "pt",
+      "context": "Culto da Frente Parlamentar Evangélica na Câmara. Em 2021, Bolsonaro indicou André Mendonça, aprovado pelo Senado em 1 dez 2021.",
+      "reaction": null,
+      "source": "Folha de S.Paulo, 10 jul 2019",
+      "url": "https://www1.folha.uol.com.br/poder/2019/07/bolsonaro-diz-que-indicara-para-vaga-no-stf-ministro-terrivelmente-evangelico.shtml",
+      "ref": "02 §A3",
+      "media": "texto"
+     },
+     {
+      "date": "23 ago 2026",
+      "actor": "Flávio Bolsonaro, candidato",
+      "quote": "Eu quero debater com quem não acredita em Deus, porque, quando eu for presidente, um dos meus primeiros atos será decretar que o Brasil é do Senhor Jesus Cristo.",
+      "lang": "pt",
+      "context": "Vídeo publicado no Instagram do candidato às 21h20. A frase foi apresentada como ato de governo.",
+      "reaction": {
+       "who": "Dom Roberto Francisco Ferreira Paz, bispo da CNBB",
+       "quote": "perigosa",
+       "date": "28 set 2026"
+      },
+      "source": "O Globo, 29 set 2026; Estadão Verifica, 25 set 2026",
+      "url": "https://oglobo.globo.com/politica/eleicoes-2026/noticia/2026/09/29/flavio-diz-que-defende-todas-as-religioes-apos-desgaste-com-caso-nossa-senhora-e-reforca-aceno-a-evangelicos-apos-erguer-imagem-da-santa.ghtml",
+      "ref": "02 §A5",
+      "media": "vídeo"
+     },
+     {
+      "date": "29 set 2026",
+      "actor": "Campanha de Flávio Bolsonaro",
+      "quote": "Flávio Bolsonaro sempre defendeu o total respeito a todas as religiões e formas de expressão da fé. Flávio fará uma oração antes de ler o termo de posse quando assumir a Presidência da República entregando o Brasil a Jesus Cristo, numa ação simbólica de agradecimento e também como um pedido de proteção e bênção para todos os brasileiros.",
+      "lang": "pt",
+      "context": "A nota veio um dia depois da crítica da CNBB. O decreto passou a ser descrito como oração simbólica.",
+      "reaction": null,
+      "source": "O Globo, 29 set 2026",
+      "url": "https://oglobo.globo.com/politica/eleicoes-2026/noticia/2026/09/29/flavio-diz-que-defende-todas-as-religioes-apos-desgaste-com-caso-nossa-senhora-e-reforca-aceno-a-evangelicos-apos-erguer-imagem-da-santa.ghtml",
+      "ref": "02 §A5",
+      "media": "texto"
+     },
+     {
+      "date": "29 set 2026",
+      "actor": "Flávio Bolsonaro",
+      "quote": "O Brasil não é um Estado laico? Só que eu defendo o Estado laico com respeito a todas as religiões.",
+      "lang": "pt",
+      "context": "Em podcast católico, no mesmo dia, Flávio também disse: «Cada um tem que se conectar com Deus da forma que achar melhor. O Estado não tem que se meter nisso.»",
+      "reaction": null,
+      "source": "Congresso em Foco, 29 set 2026",
+      "url": "https://www.congressoemfoco.com.br/noticia/122667/flavio-sobre-polemica-com-nossa-senhora-especie-de-facada",
+      "ref": "06 §1.6",
+      "media": "texto"
+     },
+     {
+      "date": "27 set 2026",
+      "actor": "Flávio Bolsonaro",
+      "quote": "A maior fake news da campanha foi essa sobre Nossa Senhora Aparecida… E o PT, eu sei hoje, já estava há alguns dias tentando levantar essa fake news. Conseguiu com a ajuda de gente dentro da CNBB. Infelizmente, essa é a realidade.",
+      "lang": "pt",
+      "context": "Um mês depois de prometer entregar o país a Jesus Cristo, o candidato acusou parte da conferência dos bispos católicos, a maior instituição cristã do país, de ajudar o PT.",
+      "reaction": {
+       "who": "CNBB",
+       "quote": "A mentira não se combate com outra mentira",
+       "date": "28 set 2026"
+      },
+      "source": "UOL / Agência Estado, 27 set 2026",
+      "url": "https://noticias.uol.com.br/ultimas-noticias/agencia-estado/2026/09/27/jorge-messias-repudia-fala-de-flavio-sobre-cnbb-ajudar-em-fake-news-sobre-nossa-senhora.htm",
+      "ref": "02 §A6",
+      "media": "texto"
+     }
+    ]
+   },
+   {
+    "heading": "O que os dados e a história mostram",
+    "intro": "Pesquisas nos Estados Unidos ligam o nacionalismo cristão a crenças antissemitas. A história europeia mostra o que Estados confessionais fizeram com minorias judaicas pequenas e leais.",
+    "kind": "default",
+    "items": [
+     {
+      "date": "fev 2023",
+      "actor": "PRRI / Brookings",
+      "quote": "Jewish people are more loyal to Israel than to the United States",
+      "lang": "en",
+      "context": "Concordam com essa frase 24% dos americanos e 44% dos adeptos do nacionalismo cristão. Com a frase de que judeus ocupam posições de poder demais, 14% contra 23%. Amostra de mais de 6 mil pessoas.",
+      "reaction": null,
+      "source": "PRRI/Brookings, «A Christian Nation? Understanding the Threat of Christian Nationalism to American Democracy and Culture», fev 2023, pp. 19-20",
+      "url": "https://www.prri.org/wp-content/uploads/2023/02/PRRI-Jan-2023-Christian-Nationalism-Final.pdf",
+      "ref": "02 §C7",
+      "media": "dado"
+     },
+     {
+      "date": "fev 2023",
+      "actor": "J. Dennen e P. A. Djupe",
+      "quote": "",
+      "lang": "pt",
+      "context": "Estudo revisado por pares conclui que nacionalistas cristãos endossam mais estereótipos antissemitas principalmente por apostarem na dominância social dos cristãos, e não por posição sobre Israel. Os dados são americanos; o que se transfere é o mecanismo, não os percentuais.",
+      "reaction": null,
+      "source": "Dennen e Djupe, «Are Christian nationalists antisemitic and why?», Social Science Quarterly 104(3), 2023, DOI 10.1111/ssqu.13248",
+      "url": "",
+      "ref": "02 §C7",
+      "media": "documento"
+     },
+     {
+      "date": "out 1940",
+      "actor": "Regime de Vichy (França)",
+      "quote": "Under Pétain and Laval, the Vichy government followed a nationalist and 'pre-French Revolutionary' agenda, replacing the ideals of 'liberty, equality, and fraternity' with 'work, family, and country.'",
+      "lang": "en",
+      "context": "Com um lema de trabalho, família e pátria, Vichy aprovou o Estatuto dos Judeus em outubro de 1940, quatro meses após chegar ao poder. Em julho de 1942, a polícia francesa prendeu 13 mil judeus em Paris.",
+      "reaction": null,
+      "source": "USHMM, Holocaust Encyclopedia, «France»",
+      "url": "https://encyclopedia.ushmm.org/content/en/article/france",
+      "ref": "02 §B2",
+      "media": "documento"
+     },
+     {
+      "date": "1938-1941",
+      "actor": "Hungria de Horthy",
+      "quote": "",
+      "lang": "pt",
+      "context": "O regime autoritário de direita de Miklós Horthy aprovou três leis antijudaicas entre 1938 e 1941: cotas, definição racial com restrição de voto e proibição de casamentos mistos. Em agosto de 1941, deportados da Hungria foram assassinados em Kamenets-Podolsk, 23.600 judeus.",
+      "reaction": null,
+      "source": "USHMM, Holocaust Encyclopedia, «Hungary before the German occupation»",
+      "url": "https://encyclopedia.ushmm.org/content/en/article/hungary-before-the-german-occupation",
+      "ref": "02 §B3",
+      "media": "documento"
+     },
+     {
+      "date": "1936-1975",
+      "actor": "Espanha de Franco",
+      "quote": "",
+      "lang": "pt",
+      "context": "O nacional-catolicismo de Franco acreditava num complô judaico-maçônico-bolchevique e criou uma seção judaico-maçônica na inteligência militar. A Espanha tinha menos de 6 mil judeus em 1936.",
+      "reaction": null,
+      "source": "Dan Kaufman, New York Review of Books (via Portside), 16 nov 2025, resenha de Paul Preston, «Architects of Terror»",
+      "url": "https://portside.org/node/38291",
+      "ref": "02 §B5",
+      "media": "livro"
+     }
+    ]
+   },
+   {
+    "heading": "O limite deste argumento",
+    "intro": "O argumento deste eixo é sobre estrutura e precedente. Não é uma acusação a pastores.",
+    "kind": "limit",
+    "items": [
+     {
+      "date": "",
+      "actor": "Pesquisa do projeto",
+      "quote": "",
+      "lang": "pt",
+      "context": "Nenhum pastor da coalizão de Flávio tem registro, em fonte confiável, de fala antissemita. As falas de Silas Malafaia sobre judeus encontradas são pró-Israel. Também não há registro de ataque a instituição judaica no Brasil ligado a retórica cristã extremista entre 2022 e 2026.",
+      "reaction": null,
+      "source": "Dossiê do projeto, eixo 02, itens descartados",
+      "url": "",
+      "ref": "02 §E1; 02 §E5",
+      "media": "documento"
+     },
+     {
+      "date": "",
+      "actor": "Pesquisa do projeto",
+      "quote": "",
+      "lang": "pt",
+      "context": "Os regimes europeus citados são diferentes entre si e diferentes do Brasil de 2026. O que eles mostram é mais estreito: quando o Estado se define pela religião, os judeus foram historicamente os primeiros a ficar de fora, por menor e mais leal que fosse a comunidade.",
+      "reaction": null,
+      "source": "Dossiê do projeto, eixo 02",
+      "url": "",
+      "ref": "02 §B5; 02 §G",
+      "media": "documento"
+     }
+    ]
+   },
+   {
+    "heading": "«Filossemitismo estratégico», nas palavras da Folha",
+    "intro": "O eixo anterior reconheceu o histórico pró-Israel de Flávio. Aqui a pergunta é de que esse apoio é feito. A expressão é da Folha e a análise é de Michel Gherman. O site não atribui motivos; mostra três registros.",
+    "kind": "lens",
+    "items": [
+     {
+      "date": "27 mar 2023",
+      "actor": "Michel Gherman, UFRJ",
+      "quote": "O bolsonarismo colonizou o judaísmo",
+      "lang": "pt",
+      "context": "Gherman é historiador, coordenador do NIEJ e consultor do Instituto Brasil-Israel. Tem posição política conhecida: em 2025 defendeu a saída do Brasil da IHRA.",
+      "reaction": null,
+      "source": "Agência Pública, «Como a extrema direita brasileira se apropriou de símbolos judaicos», 27 mar 2023",
+      "url": "https://apublica.org/2023/03/como-a-extrema-direita-brasileira-se-apropriou-de-simbolos-judaicos/",
+      "ref": "02 §C6",
+      "media": "texto"
+     },
+     {
+      "date": "1 nov 2022",
+      "actor": "Christina Vital da Cunha, UFF",
+      "quote": "Ora os judeus à esquerda não são tão judeus, ora os evangélicos progressistas não o poderiam ser",
+      "lang": "pt",
+      "context": "A pesquisadora, a partir do trabalho de Gherman, descreve como o discurso separa judeus verdadeiros e judeus de esquerda. Um filossemitismo que escolhe quais judeus valem é uma condição, não uma proteção.",
+      "reaction": null,
+      "source": "IHU/Unisinos, «Cancelamento de judeus e evangélicos à esquerda nas eleições 2022», 1 nov 2022",
+      "url": "",
+      "ref": "02 §C6",
+      "media": "texto"
+     },
+     {
+      "date": "set 2022",
+      "actor": "Machado, Mariz e Carranza",
+      "quote": "O povo de Israel somente será cheio do Espírito Santo quando se converter a Jesus",
+      "lang": "pt",
+      "context": "A frase é do pastor Abrão Almeida (1999), citada no estudo sobre a genealogia do sionismo evangélico no Brasil. No roteiro teológico, o amor a Israel é o primeiro ato de uma história que termina em conversão.",
+      "reaction": null,
+      "source": "Machado, Mariz e Carranza, «Genealogia do sionismo evangélico no Brasil», Religião e Sociedade 42(2), 2022",
+      "url": "https://www.scielo.br/j/rs/a/",
+      "ref": "02 §C4",
+      "media": "documento"
+     },
+     {
+      "date": "2013",
+      "actor": "Yaakov Ariel",
+      "quote": "Evangelicals viewed Jews as both the rightful heirs of Israel and as a group who failed to recognize their true savior.",
+      "lang": "en",
+      "context": "O historiador descreve a origem americana dessa relação: evangelizar judeus e apoiar seu retorno à Terra Santa ao mesmo tempo.",
+      "reaction": null,
+      "source": "Yaakov Ariel, «An Unusual Relationship: Evangelical Christians and Jews», NYU Press, 2013",
+      "url": "https://nyupress.org/9780814770689/an-unusual-relationship/",
+      "ref": "02 §C1",
+      "media": "livro"
+     },
+     {
+      "date": "2019",
+      "actor": "Daniel G. Hummel",
+      "quote": "conventional depictions of the Christian Zionist movement… focus too much on American evangelical apocalyptic fascination with the Jewish people.",
+      "lang": "en",
+      "context": "Contraponto honesto: Hummel mostra que o apoio evangélico a Israel também tem bases institucionais e entre gerações, não só proféticas.",
+      "reaction": null,
+      "source": "Daniel G. Hummel, «Covenant Brothers», University of Pennsylvania Press, 2019",
+      "url": "https://www.pennpress.org/9780812251401/covenant-brothers/",
+      "ref": "02 §C3",
+      "media": "livro"
+     },
+     {
+      "date": "2009",
+      "actor": "Stephen Spector",
+      "quote": "Among these motives are gratitude to the Jews…; remorse for the Church's history of anti-Semitism; and fear that God will judge the nations at the end of time on the basis of how they treated the Jewish people.",
+      "lang": "en",
+      "context": "Outro contraponto: nem todo apoio evangélico a Israel é instrumental. As motivações são várias.",
+      "reaction": null,
+      "source": "Stephen Spector, «Evangelicals and Israel», Oxford University Press, 2009",
+      "url": "https://books.google.com/books?vid=ISBN9780195368024",
+      "ref": "02 §C2",
+      "media": "livro"
+     },
+     {
+      "date": "27 jan 2026",
+      "actor": "Folha de S.Paulo (análise)",
+      "quote": "Flávio Bolsonaro abraça filossemitismo estratégico com visita a Israel",
+      "lang": "pt",
+      "context": "É o título de uma análise da Folha publicada no dia do discurso de Flávio em Jerusalém. O texto cita uma entrevista de Gherman de 2024. Só o título está verificado.",
+      "reaction": null,
+      "source": "Folha de S.Paulo, Análise, 27 jan 2026",
+      "url": "",
+      "ref": "02 §C6; 06 §4.6",
+      "media": "texto"
+     },
+     {
+      "date": "27 jan 2026",
+      "actor": "Flávio Bolsonaro",
+      "quote": "Existe apenas um Estado judeu no mundo. Negar a ele o direito de existir não é debate político, é discriminação.",
+      "lang": "pt",
+      "context": "Discurso na conferência sobre antissemitismo em Jerusalém, com Netanyahu presente. No mesmo discurso, Flávio chamou Lula de antissemita.",
+      "reaction": {
+       "who": "Claudio Lottenberg, presidente da CONIB",
+       "quote": "",
+       "date": "28 jan 2026"
+      },
+      "source": "Poder360, 27 jan 2026, com vídeo",
+      "url": "https://www.poder360.com.br/poder-eleicoes/em-israel-flavio-bolsonaro-chama-lula-de-antissemita/",
+      "ref": "06 §3.2; 06 §4.2",
+      "media": "vídeo"
+     },
+     {
+      "date": "28 ago 2026",
+      "actor": "Claudio Lottenberg",
+      "quote": "Assumo esta missão sem espírito de disputa, com a convicção de que a saúde de um povo não pertence a um governo nem a um campo político, e sim às pessoas.",
+      "lang": "pt",
+      "context": "Flávio anunciou o presidente da CONIB como seu futuro ministro da Saúde. Sete meses antes, Lottenberg tinha dito publicamente que Lula não é antissemita.",
+      "reaction": null,
+      "source": "SBT News, 28 ago 2026",
+      "url": "https://sbtnews.sbt.com.br/noticia/eleicoes/flavio-anuncia-nome-de-seu-possivel-ministro-da-saude",
+      "ref": "06 §2.11",
+      "media": "texto"
+     },
+     {
+      "date": "29 set 2026",
+      "actor": "CONIB",
+      "quote": "os encontros da comunidade judaica com os principais candidatos a presidente da República, como faz nos anos de eleição presidencial.",
+      "lang": "pt",
+      "context": "A CONIB e a FISESP receberam Flávio em São Paulo, no mesmo ciclo em que ouviram outros candidatos. Ele prometeu visitar Israel no início de um eventual governo.",
+      "reaction": null,
+      "source": "CONIB, 29 set 2026",
+      "url": "https://www.conib.org.br/noticias/todas-as-noticias/41214-conib-recebe-flavio-bolsonaro-em-ciclo-de-conversas-com-candidatos-a-presidencia-do-brasil.html",
+      "ref": "06 §3.5",
+      "media": "texto"
+     }
+    ]
+   }
+  ],
+  "closing": "O projeto disse, com as próprias palavras, que o Estado é cristão. Cabe ao leitor perguntar onde fica quem não é.",
+  "gaps": [
+   "Folha, 27 jan 2026, «Flávio Bolsonaro abraça filossemitismo estratégico»: só título e subtítulo verificados; corpo e citação de Gherman (2024) não lidos. Sem URL no dossiê.",
+   "Gherman sobre a bandeira de Israel como «cobertura» nos atos bolsonaristas (04 §3): única fonte é Brasil de Fato, partidária; precisa de segunda fonte. Fora do eixo.",
+   "O roteiro atribui a Gherman a frase «cria seu judeu verdadeiro». No dossiê ela é de Magali Cunha (CartaCapital, 02 §C5), com redação ainda não conferida. Usei só «O bolsonarismo colonizou o judaísmo» (Gherman) e «não tão judeus» (Christina Vital da Cunha, a partir de Gherman).",
+   "O roteiro diz que adeptos do nacionalismo cristão são «duas a três vezes» mais propensos a crenças antissemitas. Os números do PRRI no dossiê comparam com o total da população e dão cerca de 1,6 a 1,8 vez. Não usei a proporção.",
+   "Dennen e Djupe 2023: redação do mecanismo vem de resumo EBSCO, a confirmar na Wiley. Usado só como paráfrase, sem aspas. Sem URL no dossiê (só DOI).",
+   "Hungria de Horthy como «nacional-cristã»: autodescrição não fixada em fonte primária (02 §B3). Usei só as leis e a deportação.",
+   "Machado, Mariz e Carranza: o dossiê lista URL incompleta (https://www.scielo.br/j/rs/a/, pid S0100-85872022000200225). Precisa da URL completa ou do link DOI.",
+   "Christina Vital da Cunha, IHU 1 nov 2022: sem URL no dossiê.",
+   "Frase de Campina Grande (02 §A2): verificada por três veículos regionais ou semanais; falta URL de Folha, G1 ou UOL, ou o vídeo com minutagem.",
+   "Data da frase do decreto: 02 §A5 dá 23 ago 2026 (vídeo no Instagram). 06 §1.6 diz que a frase original seria de abr 2026, em Sinop, com base só em fonte partidária. Usei 23 ago 2026.",
+   "Poder360, 23 ago 2026 (lema no vídeo de Flávio) e Folha, 16 dez 2019 (queixa da FIB): sem URL no dossiê.",
+   "Tradução dos Protocolos por Barroso: 02 §B1 pede página em Maio ou Tucci Carneiro; 04 §1.8.1 dá como verificada pela resenha de Tucci Carneiro. Conferir a página antes do lançamento.",
+   "Lottenberg dizendo que Lula não é antissemita (28 jan 2026): posição verificada, frase literal não. Reação sem aspas.",
+   "Não se sabe se Lottenberg deixou a presidência da CONIB depois de aceitar a indicação. Muda a forma de descrevê-lo."
+  ],
+  "label": "O projeto"
+ },
+ {
+  "id": "vii",
+  "numeral": "VII",
+  "title": "A ferradura tem dois lados.",
+  "dek": "O antissemitismo de esquerda existe. A pergunta é qual extremo matou judeus, historicamente e no Brasil.",
+  "summary": "O antissemitismo de esquerda existe. A CONIB encontrou conteúdo antissionista em 70,8% dos casos validados de 2025. Mas, historicamente, a força mais letal contra judeus foi a extrema direita. Nos Estados Unidos, a ADL atribui a extremistas de direita todos os assassinatos extremistas de 2022 a 2024. No Brasil, o único movimento antissemita de massa foi o integralismo. A alta depois de 7 de outubro aconteceu em todos os países medidos, com governos de posições opostas sobre Israel.",
+  "highlights": [
+   {
+    "date": "2025",
+    "text": "Em 70,8% dos casos de antissemitismo validados pela CONIB em 2025 havia conteúdo antissionista. A ferradura existe e o site diz isso.",
+    "ref": "04 §1.8.4"
+   },
+   {
+    "date": "2022-2024",
+    "text": "Segundo a ADL, extremistas de direita cometeram todos os assassinatos ligados a extremismo nos Estados Unidos por três anos seguidos.",
+    "ref": "04 §1.5"
+   },
+   {
+    "date": "2022-2024",
+    "text": "Os casos registrados pela CONIB subiram 350%. Na França, 260%. Na Alemanha, entre 136% e 230%, conforme a fonte. A alta foi global.",
+    "ref": "04 §1.10"
+   }
+  ],
+  "stats": [
+   {
+    "value": "70,8%",
+    "label": "dos casos validados de antissemitismo no Brasil em 2025 tinham conteúdo antissionista",
+    "source": "CONIB/FISESP, Relatório Antissemitismo no Brasil 2025",
+    "ref": "04 §1.8.4"
+   },
+   {
+    "value": "100%",
+    "label": "dos assassinatos ligados a extremismo nos EUA em 2022, 2023 e 2024 foram cometidos por extremistas de direita",
+    "source": "ADL, Murder and Extremism in the United States 2024",
+    "ref": "04 §1.5"
+   },
+   {
+    "value": "6 milhões",
+    "label": "de judeus mortos pela Alemanha nazista e por regimes colaboradores",
+    "source": "USHMM; Yad Vashem",
+    "ref": "04 §1.1"
+   },
+   {
+    "value": "+350%",
+    "label": "casos de antissemitismo no Brasil de 2022 (397) a 2024 (1.788), na mesma faixa da França (+260%)",
+    "source": "CONIB/FISESP via Poder360; SPCJ/FRA",
+    "ref": "04 §1.10.1"
+   }
+  ],
+  "toc": [
+   "O que a ferradura tem de verdade",
+   "Quem matou judeus, na história",
+   "Estados Unidos, hoje",
+   "No Brasil",
+   "A alta depois de 7 de outubro",
+   "O limite dos dados"
+  ],
+  "sections": [
+   {
+    "heading": "O que a ferradura tem de verdade",
+    "intro": "A teoria da ferradura diz que extrema esquerda e extrema direita se encontram no antissemitismo. Como descrição do discurso, há base para isso no Brasil.",
+    "kind": "default",
+    "items": [
+     {
+      "date": "30 mar 2026",
+      "actor": "CONIB / FISESP",
+      "quote": "",
+      "lang": "pt",
+      "context": "Em uma amostra de 983 casos validados de 2025, 70,8% tinham conteúdo antissionista, 34,3% menções ao nazismo e 23,6% teorias de conspiração sobre poder. A CONIB classifica o conteúdo, não quem o publicou.",
+      "reaction": null,
+      "source": "CONIB/FISESP, Relatório Antissemitismo no Brasil 2025",
+      "url": "https://static.poder360.com.br/2026/03/Relatorio_Antissemitismo-no-Brasil-2025-FULL-PORT_vOK_web.pdf",
+      "ref": "04 §1.8.4",
+      "media": "dado"
+     },
+     {
+      "date": "30 mar 2026",
+      "actor": "CONIB / FISESP",
+      "quote": "Em relação ao período que antecedeu o ataque do Hamas ao sul de Israel em 7 de outubro de 2023, o ódio antijudaico não recuou, ele se instalou.",
+      "lang": "pt",
+      "context": "A CONIB validou 989 casos em 2025, 81% deles na internet. Em 2024 foram 1.788.",
+      "reaction": null,
+      "source": "Agência Brasil, 30 mar 2026",
+      "url": "https://agenciabrasil.ebc.com.br/direitos-humanos/noticia/2026-03/confederacao-aponta-mais-de-980-casos-de-odio-contra-judeus-em-2025",
+      "ref": "02 §D2; 04 §1.8.4",
+      "media": "dado"
+     }
+    ]
+   },
+   {
+    "heading": "Quem matou judeus, na história",
+    "intro": "Na escala da história, nenhuma outra família política se aproxima do registro da extrema direita.",
+    "kind": "default",
+    "items": [
+     {
+      "date": "1933-1945",
+      "actor": "Alemanha nazista",
+      "quote": "Six million Jewish people died in the Holocaust",
+      "lang": "en",
+      "context": "Cerca de 2,7 milhões em campos de extermínio e cerca de 2 milhões em fuzilamentos em massa. O Yad Vashem registra aproximadamente seis milhões.",
+      "reaction": null,
+      "source": "USHMM, «Documenting Numbers of Victims of the Holocaust and Nazi Persecution»",
+      "url": "https://encyclopedia.ushmm.org/content/en/article/documenting-numbers-of-victims-of-the-holocaust-and-nazi-persecution",
+      "ref": "04 §1.1",
+      "media": "dado"
+     },
+     {
+      "date": "1940-1945",
+      "actor": "Regimes colaboradores",
+      "quote": "",
+      "lang": "pt",
+      "context": "Os regimes que colaboraram eram fascistas, ultranacionalistas ou autoritários de direita. Hungria: 564.507 judeus mortos. Croácia da Ustaša: 30.148. França de Vichy: entre 72.900 e 74.000 deportados e mortos. Eslováquia de Tiso: cerca de 60 mil.",
+      "reaction": null,
+      "source": "USHMM, «Jewish Losses during the Holocaust: By Country»",
+      "url": "https://encyclopedia.ushmm.org/content/en/article/jewish-losses-during-the-holocaust-by-country",
+      "ref": "04 §1.1",
+      "media": "dado"
+     }
+    ]
+   },
+   {
+    "heading": "Estados Unidos, hoje",
+    "intro": "Nos Estados Unidos, os dados recentes apontam na mesma direção.",
+    "kind": "default",
+    "items": [
+     {
+      "date": "fev 2025",
+      "actor": "ADL",
+      "quote": "",
+      "lang": "pt",
+      "context": "Pelo menos 13 assassinatos ligados a extremismo em 2024, todos por extremistas de direita. Foi o terceiro ano seguido em que a direita respondeu por todos. Em 2023 foram 20.",
+      "reaction": null,
+      "source": "ADL, «Murder and Extremism in the United States 2024»",
+      "url": "https://www.adl.org/resources/report/murder-and-extremism-united-states-2024",
+      "ref": "04 §1.5",
+      "media": "dado"
+     },
+     {
+      "date": "17 jun 2020",
+      "actor": "CSIS",
+      "quote": "",
+      "lang": "pt",
+      "context": "De 893 ataques e planos terroristas nos EUA entre 1994 e maio de 2020, 57% foram de extrema direita, 25% de esquerda e 15% religiosos.",
+      "reaction": null,
+      "source": "CSIS, Seth G. Jones e Catrina Doxsee, «The Escalating Terrorism Problem in the United States», 17 jun 2020",
+      "url": "https://www.csis.org/analysis/escalating-terrorism-problem-united-states",
+      "ref": "04 §1.5",
+      "media": "dado"
+     },
+     {
+      "date": "27 out 2018",
+      "actor": "Ataque à sinagoga Tree of Life, Pittsburgh",
+      "quote": "",
+      "lang": "pt",
+      "context": "Onze mortos. O atirador, supremacista branco, foi condenado à morte em 2023. O júri concluiu por unanimidade que o ataque foi motivado por ódio aos judeus.",
+      "reaction": null,
+      "source": "AP via NBC Boston, 2 ago 2023",
+      "url": "https://www.nbcboston.com/news/national-international/the-pittsburgh-synagogue-gunman-will-be-sentenced-to-death-for-the-nations-worst-antisemitic-attack/3104104/",
+      "ref": "04 §1.2",
+      "media": "texto"
+     },
+     {
+      "date": "27 abr 2019",
+      "actor": "Ataque ao Chabad de Poway, Califórnia",
+      "quote": "",
+      "lang": "pt",
+      "context": "Uma morta. O atirador deixou um manifesto supremacista branco e foi condenado à prisão perpétua.",
+      "reaction": null,
+      "source": "Algemeiner, 1 out 2021",
+      "url": "https://www.algemeiner.com/2021/10/01/chabad-of-poway-shooter-sentenced-to-life-in-prison-plus-137-years/",
+      "ref": "04 §1.2",
+      "media": "texto"
+     },
+     {
+      "date": "9 out 2019",
+      "actor": "Ataque à sinagoga de Halle, Alemanha",
+      "quote": "",
+      "lang": "pt",
+      "context": "Dois mortos no Yom Kipur. O atirador, extremista de direita e negacionista do Holocausto, foi condenado à prisão perpétua em 2020. Fora das Américas, mas da mesma onda online de Pittsburgh e Poway, segundo a Europol.",
+      "reaction": null,
+      "source": "AP via KSAT, 21 dez 2020",
+      "url": "https://www.ksat.com/news/world/2020/12/21/german-court-convicts-man-of-murder-over-synagogue-attack/",
+      "ref": "04 §1.2",
+      "media": "texto"
+     }
+    ]
+   },
+   {
+    "heading": "No Brasil",
+    "intro": "O registro brasileiro não permite falar em mortes. Permite dizer qual foi o único movimento de massa com antissemitismo ideológico.",
+    "kind": "default",
+    "items": [
+     {
+      "date": "1936",
+      "actor": "Gustavo Barroso, Ação Integralista Brasileira",
+      "quote": "o mais convicto teórico anti-semita brasileiro",
+      "lang": "pt",
+      "context": "O chefe das milícias integralistas publicou a primeira tradução brasileira dos Protocolos dos Sábios de Sião. A frase é de Maria Luiza Tucci Carneiro. A tradução foi reeditada em 1989.",
+      "reaction": null,
+      "source": "Maria Luiza Tucci Carneiro, Revista de História (USP), n. 129-131, 1993-94",
+      "url": "http://revistas.usp.br/revhistoria/article/download/18736/20799/22267",
+      "ref": "04 §1.8.1",
+      "media": "livro"
+     },
+     {
+      "date": "17 fev 2022",
+      "actor": "Jornal Nacional (TV Globo)",
+      "quote": "Não foi a primeira vez que Bolsonaro usou o lema que tem origem no fascismo italiano, também usado no Brasil pelo Movimento Integralista e em Portugal pela ditadura salazarista.",
+      "lang": "pt",
+      "context": "O lema integralista voltou aos palanques com Jair Bolsonaro e foi repetido por Flávio em agosto de 2026. Ver eixo 04.",
+      "reaction": null,
+      "source": "G1 / Jornal Nacional, 17 fev 2022",
+      "url": "https://g1.globo.com/jornal-nacional/noticia/2022/02/17/bolsonaro-chama-de-irmao-o-primeiro-ministro-da-hungria-conhecido-por-ataques-a-democracia.ghtml",
+      "ref": "02 §A8",
+      "media": "vídeo"
+     }
+    ]
+   },
+   {
+    "heading": "A alta depois de 7 de outubro",
+    "intro": "Os casos subiram em todos os países medidos a partir de outubro de 2023, inclusive onde o governo apoiava Israel. Os monitores contam de formas diferentes; compare a ordem de grandeza, não a casa decimal.",
+    "kind": "default",
+    "items": [
+     {
+      "date": "2022-2024",
+      "actor": "Brasil (CONIB/FISESP)",
+      "quote": "",
+      "lang": "pt",
+      "context": "397 casos em 2022, 1.410 em 2023, 1.788 em 2024 e 989 em 2025. Alta de 350% de 2022 a 2024. A base é pequena e de 73% a 81% dos casos são online.",
+      "reaction": null,
+      "source": "Poder360, 15 abr 2025; Agência Brasil, 30 mar 2026; relatórios CONIB",
+      "url": "https://www.poder360.com.br/poder-brasil/casos-de-antissemitismo-no-brasil-crescem-26-em-2024-diz-conib/",
+      "ref": "04 §1.10.1",
+      "media": "dado"
+     },
+     {
+      "date": "2022-2024",
+      "actor": "França (SPCJ / Ministério do Interior)",
+      "quote": "",
+      "lang": "pt",
+      "context": "436 atos em 2022, 1.676 em 2023 e 1.570 em 2024. Alta de 260% de 2022 a 2024. Só outubro a dezembro de 2023 superou todo o ano de 2022.",
+      "reaction": null,
+      "source": "FRA, «Antisemitism in France — overview 2026»",
+      "url": "https://fra.europa.eu/sites/default/files/fra_uploads/fra-2026-france-antisemitism-overview_en.pdf",
+      "ref": "04 §1.10.1; 04 §1.7",
+      "media": "dado"
+     },
+     {
+      "date": "2022-2024",
+      "actor": "Alemanha (polícia, BKA)",
+      "quote": "",
+      "lang": "pt",
+      "context": "2.641 crimes antissemitas em 2022, 5.164 em 2023 e 6.236 em 2024. Alta de 136%.",
+      "reaction": null,
+      "source": "FRA, «Antisemitism in Germany — overview 2026»",
+      "url": "https://fra.europa.eu/sites/default/files/fra_uploads/fra-2026-germany-antisemitism-overview_en.pdf",
+      "ref": "04 §1.10.1; 04 §1.3",
+      "media": "dado"
+     },
+     {
+      "date": "2022-2024",
+      "actor": "Alemanha (RIAS, monitor comunitário)",
+      "quote": "",
+      "lang": "pt",
+      "context": "2.616 incidentes em 2022 e 8.627 em 2024. Alta de 230%.",
+      "reaction": null,
+      "source": "Bundesverband RIAS, Jahresbericht 2024, 4 jun 2025",
+      "url": "https://report-antisemitism.de/documents/04-06-25_RIAS_Bund_Jahresbericht_2024.pdf",
+      "ref": "04 §1.10.1; 04 §1.3",
+      "media": "dado"
+     },
+     {
+      "date": "2022-2024",
+      "actor": "Países Baixos (CIDI, sem internet)",
+      "quote": "",
+      "lang": "pt",
+      "context": "155 incidentes em 2022, 379 em 2023 e 421 em 2024. Alta de 172%.",
+      "reaction": null,
+      "source": "FRA, «Antisemitism in the Netherlands — overview 2026»",
+      "url": "https://fra.europa.eu/sites/default/files/fra_uploads/fra-2026-netherlands-antisemitism-overview_en.pdf",
+      "ref": "04 §1.10.1; 04 §1.7",
+      "media": "dado"
+     },
+     {
+      "date": "2024",
+      "actor": "Estados Unidos (ADL)",
+      "quote": "",
+      "lang": "pt",
+      "context": "9.354 incidentes em 2024, recorde pelo quarto ano seguido e 5% acima de 2023. 58% faziam referência a Israel ou ao sionismo.",
+      "reaction": null,
+      "source": "ADL, auditoria 2024, via Ynet",
+      "url": "https://www.ynetnews.com/jewish-world/article/r1lvmteyge",
+      "ref": "04 §1.10.1; 04 §1.5",
+      "media": "dado"
+     },
+     {
+      "date": "2023-2025",
+      "actor": "Argentina (DAIA)",
+      "quote": "",
+      "lang": "pt",
+      "context": "598 denúncias em 2023, 687 em 2024 e 713 em 2025. A DAIA registra queda depois do cessar-fogo de outubro de 2025.",
+      "reaction": null,
+      "source": "DAIA, «Informe sobre Antisemitismo en la Argentina 2025», 9 jun 2026",
+      "url": "https://zeclogic-s3-container.s3.ca-east-tor.io.cloud.ovh.net/daia.org.ar/2026/06/Informe-antisemitismo-2025.pdf",
+      "ref": "04 §1.10.1; 04 §1.7",
+      "media": "dado"
+     }
+    ]
+   },
+   {
+    "heading": "O limite dos dados",
+    "intro": "O site diz «historicamente e no Brasil». Não diz «hoje, no mundo». Estes são os motivos.",
+    "kind": "limit",
+    "items": [
+     {
+      "date": "2015-2025",
+      "actor": "Pesquisa do projeto",
+      "quote": "",
+      "lang": "pt",
+      "context": "Somando os ataques letais contra judeus no mundo entre 2015 e 2025, atiradores de extrema direita mataram 14 pessoas. Atentados jihadistas mataram mais. Só o massacre de Bondi Beach, na Austrália, em dezembro de 2025, deixou 15 mortos.",
+      "reaction": null,
+      "source": "Dossiê do projeto, eixo 04",
+      "url": "",
+      "ref": "04 §0.3; 04 §1.11.1",
+      "media": "dado"
+     },
+     {
+      "date": "21 mai 2025",
+      "actor": "Ataque ao Museu Judaico, Washington",
+      "quote": "",
+      "lang": "pt",
+      "context": "Dois mortos. O acusado gritou «Free Palestine» e não tinha vínculo com organização de esquerda. Em 2025, ataques motivados por antissionismo mataram três pessoas nos EUA, contando Boulder.",
+      "reaction": null,
+      "source": "NBC News, 6 ago 2025",
+      "url": "https://www.nbcnews.com/news/us-news/man-accused-killing-israeli-embassy-staffers-indicted-federal-hate-cri-rcna223534",
+      "ref": "04 §1.2; 04 §1.11.1",
+      "media": "texto"
+     },
+     {
+      "date": "",
+      "actor": "Pesquisa do projeto",
+      "quote": "",
+      "lang": "pt",
+      "context": "Conteúdo não é autoria. Os 70,8% de antissionismo da CONIB dizem o que foi dito, não quem disse. As menções ao nazismo incluem tanto exaltação neonazista quanto comparações entre Israel e nazismo.",
+      "reaction": null,
+      "source": "Dossiê do projeto, eixo 04, limites dos dados",
+      "url": "",
+      "ref": "04 §2",
+      "media": "documento"
+     },
+     {
+      "date": "",
+      "actor": "Pesquisa do projeto",
+      "quote": "",
+      "lang": "pt",
+      "context": "Os dados não mostram relação entre a posição do governo sobre Israel e o tamanho da alta. Também não permitem atribuir a alta brasileira ao governo Lula, nem descartar alguma contribuição. A queda de 2025 coincide com o cessar-fogo e com uma triagem mais rígida da CONIB.",
+      "reaction": null,
+      "source": "Dossiê do projeto, eixo 04",
+      "url": "",
+      "ref": "04 §1.10.2; 04 §2",
+      "media": "dado"
+     }
+    ]
+   }
+  ],
+  "closing": "A ferradura tem dois lados. Só um deles está pedindo o seu voto com o lema dos integralistas.",
+  "gaps": [
+   "O roteiro diz que a Argentina de Milei teve a menor alta. O número de 2022 da DAIA (427) é de memória, não verificado; só 2023-2025 entram. Sem ele, a comparação não pode ser feita na página.",
+   "O roteiro diz que o Brasil ficou na mesma faixa da França e da Austrália. França está verificada. Austrália (ECAJ): só a expressão «over 2,000» está verificada; os totais são de memória. Austrália fora da tabela.",
+   "Estados Unidos (ADL): só 2024 verificado (9.354, +5%). 2022 e 2023 são de memória, então não há percentual de alta 2022-2024. Reino Unido (CST 2022-2023) e Canadá (B'nai Brith): de memória. Fora da tabela.",
+   "Posição de cada governo sobre Israel (coluna do 04 §1.10.1): parte vem de Wikipedia. Não entrou nos itens; a frase «inclusive onde o governo apoiava Israel» se apoia no achado central 04 §0.5.",
+   "Manchester (2 out 2025) e Bondi Beach (14 dez 2025): status verificado, mas só via Wikipedia; falta URL direta de Reuters, BBC, ABC ou Guardian. Bondi aparece no bloco de limite sem link.",
+   "Paris Hypercacher e Copenhague (2015): de memória, não usados.",
+   "ADL: página do relatório bloqueada (403); números verificados via espelho WaterISAC (https://www.waterisac.org/tlpclear-adl-report-murder-and-extremism-united-states-2024). A participação de cerca de 75% da direita em dez anos não está verificada e não foi usada.",
+   "O roteiro diz «nas Américas»; o dado da ADL cobre só os Estados Unidos. O texto diz Estados Unidos.",
+   "Recorte da CONIB por ideologia (pp. 97-100 do relatório 2025) com texto corrompido na extração; não usado.",
+   "Frase de fechamento: é a versão de trabalho do roteiro, «a testar». Vale checar se «com o lema dos integralistas» não soa como chamar Flávio de integralista, o que o site evita."
+  ],
+  "label": "A ferradura"
+ }
+]

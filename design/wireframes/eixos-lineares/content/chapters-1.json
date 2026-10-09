@@ -1,0 +1,835 @@
+[
+ {
+  "id": "i",
+  "numeral": "I",
+  "title": "Você tem razão de estar frustrado",
+  "dek": "As frases de Lula sobre Israel, as respostas da CONIB e a saída da IHRA, impressas por inteiro e sem atenuantes.",
+  "summary": "Em 18 fev 2024, Lula comparou a guerra em Gaza ao que Hitler fez com os judeus. Nunca se retratou. Israel o declarou persona non grata. Em 2025, a CONIB chamou falas dele de \"antissemitas e irresponsáveis\". No mesmo ano, o governo tirou o Brasil da IHRA sem dar motivo. Tudo isso está aqui, nas palavras de quem disse, com data e fonte. Este site não esconde nada disso.",
+  "highlights": [
+   {
+    "date": "18 fev 2024",
+    "text": "Em Adis Abeba, Lula diz que o que acontece em Gaza já existiu: «quando o Hitler resolveu matar os judeus». Não houve retratação.",
+    "ref": "05 §N10"
+   },
+   {
+    "date": "14 mai 2025",
+    "text": "Pela primeira vez, a CONIB chama declarações de Lula de «antissemitas e irresponsáveis», depois de ele falar em genocídio em Moscou e Pequim.",
+    "ref": "05 §N13"
+   },
+   {
+    "date": "24 jul 2025",
+    "text": "O governo retira o Brasil da IHRA. O Itamaraty não informou os motivos da saída.",
+    "ref": "05 §A4"
+   }
+  ],
+  "toc": [
+   "A frase de Adis Abeba",
+   "Quem reagiu",
+   "Sem retratação",
+   "2025: a CONIB usa a palavra",
+   "Julho de 2025: Haia e a IHRA",
+   "O registro até hoje"
+  ],
+  "sections": [
+   {
+    "heading": "A frase de Adis Abeba",
+    "intro": "Em entrevista após a cúpula da União Africana, Lula respondeu a uma pergunta sobre o corte de verbas da UNRWA. A frase está aqui inteira, com o vídeo do G1.",
+    "items": [
+     {
+      "date": "18 fev 2024",
+      "actor": "Lula",
+      "quote": "O que está acontecendo na Faixa de Gaza e com o povo palestino não existe em nenhum outro momento histórico. Aliás, existiu: quando o Hitler resolveu matar os judeus. … Eu fico imaginando qual é o tamanho da consciência política dessa gente. E qual é o tamanho do coração solidário dessa gente que não está vendo que, na Faixa de Gaza, não tá acontecendo uma guerra, mas um genocídio. Não é uma guerra entre soldados e soldados. É uma guerra entre um exército altamente preparado e mulheres e crianças.",
+      "lang": "pt",
+      "context": "Entrevista coletiva em Adis Abeba, Etiópia. O G1 publicou o vídeo da fala, com 1min15.",
+      "reaction": null,
+      "source": "G1, \"Lula cita 'genocídio' e compara resposta de Israel na Faixa de Gaza à ação de Hitler contra judeus\"",
+      "url": "https://g1.globo.com/politica/noticia/2024/02/18/lula-cita-genocidio-e-compara-resposta-de-israel-na-faixa-de-gaza-a-acao-de-hitler-contra-judeus.ghtml",
+      "ref": "05 §N10",
+      "media": "vídeo"
+     }
+    ]
+   },
+   {
+    "heading": "Quem reagiu",
+    "intro": "A reação veio de Israel, das instituições judaicas brasileiras e de dentro do próprio governo.",
+    "items": [
+     {
+      "date": "18 fev 2024",
+      "actor": "Benjamin Netanyahu, primeiro-ministro de Israel",
+      "quote": "The words of the President of Brazil are shameful and alarming. This is a trivialization of the Holocaust.",
+      "lang": "en",
+      "context": "No dia seguinte, o chanceler Israel Katz declarou Lula persona non grata em Israel até que ele se retratasse.",
+      "reaction": {
+       "who": "Israel Katz, chanceler de Israel, no Yad Vashem",
+       "quote": "The comparison between Israel's just war against Hamas and the atrocities of Hitler and the Nazis is a disgrace and a severe antisemitic attack.",
+       "date": "19 fev 2024"
+      },
+      "source": "Times of Israel",
+      "url": "",
+      "ref": "05 §N10",
+      "media": "texto"
+     },
+     {
+      "date": "18 fev 2024",
+      "actor": "CONIB",
+      "quote": "A Conib repudia as declarações infundadas do presidente Lula comparando o Holocausto à ação de defesa do Estado de Israel contra o grupo terrorista Hamas. Os nazistas exterminaram seis milhões de judeus indefesos na Europa somente por serem judeus. Já Israel está se defendendo de um grupo terrorista que invadiu o país, matou mais de mil pessoas, promoveu estupros em massa, queimou pessoas vivas e defende em sua Carta de Fundação a eliminação do Estado Judeu. Essa distorção perversa da realidade ofende a memória das vítimas do Holocausto e de seus descendentes. O governo brasileiro vem adotando uma postura extrema e desequilibrada em relação ao trágico conflito no Oriente Médio, abandonando a tradição de equilíbrio e busca de diálogo da política externa brasileira. A CONIB pede mais uma vez moderação aos dirigentes, para que a trágica violência naquela região não seja importada para o nosso país.",
+      "lang": "pt",
+      "context": "Nota oficial da Confederação Israelita do Brasil no mesmo dia. A nota não acusa Lula de antissemitismo.",
+      "reaction": null,
+      "source": "Poder360, \"Comparar Israel a Hitler mostra desequilíbrio de Lula, diz Conib\"",
+      "url": "",
+      "ref": "05 §N10",
+      "media": "documento"
+     },
+     {
+      "date": "fev 2024",
+      "actor": "Museu do Holocausto de Curitiba",
+      "quote": "vulgarização do Holocausto",
+      "lang": "pt",
+      "context": "O Museu do Holocausto disse que a fala \"alimenta o antissemitismo\". O Instituto Brasil-Israel disse que ela \"invoca a ideia de que os judeus são 'os nazistas do presente'\".",
+      "reaction": null,
+      "source": "Aos Fatos, \"O que é antissemitismo e o que dizem pesquisadores e organizações sobre a fala de Lula\"",
+      "url": "",
+      "ref": "05 §N10",
+      "media": "texto"
+     },
+     {
+      "date": "20 fev 2024",
+      "actor": "Jaques Wagner, líder do governo no Senado",
+      "quote": "Não tiro uma palavra do que vossa excelência disse, a não ser o final. Não se traz à baila o episódio do Holocausto para nenhuma comparação, porque fere sentimentos, inclusive meus, de familiares perdidos naquele episódio",
+      "lang": "pt",
+      "context": "Wagner é judeu. Disse que Lula \"passou do ponto\", mas defendeu o presidente e chamou a fala de \"a indignação de um humanista\".",
+      "reaction": null,
+      "source": "Folha de S.Paulo, \"Lula passou do ponto sobre Holocausto, mas é indignação de um humanista, diz Wagner\"",
+      "url": "https://www1.folha.uol.com.br/mundo/2024/02/lula-passou-do-ponto-sobre-holocausto-mas-e-indignacao-de-um-humanista-diz-wagner.shtml",
+      "ref": "05 §P6",
+      "media": "texto"
+     },
+     {
+      "date": "18 fev 2024",
+      "actor": "Hamas",
+      "quote": "",
+      "lang": "pt",
+      "context": "O Hamas agradeceu publicamente a Lula pela declaração.",
+      "reaction": null,
+      "source": "Poder360",
+      "url": "",
+      "ref": "05 §N10",
+      "media": "texto"
+     }
+    ]
+   },
+   {
+    "heading": "Sem retratação",
+    "intro": "O Planalto decidiu que Lula não pediria desculpas e que a resposta seria diplomática.",
+    "items": [
+     {
+      "date": "19 fev 2024",
+      "actor": "Governo Lula",
+      "quote": "",
+      "lang": "pt",
+      "context": "Lula convocou o embaixador de Israel, Daniel Zonshine, e chamou de volta para consultas o embaixador brasileiro em Israel, Frederico Meyer. Em 27 fev, disse que não tinha usado a palavra \"Holocausto\". Não se retratou.",
+      "reaction": null,
+      "source": "Folha de S.Paulo, \"Governo vê Israel elevar crise; Lula não deve se retratar\"; Estadão, 27 fev 2024",
+      "url": "",
+      "ref": "05 §N10",
+      "media": "texto"
+     },
+     {
+      "date": "24 fev 2024",
+      "actor": "Celso Amorim",
+      "quote": "Se Netanyahu espera desculpas de Lula, vai continuar esperando.",
+      "lang": "pt",
+      "context": "Amorim discordou de Jaques Wagner: \"Acho que não passou do ponto.\"",
+      "reaction": null,
+      "source": "Folha de S.Paulo, \"Se Netanyahu espera desculpas de Lula, vai continuar esperando, diz Celso Amorim\"",
+      "url": "https://www1.folha.uol.com.br/amp/mundo/2024/02/se-netanyahu-espera-desculpas-de-lula-vai-continuar-esperando-diz-celso-amorim.shtml",
+      "ref": "05 §P6",
+      "media": "texto"
+     },
+     {
+      "date": "29 mai 2024",
+      "actor": "Itamaraty",
+      "quote": "",
+      "lang": "pt",
+      "context": "O embaixador Meyer foi transferido para Genebra. Desde então, a embaixada em Tel Aviv é chefiada por um encarregado de negócios.",
+      "reaction": null,
+      "source": "Exame",
+      "url": "",
+      "ref": "05 §N10",
+      "media": "texto"
+     }
+    ]
+   },
+   {
+    "heading": "2025: a CONIB usa a palavra",
+    "intro": "Em 2024, a nota da CONIB criticou Lula com outras palavras. Em 2025, a entidade mudou o tom três vezes.",
+    "items": [
+     {
+      "date": "14 mai 2025",
+      "actor": "Lula, em Moscou e Pequim",
+      "quote": "Aquilo não é uma guerra, aquilo é um genocídio",
+      "lang": "pt",
+      "context": "Declarações durante viagem à Rússia e à China.",
+      "reaction": {
+       "who": "CONIB",
+       "quote": "antissemitas e irresponsáveis",
+       "date": "14 mai 2025"
+      },
+      "source": "Poder360",
+      "url": "",
+      "ref": "05 §N13",
+      "media": "texto"
+     },
+     {
+      "date": "3 jun 2025",
+      "actor": "Lula, em entrevista em Brasília",
+      "quote": "vitimismo",
+      "lang": "pt",
+      "context": "Lula disse que Israel precisa parar com o seu \"vitimismo\" e voltou a falar em genocídio em Gaza.",
+      "reaction": {
+       "who": "CONIB",
+       "quote": "Lula mais uma vez ataca os judeus… pondo em risco a comunidade judaica brasileira",
+       "date": "3 jun 2025"
+      },
+      "source": "Folha de S.Paulo",
+      "url": "",
+      "ref": "05 §N13",
+      "media": "texto"
+     },
+     {
+      "date": "22 set 2025",
+      "actor": "Lula, na ONU",
+      "quote": "a melhor palavra que pode descrever o que ocorre na Faixa de Gaza é genocídio",
+      "lang": "pt",
+      "context": "Discurso na conferência da ONU sobre a solução de dois Estados, no feriado de Rosh Hashaná. No mesmo discurso, disse que o Brasil é \"enfático\" ao condenar os atos do Hamas.",
+      "reaction": {
+       "who": "CONIB",
+       "quote": "acusar judeus de matar mulheres e crianças deliberadamente é uma das mais antigas acusações antissemitas da história",
+       "date": "22 set 2025"
+      },
+      "source": "CNN Brasil",
+      "url": "",
+      "ref": "05 §N13",
+      "media": "texto"
+     }
+    ]
+   },
+   {
+    "heading": "Julho de 2025: Haia e a IHRA",
+    "intro": "Em uma semana, o Brasil aderiu à ação contra Israel na Corte Internacional de Justiça e deixou a aliança de memória do Holocausto.",
+    "items": [
+     {
+      "date": "23 jul 2025",
+      "actor": "Itamaraty",
+      "quote": "já não há espaço para ambiguidade moral nem omissão política",
+      "lang": "pt",
+      "context": "Nota anunciando que o Brasil entraria formalmente na ação da África do Sul contra Israel na CIJ, com base na Convenção sobre Genocídio.",
+      "reaction": {
+       "who": "Governo de Israel",
+       "quote": "uma demonstração de profunda falha moral",
+       "date": "24 jul 2025"
+      },
+      "source": "Poder360",
+      "url": "",
+      "ref": "05 §N13",
+      "media": "documento"
+     },
+     {
+      "date": "24 jul 2025",
+      "actor": "Governo Lula",
+      "quote": "",
+      "lang": "pt",
+      "context": "Manchete do Metrópoles: \"Governo Lula retira Brasil de aliança em memória do Holocausto\". Subtítulo: \"Itamaraty não informou os motivos para a saída da organização, criada na década de 1990\". O eixo 03 trata disso em detalhe.",
+      "reaction": {
+       "who": "CONIB",
+       "quote": "representa um retrocesso moral e diplomático",
+       "date": "28 jul 2025"
+      },
+      "source": "Metrópoles, \"Governo Lula retira Brasil de aliança em memória do Holocausto\"",
+      "url": "https://www.metropoles.com/mundo/governo-lula-retira-brasil-de-alianca-em-memoria-do-holocausto",
+      "ref": "05 §A4",
+      "media": "texto"
+     }
+    ]
+   },
+   {
+    "heading": "O registro até hoje",
+    "intro": "",
+    "items": [
+     {
+      "date": "26 ago 2025",
+      "actor": "Israel Katz, ministro da Defesa de Israel",
+      "quote": "antissemita declarado e apoiador do Hamas",
+      "lang": "pt",
+      "context": "Post de Katz sobre Lula. O Itamaraty respondeu em nota. No mesmo mês, Israel anunciou que manteria a embaixada em Brasília no nível de encarregado de negócios.",
+      "reaction": null,
+      "source": "G1",
+      "url": "",
+      "ref": "05 §N13",
+      "media": "texto"
+     },
+     {
+      "date": "22 set 2026",
+      "actor": "Lula, na Assembleia Geral da ONU",
+      "quote": "genocídio praticado pelo governo Netanyahu contra mulheres e crianças em Gaza",
+      "lang": "pt",
+      "context": "No mesmo discurso, Lula disse: \"Civis israelenses pagaram o preço do radicalismo e da intolerância dos atos terroristas do Hamas.\"",
+      "reaction": null,
+      "source": "CNN Brasil (íntegra do discurso)",
+      "url": "",
+      "ref": "05 §N13",
+      "media": "texto"
+     }
+    ]
+   }
+  ],
+  "closing": "Agora olhe o resto do registro.",
+  "gaps": [
+   "Instagram post by Jairo Roizen (07 §7.1) reposting the Metrópoles card: social media, not evidence of fact; the chapter uses the Metrópoles article itself. No verified source that the card circulates 'today'.",
+   "G1 video of the 18 Feb 2024 remarks (1:15): embedded in the G1 21 Feb 2024 piece; direct clip URL and timestamp not in the axis file.",
+   "Lula 6 Oct 2024 'Não sou antissemita, mas não tem como não torcer pela vitória do povo palestino' (05 §P8.5): needs-second-source, left out.",
+   "Lula Feb 2026 'E agora vem dizer que isso é antissemitismo?' (05 §C): needs-second-source, left out.",
+   "Lula's 27 Feb 2024 remark that he did not use the word 'Holocausto' is paraphrased (Estadão); the axis file does not give a verbatim sentence.",
+   "Lula 3 Jun 2025: only the single word 'vitimismo' is verbatim in the axis file; fuller quote needed from Folha/G1 3 Jun 2025.",
+   "No URL in the axis file for: Times of Israel 19 Feb 2024 (Netanyahu, Katz); Poder360 18 Feb 2024 (CONIB note); Aos Fatos Feb 2024 (IBI, Museu do Holocausto); Poder360 on Hamas thanking Lula; Folha 19 Feb 2024 and Estadão 27 Feb 2024; Exame 29 May 2024; Poder360 14 May 2025; Folha 3 Jun 2025; CNN Brasil 22 Sep 2025; Poder360 24 Jul 2025 (ICJ); G1 26 Aug 2025 (Katz); CNN Brasil 22 Sep 2026 (UNGA text).",
+   "Netanyahu's 18 Feb 2024 reaction: source attribution in 05 §N10 is ambiguous (Times of Israel listed after Katz); confirm outlet for Netanyahu's line.",
+   "Israel's official X post 'Before or after Lula denied the Holocaust?' and Pimenta's rebuttal (Poder360, verified) not used; available if the chapter wants them.",
+   "Flávio's 27 Jan 2026 Jerusalem accusation (05 §N13, verified) referenced only in chapter II context; not given its own item here."
+  ],
+  "label": "Frustração"
+ },
+ {
+  "id": "ii",
+  "numeral": "II",
+  "title": "O que esse governo fez, de fato",
+  "dek": "Visitas, leis, operações policiais e reuniões com a comunidade judaica que os governos Lula registraram entre 2007 e 2026.",
+  "summary": "Em 2010, Lula foi o primeiro presidente brasileiro em exercício a discursar no Knesset e a visitar o Yad Vashem. Assinou o acordo de livre comércio Mercosul-Israel. Em 2023, chamou o 7 de outubro de ataque terrorista e repatriou 1.555 pessoas. A Polícia Federal prendeu suspeitos de planejar ataques a alvos judaicos, e a CONIB parabenizou o governo. Em 2024, criou o Dia Nacional da Lembrança do Holocausto.",
+  "highlights": [
+   {
+    "date": "16 mar 2010",
+    "text": "No Yad Vashem, Lula deposita uma coroa de flores e diz: «Nunca mais, nunca mais, nunca mais.»",
+    "ref": "05 §P1"
+   },
+   {
+    "date": "8 nov 2023",
+    "text": "A Polícia Federal prende suspeitos de um plano ligado ao Hezbollah contra alvos judaicos no Brasil. A CONIB parabeniza a PF, o Ministério Público e o Ministério da Justiça.",
+    "ref": "05 §P5f"
+   },
+   {
+    "date": "29 jul 2024",
+    "text": "Lula sanciona a Lei 14.938, que cria o Dia Nacional da Lembrança do Holocausto, em 16 de abril.",
+    "ref": "05 §P5b"
+   }
+  ],
+  "toc": [
+   "Israel, 2007 a 2010",
+   "7 de outubro de 2023",
+   "Proteção à comunidade",
+   "As leis",
+   "Memória e diálogo em 2026"
+  ],
+  "sections": [
+   {
+    "heading": "Israel, 2007 a 2010",
+    "intro": "O acordo comercial, a visita de Peres e a primeira visita de Estado de um presidente brasileiro a Israel aconteceram no segundo mandato de Lula.",
+    "items": [
+     {
+      "date": "18 dez 2007",
+      "actor": "Governo Lula (Itamaraty, Celso Amorim)",
+      "quote": "",
+      "lang": "pt",
+      "context": "O Mercosul assina com Israel o primeiro acordo de livre comércio de Israel com um bloco latino-americano. Foi negociado, assinado e ratificado sob Lula, que promulgou o decreto em 27 abr 2010.",
+      "reaction": null,
+      "source": "Decreto 7.159/2010, Planalto",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2010/decreto/D7159.htm",
+      "ref": "05 §P2",
+      "media": "lei"
+     },
+     {
+      "date": "10 nov 2009",
+      "actor": "Shimon Peres, presidente de Israel",
+      "quote": "O presidente Lula e eu viemos do mesmo berço socialista, que odeia a diferença e ama a igualdade.",
+      "lang": "pt",
+      "context": "Primeira visita de Estado de um presidente israelense ao Brasil em cerca de 40 anos. Peres discursou no Congresso e se reuniu com Lula em Brasília.",
+      "reaction": null,
+      "source": "Agência Senado, \"Shimon Peres parabeniza Brasil por políticas sociais\"",
+      "url": "https://www12.senado.leg.br/noticias/materias/2009/11/10/shimon-peres-parabeniza-brasil-por-politicas-sociais-1616858011",
+      "ref": "05 §P3",
+      "media": "texto"
+     },
+     {
+      "date": "15 mar 2010",
+      "actor": "Lula, no Knesset",
+      "quote": "I dream of an independent and free Palestine living in peace in the Middle East. I believe the Palestinians and Israelis are going to share the land of their forefathers.",
+      "lang": "en",
+      "context": "Primeiro presidente brasileiro em exercício a discursar em sessão especial do parlamento israelense. O chanceler Avigdor Lieberman boicotou o discurso. A íntegra ainda não foi recuperada; a frase é a registrada pela JTA.",
+      "reaction": null,
+      "source": "Jewish Journal/JTA",
+      "url": "https://jewishjournal.com/news/worldwide/77601/",
+      "ref": "05 §P1",
+      "media": "texto"
+     },
+     {
+      "date": "15 mar 2010",
+      "actor": "Lula",
+      "quote": "",
+      "lang": "pt",
+      "context": "Lula recusou o convite da chancelaria israelense para visitar o túmulo de Theodor Herzl. Foi a principal queixa de Israel sobre a viagem.",
+      "reaction": {
+       "who": "Yitzhak Eldan, chefe do protocolo da chancelaria israelense",
+       "quote": "Apreciamos o fato de o presidente ter vindo ao museu e plantado uma árvore em seu bosque. Mas nada substitui a visita ao túmulo de Theodor Herzl.",
+       "date": "16 mar 2010"
+      },
+      "source": "Folha de S.Paulo, \"Em Israel, Lula sofre boicote de ministro por não visitar túmulo\"",
+      "url": "https://m.folha.uol.com.br/mundo/2010/03/707226-em-israel-lula-sofre-boicote-de-ministro-por-nao-visitar-tumulo.shtml",
+      "ref": "05 §P1",
+      "media": "texto"
+     },
+     {
+      "date": "16 mar 2010",
+      "actor": "Lula, no Yad Vashem",
+      "quote": "A humanidade deve repetir todos os dias, quantas vezes for necessário, 'nunca mais', 'nunca mais', 'nunca mais'.",
+      "lang": "pt",
+      "context": "Lula visitou o Museu do Holocausto em Jerusalém, de quipá, e plantou uma árvore na Floresta de Jerusalém.",
+      "reaction": null,
+      "source": "BBC Brasil, \"'Humanidade deve repetir: nunca mais', diz Lula sobre Holocausto\"",
+      "url": "https://www.bbc.com/portuguese/noticias/2010/03/100316_lula_holocausto_ss_vdm",
+      "ref": "05 §P1",
+      "media": "texto"
+     },
+     {
+      "date": "16 mar 2010",
+      "actor": "Lula, no Yad Vashem",
+      "quote": "A visita ao Museu do Holocausto deveria ser quase obrigatória para todos os que querem dirigir uma nação.",
+      "lang": "pt",
+      "context": "Na mesma visita, Lula disse: \"Aqueles que lutam pelos direitos humanos não podem de forma alguma permitir que se repita algo como o Holocausto.\"",
+      "reaction": null,
+      "source": "Folha de S.Paulo, \"'Nunca mais, nunca mais', diz Lula em Museu do Holocausto\"",
+      "url": "https://www1.folha.uol.com.br/fsp/mundo/ft1703201002.htm",
+      "ref": "05 §P1",
+      "media": "texto"
+     },
+     {
+      "date": "16 mar 2010",
+      "actor": "Lula, no Yad Vashem",
+      "quote": "",
+      "lang": "pt",
+      "context": "Lula depositou uma coroa de flores no Museu do Holocausto. O Projeto Comprova confirmou fotos e vídeos do momento em 2023, contra um vídeo que dizia o contrário.",
+      "reaction": null,
+      "source": "GZH/Projeto Comprova, \"Lula depositou flores no Museu do Holocausto, ao contrário do que alega vídeo\"",
+      "url": "https://gauchazh.clicrbs.com.br/politica/noticia/2023/10/lula-depositou-flores-no-museu-do-holocausto-ao-contrario-do-que-alega-video-clnw01wdm0098015yx3e1dzfj.html",
+      "ref": "05 §P1",
+      "media": "foto"
+     }
+    ]
+   },
+   {
+    "heading": "7 de outubro de 2023",
+    "intro": "A primeira nota de Lula falou em terrorismo, mas não citou o Hamas. Ele nomeou o Hamas duas semanas depois.",
+    "items": [
+     {
+      "date": "7 out 2023",
+      "actor": "Lula",
+      "quote": "Fiquei chocado com os ataques terroristas realizados hoje contra civis em Israel, que causaram numerosas vítimas. Ao expressar minhas condolências aos familiares das vítimas, reafirmo meu repúdio ao terrorismo em qualquer de suas formas. O Brasil não poupará esforços para evitar a escalada do conflito, inclusive no exercício da Presidência do Conselho de Segurança da ONU.",
+      "lang": "pt",
+      "context": "Post no X no dia do ataque. O texto não menciona o Hamas. O Brasil nunca classificou o Hamas como organização terrorista.",
+      "reaction": null,
+      "source": "G1, \"O que Lula já disse desde o início do conflito entre Israel e o Hamas\"",
+      "url": "https://g1.globo.com/mundo/noticia/2024/02/21/o-que-lula-ja-disse-desde-o-inicio-do-conflito-entre-israel-e-o-hamas.ghtml",
+      "ref": "05 §P4a",
+      "media": "texto"
+     },
+     {
+      "date": "23 out 2023",
+      "actor": "Lula",
+      "quote": "Não é porque Hamas cometeu um ato terrorista contra Israel, que Israel tem que matar milhões de inocentes.",
+      "lang": "pt",
+      "context": "Primeira vez que Lula liga as palavras \"ato terrorista\" ao Hamas. Em 20 mar 2024, disse: \"nós do PT condenamos o ato terrorista do Hamas\".",
+      "reaction": null,
+      "source": "G1, \"O que Lula já disse desde o início do conflito entre Israel e o Hamas\" (vídeo)",
+      "url": "https://g1.globo.com/mundo/noticia/2024/02/21/o-que-lula-ja-disse-desde-o-inicio-do-conflito-entre-israel-e-o-hamas.ghtml",
+      "ref": "05 §P4a",
+      "media": "vídeo"
+     },
+     {
+      "date": "18 out 2023",
+      "actor": "Brasil, na presidência do Conselho de Segurança da ONU",
+      "quote": "unequivocally rejects and condemns the heinous terrorist attacks by Hamas… and the taking of hostages",
+      "lang": "en",
+      "context": "Projeto de resolução brasileiro que condenava o Hamas e pedia a libertação dos reféns. Teve 12 votos a favor. Os Estados Unidos vetaram, alegando que o texto não mencionava o direito de Israel à autodefesa.",
+      "reaction": null,
+      "source": "UN News, \"Israel-Gaza crisis: US vetoes Security Council resolution\"",
+      "url": "https://news.un.org/en/story/2023/10/1142507",
+      "ref": "05 §P4c",
+      "media": "documento"
+     },
+     {
+      "date": "10 out a 23 dez 2023",
+      "actor": "Governo Lula (Operação Voltando em Paz)",
+      "quote": "",
+      "lang": "pt",
+      "context": "O Brasil foi um dos primeiros países a retirar seus cidadãos. Foram 13 voos da FAB, com 1.555 passageiros e 53 animais, vindos de Israel, da Cisjordânia e de Gaza.",
+      "reaction": null,
+      "source": "Agência Brasil via ISTOÉ Dinheiro, \"'Brasil é o meu segundo país', diz palestino vindo de Gaza\"",
+      "url": "https://istoedinheiro.com.br/brasil-e-o-meu-segundo-pais-diz-palestino-vindo-de-gaza/",
+      "ref": "05 §P4b",
+      "media": "texto"
+     }
+    ]
+   },
+   {
+    "heading": "Proteção à comunidade",
+    "intro": "",
+    "items": [
+     {
+      "date": "8 nov 2023",
+      "actor": "Polícia Federal",
+      "quote": "",
+      "lang": "pt",
+      "context": "Com inteligência de Israel e dos Estados Unidos, a PF cumpriu 11 mandados em SP, MG e DF e prendeu dois homens em São Paulo. Eles eram suspeitos de um plano ligado ao Hezbollah para atacar alvos judaicos no Brasil. A CONIB parabenizou a PF, o Ministério Público e o Ministério da Justiça pela ação preventiva.",
+      "reaction": {
+       "who": "CONIB",
+       "quote": "não podem ser importados ao nosso país",
+       "date": "9 nov 2023"
+      },
+      "source": "G1/Jornal da Globo, \"Confederação Israelita do Brasil se manifesta após prisão de suspeitos terroristas\"",
+      "url": "https://g1.globo.com/jornal-da-globo/noticia/2023/11/09/confederacao-israelita-do-brasil-se-manifesta-apos-prisao-de-suspeitos-terroristas-barroso-e-pacheco-tambem-repercutem-operacao.ghtml",
+      "ref": "05 §P5f",
+      "media": "vídeo"
+     }
+    ]
+   },
+   {
+    "heading": "As leis",
+    "intro": "Nenhuma das duas é uma lei específica contra o antissemitismo. As duas foram sancionadas por Lula.",
+    "items": [
+     {
+      "date": "11 jan 2023",
+      "actor": "Lula (sanção; projeto do Congresso)",
+      "quote": "em razão de raça, cor, etnia ou procedência nacional",
+      "lang": "pt",
+      "context": "A Lei 14.532 transforma a injúria racial em crime de racismo, com pena de 2 a 5 anos. Também pune quem impede a prática religiosa. Vale para ofensas a judeus por etnia, religião ou procedência.",
+      "reaction": null,
+      "source": "Lei 14.532/2023, Planalto",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/L14532.htm",
+      "ref": "05 §P5a",
+      "media": "lei"
+     },
+     {
+      "date": "29 jul 2024",
+      "actor": "Lula e o ministro Silvio Almeida",
+      "quote": "Institui o Dia Nacional da Lembrança do Holocausto",
+      "lang": "pt",
+      "context": "A Lei 14.938 marca o dia 16 de abril, data da morte do diplomata Luiz Martins de Souza Dantas, que deu vistos a judeus que fugiam do nazismo.",
+      "reaction": null,
+      "source": "Lei 14.938/2024, Planalto",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/L14938.htm",
+      "ref": "05 §P5b",
+      "media": "lei"
+     }
+    ]
+   },
+   {
+    "heading": "Memória e diálogo em 2026",
+    "intro": "",
+    "items": [
+     {
+      "date": "28 jan 2026",
+      "actor": "Planalto (Geraldo Alckmin, Gleisi Hoffmann, Macaé Evaristo, Clara Ant e outros)",
+      "quote": "faz parte do compromisso deste governo de combater todo tipo de preconceito e discriminação.",
+      "lang": "pt",
+      "context": "Encontro inédito no Planalto sobre o combate ao antissemitismo, com a CONIB, o Instituto Brasil-Israel, o Museu do Holocausto de Curitiba e pesquisadores. A frase é de Gleisi Hoffmann. A educação foi o eixo principal. Não houve grupo de trabalho nem plano formal. Lula estava em viagem; Alckmin presidiu.",
+      "reaction": {
+       "who": "Claudio Lottenberg, presidente da CONIB",
+       "quote": "louvável",
+       "date": "28 jan 2026"
+      },
+      "source": "Agência Brasil, \"Governo debate combate ao antissemitismo com foco na educação\"",
+      "url": "https://agenciabrasil.ebc.com.br/politica/noticia/2026-01/governo-debate-combate-ao-antissemitismo-com-foco-na-educacao",
+      "ref": "05 §P5d, §P9",
+      "media": "texto"
+     },
+     {
+      "date": "28 jan 2026",
+      "actor": "Claudio Lottenberg, presidente da CONIB",
+      "quote": "",
+      "lang": "pt",
+      "context": "Um dia depois de Flávio Bolsonaro acusar Lula em Jerusalém, Lottenberg rejeitou a acusação. Já tinha dito o mesmo em nov 2023. Em 28 ago 2026, aceitou ser indicado ministro da Saúde de Flávio.",
+      "reaction": null,
+      "source": "O Globo, 28 jan 2026; Folha de S.Paulo, 4 fev 2026",
+      "url": "",
+      "ref": "06 §4.2",
+      "media": "texto"
+     },
+     {
+      "date": "16 abr 2026",
+      "actor": "Itamaraty",
+      "quote": "Combater o antissemitismo exige estratégia, não apenas reação.",
+      "lang": "pt",
+      "context": "Primeira observância federal do Dia Nacional da Lembrança do Holocausto: seminário no Itamaraty sobre o enfrentamento ao antissemitismo. A frase é de Claudio Lottenberg. A ministra Janine Mello (Direitos Humanos) disse: \"Onde o ódio é tolerado, a democracia adoece\". No evento, Sofia Débora Levy pediu a volta do Brasil à IHRA. Um núcleo do PT de São Paulo pediu o cancelamento do seminário.",
+      "reaction": null,
+      "source": "CONIB, \"Seminário reúne especialistas no Itamaraty para discutir antissemitismo\"",
+      "url": "https://www.conib.org.br/noticias/todas-as-noticias/40740-seminario-reune-especialistas-no-itamaraty-para-discutir-antissemitismo.html",
+      "ref": "05 §P5e",
+      "media": "texto"
+     }
+    ]
+   }
+  ],
+  "closing": "Nada disso apaga o eixo anterior. Os dois registros são verdadeiros.",
+  "gaps": [
+   "Knesset speech 15 Mar 2010: transcript (Biblioteca da Presidência / Knesset PDF) not retrieved; only the JTA English line is usable.",
+   "Peres and Netanyahu verbatim reactions to the 2010 visit: not retrieved.",
+   "Lula's own words to Peres in Nov 2009 ('não há paz sem concessão'): needs-second-source, left out.",
+   "Yad Vashem 2010 footage (EBC/NBR, Globo): exists per Comprova, URL and timestamp pending. No first-person on-camera clip of Lula condemning antisemitism 2023-2026 found (05 §B).",
+   "Lula 27 Jan 2010 Holocaust Day speech: needs-second-source, left out.",
+   "CONIB praise of the Oct 2023 repatriation: not found. Minister Vieira's 'maior operação de retirada' quote: needs direct cite.",
+   "PF Operação Bedel (Jun 2023): needs-second-source, left out. Operação Nuremberg (Oct 2025) was GAECO/state prosecutors, not federal; not credited.",
+   "Lottenberg 28 Jan 2026 (06 §4.2): position verified, verbatim needs-second-source, so no quote; O Globo 28 Jan 2026 URL not in axis file. Rabbi's rebuttal (06 §4.3) needs-second-source; the site cannot show the community split with a named voice yet.",
+   "Whether Claudio Lottenberg stepped aside from CONIB after accepting Flávio's nomination (28 Aug 2026): unknown; affects how CONIB is described.",
+   "Lula/PT campaign meeting with CONIB in the 2026 candidates cycle: unknown. 2022-2023 Lula-CONIB meetings: not found.",
+   "20 Mar 2024 'nós do PT condenamos o ato terrorista do Hamas' (Poder360) used only inside a context line; no URL in axis file.",
+   "Not assigned by the narrative but verified elsewhere: Dino's Apr 2023 order for a PF inquiry into neo-Nazi groups (sources.md A1-42). Could strengthen this chapter if Alice wants it."
+  ],
+  "label": "O registro"
+ },
+ {
+  "id": "iii",
+  "numeral": "III",
+  "title": "A IHRA, sem atalhos",
+  "dek": "O que o Brasil era na IHRA, como saiu, o único motivo registrado e quem condenou a saída.",
+  "summary": "O Brasil entrou na IHRA como observador em nov 2021, no governo Bolsonaro. Nunca foi membro pleno. O governo Lula decidiu sair em 18 jul 2025 e não deu motivo oficial. Isso foi uma falha. O único motivo registrado é de Celso Amorim e trata do uso político da definição de antissemitismo, não da memória do Holocausto. A CONIB, o Centro Simon Wiesenthal e a comissária da OEA condenaram a saída.",
+  "highlights": [
+   {
+    "date": "9 nov 2021",
+    "text": "No governo Bolsonaro, o Brasil é aceito como observador da IHRA. Nunca se torna membro pleno.",
+    "ref": "05 §A1"
+   },
+   {
+    "date": "12 ago 2025",
+    "text": "No Roda Viva, Celso Amorim dá o único motivo registrado: a definição não pode «dificultar» o reconhecimento do Estado da Palestina.",
+    "ref": "05 §A3"
+   },
+   {
+    "date": "28 jul 2025",
+    "text": "A CONIB diz que a saída «representa um retrocesso moral e diplomático» e lança campanha pela volta do Brasil à IHRA.",
+    "ref": "05 §A5"
+   }
+  ],
+  "toc": [
+   "O que o Brasil era na IHRA",
+   "A decisão",
+   "O único motivo registrado",
+   "Quem condenou",
+   "O que o mesmo governo fez pela memória",
+   "Contexto: o debate sobre a definição"
+  ],
+  "sections": [
+   {
+    "heading": "O que o Brasil era na IHRA",
+    "intro": "A Aliança Internacional para a Memória do Holocausto tem membros e observadores. Ser observador não obriga um país a adotar a definição de antissemitismo da IHRA. O governo federal nunca a adotou; alguns estados e cidades, sim.",
+    "items": [
+     {
+      "date": "9 nov 2021",
+      "actor": "Governo Bolsonaro (chanceler Carlos França)",
+      "quote": "to promote education and research on the Holocaust, as well as to improve national policies to combat antisemitism.",
+      "lang": "en",
+      "context": "O Brasil pediu status de observador em set 2021 e foi aceito em 9 nov 2021, aniversário da Noite dos Cristais. A frase é do Itamaraty na época, sobre o que faria na IHRA. O Brasil nunca se tornou membro pleno.",
+      "reaction": null,
+      "source": "Algemeiner/JNS, \"Brazil, with its large Jewish community, joins IHRA as observer country\"",
+      "url": "https://www.algemeiner.com/2021/11/18/brazil-with-its-large-jewish-community-joins-ihra-as-observer-country/",
+      "ref": "05 §A1",
+      "media": "texto"
+     }
+    ]
+   },
+   {
+    "heading": "A decisão",
+    "intro": "A saída não teve decreto nem ato no Diário Oficial. Foi comunicada por via diplomática.",
+    "items": [
+     {
+      "date": "18 jul 2025",
+      "actor": "Governo Lula (Itamaraty)",
+      "quote": "",
+      "lang": "pt",
+      "context": "A decisão interna é de 18 jul 2025. O Itamaraty informou a embaixada de Israel. Israel tornou a saída pública em 24 jul, um dia depois de o Brasil anunciar a adesão à ação contra Israel na Corte Internacional de Justiça. Fontes diplomáticas disseram ao O Globo que a entrada em 2021 tinha sido \"apressada\".",
+      "reaction": null,
+      "source": "O Globo, \"Brasil deixa aliança internacional em memória do Holocausto e gera reação do governo de Israel\"",
+      "url": "https://oglobo.globo.com/mundo/noticia/2025/07/28/brasil-deixa-alianca-internacional-em-memoria-do-holocausto-e-gera-reacao-do-governo-de-israel.ghtml",
+      "ref": "05 §A2",
+      "media": "texto"
+     },
+     {
+      "date": "24 jul 2025",
+      "actor": "Itamaraty",
+      "quote": "Itamaraty não informou os motivos para a saída da organização, criada na década de 1990",
+      "lang": "pt",
+      "context": "Subtítulo da reportagem do Metrópoles. Não houve nota pública do Itamaraty com as razões da saída. Sair sem explicar foi uma falha.",
+      "reaction": null,
+      "source": "Metrópoles, \"Governo Lula retira Brasil de aliança em memória do Holocausto\"",
+      "url": "https://www.metropoles.com/mundo/governo-lula-retira-brasil-de-alianca-em-memoria-do-holocausto",
+      "ref": "05 §A3, §A4",
+      "media": "texto"
+     }
+    ]
+   },
+   {
+    "heading": "O único motivo registrado",
+    "intro": "",
+    "items": [
+     {
+      "date": "12 ago 2025",
+      "actor": "Celso Amorim, no Roda Viva",
+      "quote": "Não podemos permitir que isso sirva para dificultar o que achamos que é a solução [para o conflito], que é o reconhecimento do Estado da Palestina",
+      "lang": "pt",
+      "context": "Amorim disse que o governo se sentiu \"manipulado\" pelo uso que se fazia da aliança e da definição. O motivo trata do uso político da definição, não da memória do Holocausto. A saída, porém, tirou o Brasil da cooperação em educação sobre o Holocausto sem mudar nada no status legal da definição no país.",
+      "reaction": null,
+      "source": "Metrópoles, \"Celso Amorim explica por que Brasil saiu de aliança do Holocausto\"",
+      "url": "https://www.metropoles.com/mundo/celso-amorim-explica-por-que-brasil-saiu-de-alianca-do-holocausto",
+      "ref": "05 §A3, §A6",
+      "media": "vídeo"
+     }
+    ]
+   },
+   {
+    "heading": "Quem condenou",
+    "intro": "",
+    "items": [
+     {
+      "date": "24 jul 2025",
+      "actor": "Ministério das Relações Exteriores de Israel",
+      "quote": "Voltar-se contra o Estado judeu e abandonar o consenso global contra o antissemitismo é imprudente e vergonhoso.",
+      "lang": "pt",
+      "context": "Versão em português publicada pelo O Globo da nota israelense.",
+      "reaction": null,
+      "source": "O Globo, \"Brasil deixa aliança internacional em memória do Holocausto e gera reação do governo de Israel\"",
+      "url": "https://oglobo.globo.com/mundo/noticia/2025/07/28/brasil-deixa-alianca-internacional-em-memoria-do-holocausto-e-gera-reacao-do-governo-de-israel.ghtml",
+      "ref": "05 §A5",
+      "media": "texto"
+     },
+     {
+      "date": "28 jul 2025",
+      "actor": "CONIB",
+      "quote": "A decisão do governo brasileiro acontece em meio ao aumento vertiginoso dos casos de antissemitismo e ódio contra judeus no Brasil e no mundo.",
+      "lang": "pt",
+      "context": "A CONIB expressou \"indignação\" e disse que a medida \"representa um retrocesso moral e diplomático\". Em 11 ago 2025, lançou a campanha \"Pela volta do Brasil à IHRA\".",
+      "reaction": null,
+      "source": "O Globo, \"Brasil deixa aliança internacional em memória do Holocausto e gera reação do governo de Israel\"",
+      "url": "https://oglobo.globo.com/mundo/noticia/2025/07/28/brasil-deixa-alianca-internacional-em-memoria-do-holocausto-e-gera-reacao-do-governo-de-israel.ghtml",
+      "ref": "05 §A5",
+      "media": "texto"
+     },
+     {
+      "date": "jul 2025",
+      "actor": "Centro Simon Wiesenthal",
+      "quote": "Withdrawing Brazil from an international organisation that seeks to preserve the memory of the Holocaust and combat antisemitism is not a measure against the State of Israel. It is contempt for Jews.",
+      "lang": "en",
+      "context": "",
+      "reaction": null,
+      "source": "Jewish News (Reino Unido), 29 jul 2025",
+      "url": "",
+      "ref": "05 §A5",
+      "media": "texto"
+     },
+     {
+      "date": "jul 2025",
+      "actor": "Fernando Lottenberg, comissário da OEA para o combate ao antissemitismo",
+      "quote": "Being integrated into the IHRA is a way to demonstrate commitment to peace, Holocaust education, and the fight against antisemitism.",
+      "lang": "en",
+      "context": "Fernando Lottenberg não é Claudio Lottenberg, presidente da CONIB.",
+      "reaction": null,
+      "source": "Jewish News (Reino Unido), 29 jul 2025",
+      "url": "",
+      "ref": "05 §A5",
+      "media": "texto"
+     }
+    ]
+   },
+   {
+    "heading": "O que o mesmo governo fez pela memória",
+    "intro": "A saída da IHRA não pode ser lida sozinha. Também não é apagada pelo que vem a seguir.",
+    "items": [
+     {
+      "date": "29 jul 2024",
+      "actor": "Lula",
+      "quote": "Institui o Dia Nacional da Lembrança do Holocausto",
+      "lang": "pt",
+      "context": "Um ano antes da saída, o mesmo governo criou o dia nacional, em 16 de abril.",
+      "reaction": null,
+      "source": "Lei 14.938/2024, Planalto",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/L14938.htm",
+      "ref": "05 §P5b, §A8",
+      "media": "lei"
+     },
+     {
+      "date": "27 jan 2025",
+      "actor": "Lula",
+      "quote": "Em 27 de janeiro, é celebrado o Dia Internacional em Memória das Vítimas do Holocausto. Há exatos 80 anos, o campo de concentração de Auschwitz foi libertado…",
+      "lang": "pt",
+      "context": "Post de Lula nos 80 anos da libertação de Auschwitz. Ele fala do compromisso de acabar com \"o antissemitismo e todas as formas de discriminação\" e termina com \"Nunca mais\".",
+      "reaction": null,
+      "source": "Diário de Pernambuco, \"'Nunca mais', diz Lula em Dia da Memória do Holocausto\"",
+      "url": "",
+      "ref": "05 §P5c, §A8",
+      "media": "texto"
+     },
+     {
+      "date": "27 jan 2026",
+      "actor": "Lula",
+      "quote": "Hoje – Dia Internacional em Memória das Vítimas do Holocausto – é preciso recordar os horrores que a humanidade é capaz de cometer contra o próprio ser humano. E lembrar que o autoritarismo, os discursos de ódio e o preconceito étnico e religioso foram as peças com as quais essa grande tragédia do século XX foi construída.",
+      "lang": "pt",
+      "context": "Post publicado horas depois do discurso de Flávio Bolsonaro em Jerusalém. Lula lembrou que assinou, em 2004, a petição que levou a ONU a instituir o 27 de janeiro.",
+      "reaction": null,
+      "source": "Folha de S.Paulo, \"Lula publica nota em memória ao Holocausto após Flávio Bolsonaro acusá-lo de antissemitismo\"",
+      "url": "",
+      "ref": "05 §P5c, §A8",
+      "media": "texto"
+     },
+     {
+      "date": "16 abr 2026",
+      "actor": "Itamaraty",
+      "quote": "",
+      "lang": "pt",
+      "context": "Primeira observância federal do Dia Nacional da Lembrança do Holocausto, com seminário sobre antissemitismo. No evento, Sofia Débora Levy pediu publicamente a volta do Brasil à IHRA.",
+      "reaction": null,
+      "source": "CONIB, \"Seminário reúne especialistas no Itamaraty para discutir antissemitismo\"",
+      "url": "https://www.conib.org.br/noticias/todas-as-noticias/40740-seminario-reune-especialistas-no-itamaraty-para-discutir-antissemitismo.html",
+      "ref": "05 §P5e, §A8",
+      "media": "texto"
+     }
+    ]
+   },
+   {
+    "heading": "Contexto: o debate sobre a definição",
+    "intro": "Isto é contexto para o leitor. O governo não usou esse argumento na época, e não deve ser apresentado como o motivo do governo.",
+    "items": [
+     {
+      "date": "7 nov 2017",
+      "actor": "Kenneth Stern, redator principal da definição de trabalho adotada pela IHRA",
+      "quote": "The definition was not drafted, and was never intended, as a tool to target or chill speech on a college campus. In fact, at a conference in 2010 about the impact of the definition, I highlighted this misuse, and the damage it could do.",
+      "lang": "en",
+      "context": "Depoimento escrito à Comissão de Justiça da Câmara dos Estados Unidos.",
+      "reaction": null,
+      "source": "US House Judiciary Committee, depoimento escrito de Kenneth Stern",
+      "url": "https://docs.house.gov/meetings/JU/JU00/20171107/106610/HHRG-115-JU00-Wstate-SternK-20171107.pdf",
+      "ref": "05 §A7",
+      "media": "documento"
+     }
+    ]
+   }
+  ],
+  "closing": "Sair sem explicar foi uma falha. Quem condenou a saída está nesta página, e quem pede a volta também.",
+  "gaps": [
+   "Legal form of the exit (withdrawal vs non-renewal) and IHRA's own observer list: unconfirmed.",
+   "FISESP verbatim statement on the exit: needs-second-source, left out.",
+   "Any later written Itamaraty justification: not found.",
+   "No URL in the axis file for: Jewish News UK 29 Jul 2025 (Wiesenthal Centre, OAS commissioner); Diário de Pernambuco 27 Jan 2025; Folha 27 Jan 2026; source for CONIB's 11 Aug 2025 'Pela volta do Brasil à IHRA' campaign (mentioned in context, attributed to the O Globo item, which predates it).",
+   "Israel MFA date: the O Globo Portuguese version is from the 28 Jul article; the English original (24 Jul) has no URL in the axis file.",
+   "Itamaraty parallel note of 27 Jan 2025 condemning antisemitism: needs direct cite (gov.br restricted).",
+   "Museum funding or Auschwitz-80 attendance by the government (Jan 2025): not verified.",
+   "Jerusalem Declaration on Antisemitism (05 §A7, verified) left out; narrative names only Stern as context."
+  ],
+  "label": "A IHRA"
+ }
+]

@@ -1,0 +1,113 @@
+<!doctype html>
+<!-- Generated from content/eixo-template.html by content/build.py. Edit the template, not this file. -->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eixos lineares · eixo 07</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="wf.css">
+<style>
+.ch-head { background: var(--field-a); }
+@media (min-width: 900px) { .ch-head { min-height: calc(100vh - 56px); } }
+
+.layout { display: grid; gap: 32px; padding-inline: var(--gutter); padding-block: 40px 72px; }
+@media (min-width: 1000px) { .layout { grid-template-columns: 240px minmax(0, 1fr); gap: 56px; } .side { position: sticky; top: 72px; align-self: start; } }
+.side ol { list-style: none; margin: 8px 0 0; padding: 0; }
+.side li button {
+  width: 100%; text-align: left; background: none; border: 0; border-top: 1px solid var(--soft-line);
+  padding: 10px 0; font: 500 15px/1.3 var(--font); color: var(--ink); cursor: pointer; letter-spacing: -0.01em;
+}
+.side li button:hover { text-decoration: underline; }
+
+.content { display: grid; gap: 64px; min-width: 0; max-width: 960px; }
+.sec { display: grid; gap: 24px; scroll-margin-top: 72px; }
+.sec h2 { margin: 0; font-size: clamp(28px, 3.4vw, 44px); letter-spacing: -0.04em; line-height: 1.05; text-wrap: balance; }
+.sec.lens, .sec.limit { border: 1.5px dashed var(--ink); padding: 20px; }
+.sec .kind { justify-self: start; background: var(--ink); color: var(--paper); padding: 3px 8px; }
+
+/* Evidence: image first, then one quote (or one line of context when there is no quote) */
+.item { display: grid; gap: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+@media (min-width: 700px) { .item { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 24px; } }
+.item .ph { aspect-ratio: 4 / 3; min-height: 0; }
+.item .txt { display: grid; gap: 10px; align-content: start; min-width: 0; }
+.item .top { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+.item blockquote { margin: 0; font-size: clamp(20px, 2.2vw, 26px); font-weight: 500; letter-spacing: -0.025em; line-height: 1.2; }
+.item .ctx { margin: 0; font-size: 18px; line-height: 1.35; letter-spacing: -0.01em; }
+.item .reaction { margin: 0; padding-left: 12px; border-left: 2px solid var(--ink); font-size: 15px; display: grid; gap: 2px; }
+.item .src { font-size: 13px; color: var(--muted); }
+.item .src a { color: var(--ink); }
+
+.closing { font-size: clamp(26px, 3.2vw, 40px); font-weight: 700; letter-spacing: -0.04em; line-height: 1.08; margin: 0; padding-top: 24px; border-top: 1px solid var(--line); text-wrap: balance; }
+
+.pager { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.pager a { display: grid; gap: 6px; padding: 24px var(--gutter); background: var(--block); text-decoration: none; min-height: 140px; align-content: space-between; }
+.pager a:hover { background: var(--field-b); }
+.pager a.next { text-align: right; }
+.pager strong { font-size: clamp(18px, 2.4vw, 28px); letter-spacing: -0.03em; line-height: 1.1; }
+</style>
+</head>
+<body>
+<main id="page"></main>
+<footer class="site">
+  <div class="wordmark">LOGO</div>
+</footer>
+
+<script src="data.js"></script>
+<script src="common.js"></script>
+<script>
+const C = window.CHAPTERS;
+const MEDIA_PH = { "vídeo": "Vídeo", "foto": "Foto", "documento": "Documento", "lei": "Diário Oficial", "dado": "Gráfico", "livro": "Capa do livro" };
+const KIND_LABEL = { lens: "Lente", limit: "Limite", counterexample: "Contraexemplo", counterweight: "Contrapeso", data: "Dados", context: "Contexto" };
+
+function render() {
+  const id = "vii";
+  const idx = Math.max(0, C.findIndex(c => c.id === id));
+  const c = C[idx];
+  document.title = "Eixos lineares · " + chapterNum(idx);
+  document.querySelector(".wf-bar")?.remove();
+  document.querySelector(".nav")?.remove();
+  document.querySelector(".sheet")?.remove();
+  mountChrome(c.id);
+
+  const secs = c.sections.map((s, i) => {
+    const kind = KIND_LABEL[s.kind] ? s.kind : null;
+    return el("section", { class: "sec" + (kind ? " " + kind : ""), id: "s" + i },
+      kind ? el("span", { class: "kind mono" }, KIND_LABEL[kind]) : null,
+      el("h2", {}, s.heading),
+      s.items.map(it => el("article", { class: "item" },
+        el("div", { class: "ph" }, el("span", {}, MEDIA_PH[it.media] || "Imagem")),
+        el("div", { class: "txt" },
+          el("div", { class: "top mono" }, el("span", {}, it.date), it.actor ? el("span", {}, it.actor) : null),
+          it.quote ? el("blockquote", { lang: it.lang || "pt" }, "«" + it.quote + "»")
+                   : (it.context ? el("p", { class: "ctx" }, it.context) : null),
+          it.reaction && it.reaction.quote ? el("p", { class: "reaction" },
+            el("span", { class: "mono" }, it.reaction.who), el("q", {}, it.reaction.quote)) : null,
+          el("div", { class: "src" }, it.url ? el("a", { href: it.url, target: "_blank", rel: "noopener" }, it.source + " ↗") : it.source))
+      ))
+    );
+  });
+
+  const prev = C[idx - 1], next = C[idx + 1];
+  document.getElementById("page").replaceChildren(
+    el("section", { class: "ch-head cover" }, buildCover(c, idx, { titleTag: "h1" })),
+    el("div", { class: "layout" },
+      el("aside", { class: "side" },
+        el("ol", {}, c.sections.map((s, i) => el("li", {},
+          el("button", { type: "button", onclick: () => document.getElementById("s" + i).scrollIntoView({ block: "start" }) }, s.heading))))),
+      el("div", { class: "content" },
+        secs,
+        c.closing ? el("p", { class: "closing" }, c.closing) : null)
+    ),
+    el("nav", { class: "pager", "aria-label": "Eixos vizinhos" },
+      prev ? el("a", { href: chapterUrl(prev.id) }, el("span", { class: "mono" }, "← " + chapterNum(idx - 1)), el("strong", {}, prev.title))
+           : el("a", { href: "index.html" }, el("span", { class: "mono" }, "←"), el("strong", {}, "Início")),
+      next ? el("a", { class: "next", href: chapterUrl(next.id) }, el("span", { class: "mono" }, chapterNum(idx + 1) + " →"), el("strong", {}, next.title))
+           : el("a", { class: "next", href: "index.html" }, el("span", { class: "mono" }, "→"), el("strong", {}, "Início"))
+    )
+  );
+}
+render();
+</script>
+</body>
+</html>
