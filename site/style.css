@@ -405,13 +405,12 @@ a { color: inherit; }
 }
 .depo__lado { align-self: start; position: sticky; top: 0; }
 .depo__autor { font-size: 20px; line-height: 1.25; }
-.depo__meta { margin-top: 10px; font-size: 20px; line-height: 1.4; color: var(--azul-3); max-width: 18ch; }
+.depo__meta { margin-top: 10px; font-size: 20px; line-height: 1.4; color: var(--azul-3); max-width: 22ch; }
 .depo__texto { max-width: 660px; }
 .depo__titulo { font: 300 clamp(40px, 3.6vw, 52px)/1.04 var(--serif); letter-spacing: -0.035em; margin-bottom: 48px; }
 .depo__texto .corpo { font-size: 20px; line-height: 1.5; }
 .depo__texto .corpo + .corpo { margin-top: 24px; }
-.depo__fonte { margin-top: 10px; font-size: 11px; color: var(--azul-3); opacity: 0.8; text-transform: none; }
-.depo__fonte + .corpo { margin-top: 24px; }
+.depo__fonte { color: var(--azul-3); }
 @media (max-width: 767px) {
   .depo__fechar { top: 8px; right: 8px; }
   .depo__corpo { display: block; padding: 64px var(--gutter) 80px; }

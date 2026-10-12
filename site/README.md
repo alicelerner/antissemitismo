@@ -44,7 +44,7 @@ Revised the same day at Alice's request:
 - Quotes in plain quotation marks (“…”, inner ‘…’), the opening mark hanging in the margin; no separate glyph, no «».
 - Hover slower and softer: widening 600ms strong ease-in-out (on-screen morph, per the `animate` skill), bar colour 400ms ease, extra line 500ms with 120ms delay.
 - Video and post cards open the original on Instagram in a new tab.
-- Testimony cards open a full-screen modal in `--tinta` (Alice's mockup, 2026-10-12; it replaced a right-hand drawer): author and role left, title and full text right, on the page's two-column grid. The modal grows out of the card's dark thumbnail (clip-path, 650ms strong ease-in-out), then the text rises in 60ms apart; closing (×, Esc) shrinks it back into the card in 420ms. WAAPI in `main.js`, since the start shape is the card's live position. The × gets a soft circle and a quarter turn on hover. Full texts live in `<template>` elements in `index.html`, exactly as given; Schucman's own source domains are printed under each paragraph.
+- Testimony cards open a full-screen modal in `--tinta` (Alice's mockup, 2026-10-12; it replaced a right-hand drawer): author and role left, title and full text right, on the page's two-column grid. The modal grows out of the card's dark thumbnail (clip-path, 650ms strong ease-in-out), then the text rises in 60ms apart; closing (×, Esc) shrinks it back into the card in 420ms. WAAPI in `main.js`, since the start shape is the card's live position. The × gets a soft circle and a quarter turn on hover. Full texts live in `<template>` elements in `index.html`, exactly as given; Schucman's sources stay exactly as she wrote them: domains in parentheses at the end of each paragraph (no full URLs were given), in a lighter blue.
 - Keyboard hover state uses `:has(:focus-visible)`, not `:focus-within`: the dialog returns focus to the card on close, which kept the first card stuck open.
 
 | Card | Item | Source | Image |
@@ -59,7 +59,7 @@ Revised the same day at Alice's request:
 Open for this module:
 - These are voices, not evidence: every `materiais/` item is `nao-verificado`. Confirm that attributed opinion pieces may appear under the "only `verified`" rule.
 - Kiko Goifman: confirm he is Jewish before he sits under this heading; the card's extra line is the capture's own title, not his words.
-- Lia Vainer Schucman: no role line or place of publication yet, so her card has no meta line.
+- Lia Vainer Schucman: role line given by Alice on 2026-10-12: «Professora da Universidade Federal de Santa Catarina, pesquisadora das relações raciais e integrante de iniciativas de enfrentamento ao antissemitismo.» Place of publication still unknown.
 - Only four cards. Fernanda Yuki (`materiais/09`) and Célio Lima (`materiais/08`) were left out because nothing says they are Jewish.
 
 ## Open
