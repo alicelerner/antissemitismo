@@ -53,6 +53,7 @@ Revised the same day at Alice's request:
 | Vídeo | Kiko Goifman, Instagram reel, 25 out 2022 | `materiais/03` | `img/vozes/goifman-reel-2022.jpg` (reel frame) |
 | Post | Coletivo Golem, "Bolsonarismo e nazismo: entre referências e reverências", 9 out 2026 | `materiais/12` | `img/vozes/golem-dossie-2026.jpg` (carousel cover) |
 | Depoimento | Lia Vainer Schucman, «Nossa proteção não precisa depender do silenciamento de ninguém.» | `design/structures/depoimento-ilustrado/brief.md` | none, typographic |
+| Post | Coletivo Golem, "A extrema-direita nunca foi e nunca será aliada de judeus e judias: o Golem contra Flávio Bolsonaro", 6 out 2026 (added 2026-10-12, branch `vozes-golem-flavio`) | `materiais/13` | `img/vozes/golem-contra-flavio-2026.jpg` (carousel cover) |
 
 `img/vozes/` is git-ignored like the episode images (third-party media).
 
@@ -60,7 +61,7 @@ Open for this module:
 - These are voices, not evidence: every `materiais/` item is `nao-verificado`. Confirm that attributed opinion pieces may appear under the "only `verified`" rule.
 - Kiko Goifman: confirm he is Jewish before he sits under this heading; the card's extra line is the capture's own title, not his words.
 - Lia Vainer Schucman: role line given by Alice on 2026-10-12: «Professora da Universidade Federal de Santa Catarina, pesquisadora das relações raciais e integrante de iniciativas de enfrentamento ao antissemitismo.» Place of publication still unknown.
-- Only four cards. Fernanda Yuki (`materiais/09`) and Célio Lima (`materiais/08`) were left out because nothing says they are Jewish.
+- Five cards since 2026-10-12. Fernanda Yuki (`materiais/09`) and Célio Lima (`materiais/08`) were left out because nothing says they are Jewish.
 
 ## Test: episodes open in a modal on the cover (2026-10-12, branch `capa-desconfianca`)
 
