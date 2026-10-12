@@ -352,9 +352,9 @@ a { color: inherit; }
 @media (hover: hover) and (pointer: fine) {
   /* Widening is the reference's own effect: neighbours shift right. Four cards, so the layout cost is accepted. */
   .voz { transition: flex-basis 600ms var(--ease-in-out); }
-  .voz:hover, .voz:focus-within { flex-basis: 580px; }
-  .voz:hover .voz__thumb, .voz:focus-within .voz__thumb { border-bottom-color: var(--brasa); }
-  .voz:hover .voz__mais, .voz:focus-within .voz__mais {
+  .voz:hover, .voz:has(:focus-visible) { flex-basis: 580px; }
+  .voz:hover .voz__thumb, .voz:has(:focus-visible) .voz__thumb { border-bottom-color: var(--brasa); }
+  .voz:hover .voz__mais, .voz:has(:focus-visible) .voz__mais {
     opacity: 1; transform: none;
     transition-duration: 500ms; transition-delay: 120ms;
   }
@@ -373,34 +373,36 @@ a { color: inherit; }
 
 /* ---------- Testimony modal (full screen, dark blue; Alice, 2026-10-12, replaced the drawer) ----------
    Same two columns as the rest of the page: author left, title and text right.
-   Occasional, opened on purpose: the screen fades in over 400ms and the text rises 24px with the strong
-   ease-out (500ms); it fades out in 250ms. Native <dialog> for focus trap, Esc and an inert page. */
+   Motion (animate skill; purpose: spatial consistency). The modal grows out of the card's dark thumbnail
+   into the full screen with clip-path, 650ms strong ease-in-out (on-screen morph); author, title and text
+   then rise 16px and fade in, 60ms apart, 600ms strong ease-out. Closing reverses into the card in 420ms.
+   Driven by WAAPI in main.js because the start shape is the card's live position.
+   Native <dialog> for focus trap, Esc and an inert page. */
 .depo {
   position: fixed; inset: 0; width: 100vw; height: 100dvh; max-width: none; max-height: none;
   margin: 0; padding: 0; border: 0;
   background: var(--tinta); color: var(--papel);
-  opacity: 0;
-  transition: opacity 250ms ease, overlay 250ms allow-discrete, display 250ms allow-discrete;
 }
 .depo:not([open]) { display: none; }
-.depo[open] { opacity: 1; transition-duration: 400ms; transition-timing-function: var(--ease-out); }
-@starting-style { .depo[open] { opacity: 0; } }
 .depo::backdrop { background: transparent; }
 
 .depo__fechar {
   position: absolute; top: 24px; right: 24px; z-index: 1;
-  width: 44px; height: 44px; display: grid; place-items: center;
-  background: none; border: 0; color: inherit; cursor: pointer;
+  width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center;
+  background: transparent; border: 0; color: inherit; cursor: pointer;
+  transition: background-color 200ms ease, transform 160ms var(--ease-out);
 }
-.depo__fechar svg { width: 24px; height: 24px; stroke: currentColor; stroke-width: 1.5; fill: none; }
+.depo__fechar svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.5; fill: none; transition: transform 300ms var(--ease-out); }
+.depo__fechar:active { transform: scale(0.94); }
+@media (hover: hover) and (pointer: fine) {
+  .depo__fechar:hover { background: rgba(255, 255, 255, 0.12); }
+  .depo__fechar:hover svg { transform: rotate(90deg); }
+}
 .depo__corpo {
   height: 100%; overflow-y: auto; overscroll-behavior: contain;
   display: grid; grid-template-columns: minmax(0, 596fr) minmax(0, 796fr); column-gap: var(--gutter);
   padding: 72px 40px 120px;
 }
-.depo__lado, .depo__texto { transform: translateY(24px); transition: transform 250ms ease; }
-.depo[open] .depo__lado, .depo[open] .depo__texto { transform: none; transition: transform 500ms var(--ease-out); }
-@starting-style { .depo[open] .depo__lado, .depo[open] .depo__texto { transform: translateY(24px); } }
 .depo__lado { align-self: start; position: sticky; top: 0; }
 .depo__autor { font-size: 20px; line-height: 1.25; }
 .depo__meta { margin-top: 10px; font-size: 20px; line-height: 1.4; color: var(--azul-3); max-width: 18ch; }
@@ -430,7 +432,7 @@ a { color: inherit; }
   .hero__band img, .hero__title h1 .line > span, .capa__name .line > span { transform: none !important; transition: none; }
   .voz { transition: none !important; }
   .voz__mais { transform: none !important; }
-  .depo__lado, .depo__texto, .depo[open] .depo__lado, .depo[open] .depo__texto { transform: none !important; }
+  .depo__fechar svg { transition: none; }
   .quote__author, .abertura, .eixo-lista, .capa__img, .mod--gravura img { transform: none !important; transition-property: opacity; transition-duration: 200ms; }
   .menu, .menu[open] { clip-path: none; transition: opacity 200ms ease, overlay 200ms allow-discrete, display 200ms allow-discrete; opacity: 1; }
   @starting-style { .menu[open] { opacity: 0; } }

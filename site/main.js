@@ -59,15 +59,51 @@
   }
 
   // Testimony modal: native <dialog>, full screen, filled from the card's <template>.
+  // It grows out of the card's dark thumbnail and shrinks back into it (see style.css for the values).
   const depo = document.getElementById("depo");
   if (depo) {
     const corpo = depo.querySelector(".depo__corpo");
-    document.querySelectorAll("[data-depo]").forEach((b) => b.addEventListener("click", () => {
-      corpo.replaceChildren(document.getElementById("depo-" + b.dataset.depo).content.cloneNode(true));
+    const easeInOut = "cubic-bezier(0.77, 0, 0.175, 1)";
+    const easeOut = "cubic-bezier(0.23, 1, 0.32, 1)";
+    let origem = null, fechando = false;
+
+    // clip-path inset() that matches an element's box on screen
+    const recorte = (el) => {
+      const r = el.getBoundingClientRect();
+      return `inset(${r.top}px ${innerWidth - r.right}px ${innerHeight - r.bottom}px ${r.left}px)`;
+    };
+    const partes = () => [depo.querySelector(".depo__lado"), depo.querySelector(".depo__titulo"), ...depo.querySelectorAll(".depo__texto > :not(.depo__titulo)")];
+
+    function abrir(botao) {
+      origem = botao.querySelector(".voz__thumb");
+      corpo.replaceChildren(document.getElementById("depo-" + botao.dataset.depo).content.cloneNode(true));
       corpo.scrollTop = 0;
       depo.showModal();
-    }));
-    depo.querySelector(".depo__fechar").addEventListener("click", () => depo.close());
+      if (reduce) { depo.animate({ opacity: [0, 1] }, { duration: 200, easing: "ease" }); return; }
+      depo.animate({ clipPath: [recorte(origem), "inset(0px 0px 0px 0px)"] }, { duration: 650, easing: easeInOut });
+      partes().forEach((el, i) => el.animate(
+        { opacity: [0, 1], transform: ["translateY(16px)", "translateY(0)"] },
+        { duration: 600, delay: 320 + Math.min(i, 3) * 60, easing: easeOut, fill: "backwards" }));
+      depo.querySelector(".depo__fechar").animate({ opacity: [0, 1] }, { duration: 300, delay: 450, easing: "ease", fill: "backwards" });
+    }
+
+    async function fechar() {
+      if (fechando) return;
+      fechando = true;
+      depo.getAnimations({ subtree: true }).forEach((a) => a.finish());
+      const fim = reduce || !origem
+        ? depo.animate({ opacity: [1, 0] }, { duration: 200, easing: "ease" })
+        : (corpo.animate({ opacity: [1, 0] }, { duration: 160, easing: "ease", fill: "forwards" }),
+           depo.animate({ clipPath: ["inset(0px 0px 0px 0px)", recorte(origem)] }, { duration: 420, easing: easeInOut, fill: "forwards" }));
+      await fim.finished.catch(() => {});
+      depo.close();
+      depo.getAnimations({ subtree: true }).forEach((a) => a.cancel());
+      fechando = false;
+    }
+
+    document.querySelectorAll("[data-depo]").forEach((b) => b.addEventListener("click", () => abrir(b)));
+    depo.querySelector(".depo__fechar").addEventListener("click", fechar);
+    depo.addEventListener("cancel", (e) => { e.preventDefault(); fechar(); }); // Esc
   }
 
   // CTAs point to axis pages that do not exist yet.
