@@ -67,7 +67,6 @@
 
 <script src="data.js"></script>
 <script src="common.js"></script>
-<script src="thoughts.js"></script>
 <script>
 mountChrome("home");
 const C = window.CHAPTERS;
@@ -85,7 +84,6 @@ function pinCovers() {
 pinCovers();
 addEventListener("resize", pinCovers);
 document.fonts?.ready.then(pinCovers);
-mountThoughts();
 if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
 </script>
 </body>
