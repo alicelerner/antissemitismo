@@ -13,6 +13,10 @@ The phase 2 site follows stateofaidesign.com (Framer, by ++hellohello) closely, 
 
 Three candidate structures are being wireframed for team feedback (since 2026-10-08). Briefs, references and status for each live in `design/structures/`; start with its README. Wireframes go in `design/wireframes/`.
 
+## Site (production build)
+
+Option 1, "eixos lineares", won the team vote. Its build lives in `site/` (since 2026-10-12), independent of the wireframes. Read `site/README.md` first: palette, type, episode sources and open items. Home first, axis pages next.
+
 ## Motion
 
 All animation work goes through Emil Kowalski's skills: emil-design-eng, animate, review-animations, improve-animations, find-animation-opportunities, animation-vocabulary, apple-design, pick-ui-library, prototype, mobile-native, break-ui. Invoke the relevant skill before writing or reviewing any animation.

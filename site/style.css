@@ -1,0 +1,316 @@
+/* Fonts: the Figma set (Alice, 2026-10-12): Fraunces Light for display and Geist Mono for labels (OFL, Google Fonts,
+   loaded in index.html); PP Neue Montreal Regular for all other text, with no tracking (Alice's non-commercial licence;
+   local file in fonts/, git-ignored). Sizes and leading mirror the Figma text styles. */
+@font-face { font-family: "Neue Montreal"; src: url(fonts/PPNeueMontreal-Regular.woff2) format("woff2"); font-weight: 400; font-display: swap; }
+
+:root {
+  /* Seven blues, lightest to darkest, one per axis. Values set by Alice in Figma, 2026-10-12. */
+  --azul-1: #e9f0fc;
+  --azul-2: #dae5f8;
+  --azul-3: #b4caf0;
+  --azul-4: #93afe2;
+  --azul-5: #7492d3;
+  --azul-6: #4863a1;
+  --azul-7: #31498c;
+  --tinta: #07122e;      /* replaces the reference's black */
+  --papel: #ffffff;
+  --brasa: #ff6b35;      /* the one complementary colour: CTAs, dates, accents */
+
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Neue Montreal", "Helvetica Neue", Arial, sans-serif;
+  --mono: "Geist Mono", ui-monospace, Menlo, monospace;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
+  --gutter: 16px;
+  --bar: 56px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  background: var(--papel);
+  color: var(--tinta);
+  font: 400 16px/1.4 var(--sans);
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+
+.mono {
+  font: 400 13px/1.2 var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Bar ---------- */
+.bar {
+  position: fixed; inset: 0 0 auto 0; z-index: 50;
+  display: flex; height: var(--bar);
+}
+.bar__mark {
+  display: flex; align-items: center; padding: 0 var(--gutter);
+  background: var(--tinta); color: var(--papel);
+  text-decoration: none; font: 400 18px/1 var(--sans);
+}
+.bar__menu {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  width: 516px; padding: 0 var(--gutter);
+  background: var(--brasa); color: var(--tinta);
+  border: 0; font: 400 18px/1 var(--sans); cursor: pointer;
+}
+.bar__menu i { font-style: normal; font-size: 22px; transition: transform 200ms var(--ease-out); }
+@media (max-width: 767px) { .bar__menu { flex: 1; width: auto; } }
+
+/* ---------- Menu panel (reference: stateofaidesign "Report Chapters") ----------
+   Opens as a panel the width of the bar, growing down out of it; the page stays visible beside it.
+   Occasional use: drawer curve, 450ms in, 250ms out. Rows rise from a mask, 40ms apart. */
+.menu {
+  position: fixed; inset: 0 auto 0 0;
+  border: 0; padding: 0; margin: 0;
+  width: 592px; max-width: 100vw; height: 100dvh; max-height: none;
+  background: var(--brasa); color: var(--tinta);
+  display: flex; flex-direction: column;
+  clip-path: inset(0 0 calc(100% - var(--bar)) 0);
+  transition: clip-path 250ms var(--ease-drawer), overlay 250ms allow-discrete, display 250ms allow-discrete;
+}
+.menu:not([open]) { display: none; }
+.menu[open] { clip-path: inset(0 0 0 0); transition-duration: 450ms; }
+@starting-style { .menu[open] { clip-path: inset(0 0 calc(100% - var(--bar)) 0); } }
+.menu::backdrop { background: transparent; }
+
+.menu__head {
+  flex: none; height: var(--bar);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 var(--gutter); border-bottom: 1px solid var(--tinta);
+  font: 400 18px/1 var(--sans);
+}
+.menu__close { background: none; border: 0; color: inherit; cursor: pointer; font: 400 28px/1 var(--sans); width: 44px; height: 44px; margin-right: -12px; }
+
+.menu__body { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 var(--gutter) var(--gutter); min-height: 0; }
+.menu ol { list-style: none; }
+.menu li { border-bottom: 1px solid var(--tinta); }
+.menu li a { display: block; padding: 6px 20px 2px; text-decoration: none; }
+.menu__mask { display: block; overflow: hidden; }
+.menu__t {
+  display: inline-block;
+  font: 300 min(64px, 7.2vh)/1.08 var(--serif); letter-spacing: -0.045em;
+  transform: translateY(105%);
+  transition: transform 250ms var(--ease-drawer);
+}
+.menu__t sup { font: 400 14px/1 var(--sans); letter-spacing: 0; vertical-align: top; margin-left: 10px; position: relative; top: 0.4em; }
+.menu[open] .menu__t { transform: none; transition-duration: 600ms; transition-timing-function: var(--ease-out); }
+@starting-style { .menu[open] .menu__t { transform: translateY(105%); } }
+.menu[open] li:nth-child(1) .menu__t { transition-delay: 120ms; }
+.menu[open] li:nth-child(2) .menu__t { transition-delay: 160ms; }
+.menu[open] li:nth-child(3) .menu__t { transition-delay: 200ms; }
+.menu[open] li:nth-child(4) .menu__t { transition-delay: 240ms; }
+.menu[open] li:nth-child(5) .menu__t { transition-delay: 280ms; }
+.menu[open] li:nth-child(6) .menu__t { transition-delay: 320ms; }
+.menu[open] li:nth-child(7) .menu__t { transition-delay: 360ms; }
+.menu__legal { margin-top: 24px; padding-left: 20px; font-size: 11px; }
+
+@media (hover: hover) and (pointer: fine) {
+  .menu li a .menu__t { transition-property: transform, opacity; }
+  .menu li a:hover .menu__t { opacity: 0.6; }
+}
+@media (max-width: 767px) {
+  .menu { width: 100vw; }
+}
+
+/* ---------- Hero ---------- */
+.hero { min-height: 100svh; display: grid; grid-template-rows: 48svh 1fr; padding-top: 0; }
+.hero__band { display: grid; grid-template-columns: repeat(6, 1fr); overflow: hidden; }
+.hero__band figure { position: relative; overflow: hidden; }
+.hero__band img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: grayscale(1) contrast(1.15);
+  mix-blend-mode: luminosity;
+  transform: scale(1.12);
+  transition: transform 1400ms var(--ease-out);
+}
+.hero.is-in .hero__band img { transform: scale(1); }
+.hero__band figure:nth-child(1) { background: var(--azul-1); }
+.hero__band figure:nth-child(2) { background: var(--azul-2); }
+.hero__band figure:nth-child(3) { background: var(--azul-3); }
+.hero__band figure:nth-child(4) { background: var(--azul-4); }
+.hero__band figure:nth-child(5) { background: var(--azul-5); }
+.hero__band figure:nth-child(6) { background: var(--azul-6); }
+
+.hero__text {
+  display: grid; grid-template-columns: 1fr 2fr; gap: var(--gutter);
+  padding: 24px var(--gutter) var(--gutter); border-top: 1px solid var(--tinta);
+}
+.hero__lede { display: flex; flex-direction: column; justify-content: space-between; gap: 24px; }
+.hero__lede p:first-child { font-size: 20px; line-height: 1.25; max-width: 300px; }
+.hero__title { display: flex; flex-direction: column; justify-content: space-between; gap: 24px; min-width: 0; }
+.hero__title h1 {
+  font: 300 clamp(56px, 10.55vw, 176px)/0.82 var(--serif);
+  letter-spacing: -0.045em;
+  white-space: nowrap; /* no bleed: the Figma title sits inside its column */
+}
+.hero__title h1 .line { display: block; overflow: hidden; padding: 0.12em 0 0.1em; margin: -0.12em 0 -0.1em; }
+.hero__title h1 em { font-style: italic; }
+.hero__title h1 .line > span { display: block; transform: translateY(105%); transition: transform 900ms var(--ease-out); }
+.hero.is-in h1 .line > span { transform: none; }
+.hero.is-in h1 .line:nth-child(2) > span { transition-delay: 80ms; }
+.scroll-hint { display: flex; align-items: center; gap: 8px; font-size: 18px; }
+.scroll-hint span { color: var(--brasa); }
+
+@media (max-width: 767px) {
+  .hero { grid-template-rows: 38svh auto; min-height: 0; padding-bottom: 48px; }
+  .hero__band { grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr 1fr; }
+  .hero__text { grid-template-columns: 1fr; align-content: start; gap: 32px; }
+  .hero__title, .hero__lede { justify-content: flex-start; }
+  .hero__title { order: -1; }
+  .hero__title h1 { white-space: normal; margin-right: 0; font-size: 50px; }
+  .hero__lede p:first-child { font-size: 18px; }
+}
+
+/* ---------- Opening modules (Alice, Figma 2026-10-12) ---------- */
+.mod { padding: var(--bar) var(--gutter) var(--gutter); }
+.mod--inflexao { padding-top: 72px; }
+.mod__meta { padding: 14px 0; border-top: 1px solid var(--tinta); min-height: 45px; }
+.linha { font: 300 clamp(30px, 2.9vw, 42px)/1.04 var(--serif); letter-spacing: -0.03em; }
+.mod--inflexao .linha { margin-top: 32px; max-width: 709px; }
+
+.mod--gravura figure { aspect-ratio: 1408 / 798; overflow: hidden; position: relative; }
+.mod--gravura figcaption { position: absolute; left: 8px; bottom: 8px; padding: 4px 6px; background: rgba(7,18,46,0.8); color: #fff; font: 400 10px/1 var(--mono); text-transform: uppercase; letter-spacing: 0.02em; }
+.mod--gravura img { width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transform: scale(1.04); transition: opacity 900ms var(--ease-out), transform 1200ms var(--ease-out); }
+.mod--gravura.is-in img { opacity: 1; transform: none; }
+
+.mod--cruz { min-height: 486px; display: grid; grid-template-columns: minmax(0, 596fr) minmax(0, 796fr); column-gap: var(--gutter); }
+.mod--cruz .abertura { grid-column: 2; }
+
+/* ---------- Quote (reference 2.3) ---------- */
+.quote[hidden] { display: none; }
+.quote { display: grid; grid-template-columns: 1fr 1fr; min-height: 560px; }
+.quote__who { background: var(--tinta); color: var(--papel); padding: 16px var(--gutter); display: grid; grid-template-columns: 1fr 1fr; }
+.quote__glyph { font: 400 120px/0.8 var(--serif); color: var(--brasa); }
+.quote__author { align-self: start; padding-top: 220px; }
+.quote__author p:first-child { font-size: 18px; margin-bottom: 6px; }
+.quote__author .mono { color: rgba(255,255,255,0.6); }
+.quote__author { opacity: 0; transform: translateY(48px); transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out); }
+.quote.is-in .quote__author { opacity: 1; transform: none; transition-delay: 150ms; }
+.quote__text { background: var(--azul-2); padding: 24px var(--gutter); }
+.quote__text blockquote { font: 300 clamp(36px, 3.6vw, 52px)/1.02 var(--serif); letter-spacing: -0.035em; max-width: 16ch; }
+
+/* ---------- Axis covers (reference 2.4, structure by Alice) ---------- */
+.capa {
+  --bg: var(--azul-1); --fg: var(--tinta);
+  background: var(--bg); color: var(--fg);
+  display: flex; flex-direction: column;
+  padding: var(--bar) var(--gutter) var(--gutter);
+  min-height: 100vh;
+}
+.capa[data-n="1"] { --bg: var(--azul-1); }
+.capa[data-n="2"] { --bg: var(--azul-2); }
+.capa[data-n="3"] { --bg: var(--azul-3); }
+.capa[data-n="4"] { --bg: var(--azul-4); }
+.capa[data-n="5"] { --bg: var(--azul-5); }
+.capa[data-n="6"] { --bg: var(--azul-6); --fg: var(--papel); }
+.capa[data-n="7"] { --bg: var(--azul-7); --fg: var(--papel); }
+
+.capa__meta { border-top: 1px solid var(--fg); height: 29px; flex: none; }
+/* Two rows: name | opening, then image | list + CTA. The bottom row takes the image's height,
+   so "Nesse eixo" always starts at the image's top and the CTA ends at its bottom (Alice, 2026-10-12). */
+.capa__main {
+  flex: 1; display: grid; column-gap: var(--gutter); row-gap: 32px;
+  grid-template-columns: minmax(0, 596fr) minmax(0, 796fr);
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "nome abertura" "img fim";
+}
+.capa__name { grid-area: nome; }
+.capa__main > .abertura { grid-area: abertura; }
+.capa__img, .capa > .capa__main > .stats { grid-area: img; align-self: start; }
+.capa__fim { grid-area: fim; display: flex; flex-direction: column; justify-content: space-between; gap: 32px; min-width: 0; }
+.capa__fim .eixo-lista { max-width: 594px; }
+
+.capa__name { font: 300 clamp(64px, 7.2vw, 104px)/0.9 var(--serif); letter-spacing: -0.045em; }
+.capa__name .line { display: block; overflow: hidden; padding-bottom: 0.06em; }
+.capa__name .line > span { display: block; transform: translateY(105%); transition: transform 800ms var(--ease-out); }
+.capa__name .line:nth-child(2) > span { transition-delay: 60ms; }
+.capa.is-in .capa__name .line > span { transform: none; }
+
+.capa__img { position: relative; width: min(100%, 576px); aspect-ratio: 4 / 3; overflow: hidden; background: var(--tinta);
+  opacity: 0; transform: scale(1.04); transition: opacity 900ms var(--ease-out), transform 1200ms var(--ease-out); }
+.capa.is-in .capa__img { opacity: 1; transform: none; }
+.capa__img img { width: 100%; height: 100%; object-fit: cover; }
+.capa__img figcaption { position: absolute; left: 8px; bottom: 8px; padding: 4px 6px; background: rgba(7,18,46,0.8); color: #fff; font: 400 10px/1 var(--mono); text-transform: uppercase; letter-spacing: 0.02em; }
+
+.abertura { display: flex; flex-direction: column; gap: 32px; max-width: 594px; }
+/* Figma "Texto/Corpo": Neue Montreal 16 / 150%, no tracking, 16px between paragraphs */
+.corpo { font: 400 16px/1.5 var(--sans); }
+.corpo + .corpo { margin-top: 16px; }
+.capa .abertura, .capa .eixo-lista {
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+}
+.capa.is-in .abertura { opacity: 1; transform: none; transition-delay: 120ms; }
+.capa.is-in .eixo-lista { opacity: 1; transform: none; transition-delay: 220ms; }
+
+.eixo-lista ul { list-style: none; margin-top: 32px; }
+.eixo-lista li { padding: 16px 0; border-bottom: 1px solid var(--fg); font-size: 15px; line-height: 1.3; }
+
+/* Axis 07: the two numbers take the photo's place */
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gutter); border-top: 1px solid var(--fg); padding-top: 16px; }
+.stat__v { font: 300 clamp(64px, 6vw, 96px)/0.9 var(--serif); letter-spacing: -0.05em; font-variant-numeric: tabular-nums; }
+.stat__l { margin-top: 10px; max-width: 30ch; }
+.stat .mono { margin-top: 10px; opacity: 0.7; }
+
+.capa__cta {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 24px 16px; background: var(--tinta); color: var(--papel);
+  font: 400 18px/1 var(--sans); text-decoration: none;
+}
+.capa[data-n="7"] .capa__cta { background: var(--brasa); color: var(--tinta); }
+.capa__cta .mono { opacity: 0.6; font-size: 10px; }
+
+/* Desktop: covers stack over each other with sticky alone (reference 2.4), only when a whole cover fits. */
+@media (min-width: 1024px) and (min-height: 720px) {
+  .capa { position: sticky; top: 0; height: 100vh; min-height: 0; }
+}
+
+@media (max-width: 1023px) {
+  .mod--cruz { grid-template-columns: 1fr; min-height: 0; padding-bottom: 64px; }
+  .mod--cruz .abertura { grid-column: 1; margin-top: 24px; }
+  .capa { min-height: 0; padding-bottom: 32px; }
+  .capa__main { display: flex; flex-direction: column; gap: 24px; }
+  .capa__fim { display: contents; }
+  .capa__name { order: 1; font-size: 56px; margin-top: 12px; }
+  .capa__main > .abertura { order: 2; }
+  .eixo-lista { order: 3; }
+  .capa__img, .stats { order: 4; width: 100%; margin-top: 8px; }
+  .capa__cta { order: 5; }
+  .capa { scroll-margin-top: var(--bar); }
+}
+@media (max-width: 767px) {
+  .linha { font-size: 28px; }
+  .quote { grid-template-columns: 1fr; min-height: 0; }
+  .quote__text { order: -1; padding-bottom: 64px; }
+  .quote__text blockquote { font-size: 40px; }
+  .quote__who { grid-template-columns: 1fr; gap: 24px; }
+  .quote__author { padding-top: 0; }
+}
+@media (max-width: 599px) {
+  .stats { grid-template-columns: 1fr; }
+  .stat__v { font-size: 72px; }
+}
+
+/* ---------- Footer ---------- */
+.fim { background: var(--tinta); color: var(--papel); padding: 16px var(--gutter) var(--gutter); }
+.fim__row { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.fim__mark { margin: 120px 0 24px; font: 300 clamp(48px, 9.45vw, 136px)/0.9 var(--serif); letter-spacing: -0.05em; }
+.fim .mono { color: rgba(255,255,255,0.6); }
+
+/* ---------- Reduced motion: keep the fades, drop the movement ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .hero__band img, .hero__title h1 .line > span, .capa__name .line > span { transform: none !important; transition: none; }
+  .quote__author, .abertura, .eixo-lista, .capa__img, .mod--gravura img { transform: none !important; transition-property: opacity; transition-duration: 200ms; }
+  .menu, .menu[open] { clip-path: none; transition: opacity 200ms ease, overlay 200ms allow-discrete, display 200ms allow-discrete; opacity: 1; }
+  @starting-style { .menu[open] { opacity: 0; } }
+  .menu__t, .menu[open] .menu__t { transform: none; transition: none; }
+}

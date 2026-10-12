@@ -1,1 +1,6 @@
 .DS_Store
+
+# Licensed fonts and third-party images: kept local until Alice decides (public repo)
+Fonts/
+site/fonts/
+site/img/episodios/

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teste de tipografia</title>
+<style>
+@font-face { font-family: "EdNew"; src: url(fonts/PPEditorialNew-Regular.woff2) format("woff2"); }
+@font-face { font-family: "EdNew"; src: url(fonts/PPEditorialNew-Italic.woff2) format("woff2"); font-style: italic; }
+@font-face { font-family: "EdNewUL"; src: url(fonts/PPEditorialNew-Ultralight.woff2) format("woff2"); }
+@font-face { font-family: "EdOld"; src: url(fonts/PPEditorialOld-Regular.woff2) format("woff2"); }
+@font-face { font-family: "RightSerif"; src: url(fonts/PPRightSerif-Medium.woff2) format("woff2"); }
+@font-face { font-family: "RightSerifL"; src: url(fonts/PPRightSerif-Light.woff2) format("woff2"); }
+@font-face { font-family: "Montreal"; src: url(fonts/PPNeueMontreal-Regular.woff2) format("woff2"); }
+@font-face { font-family: "Montreal"; src: url(fonts/PPNeueMontreal-Medium.woff2) format("woff2"); font-weight: 500; }
+@font-face { font-family: "MontrealMono"; src: url(fonts/PPNeueMontrealMono-Regular.woff2) format("woff2"); }
+:root { --tinta: #07122e; }
+* { margin: 0; box-sizing: border-box; }
+body { background: #fff; color: var(--tinta); font: 16px/1.4 Montreal, sans-serif; padding: 16px; }
+.mono { font: 13px/1.2 MontrealMono, monospace; text-transform: uppercase; }
+section { border-top: 1px solid var(--tinta); padding: 14px 0 64px; display: grid; grid-template-columns: 1fr 2fr; gap: 16px; }
+h2 { font-weight: 400; font-size: clamp(48px, 7vw, 104px); line-height: .92; letter-spacing: -.045em; }
+.line { font-size: clamp(28px, 2.9vw, 44px); line-height: 1.04; letter-spacing: -.03em; margin-top: 24px; max-width: 18ch; }
+.q { font: 500 clamp(22px, 2vw, 30px)/1.12 Montreal, sans-serif; letter-spacing: -.03em; margin-top: 16px; max-width: 26ch; }
+p.body { margin-top: 12px; max-width: 46ch; }
+@media (max-width: 767px) { section { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<p class="mono" style="padding-bottom:16px">Larken não está na pasta Fonts. Candidatas a substituta, todas com PP Neue Montreal como sem serifa e PP Neue Montreal Mono nos rótulos.</p>
+
+<section>
+  <p class="mono">A · PP Editorial New Regular<br>em uso na home</p>
+  <div style="font-family: EdNew">
+    <h2>Quem é mais antissemita?</h2>
+    <p class="line">Você tem razão de estar frustrado.</p>
+    <p class="q">«O estado é cristão e a minoria que for contra, que se mude.»</p>
+    <p class="body" style="font-family: Montreal">Dois registros documentados. Toda citação é literal, datada e linkada à fonte.</p>
+  </div>
+</section>
+
+<section>
+  <p class="mono">B · PP Editorial Old Regular</p>
+  <div style="font-family: EdOld">
+    <h2>Quem é mais antissemita?</h2>
+    <p class="line">Você tem razão de estar frustrado.</p>
+    <p class="q">«O estado é cristão e a minoria que for contra, que se mude.»</p>
+    <p class="body" style="font-family: Montreal">Dois registros documentados. Toda citação é literal, datada e linkada à fonte.</p>
+  </div>
+</section>
+
+<section>
+  <p class="mono">C · PP Right Serif Medium / Light</p>
+  <div>
+    <h2 style="font-family: RightSerif">Quem é mais antissemita?</h2>
+    <p class="line" style="font-family: RightSerifL">Você tem razão de estar frustrado.</p>
+    <p class="q">«O estado é cristão e a minoria que for contra, que se mude.»</p>
+    <p class="body">Dois registros documentados. Toda citação é literal, datada e linkada à fonte.</p>
+  </div>
+</section>
+
+<section>
+  <p class="mono">D · PP Editorial New Ultralight + Italic</p>
+  <div>
+    <h2 style="font-family: EdNewUL">Quem é mais antissemita?</h2>
+    <p class="line" style="font-family: EdNew; font-style: italic">Você tem razão de estar frustrado.</p>
+    <p class="q">«O estado é cristão e a minoria que for contra, que se mude.»</p>
+    <p class="body">Dois registros documentados. Toda citação é literal, datada e linkada à fonte.</p>
+  </div>
+</section>
+</body>
+</html>
