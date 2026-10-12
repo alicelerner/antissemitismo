@@ -58,7 +58,7 @@
     sync();
   }
 
-  // Testimony drawer: native <dialog>, filled from the card's <template>. Clicking the dimmed page closes it.
+  // Testimony modal: native <dialog>, full screen, filled from the card's <template>.
   const depo = document.getElementById("depo");
   if (depo) {
     const corpo = depo.querySelector(".depo__corpo");
@@ -68,7 +68,6 @@
       depo.showModal();
     }));
     depo.querySelector(".depo__fechar").addEventListener("click", () => depo.close());
-    depo.addEventListener("click", (e) => { if (e.target === depo && e.clientX < depo.getBoundingClientRect().left) depo.close(); });
   }
 
   // CTAs point to axis pages that do not exist yet.

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Geist+Mono:wght@400&display=swap">
-<link rel="stylesheet" href="style.css?v=16">
+<link rel="stylesheet" href="style.css?v=17">
 </head>
 <body>
 
@@ -328,11 +328,12 @@
 
   <!-- Full testimonies, opened in the drawer from the Vozes cards. Text kept exactly as given. -->
   <template id="depo-limoncic">
-    <p class="depo__tipo mono">Depoimento</p>
-    <h2 class="depo__titulo" id="depo-titulo">Uma das razões pelas quais voto no Lula? Porque sou judeu.</h2>
-    <p class="depo__autor">Flávio Limoncic</p>
-    <p class="depo__meta mono">Bisneto de Lea e Itec, vítimas do Holocausto</p>
+    <div class="depo__lado">
+      <p class="depo__autor">Flávio Limoncic</p>
+      <p class="depo__meta">Bisneto de Lea e Itec, vítimas do Holocausto</p>
+    </div>
     <div class="depo__texto">
+      <h2 class="depo__titulo" id="depo-titulo">Uma das razões pelas quais voto no Lula? Porque sou judeu.</h2>
       <p class="corpo">Nos últimos anos, o Brasil e o mundo passaram por transformações profundas. Novas configurações familiares surgiram, relações de trabalho se tornaram mais flexíveis, grandes fluxos migratórios ocorreram, maneiras de ser e de viver, até recentemente invisibilizadas e subalternizadas, reivindicaram legitimidade social e direitos civis. Esse conjunto de mudanças tem sido sentido por alguns como ampliação de horizontes e possibilidade de invenção de novos futuros; por outros, como ameaça à sua segurança material e espiritual.</p>
       <p class="corpo">É o campo político dos que sentem as mudanças como ameaças que a extrema direita tem conseguido mobilizar. O objetivo: a imposição de um mundo de ordem e hierarquia, onde cada um tenha seu papel e lugar social definidos, inspirado em uma suposta idade de ouro que se perdeu quando, justamente, papéis e lugares tradicionais foram desafiados. O método: a produção simbólica de inimigos, aos quais devem ser impostos submissão e conformidade. Se preciso, silenciamento e exclusão. O desdobramento: o fascínio pela violência, a obsessão por armas, o empobrecimento do vocabulário e das formas de pensar o mundo, a descartabilidade de vidas e corpos, a pulsão de morte pairando no ar.</p>
       <p class="corpo">Tudo o que vemos hoje antecedeu e preparou, ressalvadas as especificidades históricas, o genocídio nazista dos judeus, porque a morte simbólica precede a morte física. Sabemos bem, genocídios não precisam de câmaras de gás, nem de seis milhões de mortos. Tornar a vida insuportável, ou simplesmente deixar morrer, como estabelecido no ordenamento jurídico internacional, também é genocídio. Não foi o que ocorreu com os Yanomamis, no início da década?</p>
@@ -346,10 +347,11 @@
     </div>
   </template>
   <template id="depo-schucman">
-    <p class="depo__tipo mono">Depoimento</p>
-    <h2 class="depo__titulo" id="depo-titulo">“Nossa proteção não precisa depender do silenciamento de ninguém.”</h2>
-    <p class="depo__autor">Lia Vainer Schucman</p>
+    <div class="depo__lado">
+      <p class="depo__autor">Lia Vainer Schucman</p>
+    </div>
     <div class="depo__texto">
+      <h2 class="depo__titulo" id="depo-titulo">“Nossa proteção não precisa depender do silenciamento de ninguém.”</h2>
       <p class="corpo">Muitos judeus, realmente preocupados com a sua própria sobrevivência, têm recusado Lula, acreditando que gostar de Israel seria uma garantia de não ser antissemita. Eu entendo o medo. Mas precisamos olhar para o que cada projeto político faz, para além das bandeiras que exibe.</p>
       <p class="corpo">O apoio de Flávio Bolsonaro a Israel não apaga a história do bolsonarismo. Jair Bolsonaro falou em “perdoar” o Holocausto e recebeu Beatrix von Storch, liderança da extrema direita alemã. No seu governo, Roberto Alvim reproduziu um discurso de Goebbels, ministro da propaganda nazista, e acabou demitido. Amar Israel não limpa essa história.</p>
       <p class="depo__fonte mono">Fontes citadas pela autora: www1.folha.uol.com.br, www1.folha.uol.com.br, agenciabrasil.ebc.com.br</p>
@@ -364,10 +366,7 @@
   </template>
 
   <dialog class="depo" id="depo" aria-labelledby="depo-titulo">
-    <div class="depo__head">
-      <span class="mono">Vozes</span>
-      <button class="depo__fechar" type="button" aria-label="Fechar depoimento">×</button>
-    </div>
+    <button class="depo__fechar" type="button" aria-label="Fechar depoimento"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18M21 3L3 21"/></svg></button>
     <div class="depo__corpo"></div>
   </dialog>
 
@@ -378,6 +377,6 @@
   </footer>
 </main>
 
-<script src="main.js?v=5"></script>
+<script src="main.js?v=6"></script>
 </body>
 </html>

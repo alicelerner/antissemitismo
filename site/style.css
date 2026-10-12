@@ -371,42 +371,53 @@ a { color: inherit; }
   .voz__citacao { font-size: 26px; }
 }
 
-/* ---------- Testimony drawer (from the right) ----------
-   Occasional, opened on purpose: drawer curve, 500ms in, 300ms out, leaving the way it came.
-   Native <dialog> for focus trap, Esc and inert page. The page dims behind it. */
+/* ---------- Testimony modal (full screen, dark blue; Alice, 2026-10-12, replaced the drawer) ----------
+   Same two columns as the rest of the page: author left, title and text right.
+   Occasional, opened on purpose: the screen fades in over 400ms and the text rises 24px with the strong
+   ease-out (500ms); it fades out in 250ms. Native <dialog> for focus trap, Esc and an inert page. */
 .depo {
-  position: fixed; inset: 0 0 0 auto;
-  width: min(640px, 100vw); max-width: 100vw; height: 100dvh; max-height: none;
+  position: fixed; inset: 0; width: 100vw; height: 100dvh; max-width: none; max-height: none;
   margin: 0; padding: 0; border: 0;
-  background: var(--papel); color: var(--tinta);
-  display: flex; flex-direction: column;
-  transform: translateX(100%);
-  transition: transform 300ms var(--ease-drawer), overlay 300ms allow-discrete, display 300ms allow-discrete;
+  background: var(--tinta); color: var(--papel);
+  opacity: 0;
+  transition: opacity 250ms ease, overlay 250ms allow-discrete, display 250ms allow-discrete;
 }
 .depo:not([open]) { display: none; }
-.depo[open] { transform: none; transition-duration: 500ms; }
-@starting-style { .depo[open] { transform: translateX(100%); } }
-.depo::backdrop {
-  background: rgba(7, 18, 46, 0); 
-  transition: background-color 300ms ease, overlay 300ms allow-discrete, display 300ms allow-discrete;
-}
-.depo[open]::backdrop { background: rgba(7, 18, 46, 0.45); transition-duration: 500ms; }
-@starting-style { .depo[open]::backdrop { background: rgba(7, 18, 46, 0); } }
+.depo[open] { opacity: 1; transition-duration: 400ms; transition-timing-function: var(--ease-out); }
+@starting-style { .depo[open] { opacity: 0; } }
+.depo::backdrop { background: transparent; }
 
-.depo__head {
-  flex: none; height: var(--bar); display: flex; align-items: center; justify-content: space-between;
-  padding: 0 var(--gutter); background: var(--tinta); color: var(--papel);
+.depo__fechar {
+  position: absolute; top: 24px; right: 24px; z-index: 1;
+  width: 44px; height: 44px; display: grid; place-items: center;
+  background: none; border: 0; color: inherit; cursor: pointer;
 }
-.depo__head .mono { color: rgba(255,255,255,0.6); }
-.depo__fechar { background: none; border: 0; color: inherit; cursor: pointer; font: 400 28px/1 var(--sans); width: 44px; height: 44px; margin-right: -12px; }
-.depo__corpo { flex: 1; overflow-y: auto; overscroll-behavior: contain; padding: 32px var(--gutter) 64px; }
-.depo__tipo { opacity: 0.6; }
-.depo__titulo { margin-top: 16px; font: 300 clamp(32px, 3vw, 44px)/1.02 var(--serif); letter-spacing: -0.035em; text-wrap: balance; }
-.depo__autor { margin-top: 24px; font-size: 18px; }
-.depo__meta { margin-top: 6px; opacity: 0.6; }
-.depo__texto { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--tinta); max-width: 60ch; }
-.depo__fonte { margin-top: 8px; font-size: 11px; opacity: 0.5; text-transform: none; }
-.depo__fonte + .corpo { margin-top: 16px; }
+.depo__fechar svg { width: 24px; height: 24px; stroke: currentColor; stroke-width: 1.5; fill: none; }
+.depo__corpo {
+  height: 100%; overflow-y: auto; overscroll-behavior: contain;
+  display: grid; grid-template-columns: minmax(0, 596fr) minmax(0, 796fr); column-gap: var(--gutter);
+  padding: 72px 40px 120px;
+}
+.depo__lado, .depo__texto { transform: translateY(24px); transition: transform 250ms ease; }
+.depo[open] .depo__lado, .depo[open] .depo__texto { transform: none; transition: transform 500ms var(--ease-out); }
+@starting-style { .depo[open] .depo__lado, .depo[open] .depo__texto { transform: translateY(24px); } }
+.depo__lado { align-self: start; position: sticky; top: 0; }
+.depo__autor { font-size: 20px; line-height: 1.25; }
+.depo__meta { margin-top: 10px; font-size: 20px; line-height: 1.4; color: var(--azul-3); max-width: 18ch; }
+.depo__texto { max-width: 660px; }
+.depo__titulo { font: 300 clamp(40px, 3.6vw, 52px)/1.04 var(--serif); letter-spacing: -0.035em; margin-bottom: 48px; }
+.depo__texto .corpo { font-size: 20px; line-height: 1.5; }
+.depo__texto .corpo + .corpo { margin-top: 24px; }
+.depo__fonte { margin-top: 10px; font-size: 11px; color: var(--azul-3); opacity: 0.8; text-transform: none; }
+.depo__fonte + .corpo { margin-top: 24px; }
+@media (max-width: 767px) {
+  .depo__fechar { top: 8px; right: 8px; }
+  .depo__corpo { display: block; padding: 64px var(--gutter) 80px; }
+  .depo__lado { position: static; margin-bottom: 32px; }
+  .depo__autor, .depo__meta { font-size: 16px; }
+  .depo__titulo { font-size: 34px; margin-bottom: 32px; }
+  .depo__texto .corpo { font-size: 17px; }
+}
 
 /* ---------- Footer ---------- */
 .fim { background: var(--tinta); color: var(--papel); padding: 16px var(--gutter) var(--gutter); }
@@ -419,8 +430,7 @@ a { color: inherit; }
   .hero__band img, .hero__title h1 .line > span, .capa__name .line > span { transform: none !important; transition: none; }
   .voz { transition: none !important; }
   .voz__mais { transform: none !important; }
-  .depo, .depo[open] { transform: none; transition: opacity 200ms ease, overlay 200ms allow-discrete, display 200ms allow-discrete; opacity: 1; }
-  @starting-style { .depo[open] { opacity: 0; } }
+  .depo__lado, .depo__texto, .depo[open] .depo__lado, .depo[open] .depo__texto { transform: none !important; }
   .quote__author, .abertura, .eixo-lista, .capa__img, .mod--gravura img { transform: none !important; transition-property: opacity; transition-duration: 200ms; }
   .menu, .menu[open] { clip-path: none; transition: opacity 200ms ease, overlay 200ms allow-discrete, display 200ms allow-discrete; opacity: 1; }
   @starting-style { .menu[open] { opacity: 0; } }
