@@ -302,11 +302,18 @@ a { color: inherit; }
 }
 
 /* ---------- Vozes: carousel before the footer (reference 2.5, case studies) ----------
-   Cards 460px desktop / 267px phones on a 16px gap, arrows top-right, 16px accent bar under each thumbnail.
+   Cards up to 460x560 desktop (scaled to the viewport, see --voz-h) / 267px phones on a 16px gap, arrows top-right, 16px accent bar under each thumbnail.
    Hover widens the card to 580px, turns the bar brasa and reveals one line. Unlike the reference the track
    snaps (reference 7.1 note). Alice asked for a slower, softer hover (2026-10-12): the widening is on-screen
    morphing, so strong ease-in-out at 600ms; colour 400ms ease; the extra line follows 120ms later. */
-.vozes { padding: 72px 0 96px; overflow: hidden; }
+.vozes {
+  padding: 72px 0 96px; overflow: hidden;
+  /* Thumbnail height follows the viewport so title + cards fit one fold (Alice, 2026-10-12);
+     600px covers the fixed bar, label, title, card captions and some air; Alice then asked for 20% more, then
+     50% on top of that, then 10% less across the board, cap included (2026-10-12), so short screens trade the
+     captions for bigger images. Width and quote scale with it. */
+  --voz-h: calc(min(560px, clamp(300px, 100svh - 600px, 560px) * 1.8) * 0.9);
+}
 .vozes > .mod__meta { margin: 0 var(--gutter); }
 .vozes__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; padding: 32px var(--gutter) 40px; }
 .vozes__head h2 { font: 300 clamp(44px, 5.6vw, 80px)/0.92 var(--serif); letter-spacing: -0.045em; max-width: 12ch; padding-bottom: 0.06em; }
@@ -326,12 +333,12 @@ a { color: inherit; }
   scroll-snap-type: x mandatory; scrollbar-width: none;
 }
 .vozes__trilho::-webkit-scrollbar { display: none; }
-.voz { flex: 0 0 460px; min-width: 0; scroll-snap-align: start; }
+.voz { flex: 0 0 calc(var(--voz-h) * 460 / 560); min-width: 0; scroll-snap-align: start; }
 .voz > a, .voz__abrir { display: block; width: 100%; text-decoration: none; color: inherit; }
 .voz__abrir { border: 0; padding: 0; background: none; font: inherit; text-align: left; cursor: pointer; }
 .voz__abrir > span { display: block; }
 .voz__thumb {
-  display: block; position: relative; height: 560px; overflow: hidden; background: var(--tinta);
+  display: block; position: relative; height: var(--voz-h); overflow: hidden; background: var(--tinta);
   border-bottom: 16px solid var(--azul-3); transition: border-color 400ms ease;
 }
 .voz__thumb img { width: 100%; height: 100%; object-fit: cover; }
@@ -340,7 +347,7 @@ a { color: inherit; }
 .voz--post .voz__thumb img { filter: grayscale(1); }
 .voz--depoimento .voz__thumb { display: flex; align-items: flex-end; padding: 16px; color: var(--papel); }
 /* Opening quote hangs into the margin so the text block stays aligned */
-.voz__citacao { display: block; font: 300 clamp(30px, 2.6vw, 38px)/1.04 var(--serif); letter-spacing: -0.03em; max-width: 14ch; text-indent: -0.4em; padding-left: 0.4em; }
+.voz__citacao { display: block; font: 300 calc(var(--voz-h) * 38 / 560)/1.04 var(--serif); letter-spacing: -0.03em; max-width: 14ch; text-indent: -0.4em; padding-left: 0.4em; }
 .voz__play { position: absolute; left: 16px; bottom: 16px; width: 56px; height: 56px; border-radius: 50%; background: var(--brasa); display: grid; place-items: center; }
 .voz__play::after { content: ""; margin-left: 4px; border-style: solid; border-width: 10px 0 10px 16px; border-color: transparent transparent transparent var(--tinta); }
 .voz__tipo { margin-top: 16px; opacity: 0.6; }
@@ -354,7 +361,7 @@ a { color: inherit; }
 @media (hover: hover) and (pointer: fine) {
   /* Widening is the reference's own effect: neighbours shift right. Four cards, so the layout cost is accepted. */
   .voz { transition: flex-basis 600ms var(--ease-in-out); }
-  .voz:hover, .voz:has(:focus-visible) { flex-basis: 580px; }
+  .voz:hover, .voz:has(:focus-visible) { flex-basis: calc(var(--voz-h) * 580 / 560); }
   .voz:hover .voz__thumb, .voz:has(:focus-visible) .voz__thumb { border-bottom-color: var(--brasa); }
   .voz:hover .voz__mais, .voz:has(:focus-visible) .voz__mais {
     opacity: 1; transform: none;
