@@ -1,0 +1,24 @@
+{
+  "id": "11-icl-flavio-propaganda-mussolini",
+  "tipo": "materia",
+  "veiculo": "ICL Notícias",
+  "autor": "Felipe Rabioglio",
+  "data": "2026-10-10",
+  "url": "https://iclnoticias.com.br/pl-apaga-propaganda-de-flavio-bolsonaro/",
+  "titulo": "PL apaga propaganda de Flávio Bolsonaro semelhante à de Mussolini",
+  "resumo": "Peça 'Tropa do Flávio' no canal do PL no WhatsApp, com o rosto de Flávio cercado pela expressão repetida, como o painel 'SÌ' de Mussolini no Palazzo Braschi (1934). PL apagou e pediu desculpas. imagem-01: comparação lado a lado.",
+  "tier_dossie": "não está no dossiê; ICL fica fora do Tier 2 (precisa de segunda fonte)",
+  "capturado_em": "2026-10-12",
+  "origem_lista": "https://docs.google.com/document/d/1tKHl5n_Ow9DroWfCGwzX6JBseSYH1MjCcfIvUZWCYZo",
+  "status_uso": "nao-verificado",
+  "arquivos": [
+    "captura.json",
+    "imagens/imagem-01.webp",
+    "imagens/imagens.json",
+    "og.webp",
+    "pagina.pdf",
+    "print-pagina.png",
+    "print-topo.png",
+    "texto.txt"
+  ]
+}

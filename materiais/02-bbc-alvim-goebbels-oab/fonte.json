@@ -1,0 +1,28 @@
+{
+  "id": "02-bbc-alvim-goebbels-oab",
+  "tipo": "materia",
+  "veiculo": "BBC News Brasil",
+  "data": "2020-01-17",
+  "url": "https://www.bbc.com/portuguese/brasil-51149263",
+  "titulo": "'Na Alemanha ele estaria preso': Vídeo de Alvim inspirado em Goebbels configura apologia ao nazismo, diz presidente da OAB",
+  "resumo": "Repercussão jurídica do vídeo de Roberto Alvim. imagem-01 é frame do vídeo oficial da Secretaria Especial da Cultura; imagem-03 é o texto do art. 20 da Lei 7.716/89; imagem-05 é post de Olavo de Carvalho.",
+  "tier_dossie": "Tier 2 (BBC)",
+  "nota": "O vídeo original não está embutido na página; para o vídeo, ver fontes do evidence-map (Folha, G1, Metrópoles).",
+  "capturado_em": "2026-10-12",
+  "origem_lista": "https://docs.google.com/document/d/1tKHl5n_Ow9DroWfCGwzX6JBseSYH1MjCcfIvUZWCYZo",
+  "status_uso": "nao-verificado",
+  "arquivos": [
+    "captura.json",
+    "imagens/imagem-01.webp",
+    "imagens/imagem-02.webp",
+    "imagens/imagem-03.webp",
+    "imagens/imagem-04.webp",
+    "imagens/imagem-05.webp",
+    "imagens/imagens.json",
+    "og.jpg",
+    "pagina.pdf",
+    "print-pagina.png",
+    "print-topo.png",
+    "texto.txt"
+  ]
+}

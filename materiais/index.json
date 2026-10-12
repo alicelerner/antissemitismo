@@ -1,0 +1,122 @@
+[
+  {
+    "id": "01-catarinas-11-casos-nazismo",
+    "tipo": "web-story",
+    "veiculo": "Portal Catarinas",
+    "data": "2022-10-26",
+    "titulo": "11 casos que ligam Bolsonaro à ideologia nazista",
+    "url": "https://catarinas.info/web-stories/11casos-que-ligam-bolsonaro-a-ideologia-nazista/",
+    "tier_dossie": "excluído como prova (agregador partidário); útil como mapa de episódios",
+    "status_uso": "nao-verificado"
+  },
+  {
+    "id": "02-bbc-alvim-goebbels-oab",
+    "tipo": "materia",
+    "veiculo": "BBC News Brasil",
+    "data": "2020-01-17",
+    "titulo": "'Na Alemanha ele estaria preso': Vídeo de Alvim inspirado em Goebbels configura apologia ao nazismo, diz presidente da OAB",
+    "url": "https://www.bbc.com/portuguese/brasil-51149263",
+    "tier_dossie": "Tier 2 (BBC)",
+    "status_uso": "nao-verificado"
+  },
+  {
+    "id": "03-ig-kikogoifman-simbolos-nazistas",
+    "tipo": "reel",
+    "veiculo": "Instagram @kikogoifman",
+    "data": "2022-10-25",
+    "titulo": "Reel: símbolos e lemas nazistas e integralistas no bolsonarismo",
+    "url": "https://www.instagram.com/reels/CkI8PM1Dk97/",
+    "tier_dossie": "excluído como prova (rede social, opinião); utilizável como peça de referência visual",
+    "status_uso": "nao-verificado"
+  },
+  {
+    "id": "04-fpabramo-adriana-dias-entrevista",
+    "tipo": "materia",
+    "veiculo": "Fundação Perseu Abramo",
+    "data": "2021-08-15",
+    "titulo": "Entrevista – Adriana Dias: Bolsonaro e o neonazismo. Uma relação comprovada",
+    "url": "https://fpabramo.org.br/entrevista-adriana-dias-bolsonaro-e-o-neonazismo-uma-relacao-comprovada/",
+    "tier_dossie": "excluído como prova de fato (fundação ligada ao PT); a fala de Adriana Dias pode ser citada como voz de especialista",
+    "status_uso": "nao-verificado"
+  },
+  {
+    "id": "05-intercept-carta-bolsonaro-2004",
+    "tipo": "materia",
+    "veiculo": "The Intercept Brasil",
+    "data": "2021-07-28",
+    "titulo": "Pesquisadora encontra carta de Bolsonaro publicada em sites neonazistas em 2004",
+    "url": "https://www.intercept.com.br/2021/07/28/carta-bolsonaro-neonazismo/",
+    "tier_dossie": "dossiê A1-02, needs-second-source",
+    "status_uso": "nao-verificado"
+  },
+  {
+    "id": "06-cartacapital-lista-boicote-judeus",
+    "tipo": "materia",
+    "veiculo": "CartaCapital",
+    "data": "2026-09-26",
+    "titulo": "Judeus bolsonaristas pregam boicote a eleitores de Lula na comunidade israelita",
+    "url": "https://www.cartacapital.com.br/politica/judeus-bolsonaristas-pregam-boicote-a-eleitores-de-lula-na-comunidade-israelita/",
+    "tier_dossie": "não está no dossiê; CartaCapital fica fora do Tier 2 (precisa de segunda fonte)",
+    "status_uso": "nao-verificado"
+  },
+  {
+    "id": "07-conib-encontro-planalto-2026",
+    "tipo": "materia",
+    "veiculo": "CONIB",
+    "data": "2026-01-29",
+    "titulo": "CONIB participa de encontro com autoridades em Brasília para discutir combate ao antissemitismo",
+    "url": "https://conib.org.br/noticias/todas-as-noticias/40480-conib-participa-de-encontro-com-autoridades-em-brasilia-para-discutir-combate-ao-antissemitismo.html",
+    "tier_dossie": "Tier 1 (nota da própria CONIB); mesmo evento do dossiê A5-44 (Agência Brasil)",
+    "status_uso": "nao-verificado"
+  },
+  {
+    "id": "08-ig-celiolima-deus-patria-familia",
+    "tipo": "post",
+    "veiculo": "Instagram @celio.lima_",
+    "data": "2026-09-13",
+    "titulo": "A origem do slogan fascista 'Deus, Pátria e Família' utilizado pelo bolsonarismo",
+    "url": "https://www.instagram.com/p/DdOr_txHNin/",
+    "tier_dossie": "excluído como prova (rede social); a imagem-02 é um documento histórico que vale rastrear até o acervo original",
+    "status_uso": "nao-verificado"
+  },
+  {
+    "id": "09-ig-feryuki-ustra-tortura",
+    "tipo": "reel",
+    "veiculo": "Instagram @fer.yuki",
+    "data": "2026-10-04",
+    "titulo": "Reel: Bolsonaro, Ustra e depoimentos de torturados",
+    "url": "https://www.instagram.com/reel/DeDopDCtNJV/",
+    "tier_dossie": "excluído como prova (rede social); os trechos de arquivo (TV Câmara, CNV) são rastreáveis até originais Tier 1",
+    "status_uso": "nao-verificado"
+  },
+  {
+    "id": "10-piaui-bolsonaro-judeus-antissemitismo",
+    "tipo": "materia",
+    "veiculo": "revista piauí",
+    "data": "2021-07-28",
+    "titulo": "Bolsonaro, os judeus e o antissemitismo",
+    "url": "https://piaui.uol.com.br/web/bolsonaro-os-judeus-e-o-antissemitismo/",
+    "tier_dossie": "não está no dossiê; piauí não está na lista Tier 2 e o texto é analítico",
+    "status_uso": "nao-verificado"
+  },
+  {
+    "id": "11-icl-flavio-propaganda-mussolini",
+    "tipo": "materia",
+    "veiculo": "ICL Notícias",
+    "data": "2026-10-10",
+    "titulo": "PL apaga propaganda de Flávio Bolsonaro semelhante à de Mussolini",
+    "url": "https://iclnoticias.com.br/pl-apaga-propaganda-de-flavio-bolsonaro/",
+    "tier_dossie": "não está no dossiê; ICL fica fora do Tier 2 (precisa de segunda fonte)",
+    "status_uso": "nao-verificado"
+  },
+  {
+    "id": "12-ig-coletivogolem-dossie-bolsonarismo-nazismo",
+    "tipo": "post",
+    "veiculo": "Instagram @coletivogolem.brasil",
+    "data": "2026-10-09",
+    "titulo": "Bolsonarismo e nazismo: entre referências e reverências",
+    "url": "https://www.instagram.com/p/DeRyj_OnCk3/",
+    "tier_dossie": "excluído como prova (rede social); as fontes citadas em cada imagem são o caminho para verificação",
+    "status_uso": "nao-verificado"
+  }
+]

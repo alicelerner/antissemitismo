@@ -1,1 +1,13 @@
 .DS_Store
+
+# materiais/: third-party media stays local (public repo on GitHub Pages).
+# Only metadata is tracked.
+materiais/**
+!materiais/
+!materiais/*/
+!materiais/*/imagens/
+!materiais/README.md
+!materiais/index.json
+!materiais/*/fonte.json
+!materiais/*/captura.json
+!materiais/*/imagens/imagens.json

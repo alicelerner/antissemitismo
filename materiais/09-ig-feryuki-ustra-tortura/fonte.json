@@ -1,0 +1,20 @@
+{
+  "id": "09-ig-feryuki-ustra-tortura",
+  "tipo": "reel",
+  "veiculo": "Instagram @fer.yuki",
+  "autor": "Fernanda Yuki",
+  "data": "2026-10-04",
+  "url": "https://www.instagram.com/reel/DeDopDCtNJV/",
+  "titulo": "Reel: Bolsonaro, Ustra e depoimentos de torturados",
+  "resumo": "Vídeo de 71 s, 1080x1920, PB. Alterna Bolsonaro jovem, depoimentos de sobreviventes da tortura (Comissão da Verdade), Dilma ('A dor é insuportável') e o voto de Bolsonaro homenageando Ustra. Fecha com 'O grande erro foi torturar e não matar'.",
+  "tier_dossie": "excluído como prova (rede social); os trechos de arquivo (TV Câmara, CNV) são rastreáveis até originais Tier 1",
+  "capturado_em": "2026-10-12",
+  "origem_lista": "https://docs.google.com/document/d/1tKHl5n_Ow9DroWfCGwzX6JBseSYH1MjCcfIvUZWCYZo",
+  "status_uso": "nao-verificado",
+  "arquivos": [
+    "legenda.txt",
+    "video.info.json",
+    "video.jpg",
+    "video.mp4"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "06-cartacapital-lista-boicote-judeus",
+  "tipo": "materia",
+  "veiculo": "CartaCapital",
+  "autor": "Sergio Lirio",
+  "data": "2026-09-26",
+  "url": "https://www.cartacapital.com.br/politica/judeus-bolsonaristas-pregam-boicote-a-eleitores-de-lula-na-comunidade-israelita/",
+  "titulo": "Judeus bolsonaristas pregam boicote a eleitores de Lula na comunidade israelita",
+  "resumo": "Lista de 1.306 judeus eleitores de Lula ('para não se fazer negócios ou contratá-los') circulou em grupos de mensagens da comunidade.",
+  "tier_dossie": "não está no dossiê; CartaCapital fica fora do Tier 2 (precisa de segunda fonte)",
+  "capturado_em": "2026-10-12",
+  "origem_lista": "https://docs.google.com/document/d/1tKHl5n_Ow9DroWfCGwzX6JBseSYH1MjCcfIvUZWCYZo",
+  "status_uso": "nao-verificado",
+  "arquivos": [
+    "captura.json",
+    "imagens/imagem-01.png",
+    "imagens/imagens.json",
+    "og.png",
+    "pagina.pdf",
+    "print-pagina.png",
+    "print-topo.png",
+    "texto.txt"
+  ]
+}

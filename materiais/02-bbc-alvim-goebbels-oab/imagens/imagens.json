@@ -1,0 +1,42 @@
+[
+  {
+    "arquivo": "imagens/imagem-01.webp",
+    "src": "https://ichef.bbci.co.uk/ace/ws/800/cpsprodpb/11E4E/production/_110549237_alvim.png.webp",
+    "alt": "frame de vídeo da Secretaria Especial de Cultura",
+    "caption": null,
+    "w": 760,
+    "h": 427
+  },
+  {
+    "arquivo": "imagens/imagem-02.webp",
+    "src": "https://ichef.bbci.co.uk/ace/ws/800/cpsprodpb/2157/production/_110553580_c4b23fd5-4e86-48e5-a9d0-3763b767bc52.jpg.webp",
+    "alt": "Felipe Santa Cruz",
+    "caption": "Legenda da foto,\nFelipe Santa Cruz diz que vídeo deve ser visto dentro de contexto de 'escalada de lideranças do governo brasileiro de idealização do autoritarismo'.",
+    "w": 760,
+    "h": 427
+  },
+  {
+    "arquivo": "imagens/imagem-03.webp",
+    "src": "https://ichef.bbci.co.uk/ace/ws/800/cpsprodpb/5EE6/production/_110549242_lei.png.webp",
+    "alt": "imagem de texto de artigo 20 da Lei 7.716 de 1989",
+    "caption": null,
+    "w": 760,
+    "h": 164
+  },
+  {
+    "arquivo": "imagens/imagem-04.webp",
+    "src": "https://ichef.bbci.co.uk/ace/ws/800/cpsprodpb/17CFF/production/_110553579_christiansolmecke1.jpg.webp",
+    "alt": "Advogado Christian Solmecke",
+    "caption": "Legenda da foto,\nPara Solmecke, caso envolvendo secretário de cultura poderia parar na Justiça caso acontecesse na Alemanha",
+    "w": 760,
+    "h": 427
+  },
+  {
+    "arquivo": "imagens/imagem-05.webp",
+    "src": "https://ichef.bbci.co.uk/ace/ws/519/cpsprodpb/37D6/production/_110549241_olavo.png.webp",
+    "alt": "postagem de Olavo de Carvalho",
+    "caption": null,
+    "w": 760,
+    "h": 289
+  }
+]

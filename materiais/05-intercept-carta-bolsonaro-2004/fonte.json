@@ -1,0 +1,27 @@
+{
+  "id": "05-intercept-carta-bolsonaro-2004",
+  "tipo": "materia",
+  "veiculo": "The Intercept Brasil",
+  "data": "2021-07-28",
+  "url": "https://www.intercept.com.br/2021/07/28/carta-bolsonaro-neonazismo/",
+  "titulo": "Pesquisadora encontra carta de Bolsonaro publicada em sites neonazistas em 2004",
+  "resumo": "A carta de 17 dez 2004 assinada por Jair Bolsonaro publicada no site neonazista Econac. imagem-01: foto de Bolsonaro fardado + banner no Econac; imagem-02: a carta; imagem-03: arte de capa do Intercept.",
+  "tier_dossie": "dossiê A1-02, needs-second-source",
+  "nota": "As imagens da carta não aparecem mais na página atual do Intercept (só as legendas 'Reprodução/Web Archive'). Foram recuperadas da cópia de 2021 na Wayback Machine (theintercept.com/wp-uploads/sites/1/2021/07/). ATENÇÃO: a carta diz 'Vocês são a razão da existência do meu mandato'; o dossiê (01 §218, A1-02) registra 'a razão de ser do meu mandato'. Corrigir antes de citar.",
+  "origem_imagens": "https://web.archive.org/web/2021id_/https://theintercept.com/wp-uploads/sites/1/2021/07/",
+  "capturado_em": "2026-10-12",
+  "origem_lista": "https://docs.google.com/document/d/1tKHl5n_Ow9DroWfCGwzX6JBseSYH1MjCcfIvUZWCYZo",
+  "status_uso": "nao-verificado",
+  "arquivos": [
+    "captura.json",
+    "imagens/imagem-01.jpg",
+    "imagens/imagem-02.jpg",
+    "imagens/imagem-03.jpg",
+    "imagens/imagens.json",
+    "og.jpg",
+    "pagina.pdf",
+    "print-pagina.png",
+    "print-topo.png",
+    "texto.txt"
+  ]
+}
