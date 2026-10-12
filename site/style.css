@@ -300,6 +300,72 @@ a { color: inherit; }
   .stat__v { font-size: 72px; }
 }
 
+/* ---------- Vozes: carousel before the footer (reference 2.5, case studies) ----------
+   Cards 460px desktop / 267px phones on a 16px gap, arrows top-right, 16px accent bar under each thumbnail.
+   Hover widens the card to 580px, turns the bar brasa and reveals one line. Unlike the reference the track
+   snaps (reference 7.1 note). Hover motion is tens-a-day tier: 200ms, strong ease-out, pointer-gated. */
+.vozes { padding: 72px 0 96px; overflow: hidden; }
+.vozes > .mod__meta { margin: 0 var(--gutter); }
+.vozes__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; padding: 32px var(--gutter) 40px; }
+.vozes__head h2 { font: 300 clamp(44px, 5.6vw, 80px)/0.92 var(--serif); letter-spacing: -0.045em; max-width: 12ch; }
+.vozes__head h2 { overflow: hidden; padding-bottom: 0.06em; }
+.vozes__setas { display: flex; gap: 8px; flex: none; }
+.vozes__seta {
+  width: 56px; height: 56px; border: 0; background: var(--tinta); color: var(--papel);
+  font: 400 22px/1 var(--sans); cursor: pointer;
+  transition: opacity 150ms ease, transform 120ms var(--ease-out);
+}
+.vozes__seta:disabled { opacity: 0.5; cursor: default; }
+.vozes__seta:not(:disabled):active { transform: scale(0.96); }
+
+.vozes__trilho {
+  list-style: none; display: flex; gap: 16px; align-items: flex-start;
+  overflow-x: auto; overscroll-behavior-x: contain;
+  padding: 0 var(--gutter); scroll-padding-inline: var(--gutter);
+  scroll-snap-type: x mandatory; scrollbar-width: none;
+}
+.vozes__trilho::-webkit-scrollbar { display: none; }
+.voz { flex: 0 0 460px; min-width: 0; scroll-snap-align: start; }
+.voz > a { display: block; text-decoration: none; }
+.voz__thumb {
+  position: relative; height: 560px; overflow: hidden; background: var(--tinta);
+  border-bottom: 16px solid var(--azul-3); transition: border-color 200ms ease;
+}
+.voz__thumb img { width: 100%; height: 100%; object-fit: cover; }
+.voz--video .voz__thumb img { object-position: 50% 58%; }
+.voz--depoimento .voz__thumb { display: flex; flex-direction: column; justify-content: space-between; padding: 16px; color: var(--papel); }
+.voz--depoimento .voz__thumb::before { content: "“"; font: 400 96px/0.8 var(--serif); color: var(--brasa); }
+.voz--depoimento blockquote { font: 300 clamp(30px, 2.6vw, 38px)/1.04 var(--serif); letter-spacing: -0.03em; max-width: 14ch; }
+.voz__play { position: absolute; left: 16px; bottom: 16px; width: 56px; height: 56px; border-radius: 50%; background: var(--brasa); display: grid; place-items: center; }
+.voz__play::after { content: ""; margin-left: 4px; border-style: solid; border-width: 10px 0 10px 16px; border-color: transparent transparent transparent var(--tinta); }
+.voz__tipo { margin-top: 16px; opacity: 0.6; }
+.voz__titulo { margin-top: 8px; font: 400 24px/1.1 var(--sans); }
+.voz__meta { margin-top: 6px; font-size: 14px; line-height: 1.35; opacity: 0.6; }
+.voz__mais {
+  margin-top: 12px; font-size: 15px; line-height: 1.35; max-width: 46ch;
+  opacity: 0; transform: translateY(6px);
+  transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  /* Widening is the reference's own effect: neighbours shift right. Four cards, so the layout cost is accepted. */
+  .voz { transition: flex-basis 200ms var(--ease-out); }
+  .voz:hover, .voz:focus-within { flex-basis: 580px; }
+  .voz:hover .voz__thumb, .voz:focus-within .voz__thumb { border-bottom-color: var(--brasa); }
+  .voz:hover .voz__mais, .voz:focus-within .voz__mais { opacity: 1; transform: none; }
+  .vozes__seta:not(:disabled):hover { background: var(--azul-7); }
+}
+@media (hover: none) { .voz__mais { opacity: 1; transform: none; } }
+@media (max-width: 767px) {
+  .vozes { padding: 48px 0 64px; }
+  .vozes__head { padding-bottom: 24px; }
+  .vozes__head h2 { font-size: 44px; }
+  .vozes__seta { width: 44px; height: 44px; }
+  .voz { flex-basis: 267px; }
+  .voz__thumb { height: 334px; }
+  .voz--depoimento blockquote { font-size: 26px; }
+  .voz--depoimento .voz__thumb::before { font-size: 72px; }
+}
+
 /* ---------- Footer ---------- */
 .fim { background: var(--tinta); color: var(--papel); padding: 16px var(--gutter) var(--gutter); }
 .fim__row { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
@@ -309,6 +375,8 @@ a { color: inherit; }
 /* ---------- Reduced motion: keep the fades, drop the movement ---------- */
 @media (prefers-reduced-motion: reduce) {
   .hero__band img, .hero__title h1 .line > span, .capa__name .line > span { transform: none !important; transition: none; }
+  .voz { transition: none !important; }
+  .voz__mais { transform: none !important; }
   .quote__author, .abertura, .eixo-lista, .capa__img, .mod--gravura img { transform: none !important; transition-property: opacity; transition-duration: 200ms; }
   .menu, .menu[open] { clip-path: none; transition: opacity 200ms ease, overlay 200ms allow-discrete, display 200ms allow-discrete; opacity: 1; }
   @starting-style { .menu[open] { opacity: 0; } }

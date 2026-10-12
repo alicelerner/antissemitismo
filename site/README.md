@@ -8,7 +8,7 @@ Run locally: `python3 -m http.server 8766 --directory site` (or the `site` entry
 
 Home only. Story told through the seven axis covers for readers who scroll straight through. Axis pages come next; the covers' "Entrar no eixo" bars are disabled and say "em construção".
 
-Order (matches Figma "eixos lineares", node 18:2, as Alice edited it on 2026-10-12): hero (collage of real episode photos) → "Ponto de inflexão" line → full-width painting (`img/modulos/pintura-ponto-de-inflexao.jpg`, 1598 x 900, exported from Figma on 2026-10-12; replaced the engraving): Maurycy Minkowski, "After the Pogrom", 1910, Jewish Museum (credit given by Alice) → "entre a cruz e a espada" text, right column → quote module (hidden, kept in the markup) → seven covers, stacked with `position: sticky` on desktop when the viewport is at least 1024 x 720, plain sections below that (reference 7.1) → footer.
+Order (matches Figma "eixos lineares", node 18:2, as Alice edited it on 2026-10-12): hero (collage of real episode photos) → "Ponto de inflexão" line → full-width painting (`img/modulos/pintura-ponto-de-inflexao.jpg`, 1598 x 900, exported from Figma on 2026-10-12; replaced the engraving): Maurycy Minkowski, "After the Pogrom", 1910, Jewish Museum (credit given by Alice) → "entre a cruz e a espada" text, right column → quote module (hidden, kept in the markup) → seven covers, stacked with `position: sticky` on desktop when the viewport is at least 1024 x 720, plain sections below that (reference 7.1) → "O que alguns judeus estão pensando" carousel → footer.
 
 Cover structure (Alice's): hairline only on top; number and name stacked in the display serif; photo bottom-left (axis 07: the two numbers instead); right column with cover line + short paragraph, "Nesse eixo, cobriremos:" with four episode rows, CTA at the bottom.
 
@@ -35,6 +35,25 @@ Every quote is in the dossier as `verified`. The images come from `materiais/` (
 | 05 | Lottenberg on the AfD, Jul 2021 (`03 pair 6`) | JTA | `05-piaui-von-storch.jpg` | `materiais/10` (piauí) |
 | 06 | CONIB on Alvim, Jan 2020 (`01 §2a`) | Metrópoles | `06-bbc-alvim.webp` | `materiais/02` (official Secult video frame, via BBC) |
 | 07 | 70,8% (`04 §1.8.4`) and 100% (`04 §1.5`) | CONIB/FISESP; ADL | none, typographic | ADL sits behind a bot check; not bypassed |
+
+## Carousel "O que alguns judeus estão pensando" (2026-10-12, branch `complementar`)
+
+Alice asked for a last module before the footer like the reference's case-studies carousel (reference 2.5), mixing posts, videos and testimonies. Cards 460px (267px on phones), 16px gap, arrows top-right, 16px `--azul-3` bar under each thumbnail; hover widens the card to 580px, turns the bar `--brasa` and shows one extra line. The track snaps on touch, unlike the reference.
+
+| Card | Item | Source | Image |
+|---|---|---|---|
+| Depoimento | Flávio Limoncic, «O "nunca mais" não pode se referir somente aos judeus.» | `research/testimonies/limoncic.md` | none, typographic |
+| Vídeo | Kiko Goifman, Instagram reel, 25 out 2022 | `materiais/03` | `img/vozes/goifman-reel-2022.jpg` (reel frame) |
+| Post | Coletivo Golem, "Bolsonarismo e nazismo: entre referências e reverências", 9 out 2026 | `materiais/12` | `img/vozes/golem-dossie-2026.jpg` (carousel cover) |
+| Depoimento | Lia Vainer Schucman, «Nossa proteção não precisa depender do silenciamento de ninguém.» | `design/structures/depoimento-ilustrado/brief.md` | none, typographic |
+
+`img/vozes/` is git-ignored like the episode images (third-party media).
+
+Open for this module:
+- These are voices, not evidence: every `materiais/` item is `nao-verificado`. Confirm that attributed opinion pieces may appear under the "only `verified`" rule.
+- Kiko Goifman: confirm he is Jewish before he sits under this heading; the card's extra line is the capture's own title, not his words.
+- Lia Vainer Schucman: no role line or place of publication yet, so her card has no meta line.
+- Only four cards. Fernanda Yuki (`materiais/09`) and Célio Lima (`materiais/08`) were left out because nothing says they are Jewish.
 
 ## Open
 

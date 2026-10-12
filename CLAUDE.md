@@ -9,13 +9,11 @@ A site aimed at undecided Jewish voters in the 2026 Brazilian runoff. Full plan 
 
 The phase 2 site follows stateofaidesign.com (Framer, by ++hellohello) closely, in structure and motion: "something very similar", per Alice (2026-10-05). The detailed map is in `design/reference-stateofaidesign.md`. Check it before proposing layout. Palette and tone are not settled yet.
 
-## Structure options
+## What lives in the repo (Alice, 2026-10-12)
 
-Three candidate structures are being wireframed for team feedback (since 2026-10-08). Briefs, references and status for each live in `design/structures/`; start with its README. Wireframes go in `design/wireframes/`.
-
-## Site (production build)
-
-Option 1, "eixos lineares", won the team vote. Its build lives in `site/` (since 2026-10-12), independent of the wireframes. Read `site/README.md` first: palette, type, episode sources and open items. Home first, axis pages next.
+1. `design/wireframes/` and `design/structures/`: the three structure options wireframed for team feedback. Frozen: do not edit.
+2. `site/`: the final layout of option 1, "eixos lineares", which won the team vote. Read `site/README.md` first: palette, type, episode sources and open items. New work goes on a branch. This is what gets deployed.
+3. `grafo/`: the graph layout, worked on in a separate session. Leave it alone from `site/` work. If it is ever deployed, it gets its own URL.
 
 ## Motion
 

@@ -42,6 +42,22 @@
     if (e.clientX > r.right || e.clientY > r.bottom) menu.close();
   });
 
+  // Vozes carousel: arrows step one card; native scroll and snap do the rest. Ends disable their arrow.
+  const trilho = document.querySelector(".vozes__trilho");
+  if (trilho) {
+    const setas = document.querySelectorAll(".vozes__seta");
+    const step = () => trilho.querySelector(".voz").offsetWidth + 16;
+    setas.forEach((b) => b.addEventListener("click", () =>
+      trilho.scrollBy({ left: +b.dataset.dir * step(), behavior: reduce ? "auto" : "smooth" })));
+    const sync = () => {
+      setas[0].disabled = trilho.scrollLeft <= 1;
+      setas[1].disabled = trilho.scrollLeft + trilho.clientWidth >= trilho.scrollWidth - 1;
+    };
+    trilho.addEventListener("scroll", sync, { passive: true });
+    addEventListener("resize", sync);
+    sync();
+  }
+
   // CTAs point to axis pages that do not exist yet.
   document.querySelectorAll('[aria-disabled="true"]').forEach((a) => a.addEventListener("click", (e) => e.preventDefault()));
 })();

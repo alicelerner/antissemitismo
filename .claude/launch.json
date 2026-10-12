@@ -24,6 +24,18 @@
         "site"
       ],
       "port": 8766
+    },
+    {
+      "name": "site-complementar",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8767",
+        "--directory",
+        "site"
+      ],
+      "port": 8767
     }
   ]
 }
