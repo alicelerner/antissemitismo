@@ -58,8 +58,8 @@
     sync();
   }
 
-  // Testimony modal: native <dialog>, full screen, filled from the card's <template>.
-  // It grows out of the card's dark thumbnail and shrinks back into it (see style.css for the values).
+  // Testimony and episode modal: native <dialog>, full screen, filled from a <template>.
+  // It grows out of the card's dark thumbnail (or the episode row) and shrinks back into it.
   const depo = document.getElementById("depo");
   if (depo) {
     const corpo = depo.querySelector(".depo__corpo");
@@ -74,9 +74,9 @@
     };
     const partes = () => [depo.querySelector(".depo__lado"), depo.querySelector(".depo__titulo"), ...depo.querySelectorAll(".depo__texto > :not(.depo__titulo)")];
 
-    function abrir(botao) {
-      origem = botao.querySelector(".voz__thumb");
-      corpo.replaceChildren(document.getElementById("depo-" + botao.dataset.depo).content.cloneNode(true));
+    function abrir(botao, id) {
+      origem = botao.querySelector(".voz__thumb") || botao;
+      corpo.replaceChildren(document.getElementById(id).content.cloneNode(true));
       corpo.scrollTop = 0;
       depo.showModal();
       if (reduce) { depo.animate({ opacity: [0, 1] }, { duration: 200, easing: "ease" }); return; }
@@ -101,7 +101,8 @@
       fechando = false;
     }
 
-    document.querySelectorAll("[data-depo]").forEach((b) => b.addEventListener("click", () => abrir(b)));
+    document.querySelectorAll("[data-depo]").forEach((b) => b.addEventListener("click", () => abrir(b, "depo-" + b.dataset.depo)));
+    document.querySelectorAll("[data-ep]").forEach((b) => b.addEventListener("click", () => abrir(b, "ep-" + b.dataset.ep)));
     depo.querySelector(".depo__fechar").addEventListener("click", fechar);
     depo.addEventListener("cancel", (e) => { e.preventDefault(); fechar(); }); // Esc
   }
