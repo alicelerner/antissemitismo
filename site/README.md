@@ -40,6 +40,12 @@ Every quote is in the dossier as `verified`. The images come from `materiais/` (
 
 Alice asked for a last module before the footer like the reference's case-studies carousel (reference 2.5), mixing posts, videos and testimonies. Cards 460px (267px on phones), 16px gap, arrows top-right, 16px `--azul-3` bar under each thumbnail; hover widens the card to 580px, turns the bar `--brasa` and shows one extra line. The track snaps on touch, unlike the reference.
 
+Revised the same day at Alice's request:
+- Quotes in plain quotation marks (“…”, inner ‘…’), the opening mark hanging in the margin; no separate glyph, no «».
+- Hover slower and softer: widening 600ms strong ease-in-out (on-screen morph, per the `animate` skill), bar colour 400ms ease, extra line 500ms with 120ms delay.
+- Video and post cards open the original on Instagram in a new tab.
+- Testimony cards open a drawer from the right (native `<dialog>`, 640px, full width on phones; drawer curve, 500ms in, 300ms out; page dimmed behind). Full texts live in `<template>` elements in `index.html`, exactly as given; Schucman's own source domains are printed under each paragraph.
+
 | Card | Item | Source | Image |
 |---|---|---|---|
 | Depoimento | Flávio Limoncic, «O "nunca mais" não pode se referir somente aos judeus.» | `research/testimonies/limoncic.md` | none, typographic |

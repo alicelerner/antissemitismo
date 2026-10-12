@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Geist+Mono:wght@400&display=swap">
-<link rel="stylesheet" href="style.css?v=15">
+<link rel="stylesheet" href="style.css?v=16">
 </head>
 <body>
 
@@ -289,11 +289,13 @@
     </div>
     <ul class="vozes__trilho" aria-label="Posts, vídeos e depoimentos">
       <li class="voz voz--depoimento">
-        <div class="voz__thumb"><blockquote>O “nunca mais” não pode se referir somente aos judeus.</blockquote></div>
-        <p class="voz__tipo mono">Depoimento</p>
-        <h3 class="voz__titulo">Flávio Limoncic</h3>
-        <p class="voz__meta">Bisneto de Lea e Itec, vítimas do Holocausto</p>
-        <p class="voz__mais">«Uma das razões pelas quais voto no Lula? Porque sou judeu.»</p>
+        <button class="voz__abrir" type="button" data-depo="limoncic" aria-haspopup="dialog" aria-controls="depo">
+          <span class="voz__thumb"><span class="voz__citacao">“O ‘nunca mais’ não pode se referir somente aos judeus.”</span></span>
+          <span class="voz__tipo mono">Depoimento</span>
+          <span class="voz__titulo">Flávio Limoncic</span>
+          <span class="voz__meta">Bisneto de Lea e Itec, vítimas do Holocausto</span>
+          <span class="voz__mais">Ler o depoimento completo <span aria-hidden="true">→</span></span>
+        </button>
       </li>
       <li class="voz voz--video">
         <a href="https://www.instagram.com/reels/CkI8PM1Dk97/" target="_blank" rel="noopener">
@@ -314,13 +316,60 @@
         </a>
       </li>
       <li class="voz voz--depoimento">
-        <div class="voz__thumb"><blockquote>Nossa proteção não precisa depender do silenciamento de ninguém.</blockquote></div>
-        <p class="voz__tipo mono">Depoimento</p>
-        <h3 class="voz__titulo">Lia Vainer Schucman</h3>
-        <p class="voz__mais">«Amar Israel não limpa essa história.»</p>
+        <button class="voz__abrir" type="button" data-depo="schucman" aria-haspopup="dialog" aria-controls="depo">
+          <span class="voz__thumb"><span class="voz__citacao">“Nossa proteção não precisa depender do silenciamento de ninguém.”</span></span>
+          <span class="voz__tipo mono">Depoimento</span>
+          <span class="voz__titulo">Lia Vainer Schucman</span>
+          <span class="voz__mais">Ler o depoimento completo <span aria-hidden="true">→</span></span>
+        </button>
       </li>
     </ul>
   </section>
+
+  <!-- Full testimonies, opened in the drawer from the Vozes cards. Text kept exactly as given. -->
+  <template id="depo-limoncic">
+    <p class="depo__tipo mono">Depoimento</p>
+    <h2 class="depo__titulo" id="depo-titulo">Uma das razões pelas quais voto no Lula? Porque sou judeu.</h2>
+    <p class="depo__autor">Flávio Limoncic</p>
+    <p class="depo__meta mono">Bisneto de Lea e Itec, vítimas do Holocausto</p>
+    <div class="depo__texto">
+      <p class="corpo">Nos últimos anos, o Brasil e o mundo passaram por transformações profundas. Novas configurações familiares surgiram, relações de trabalho se tornaram mais flexíveis, grandes fluxos migratórios ocorreram, maneiras de ser e de viver, até recentemente invisibilizadas e subalternizadas, reivindicaram legitimidade social e direitos civis. Esse conjunto de mudanças tem sido sentido por alguns como ampliação de horizontes e possibilidade de invenção de novos futuros; por outros, como ameaça à sua segurança material e espiritual.</p>
+      <p class="corpo">É o campo político dos que sentem as mudanças como ameaças que a extrema direita tem conseguido mobilizar. O objetivo: a imposição de um mundo de ordem e hierarquia, onde cada um tenha seu papel e lugar social definidos, inspirado em uma suposta idade de ouro que se perdeu quando, justamente, papéis e lugares tradicionais foram desafiados. O método: a produção simbólica de inimigos, aos quais devem ser impostos submissão e conformidade. Se preciso, silenciamento e exclusão. O desdobramento: o fascínio pela violência, a obsessão por armas, o empobrecimento do vocabulário e das formas de pensar o mundo, a descartabilidade de vidas e corpos, a pulsão de morte pairando no ar.</p>
+      <p class="corpo">Tudo o que vemos hoje antecedeu e preparou, ressalvadas as especificidades históricas, o genocídio nazista dos judeus, porque a morte simbólica precede a morte física. Sabemos bem, genocídios não precisam de câmaras de gás, nem de seis milhões de mortos. Tornar a vida insuportável, ou simplesmente deixar morrer, como estabelecido no ordenamento jurídico internacional, também é genocídio. Não foi o que ocorreu com os Yanomamis, no início da década?</p>
+      <p class="corpo">A experiência histórica judaica, como a entendo, torna um imperativo moral defender a dignidade e a vida de todos. O "nunca mais" não pode se referir somente aos judeus. É inaceitável que indígenas, quilombolas, gays, mulheres trans ou quaisquer pessoas sejam colocadas em situação de risco individual e coletivo. A indiferença diante da dor e da morte de outros seria uma traição tanto à dimensão universal da mensagem profética judaica quanto aos que morreram simplesmente por serem quem foram.</p>
+      <p class="corpo">Não falo de forma abstrata.</p>
+      <p class="corpo">No Yad Vashem, o Museu do Holocausto de Israel, há cerca de 30 Limoncics registrados. Os sobrenomes dos meus outros avós, bastante comuns, milhares. Foram assassinados, simplesmente, por serem quem eram. Judeus. Uma mulher chamada Lea, por exemplo, que vivia na aldeia de Lipcani, hoje República Moldova. Ela pode ter sido assassinada por bala, fome, frio ou exaustão. Pode ter sido abandonada à beira de uma estrada ou jogada em vala comum. Depois do verão de 1941, nada mais se soube a seu respeito. Ou um homem chamado Itec. Entre junho e dezembro de 1941, uma outra aldeia da República Moldova, chamada Marculesti, foi transformada em campo de trânsito de judeus rumo à Transnístria. Nesse intervalo de tempo, Itec foi assassinado. Ele, sabe-se como. Suas mãos foram atadas a um cavalo, que partiu em disparada. Lea era minha bisavó; Itec, meu bisavô.</p>
+      <p class="corpo">O Yad Vashem sabe que quem os matou não foi um um regime político de esquerda, mas de extrema direita, assentado nas ideias de sangue e solo, que se valeu de eleições para subverter a ordem constitucional e, apoiado no grande capital, instaurar uma ditadura implacável e homicida. Afirmar a verdade histórica é fundamental no momento em que narrativas irresponsáveis, destituídas de qualquer amparo em evidências, circulam em redes sociais e discursos políticos e nos levam ao perigoso terreno da pós-verdade, onde tudo se torna possível.</p>
+      <p class="corpo">Na democracia, ao contrário, todos são iguais, ainda que diversos, podem ser adversários, mas não inimigos, e suas divergências são resolvidas por meio das palavras, não da violência física e simbólica.</p>
+      <p class="corpo">A centralidade da palavra, aliás, aproxima a democracia da tradição judaica. Em ambas, o argumento, a persuasão e o respeito à pluralidade de visões são fundamentais. Por isso, na democracia todos têm direito à voz e, no judaísmo, até uma criança pode interpelar deus. Em ambas inexistem autoridades pessoais, mas a impessoalidade da lei, cuja legitimidade deriva de um pacto. A democracia, enfim, converge com o princípio de Tikun Olam, porque é o único sistema político que permite a todos agir para melhorar o mundo, sem medo e de acordo com suas convicções.</p>
+      <p class="corpo">Sentir as transformações das últimas décadas como ameaças é tão legítimo quanto senti-las como libertação. Projetos políticos conservadores ou progressistas, de direita ou esquerda, são igualmente legítimos, desde que compartilhem o compromisso com a democracia. Infelizmente, nessas eleições presidenciais, só há um candidato com tal compromisso inequívoco. É de se lamentar, inclusive, que não tendo conseguido produzir uma candidatura viável, a direita democrática se deixe levar pela extrema direita. Corre o risco de ser tragada e desaparecer. Como judeu, brasileiro, brasileiro judeu e judeu brasileiro, tudo isso junto e misturado, vejo o Lula, com todos os seus erros e acertos, como a única alternativa possível. Lula nunca pregou golpe de estado, mesmo quando perdeu eleições; nunca defendeu torturadores e sugeriu violência física ou simbólica contra adversários, tampouco se omitiu diante daqueles que o fizeram. Lula também nunca defendeu ser o Brasil um país de Jesus, porque sabe ser o Brasil o país dos brasileiros, inclusive judeus. Somente nesse Brasil cabemos todos, sem exceção, com nossas muitas crenças religiosas, orientações políticas, sonhos, vozes, vidas e palavras.</p>
+    </div>
+  </template>
+  <template id="depo-schucman">
+    <p class="depo__tipo mono">Depoimento</p>
+    <h2 class="depo__titulo" id="depo-titulo">“Nossa proteção não precisa depender do silenciamento de ninguém.”</h2>
+    <p class="depo__autor">Lia Vainer Schucman</p>
+    <div class="depo__texto">
+      <p class="corpo">Muitos judeus, realmente preocupados com a sua própria sobrevivência, têm recusado Lula, acreditando que gostar de Israel seria uma garantia de não ser antissemita. Eu entendo o medo. Mas precisamos olhar para o que cada projeto político faz, para além das bandeiras que exibe.</p>
+      <p class="corpo">O apoio de Flávio Bolsonaro a Israel não apaga a história do bolsonarismo. Jair Bolsonaro falou em “perdoar” o Holocausto e recebeu Beatrix von Storch, liderança da extrema direita alemã. No seu governo, Roberto Alvim reproduziu um discurso de Goebbels, ministro da propaganda nazista, e acabou demitido. Amar Israel não limpa essa história.</p>
+      <p class="depo__fonte mono">Fontes citadas pela autora: www1.folha.uol.com.br, www1.folha.uol.com.br, agenciabrasil.ebc.com.br</p>
+      <p class="corpo">Também precisamos entender que esse apoio pode ser um aceno aos evangélicos. Em algumas correntes do sionismo cristão, os judeus fazem parte de uma profecia que termina com sua conversão a Jesus. Esse aparente amor aos judeus, chamado de filosemitismo, nem sempre reconhece nosso direito de continuar sendo judeus. Isso não descreve todos os evangélicos, mas é uma dimensão importante dessa aliança.</p>
+      <p class="depo__fonte mono">Fontes citadas pela autora: cdamm.org, onlinelibrary.wiley.com</p>
+      <p class="corpo">Enquanto isso, o governo Lula reuniu um espectro amplo da comunidade judaica, incluindo CONIB, rabinos, pesquisadores e coletivos de diferentes posições. Acolheu uma articulação para enfrentar o antissemitismo e abriu frentes de discussão jurídica e educacional. Há interlocução com a educação e ações de segurança pública contra nazismo e conteúdos antissemitas nas redes. É para esse trabalho que precisamos olhar.</p>
+      <p class="depo__fonte mono">Fontes citadas pela autora: jjpd1.substack.com, noticias.uol.com.br, gov.br, gov.br</p>
+      <p class="corpo">Sobre a IHRA, é preciso ser preciso: o Brasil não saiu como membro pleno, porque nunca teve essa condição. Deixou de prosseguir na participação como observador. A IHRA é uma aliança pela memória do Holocausto; sua definição de antissemitismo não é uma lei e não tem força jurídica por si só. O problema é que seu uso tem sido politizado, inclusive para tentar silenciar críticas a Israel. Isso compromete sua legitimidade e pode enfraquecer justamente o combate ao antissemitismo.</p>
+      <p class="depo__fonte mono">Fontes citadas pela autora: noticias.uol.com.br, holocaustremembrance.com</p>
+      <p class="corpo">Por isso, considero mais inteligente construir uma estratégia brasileira, apoiada nas nossas leis antirracistas: proteger judeus sem responsabilizá-los por Israel e garantir que denunciar violações contra palestinos não seja automaticamente tratado como antissemitismo. Alguns setores da esquerda chamam esse diálogo de sionismo; setores da direita chamam o afastamento da IHRA de antissemitismo. Falta reconhecer que uma posição democrática pode sustentar as duas coisas. Nossa proteção não precisa depender do silenciamento de ninguém.</p>
+    </div>
+  </template>
+
+  <dialog class="depo" id="depo" aria-labelledby="depo-titulo">
+    <div class="depo__head">
+      <span class="mono">Vozes</span>
+      <button class="depo__fechar" type="button" aria-label="Fechar depoimento">×</button>
+    </div>
+    <div class="depo__corpo"></div>
+  </dialog>
 
   <footer class="fim">
     <div class="fim__row"><p class="mono">Feito por e para judeus brasileiros</p><p class="mono">25 de outubro de 2026</p></div>
@@ -329,6 +378,6 @@
   </footer>
 </main>
 
-<script src="main.js?v=4"></script>
+<script src="main.js?v=5"></script>
 </body>
 </html>

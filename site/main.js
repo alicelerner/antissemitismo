@@ -58,6 +58,19 @@
     sync();
   }
 
+  // Testimony drawer: native <dialog>, filled from the card's <template>. Clicking the dimmed page closes it.
+  const depo = document.getElementById("depo");
+  if (depo) {
+    const corpo = depo.querySelector(".depo__corpo");
+    document.querySelectorAll("[data-depo]").forEach((b) => b.addEventListener("click", () => {
+      corpo.replaceChildren(document.getElementById("depo-" + b.dataset.depo).content.cloneNode(true));
+      corpo.scrollTop = 0;
+      depo.showModal();
+    }));
+    depo.querySelector(".depo__fechar").addEventListener("click", () => depo.close());
+    depo.addEventListener("click", (e) => { if (e.target === depo && e.clientX < depo.getBoundingClientRect().left) depo.close(); });
+  }
+
   // CTAs point to axis pages that do not exist yet.
   document.querySelectorAll('[aria-disabled="true"]').forEach((a) => a.addEventListener("click", (e) => e.preventDefault()));
 })();
