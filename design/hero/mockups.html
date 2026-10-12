@@ -1,0 +1,38 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hero mockups</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--tinta:#07122e;--azul-1:#e9f0fc;--papel:#fff;--lens-blur:.45cqw;--bg-blur:.3cqw}
+body{margin:0;padding:16px;background:var(--papel);color:var(--tinta);font:13px/1.4 'Geist Mono',ui-monospace,monospace}
+header{display:flex;gap:16px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--tinta);padding-bottom:8px}
+h1{font-size:13px;margin:0;text-transform:uppercase;font-weight:500}
+label{display:flex;gap:6px;align-items:center}
+section{margin:24px 0 40px} h2{font-size:13px;text-transform:uppercase;font-weight:500;margin:0 0 4px} h2 b{background:var(--tinta);color:var(--papel);padding:0 6px;margin-right:6px}
+section p{margin:0 0 10px;opacity:.7}
+.frame{position:relative;container-type:inline-size;aspect-ratio:2000/590;overflow:hidden;background:var(--tinta)}
+.bg{position:absolute;inset:0}
+.bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);filter:contrast(1.25) var(--duo) blur(var(--bg-blur))}
+.duo-tinta{--duo:url(#duo-tinta)} .duo-flag{--duo:url(#duo-flag)}
+.tile{position:absolute;background:var(--papel);outline:1px solid rgba(255,255,255,.95);overflow:hidden}
+.tile img{width:100%;height:100%;object-fit:cover;display:block}
+.lens img{transform:scale(1.25);filter:var(--duo) blur(var(--lens-blur));opacity:var(--lens-op,.9)}
+.portrait img{filter:var(--duo)}
+.lab{position:absolute;left:0;bottom:0;background:var(--papel);color:var(--tinta);padding:.55cqw .8cqw .5cqw;display:flex;flex-direction:column;gap:.15cqw;font-size:.82cqw;line-height:1.2;letter-spacing:.02em}
+.lab b{font-weight:500} .lab i{font-style:normal;opacity:.6;font-size:.62cqw}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<filter id="duo-tinta" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values=".3 .59 .11 0 0 .3 .59 .11 0 0 .3 .59 .11 0 0 0 0 0 1 0"/><feComponentTransfer><feFuncR type="table" tableValues=".027 .914"/><feFuncG type="table" tableValues=".071 .941"/><feFuncB type="table" tableValues=".180 .988"/></feComponentTransfer></filter>
+<filter id="duo-flag" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values=".3 .59 .11 0 0 .3 .59 .11 0 0 .3 .59 .11 0 0 0 0 0 1 0"/><feComponentTransfer><feFuncR type="table" tableValues="0 1"/><feFuncG type="table" tableValues=".22 1"/><feFuncB type="table" tableValues=".722 1"/></feComponentTransfer></filter>
+</svg>
+<header><h1>Hero · mockups estáticos · rodada 2</h1>
+<label>blur do fundo <input type="range" min="0" max="4" step=".1" value=".3" data-v="--bg-blur"></label>
+<label>blur das lentes <input type="range" min="0" max="4" step=".1" value=".45" data-v="--lens-blur"></label>
+<label>opacidade das lentes <input type="range" min=".3" max="1" step=".05" value=".9" data-v="--lens-op" data-u=""></label>
+</header>
+<p>Base A, menos blur no fundo, sem crédito nos retratos. D é o mesmo quadro no azul da bandeira.</p>
+<section><h2><b>A</b> Fogo</h2><p>Fundo: sinagoga de Wiesbaden em chamas (02). Lentes: 05, 20. Duotone tinta → azul-1.</p>
+<div class="frame duo-tinta"><div class="bg"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wiesbaden%20Synagogue%20Burning%20%284408567277%29.jpg?width=1600" style="object-position:50% 30%" alt=""></div><div class="tile lens" style="left:3%;top:18%;width:13%;aspect-ratio:4/5"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bundesarchiv%20Bild%20146-1970-061-65%2C%20Magdeburg%2C%20zerst%C3%B6rtes%20j%C3%BCdisches%20Gesch%C3%A4ft.jpg?width=900" style="object-position:30% 50%" alt=""></div><div class="tile portrait" style="left:22%;top:12%;width:17%;aspect-ratio:1/1"><img src="mock/lula.jpg" style="object-position:58% 30%" alt=""><span class="lab"><b>LUIZ INÁCIO LULA DA SILVA</b></span></div><div class="tile lens" style="left:44%;top:-6%;width:9%;aspect-ratio:1/1"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wiesbaden%20Synagogue%20Burning%20%284408567277%29.jpg?width=900" style="object-position:40% 20%" alt=""></div><div class="tile portrait" style="left:58%;top:30%;width:17%;aspect-ratio:1/1"><img src="mock/flavio.png" style="object-position:45% 35%" alt=""><span class="lab"><b>FLÁVIO BOLSONARO</b></span></div><div class="tile lens" style="left:80%;top:8%;width:14%;aspect-ratio:5/4"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bundesarchiv%20Bild%20147-1118%2C%20Berlin%2C%20Verw%C3%BCstete%20Synagoge.jpg?width=900" style="object-position:50% 50%" alt=""></div><div class="tile lens" style="left:91%;top:60%;width:10%;aspect-ratio:1/1"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wiesbaden%20Synagogue%20Burning%20%284408567277%29.jpg?width=900" style="object-position:70% 60%" alt=""></div></div></section><section><h2><b>D</b> Fogo, azul da bandeira</h2><p>O mesmo quadro de A com o azul da bandeira (#0038B8) → branco, para comparar a cor.</p>
+<div class="frame duo-flag"><div class="bg"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wiesbaden%20Synagogue%20Burning%20%284408567277%29.jpg?width=1600" style="object-position:50% 30%" alt=""></div><div class="tile lens" style="left:3%;top:18%;width:13%;aspect-ratio:4/5"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bundesarchiv%20Bild%20146-1970-061-65%2C%20Magdeburg%2C%20zerst%C3%B6rtes%20j%C3%BCdisches%20Gesch%C3%A4ft.jpg?width=900" style="object-position:30% 50%" alt=""></div><div class="tile portrait" style="left:22%;top:12%;width:17%;aspect-ratio:1/1"><img src="mock/lula.jpg" style="object-position:58% 30%" alt=""><span class="lab"><b>LUIZ INÁCIO LULA DA SILVA</b></span></div><div class="tile lens" style="left:44%;top:-6%;width:9%;aspect-ratio:1/1"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wiesbaden%20Synagogue%20Burning%20%284408567277%29.jpg?width=900" style="object-position:40% 20%" alt=""></div><div class="tile portrait" style="left:58%;top:30%;width:17%;aspect-ratio:1/1"><img src="mock/flavio.png" style="object-position:45% 35%" alt=""><span class="lab"><b>FLÁVIO BOLSONARO</b></span></div><div class="tile lens" style="left:80%;top:8%;width:14%;aspect-ratio:5/4"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bundesarchiv%20Bild%20147-1118%2C%20Berlin%2C%20Verw%C3%BCstete%20Synagoge.jpg?width=900" style="object-position:50% 50%" alt=""></div><div class="tile lens" style="left:91%;top:60%;width:10%;aspect-ratio:1/1"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Wiesbaden%20Synagogue%20Burning%20%284408567277%29.jpg?width=900" style="object-position:70% 60%" alt=""></div></div></section>
+<script>
+document.querySelectorAll('input[data-v]').forEach(i=>i.oninput=()=>document.documentElement.style.setProperty(i.dataset.v,i.value+(i.dataset.u??'cqw')));
+</script></body></html>

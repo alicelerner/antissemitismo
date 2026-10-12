@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Geist+Mono:wght@400&display=swap">
-<link rel="stylesheet" href="style.css?v=20">
+<link rel="stylesheet" href="style.css?v=24">
 </head>
 <body>
 
@@ -40,13 +40,22 @@
 <main id="topo">
 
   <section class="hero" data-reveal>
+    <!-- Animated band, built in design/hero (rounds 1-4, 2026-10-12): blurred Kristallnacht background,
+         pogrom "lenses" and the two candidates. Motion lives in main.js. -->
     <div class="hero__band" aria-hidden="true">
-      <figure><img src="img/episodios/01-g1-lula-adis-abeba.jpg" alt=""></figure>
-      <figure><img src="img/episodios/02-conib-planalto-2026.jpg" alt=""></figure>
-      <figure><img src="img/episodios/03-oglobo-ihra.jpg" alt=""></figure>
-      <figure><img src="img/episodios/04-ato-deus-patria-familia.jpg" alt=""></figure>
-      <figure><img src="img/episodios/05-piaui-von-storch.jpg" alt=""></figure>
-      <figure><img src="img/episodios/06-bbc-alvim.webp" alt=""></figure>
+      <svg width="0" height="0" class="hero__defs">
+        <filter id="hero-duo" color-interpolation-filters="sRGB">
+          <feColorMatrix type="matrix" values=".3 .59 .11 0 0 .3 .59 .11 0 0 .3 .59 .11 0 0 0 0 0 1 0"/>
+          <feComponentTransfer><feFuncR type="table" tableValues=".027 .914"/><feFuncG type="table" tableValues=".071 .941"/><feFuncB type="table" tableValues=".180 .988"/></feComponentTransfer>
+        </filter>
+      </svg>
+      <div class="hero__bg"><img src="img/hero/wiesbaden-1938.jpg" alt=""></div>
+      <div class="hero__t hero__t--l1"><div class="hero__tile hero__tile--lens"><img src="img/hero/pogrom.jpg" alt="" style="object-position:40% 20%"></div></div>
+      <div class="hero__t hero__t--lula"><div class="hero__tile" data-who="lula"><img src="img/hero/lula.jpg" alt="" style="object-position:58% 30%"><span class="hero__lab mono">Luiz Inácio Lula da Silva</span></div></div>
+      <div class="hero__t hero__t--l2"><div class="hero__tile hero__tile--lens"><img src="img/hero/pogrom.jpg" alt="" style="object-position:85% 50%"></div></div>
+      <div class="hero__t hero__t--flavio"><div class="hero__tile" data-who="flavio"><img src="img/hero/flavio.jpg" alt="" style="object-position:45% 35%"><span class="hero__lab mono">Flávio Bolsonaro</span></div></div>
+      <div class="hero__t hero__t--l3"><div class="hero__tile hero__tile--lens"><img src="img/hero/pogrom.jpg" alt="" style="object-position:15% 70%"></div></div>
+      <div class="hero__t hero__t--l4"><div class="hero__tile hero__tile--lens"><img src="img/hero/pogrom.jpg" alt="" style="object-position:70% 30%"></div></div>
     </div>
     <div class="hero__text">
       <div class="hero__lede">
@@ -375,6 +384,6 @@
   </footer>
 </main>
 
-<script src="main.js?v=7"></script>
+<script src="main.js?v=12"></script>
 </body>
 </html>

@@ -106,6 +106,71 @@
     depo.addEventListener("cancel", (e) => { e.preventDefault(); fechar(); }); // Esc
   }
 
+  // Hero band: tiles open and close with clip-path from a random edge (prototype: design/hero/motion.html).
+  // Lula is never on screen without Flávio; Flávio may be alone. Lenses only close while 4+ tiles stay open.
+  const band = document.querySelector(".hero__band");
+  if (band && !reduce) {
+    const EASE_OUT = "cubic-bezier(0.23, 1, 0.32, 1)";
+    const OPEN = "inset(0 0% 0 0%)";
+    const CLOSED = ["inset(0 100% 0 0)", "inset(0 0 0 100%)", "inset(100% 0 0 0)", "inset(0 0 100% 0)"];
+    const MIN_OPEN = 4;
+    let openCount = 0, clock = 0, last = performance.now(), visible = true;
+    const waiters = [];
+
+    // One clock that stops while the band is off screen, so waits and animations pause together
+    const tick = (now) => {
+      if (visible) clock += now - last;
+      last = now;
+      for (let i = waiters.length - 1; i >= 0; i--) if (clock >= waiters[i].at) waiters.splice(i, 1)[0].resolve();
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    new IntersectionObserver(([e]) => {
+      visible = e.isIntersecting;
+      band.getAnimations({ subtree: true }).forEach((a) => (visible ? a.play() : a.pause()));
+    }).observe(band);
+
+    const wait = (ms) => new Promise((resolve) => waiters.push({ at: clock + ms, resolve }));
+    const rand = (a, b) => a + Math.random() * (b - a);
+    const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
+    const clip = (tile, from, to, duration) => {
+      const a = tile.animate([{ clipPath: from }, { clipPath: to }], { duration, easing: EASE_OUT, fill: "forwards" });
+      if (!visible) a.pause();
+      return a.finished.then(() => { a.commitStyles(); a.cancel(); });
+    };
+    const open = (tile) => clip(tile, pick(CLOSED), OPEN, 1400);
+    const close = (tile) => clip(tile, OPEN, pick(CLOSED), 1100);
+
+    const lens = async (tile) => {
+      await wait(rand(200, 2600));
+      for (;;) {
+        openCount++; await open(tile);
+        await wait(rand(5000, 9000));
+        while (openCount <= MIN_OPEN) await wait(rand(800, 1600));
+        openCount--; await close(tile);
+        await wait(rand(1500, 4000));
+      }
+    };
+
+    const candidates = async (lula, flavio) => {
+      await wait(400);
+      for (;;) {
+        openCount++; const flavioOpen = open(flavio);
+        await wait(rand(300, 600));
+        openCount++; await open(lula); await flavioOpen;
+        await wait(rand(14000, 18000));
+        openCount--; await close(lula);
+        await wait(rand(300, 700));
+        openCount--; await close(flavio);
+        await wait(rand(1200, 2000));
+      }
+    };
+
+    // On phones two lenses are hidden; only animate the ones on screen
+    band.querySelectorAll(".hero__tile--lens").forEach((t) => { if (t.offsetParent) lens(t); });
+    candidates(band.querySelector('[data-who="lula"]'), band.querySelector('[data-who="flavio"]'));
+  }
+
   // CTAs point to axis pages that do not exist yet.
   document.querySelectorAll('[aria-disabled="true"]').forEach((a) => a.addEventListener("click", (e) => e.preventDefault()));
 })();
