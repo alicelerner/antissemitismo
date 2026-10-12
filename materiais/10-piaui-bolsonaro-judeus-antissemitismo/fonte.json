@@ -1,0 +1,24 @@
+{
+  "id": "10-piaui-bolsonaro-judeus-antissemitismo",
+  "tipo": "materia",
+  "veiculo": "revista piauí",
+  "autor": "Fábio Zuker e Pedro Beresin",
+  "data": "2021-07-28",
+  "url": "https://piaui.uol.com.br/web/bolsonaro-os-judeus-e-o-antissemitismo/",
+  "titulo": "Bolsonaro, os judeus e o antissemitismo",
+  "resumo": "Ensaio sobre o uso político da comunidade judaica por Bolsonaro, a partir da visita de Beatrix von Storch (jul 2021).",
+  "tier_dossie": "não está no dossiê; piauí não está na lista Tier 2 e o texto é analítico",
+  "capturado_em": "2026-10-12",
+  "origem_lista": "https://docs.google.com/document/d/1tKHl5n_Ow9DroWfCGwzX6JBseSYH1MjCcfIvUZWCYZo",
+  "status_uso": "nao-verificado",
+  "arquivos": [
+    "captura.json",
+    "imagens/imagem-01.jpg",
+    "imagens/imagens.json",
+    "og.jpg",
+    "pagina.pdf",
+    "print-pagina.png",
+    "print-topo.png",
+    "texto.txt"
+  ]
+}

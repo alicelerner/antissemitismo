@@ -1,0 +1,23 @@
+{
+  "id": "07-conib-encontro-planalto-2026",
+  "tipo": "materia",
+  "veiculo": "CONIB",
+  "data": "2026-01-29",
+  "url": "https://conib.org.br/noticias/todas-as-noticias/40480-conib-participa-de-encontro-com-autoridades-em-brasilia-para-discutir-combate-ao-antissemitismo.html",
+  "titulo": "CONIB participa de encontro com autoridades em Brasília para discutir combate ao antissemitismo",
+  "resumo": "Encontro de 28 jan 2026 no Planalto, presidido por Alckmin, com Lottenberg e outras lideranças. imagem-01: foto do encontro (Valdenio Vieira/SRI, Flickr).",
+  "tier_dossie": "Tier 1 (nota da própria CONIB); mesmo evento do dossiê A5-44 (Agência Brasil)",
+  "capturado_em": "2026-10-12",
+  "origem_lista": "https://docs.google.com/document/d/1tKHl5n_Ow9DroWfCGwzX6JBseSYH1MjCcfIvUZWCYZo",
+  "status_uso": "nao-verificado",
+  "arquivos": [
+    "captura.json",
+    "imagens/imagem-01.jpg",
+    "imagens/imagens.json",
+    "og.jpg",
+    "pagina.pdf",
+    "print-pagina.png",
+    "print-topo.png",
+    "texto.txt"
+  ]
+}
