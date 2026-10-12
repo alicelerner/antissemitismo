@@ -26,16 +26,16 @@
       "port": 8766
     },
     {
-      "name": "site-complementar",
+      "name": "hero",
       "runtimeExecutable": "python3",
       "runtimeArgs": [
         "-m",
         "http.server",
-        "8767",
+        "8768",
         "--directory",
-        "site"
+        "design/hero"
       ],
-      "port": 8767
+      "port": 8768
     }
   ]
 }
