@@ -62,6 +62,20 @@ Open for this module:
 - Lia Vainer Schucman: role line given by Alice on 2026-10-12: «Professora da Universidade Federal de Santa Catarina, pesquisadora das relações raciais e integrante de iniciativas de enfrentamento ao antissemitismo.» Place of publication still unknown.
 - Only four cards. Fernanda Yuki (`materiais/09`) and Célio Lima (`materiais/08`) were left out because nothing says they are Jewish.
 
+## Test: episodes open in a modal on the cover (2026-10-12, branch `capa-desconfianca`)
+
+Alice's new script (Google Doc "Textos") replaces the seven axes with: introduction, 1 Desconfiança, 2 Lula, 3 Bolsonarismo, 4 Flávio (maybe one more between 3 and 4). The team is weighing whether to drop the axis pages and open each episode in a modal straight from the cover. This branch tests that on cover 01 only; covers 02-07 are untouched.
+
+- Cover 01 renamed "Desconfiança"; opening text from the doc, with three spelling fixes ("antissemitismo", "mau cheiro", no hyphen). No CTA: with no axis page there is nothing to enter. No "Nesse eixo" label either (Alice): the list starts with a hairline on the image's top edge.
+- Three episode rows (date | title | arrow). The doc listed four, but two were the same IHRA exit. Each row opens the testimony dialog (`#depo`), growing from the row instead of a card. Sources sit at the bottom of the modal, not in the text.
+- Modal copy is drawn from `05-lula-record.md` (§A, §N10, §N13), written by Claude, pending Alice.
+- Same day, Alice: applied to every cover. The home now has five covers: 01 Desconfiança, 02 Lula, 03 Bolsonarismo, 04 Alianças (the doc's "Eixo 2.0 (?)", kept until Alice decides), 05 Flávio. The old covers 02-07 and their CTAs are gone, axis 07 "A ferradura" (70,8% / 100%) included; the "Episodes on the covers" table above describes the v1 covers. The menu lists the five names.
+- Copy: 02 and 05 are the doc's text with spelling fixes only ("se mantêm", "direito à existência", "se opõem", "explícitos", "nazifascista"). 03 and 04 had placeholders; their opening text is Claude's, drawn from `00-narrative.md` IV and V, pending Alice.
+- Episodes (4 per cover, newest first) are all `verified` rows of `research/sources.md`. `A6-33` (Flávio's "gestapo do Lula") was left out because it is `needs-second-source`, and the Knesset speech (`A5-06`) is not claimed for the same reason. Quotes that exist only in English sources are paraphrased, not translated inside quotation marks.
+- Cover 05 uses the hero portrait `img/hero/flavio.jpg` (credit unknown, caption "Crédito a confirmar").
+- On desktop a long opening (02, 05) would push the cover past one screen; the photo now gives up height (crops shorter) instead: `.capa__main` rows `1fr minmax(0, auto)`, `min-height: 0`, `.capa__img { max-height: 100% }`.
+- CONIB May 2025: the doc linked Brasil Paralelo (not Tier 2); replaced by Poder360, "Entidade judaica critica 'falas antissemitas' de Lula", which dates the note 11 May 2025 (Lula in Moscow on the 10th). The dossier says 14 May; correct the dossier if Alice agrees.
+
 ## Open
 
 0. Opening line (date fixed to 2020 by Alice). The Mussolini episode (ICL, Oct 2026) is not in the dossier and needs a second source; ICL says "semelhante", the line says "imitaram". 
