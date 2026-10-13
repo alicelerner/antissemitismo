@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<!--
+  Browser window frame for post B (1080 x 1440). Everything is opaque except the content area, which stays transparent
+  so the recording shows through when ffmpeg lays this PNG over it. Geometry and background are read from the query string
+  so the composite script and this file agree: ?w=984&h=615&top=84&bg=31498c&ch=1440 (content width, content height,
+  chrome height, background hex, canvas height: 1440 feed, 1920 stories).
+-->
+<style>
+  :root {
+    --azul-7: #31498c;
+    --chrome: #e4e7ec;
+    --toolbar: #ffffff;
+    --omni: #eef1f5;
+    --ui-ink: #3c4043;
+    --ui-mute: #5f6368;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: var(--ch, 1440px); background: transparent; overflow: hidden; }
+  body { font: 15px/1 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; color: var(--ui-ink); }
+
+  .win { position: absolute; left: var(--x); top: var(--y); width: var(--w); height: calc(var(--top) + var(--h)); }
+  /* Outer shadows paint only outside the border box, so this never darkens the content hole. */
+  .win__shadow { position: absolute; inset: 0; border-radius: 14px; box-shadow: 0 40px 90px -20px rgba(7, 18, 46, .55), 0 0 0 1px rgba(7, 18, 46, .18); }
+  /* The page colour comes from this hole's spread shadow: blue everywhere except the hole. */
+  .win__hole { position: absolute; left: 0; right: 0; bottom: 0; height: var(--h); border-radius: 0 0 14px 14px; box-shadow: 0 0 0 3000px var(--bg, var(--azul-7)); }
+  .win__chrome { position: absolute; left: 0; right: 0; top: 0; height: var(--top); border-radius: 14px 14px 0 0; background: var(--chrome); overflow: hidden; }
+
+  .tabs { height: 42px; display: flex; align-items: flex-end; padding-left: 14px; }
+  .lights { display: flex; gap: 8px; align-self: center; margin-right: 18px; }
+  .lights i { width: 12px; height: 12px; border-radius: 50%; display: block; }
+  .lights i:nth-child(1) { background: #ff5f57; }
+  .lights i:nth-child(2) { background: #febc2e; }
+  .lights i:nth-child(3) { background: #28c840; }
+  .tab { position: relative; height: 34px; width: 250px; background: var(--toolbar); border-radius: 10px 10px 0 0; display: flex; align-items: center; gap: 9px; padding: 0 12px; font-size: 13px; }
+  .tab img { width: 16px; height: 16px; }
+  .tab span { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .tab b { font-weight: 400; color: var(--ui-mute); font-size: 15px; }
+  .plus { align-self: center; margin-left: 12px; color: var(--ui-mute); font-size: 20px; font-weight: 300; }
+
+  .toolbar { height: calc(var(--top) - 42px); background: var(--toolbar); display: flex; align-items: center; gap: 14px; padding: 0 14px; border-bottom: 1px solid #dadce0; }
+  .toolbar svg { width: 18px; height: 18px; stroke: var(--ui-mute); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+  .omni { flex: 1; height: 32px; border-radius: 16px; background: var(--omni); display: flex; align-items: center; gap: 10px; padding: 0 12px; font-size: 14px; color: var(--ui-ink); }
+  .omni span { flex: 1; letter-spacing: .1px; }
+  .avatar { width: 24px; height: 24px; border-radius: 50%; background: #b4caf0; flex: none; }
+</style>
+</head>
+<body>
+  <div class="win" id="win">
+    <div class="win__hole"></div>
+    <div class="win__shadow"></div>
+    <div class="win__chrome">
+      <div class="tabs">
+        <div class="lights"><i></i><i></i><i></i></div>
+        <div class="tab"><img src="../../site/favicon.png" alt=""><span>Quem é mais antissemita?</span><b>×</b></div>
+        <div class="plus">+</div>
+      </div>
+      <div class="toolbar">
+        <svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+        <svg viewBox="0 0 24 24" style="opacity:.45"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5"/></svg>
+        <div class="omni">
+          <svg viewBox="0 0 24 24"><path d="M4 8h10M18 8h2M4 16h2M10 16h10"/><circle cx="16" cy="8" r="2"/><circle cx="8" cy="16" r="2"/></svg>
+          <span>bomprosjudeustambem.com.br</span>
+          <svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg>
+        </div>
+        <div class="avatar"></div>
+      </div>
+    </div>
+  </div>
+<script>
+  const q = new URLSearchParams(location.search);
+  const w = +(q.get("w") || 984), h = +(q.get("h") || 615), bar = +(q.get("top") || 84);
+  const s = document.getElementById("win").style;
+  s.setProperty("--w", w + "px"); s.setProperty("--h", h + "px"); s.setProperty("--top", bar + "px");
+  if (q.get("bg")) s.setProperty("--bg", "#" + q.get("bg"));
+  const ch = +(q.get("ch") || 1440);
+  document.documentElement.style.setProperty("--ch", ch + "px");
+  s.setProperty("--x", (1080 - w) / 2 + "px"); s.setProperty("--y", Math.round((ch - h - bar) / 2) + "px");
+</script>
+</body>
+</html>
