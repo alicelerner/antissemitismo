@@ -153,10 +153,12 @@ a { color: inherit; }
   from { transform: translate3d(-2%, 1.5%, 0) scale(1); }
   to   { transform: translate3d(2%, -1.5%, 0) scale(1.18); }
 }
-/* Proposal "revelação" (branch menos-referencia, 2026-10-13). The band sits on a 12-column grid (4 on phones), drawn as
-   hairlines. Slats: each holds the same sharp pogrom photo, offset so the twelve line up as one picture; a CSS wave brings
-   one slat into focus after another (opacity only, off the main thread). Candidates: grid-aligned windows that develop
-   like prints, paper first, then the portrait (main.js). Names run vertically along each window's left edge. */
+/* Proposal "revelação" (branch menos-referencia, 2026-10-13). The band sits on a 12-column grid (5 on phones), drawn as
+   hairlines. Slats: each holds the same sharp photo, offset so they line up as one picture; a CSS wave brings one slat
+   into focus after another (opacity only, off the main thread), and main.js swaps in the next photo (Kristallnacht,
+   Białystok) as each slat starts a new wave, while it is invisible. Candidates: grid-aligned windows that open and close
+   from an edge with clip-path, as in round 4 (Alice, 2026-10-13); the name runs vertically along the window's left edge,
+   inside the clip so it enters with the photo. */
 .hero__band { --cols: 12; --step: 0.9s; }
 .hero__slat {
   position: absolute; top: 0; bottom: 0; overflow: hidden;
@@ -165,7 +167,7 @@ a { color: inherit; }
   animation: hero-foco 16s linear infinite; animation-delay: calc(var(--i) * var(--step));
 }
 .hero__slat > div { position: absolute; top: 0; height: 100%; width: calc(var(--cols) * 100%); left: calc(var(--i) * -100%); }
-.hero__slat img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; filter: contrast(1.15) var(--duo) blur(.1cqw); }
+.hero__slat img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; filter: contrast(1.15) var(--duo) blur(.1cqw); }
 @keyframes hero-foco {
   0%   { opacity: 0; animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
   10%  { opacity: 1; }
@@ -178,7 +180,11 @@ a { color: inherit; }
   background: linear-gradient(to right, transparent calc(100% - 1px), rgba(233, 240, 252, .28) 0) 0 0 / calc(100% / var(--cols)) 100%;
 }
 .hero__p {
-  position: absolute; z-index: 2; margin: 0; width: calc(2 * 100% / var(--cols));
+  /* The figure includes the name strip on its left (--lab), so one clip-path covers window and name */
+  --lab: max(20px, 2cqw);
+  position: absolute; z-index: 2; margin: 0 0 0 calc(-1 * var(--lab)); padding-left: var(--lab);
+  width: calc(2 * 100% / var(--cols) + var(--lab));
+  clip-path: inset(0 100% 0 0);
   will-change: transform; animation: hero-drift var(--d) var(--ease-in-out-sine) infinite alternate; animation-delay: var(--dl, 0s);
 }
 @keyframes hero-drift {
@@ -188,13 +194,11 @@ a { color: inherit; }
 .hero__p--lula   { left: calc(2 * 100% / var(--cols)); top: 10%; --d: 19s; --dy: 7cqh; }
 .hero__p--flavio { left: calc(7 * 100% / var(--cols)); top: 38%; --d: 21s; --dl: -9s; --dy: -7cqh; }
 .hero__win { position: relative; aspect-ratio: 1; overflow: hidden; }
-.hero__win img, .hero__papel { position: absolute; inset: 0; width: 100%; height: 100%; }
-.hero__win img { z-index: 1; object-fit: cover; filter: var(--duo); opacity: 0; }
-.hero__papel { background: var(--azul-1); opacity: 0; }
+.hero__win img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: var(--duo); }
 .hero__nome {
-  position: absolute; right: 100%; bottom: 0; opacity: 0;
+  position: absolute; left: 0; bottom: 0; width: var(--lab);
   writing-mode: vertical-rl; transform: rotate(180deg);
-  padding: .8cqw .45cqw; background: var(--tinta); color: var(--azul-1);
+  display: flex; align-items: center; padding: .8cqw 0; background: var(--tinta); color: var(--azul-1);
   font-size: clamp(9px, .82cqw, 13px); white-space: nowrap;
 }
 
@@ -227,11 +231,11 @@ a { color: inherit; }
      Names sit horizontally outside the window, Lula's under it, Flávio's over it. */
   .hero__band { --cols: 5; --step: 2.16s; }
   .hero__slat:nth-child(n+6) { display: none; }
-  .hero__p--lula   { left: 0; top: 6%; --dy: 5cqh; }
-  .hero__p--flavio { left: 60%; top: 40%; --dy: -5cqh; }
-  .hero__nome { writing-mode: horizontal-tb; transform: none; font-size: 9px; padding: 5px 6px 4px; }
-  .hero__p--lula .hero__nome   { right: auto; left: 0; bottom: auto; top: 100%; }
-  .hero__p--flavio .hero__nome { right: 0; bottom: 100%; }
+  .hero__p { --lab: 18px; margin: 0; padding: 0; width: calc(2 * 100% / var(--cols)); }
+  .hero__p--lula   { left: 0; top: 6%; padding-bottom: var(--lab); --dy: 5cqh; }
+  .hero__p--flavio { left: 60%; top: 34%; padding-top: var(--lab); --dy: -5cqh; }
+  .hero__nome { writing-mode: horizontal-tb; transform: none; width: auto; height: var(--lab); font-size: 9px; padding: 0 6px; }
+  .hero__p--flavio .hero__nome { left: auto; right: 0; bottom: auto; top: 0; }
   .hero__text { display: flex; flex-direction: column; padding-bottom: 24px; }
   .hero__title, .hero__lede { display: contents; }
   .hero__title h1 { white-space: normal; margin-right: 0; font-size: 50px; }
@@ -575,7 +579,7 @@ a { color: inherit; }
   .hero__title h1 .line > span, .capa__name .line > span, .fim__mark .line > span { filter: none !important; transition: opacity 200ms ease; }
   .hero__bg, .hero__p, .hero__slat { animation: none; }
   .hero__slat:nth-child(4n+2) { opacity: .9; }
-  .hero__win img, .hero__nome { opacity: 1; }
+  .hero__p { clip-path: none; }
   .voz { transition: none !important; }
   .voz__mais { transform: none !important; }
   .depo__fechar svg, .ep__seta { transition: none; }

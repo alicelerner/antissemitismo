@@ -48,3 +48,7 @@ The reference's motion grammar is "things slide into place" (masks, scales, clip
 - Hero text block (row 9).
 - Cover transition: the previous cover could dim as the next slides over it.
 - The tinta + rose bar colours themselves.
+
+## 7. Alice's verdict (2026-10-13)
+
+Kept: hero slats (with a new photo each wave, and the candidates opening from an edge as before), focus-in entrances, the bar's axis name (at the old 516px width), the menu index (aligned to the capitals). Rejected and reverted: carousel, footer ledger.

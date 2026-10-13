@@ -131,13 +131,32 @@
     depo.addEventListener("cancel", (e) => { e.preventDefault(); fechar(); }); // Esc
   }
 
-  // Hero band (proposal "revelação"): the slat wave is CSS. Here, the two candidates develop like prints:
-  // paper and name appear, the portrait emerges over the paper; closing reverses it.
-  // Lula is never on screen without Flávio; Flávio may be alone.
+  // Hero band (proposal "revelação"). The slat wave is CSS; here each slat takes the next photo when it starts a new
+  // wave (opacity 0 at that moment), so every wave reveals a new photo. The candidates open and close from a random
+  // edge with clip-path, as in round 4. Lula is never on screen without Flávio; Flávio may be alone.
   const band = document.querySelector(".hero__band");
   if (band && !reduce) {
     const EASE_OUT = "cubic-bezier(0.23, 1, 0.32, 1)";
-    const SINE = "cubic-bezier(0.37, 0, 0.63, 1)";
+    const OPEN = "inset(0 0% 0 0%)";
+    const CLOSED = ["inset(0 100% 0 0)", "inset(0 0 0 100%)", "inset(100% 0 0 0)", "inset(0 0 100% 0)"];
+    // Kristallnacht and Białystok. Białystok is a scan with a white border, so it is enlarged to hide it.
+    const FOTOS = [
+      { src: "img/hero/cristais1.jpg", pos: "50% 40%" },
+      { src: "img/hero/bialystok.jpg", pos: "50% 45%", scale: 1.12 },
+      { src: "img/hero/cristais2.jpeg", pos: "50% 55%" },
+      { src: "img/hero/cristais3.webp", pos: "50% 50%" },
+    ];
+    FOTOS.forEach((f) => { new Image().src = f.src; }); // warm the cache so a swap never shows an empty slat
+    band.querySelectorAll(".hero__slat").forEach((slat) => {
+      const img = slat.querySelector("img");
+      let n = 0;
+      slat.addEventListener("animationiteration", () => {
+        const f = FOTOS[++n % FOTOS.length];
+        img.src = f.src;
+        img.style.objectPosition = f.pos;
+        img.style.transform = f.scale ? `scale(${f.scale})` : "";
+      });
+    });
     let clock = 0, last = performance.now(), visible = true;
     const waiters = [];
 
@@ -156,24 +175,14 @@
 
     const wait = (ms) => new Promise((resolve) => waiters.push({ at: clock + ms, resolve }));
     const rand = (a, b) => a + Math.random() * (b - a);
-    const fade = (el, to, duration, easing) => {
-      const a = el.animate({ opacity: [getComputedStyle(el).opacity, to] }, { duration, easing, fill: "forwards" });
+    const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
+    const clip = (el, from, to, duration) => {
+      const a = el.animate([{ clipPath: from }, { clipPath: to }], { duration, easing: EASE_OUT, fill: "forwards" });
       if (!visible) a.pause();
       return a.finished.then(() => { a.commitStyles(); a.cancel(); });
     };
-    const parts = (fig) => [fig.querySelector(".hero__papel"), fig.querySelector(".hero__nome"), fig.querySelector("img")];
-    const open = async (fig) => {
-      const [papel, nome, img] = parts(fig);
-      fade(nome, 1, 500, EASE_OUT);
-      await fade(papel, 1, 500, EASE_OUT);
-      await fade(img, 1, 2200, SINE);
-    };
-    const close = async (fig) => {
-      const [papel, nome, img] = parts(fig);
-      await fade(img, 0, 1400, SINE);
-      fade(nome, 0, 400, EASE_OUT);
-      await fade(papel, 0, 400, EASE_OUT);
-    };
+    const open = (fig) => clip(fig, pick(CLOSED), OPEN, 1400);
+    const close = (fig) => clip(fig, OPEN, pick(CLOSED), 1100);
 
     const candidates = async (lula, flavio) => {
       await wait(400);

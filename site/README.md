@@ -95,4 +95,11 @@ Alice's line: «No dia 25, leve a memória com você pra urna. Vote por todos n�
 
 ## Proposal: less like the reference (2026-10-13, branch `menos-referencia`)
 
-Alice worried the site reads as a copy of stateofaidesign. Analysis and the list of changes in `design/proposta-menos-referencia.md`. One commit per change, so each can be dropped: hero "revelação" (grid slats come into focus, candidates develop like prints), focus-in entrances, bar naming the axis being read, menu index before the title, carousel without accent bar or widening, footer numbers as a ledger. Not merged; pending Alice.
+Alice worried the site reads as a copy of stateofaidesign. Analysis in `design/proposta-menos-referencia.md`. One commit per change.
+
+Alice's verdict, same day:
+- Hero "revelação": kept. Grid slats come into focus in a wave; each wave reveals the next photo (`img/hero/cristais1.jpg`, `bialystok.jpg`, `cristais2.jpeg`, `cristais3.webp`, saved by Alice; Białystok enlarged 1.12 to hide its scan border). The candidates open and close from an edge with clip-path, as in round 4, the vertical name inside the clip. Sources, licences and credits of the four photos still to record. `pogrom.jpg` is no longer used by the band.
+- Focus-in entrances: kept (no objection).
+- Bar names the axis being read: kept, back to 516px so its right edge lines up with the cover images.
+- Menu index before the title: kept; the digits' tops meet the capitals at any size.
+- Carousel and footer numbers: rejected, reverted to main.
