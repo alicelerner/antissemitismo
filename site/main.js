@@ -42,7 +42,7 @@
   const nomeia = () => {
     const capa = [...lendo].sort((a, b) => b.dataset.n - a.dataset.n)[0];
     const html = capa
-      ? `<span class="mono">${capa.dataset.n.padStart(2, "0")}</span>${capa.querySelector(".capa__name .line:last-child").textContent}`
+      ? `<span class="mono">${capa.dataset.n.padStart(2, "0")}</span>${[...capa.querySelectorAll(".capa__name .line")].slice(1).map((l) => l.textContent).join(" ")}`
       : "Eixos";
     if (atual.innerHTML === html) return;
     atual.innerHTML = html;
