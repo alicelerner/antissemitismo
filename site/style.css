@@ -573,15 +573,17 @@ a { color: inherit; }
 .fim__rotulo { font-size: clamp(22px, 2.2vw, 32px); line-height: 1.1; max-width: 9em; }
 .fim__num { font: 300 clamp(64px, 8vw, 128px)/0.85 var(--serif); letter-spacing: -0.04em; }
 .fim__leg { font-size: 18px; }
-/* Closing note (test, 2026-10-13): small text pinned to the bottom of the last cell */
-.fim__cel--nota { justify-content: flex-end; }
-.fim__nota { font-size: 15px; line-height: 1.4; color: rgba(255,255,255,0.7); max-width: 32em; text-wrap: pretty; }
+/* Closing note (test, 2026-10-13): small text aligned to the top of the numbers */
+.fim__cel--nota { justify-content: flex-start; }
+/* Optical offset: the numerals' ink starts ~0.09em below their box; the note's caps ~4.8px below its own */
+.fim__nota { font-size: 15px; line-height: 1.4; margin-top: calc(clamp(64px, 8vw, 128px) * 0.09 - 4.8px); color: rgba(255,255,255,0.7); max-width: 32em; text-wrap: pretty; }
 @media (max-width: 767px) {
   .fim__numeros { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .fim__cel:first-child { grid-column: 1 / -1; min-height: 0; padding-right: 0; border-bottom: 1px solid rgba(255,255,255,0.4); }
   .fim__cel:nth-child(2) { padding-left: 0; border-left: 0; }
   .fim__leg { font-size: 15px; }
   .fim__cel.fim__cel--nota { grid-column: 1 / -1; min-height: 0; padding: 16px 0; border-left: 0; border-top: 1px solid rgba(255,255,255,0.4); }
+  .fim__nota { margin-top: 0; }
 }
 
 /* ---------- Reduced motion: keep the fades, drop the movement ---------- */
