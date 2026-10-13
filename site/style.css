@@ -556,18 +556,18 @@ a { color: inherit; }
 .fim__bandeira { display: inline-block; height: 0.55em; width: auto; margin-left: 0.25em; vertical-align: baseline; }
 .fim.is-in .fim__mark .line > span { opacity: 1; filter: none; }
 .fim .mono { color: rgba(255,255,255,0.7); }
-/* Numbers band (test): hairlines top and bottom, dividers between cells, as in the reference */
-.fim__numeros { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-top: 1px solid rgba(255,255,255,0.4); border-bottom: 1px solid rgba(255,255,255,0.4); }
-.fim__cel { display: flex; flex-direction: column; justify-content: space-between; gap: 32px; min-height: clamp(160px, 15vw, 216px); padding: 16px 16px 16px 0; }
-.fim__cel + .fim__cel { padding-left: 16px; border-left: 1px solid rgba(255,255,255,0.4); }
+/* Numbers as a ledger (proposal, branch menos-referencia): rows split by horizontal hairlines, number left and label
+   right on the page's 596/796 grid, instead of the reference's column strip with vertical dividers */
+.fim__numeros { border-top: 1px solid rgba(255,255,255,0.4); }
+.fim__cel {
+  display: grid; grid-template-columns: minmax(0, 596fr) minmax(0, 796fr); column-gap: var(--gutter); align-items: baseline;
+  padding: 14px 0 18px; border-bottom: 1px solid rgba(255,255,255,0.4);
+}
 .fim__rotulo { font-size: clamp(22px, 2.2vw, 32px); line-height: 1.1; max-width: 9em; }
-.fim__num { font: 300 clamp(64px, 8vw, 128px)/0.85 var(--serif); letter-spacing: -0.04em; }
-.fim__leg { font-size: 18px; }
+.fim__num { font: 300 clamp(56px, 6vw, 96px)/0.9 var(--serif); letter-spacing: -0.04em; }
+.fim__leg { font-size: clamp(18px, 1.6vw, 24px); }
 @media (max-width: 767px) {
-  .fim__numeros { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .fim__cel:first-child { grid-column: 1 / -1; min-height: 0; padding-right: 0; border-bottom: 1px solid rgba(255,255,255,0.4); }
-  .fim__cel:nth-child(2) { padding-left: 0; border-left: 0; }
+  .fim__cel { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
   .fim__leg { font-size: 15px; }
 }
 
