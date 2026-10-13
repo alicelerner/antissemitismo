@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.bomprosjudeustambem.com.br" }],
+      "destination": "https://bomprosjudeustambem.com.br/$1",
+      "permanent": true
+    }
+  ]
+}
