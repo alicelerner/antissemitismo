@@ -26,7 +26,7 @@ Decisions along the way (Alice, 2026-10-13):
 - Slide 1 scrolls slowly (1400 ms per scroll, 1200-1800 ms dwell, strong ease-in-out from the `animate` skill) and only a few stops; a tour of every section at 900/700 ms was too fast.
 - The phone's status bar is `--tinta` with white text, so it continues the site's dark bar and meets the dark modal.
 - Slide 3: a heart and a Star of David beside the flag were tried and dropped.
-- In stories, the browser window keeps its feed size; the phone grows to 720 px; the flag sits 300 px from the bottom, clear of the reply bar. Add Instagram's link sticker by hand when posting.
+- In stories, the browser window keeps its feed size; the phone grows to 720 px; the link slide drops the address bar, so Alice can place Instagram's link sticker there, and the flag sits 300 px from the bottom, clear of the reply bar.
 
 ## Running
 

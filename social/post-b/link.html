@@ -6,8 +6,8 @@
   Post B, slide 5: the closing call, after the reference's last slide: only the browser's address bar with the
   domain, centred on --azul-3, 1080 x 1440. Same omnibox as the window in janela.html, enlarged. The site's small
   Brazilian flag (site/img/bandeira.svg, the one that closes the footer line) sits centred at the bottom (Alice; a
-  version flanked by a heart and a Star of David was tried and dropped, 2026-10-13). ?h=1920 makes the stories version;
-  there the flag rises clear of Instagram's reply bar.
+  version flanked by a heart and a Star of David was tried and dropped, 2026-10-13). ?h=1920 makes the stories version:
+  no address bar (Alice places Instagram's link sticker there herself), and the flag rises clear of the reply bar.
 -->
 <style>
   :root { --azul-3: #b4caf0; --ui-ink: #202124; --ui-mute: #5f6368; }
@@ -31,6 +31,7 @@
   if (new URLSearchParams(location.search).get("h") === "1920") {
     document.documentElement.style.setProperty("--h", "1920px");
     document.documentElement.style.setProperty("--b", "300px");
+    document.querySelector(".omni").remove();
   }
 </script>
 </body>
