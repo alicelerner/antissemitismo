@@ -438,10 +438,9 @@ a { color: inherit; }
 .voz__abrir > span { display: block; }
 .voz__thumb {
   display: block; position: relative; height: var(--voz-h); overflow: hidden; background: var(--tinta);
+  border-bottom: 16px solid var(--azul-3); transition: border-color 400ms ease;
 }
-/* Proposal (branch menos-referencia): no 16px accent bar, no widening. Hover moves the image closer inside its frame
-   and draws a rose line across the caption's hairline from the left; the extra line still appears. */
-.voz__thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 700ms var(--ease-out); }
+.voz__thumb img { width: 100%; height: 100%; object-fit: cover; }
 .voz--video .voz__thumb img { object-position: 50% 58%; }
 /* Golem post cover in black and white so it stays inside the palette (Alice, 2026-10-12) */
 .voz--post .voz__thumb img { filter: grayscale(1); }
@@ -450,11 +449,7 @@ a { color: inherit; }
 .voz__citacao { display: block; font: 300 calc(var(--voz-h) * 38 / 560)/1.04 var(--serif); letter-spacing: -0.03em; max-width: 14ch; text-indent: -0.4em; padding-left: 0.4em; }
 .voz__play { position: absolute; left: 16px; bottom: 16px; width: 56px; height: 56px; border-radius: 50%; background: var(--brasa); display: grid; place-items: center; }
 .voz__play::after { content: ""; margin-left: 4px; border-style: solid; border-width: 10px 0 10px 16px; border-color: transparent transparent transparent var(--tinta); }
-.voz__tipo { position: relative; margin-top: 16px; padding-top: 12px; border-top: 1px solid rgb(7 18 46 / .25); color: rgb(7 18 46 / .6); }
-.voz__tipo::before {
-  content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 2px; margin-top: -0.5px;
-  background: var(--brasa); transform: scaleX(0); transform-origin: left; transition: transform 500ms var(--ease-out);
-}
+.voz__tipo { margin-top: 16px; opacity: 0.6; }
 .voz__titulo { margin-top: 8px; font: 400 24px/1.1 var(--sans); }
 .voz__meta { margin-top: 6px; font-size: 14px; line-height: 1.35; opacity: 0.6; }
 .voz__mais {
@@ -463,8 +458,10 @@ a { color: inherit; }
   transition: opacity 300ms ease, transform 300ms var(--ease-out);
 }
 @media (hover: hover) and (pointer: fine) {
-  .voz:hover .voz__thumb img, .voz:has(:focus-visible) .voz__thumb img { transform: scale(1.03); }
-  .voz:hover .voz__tipo::before, .voz:has(:focus-visible) .voz__tipo::before { transform: scaleX(1); }
+  /* Widening is the reference's own effect: neighbours shift right. Four cards, so the layout cost is accepted. */
+  .voz { transition: flex-basis 600ms var(--ease-in-out); }
+  .voz:hover, .voz:has(:focus-visible) { flex-basis: calc(var(--voz-h) * 580 / 560); }
+  .voz:hover .voz__thumb, .voz:has(:focus-visible) .voz__thumb { border-bottom-color: var(--brasa); }
   .voz:hover .voz__mais, .voz:has(:focus-visible) .voz__mais {
     opacity: 1; transform: none;
     transition-duration: 500ms; transition-delay: 120ms;
@@ -578,8 +575,7 @@ a { color: inherit; }
   .hero__bg, .hero__p, .hero__slat { animation: none; }
   .hero__slat:nth-child(4n+2) { opacity: .9; }
   .hero__win img, .hero__nome { opacity: 1; }
-  .voz__thumb img { transform: none !important; transition: none; }
-  .voz__tipo::before { transition: none; }
+  .voz { transition: none !important; }
   .voz__mais { transform: none !important; }
   .depo__fechar svg, .ep__seta { transition: none; }
   .quote__author, .abertura, .eixo-lista, .capa__img, .mod--gravura img { transform: none !important; filter: none !important; transition-property: opacity; transition-duration: 200ms; }
