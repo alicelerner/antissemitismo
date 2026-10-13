@@ -3,36 +3,21 @@
 <head>
 <meta charset="utf-8">
 <!--
-  Post B, slide 5: the closing call, after the reference's last slide: only the browser's address bar with the
-  domain, centred on --azul-3, 1080 x 1440. Same omnibox as the window in janela.html, enlarged. The site's small
-  Brazilian flag (site/img/bandeira.svg, the one that closes the footer line) sits centred at the bottom (Alice; a
-  version flanked by a heart and a Star of David was tried and dropped, 2026-10-13). ?h=1920 makes the stories version:
-  no address bar (Alice places Instagram's link sticker there herself), and the flag rises clear of the reply bar.
+  Post B, stories only, closing slide: --azul-3 with the site's small Brazilian flag (site/img/bandeira.svg, the one
+  that closes the footer line) centred near the bottom, 1080 x 1920. The middle stays empty for Instagram's link
+  sticker, which Alice places when posting. History (Alice, 2026-10-13): the feed version, an enlarged address bar
+  with the domain over the flag, was dropped; so was a heart and a Star of David beside the flag.
+  Render with: node post-b/render.mjs link 05-link --story
 -->
 <style>
-  :root { --azul-3: #b4caf0; --ui-ink: #202124; --ui-mute: #5f6368; }
+  :root { --azul-3: #b4caf0; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { width: 1080px; height: var(--h, 1440px); overflow: hidden; background: var(--azul-3); }
-  body { display: grid; place-items: center; font: 400 34px/1 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; }
-  .omni { display: flex; align-items: center; gap: 22px; height: 84px; padding: 0 30px; border-radius: 42px; background: #fff;
-    color: var(--ui-ink); letter-spacing: .1px; box-shadow: 0 30px 60px -30px rgba(7, 18, 46, .45); }
-  .bandeira { position: absolute; left: 50%; bottom: var(--b, 96px); width: 72px; transform: translateX(-50%); }
-  .omni svg { width: 34px; height: 34px; stroke: var(--ui-mute); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--azul-3); }
+  /* 300 px from the bottom keeps it clear of the stories reply bar. */
+  .bandeira { position: absolute; left: 50%; bottom: 300px; width: 128px; transform: translateX(-50%); }
 </style>
 </head>
 <body>
-  <div class="omni">
-    <svg viewBox="0 0 24 24"><path d="M4 8h10M18 8h2M4 16h2M10 16h10"/><circle cx="16" cy="8" r="2"/><circle cx="8" cy="16" r="2"/></svg>
-    <span>bomprosjudeustambem.com.br</span>
-    <svg viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg>
-  </div>
   <img class="bandeira" src="../../site/img/bandeira.svg" alt="">
-<script>
-  if (new URLSearchParams(location.search).get("h") === "1920") {
-    document.documentElement.style.setProperty("--h", "1920px");
-    document.documentElement.style.setProperty("--b", "300px");
-    document.querySelector(".omni").remove();
-  }
-</script>
 </body>
 </html>
