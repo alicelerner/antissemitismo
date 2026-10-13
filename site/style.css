@@ -112,7 +112,8 @@ a { color: inherit; }
   transform: translateY(105%);
   transition: transform 250ms var(--ease-drawer);
 }
-.menu__t sup { font: 400 14px/1 var(--sans); letter-spacing: 0; vertical-align: top; margin-left: 10px; position: relative; top: 0.4em; }
+/* Proposal (branch menos-referencia): the index leads as a mono label instead of a superscript after the title */
+.menu__t sup { display: inline-block; width: 48px; font: 400 13px/1 var(--mono); letter-spacing: 0.02em; vertical-align: top; position: relative; top: 0.5em; }
 .menu[open] .menu__t { transform: none; transition-duration: 600ms; transition-timing-function: var(--ease-out); }
 @starting-style { .menu[open] .menu__t { transform: translateY(105%); } }
 .menu[open] li:nth-child(1) .menu__t { transition-delay: 120ms; }
