@@ -92,3 +92,15 @@ Alice's line: «No dia 25, leve a memória com você pra urna. Vote por todos n�
 5. Axis 04 line «O lema é dos integralistas de 1932» states where the slogan comes from, not that anyone is an integralist (`02 §A8`, rule in `00-narrative.md` IV). Check it reads that way.
 6. Axis 03 line «Sair sem explicar foi uma falha» is the site's own judgement, as the narrative asks (`00-narrative.md` III).
 7. Hero images (`img/hero/`): background is the Wiesbaden synagogue burning, 9 Nov 1938 (Center for Jewish History via Flickr Commons, "no known restrictions"), cropped and compressed. Lenses use the pogrom photo from Alice's Figma (source unknown). Portraits come from Alice's Figma; Lula's file carries EXIF copyright "Brenno Carvalho", Flávio's has no credit. Source, licence and credit for all three still to settle; where credits appear on the page is open.
+
+## Proposal: less like the reference (2026-10-13, branch `menos-referencia`)
+
+Alice worried the site reads as a copy of stateofaidesign. Analysis in `design/proposta-menos-referencia.md`. One commit per change.
+
+Alice's verdict, same day:
+- Hero "revelação": kept. Each time the candidates reopen (hold 5-7s, gap 0.8-1.4s), both move to a new grid spot; Lula labelled "Lula da Silva" so the name fits on phones (new column at least two away, never overlapping, new height inside the band). Grid slats come into focus in a wave; each wave reveals the next photo (`img/hero/cristais1.jpg`, `bialystok.jpg`, `cristais2.jpeg`, `cristais3.webp`, saved by Alice; Białystok enlarged 1.12 to hide its scan border). The candidates open and close from an edge with clip-path, as in round 4, the vertical name inside the clip. Sources, licences and credits of the four photos still to record. `pogrom.jpg` is no longer used by the band.
+- Candidate photos (Alice's picks, 2026-10-13): six each, `img/hero/lula*.{jpg,jpeg,webp}` and `img/hero/flavio*.jpg`, rotating one per cycle from each figure's `data-fotos` ("path x% y% zoom": focal point and a zoom so both heads come out the same size). Large files were cut to 1200px and the two AVIF converted to JPEG (older iPhones); originals in `img/hero/originais/`, kept out of the deploy by `.vercelignore`. Sources, licences and credits of these twelve still to record. `flavio-6` shows a Veja-branded microphone. Backup set, should any of these fail the licence check: `design/hero/fotos-candidatos.html` (Commons, open licences, with credits).
+- Focus-in entrances: kept (no objection).
+- Bar names the axis being read: kept, back to 516px so its right edge lines up with the cover images.
+- Menu index before the title: kept; the digits' tops meet the capitals at any size.
+- Carousel and footer numbers: rejected, reverted to main.
