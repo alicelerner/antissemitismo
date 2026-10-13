@@ -77,6 +77,10 @@ Alice's new script (Google Doc "Textos") replaces the seven axes with: introduct
 - On desktop a long opening (02, 05) would push the cover past one screen; the photo now gives up height (crops shorter) instead: `.capa__main` rows `1fr minmax(0, auto)`, `min-height: 0`, `.capa__img { max-height: 100% }`.
 - CONIB May 2025: the doc linked Brasil Paralelo (not Tier 2); replaced by Poder360, "Entidade judaica critica 'falas antissemitas' de Lula", which dates the note 11 May 2025 (Lula in Moscow on the 10th). The dossier says 14 May; correct the dossier if Alice agrees.
 
+## Footer (2026-10-12, branch `rodape`)
+
+Alice's line: «No dia 25, leve a memória com você pra urna. Vote por todos nós.» Full viewport height on `--azul-7` (first tried the flag's own `#0038B8`; Alice asked for a blue from the Figma palette), roman Fraunces Light up to 168px, sitting at the bottom. Mono row on top: "Feito por e para judeus brasileiros" left, "Outubro 2026" right; the bottom meta row is gone. The sentence ends with a small Brazilian flag (`img/bandeira.svg`, Alice's file from `design/bandeira.svg`), cap-height, kept on the same line as "nós.". It rises from a mask on enter like the hero and cover titles (900ms strong ease-out, 80ms between sentences); reduced motion drops the movement.
+
 ## Open
 
 0. Opening line (date fixed to 2020 by Alice). The Mussolini episode (ICL, Oct 2026) is not in the dossier and needs a second source; ICL says "semelhante", the line says "imitaram". 
