@@ -21,6 +21,7 @@ Figma is the source of truth for layout and copy; the code follows it. Exception
 - Copy: very short. Each cover = number + short name, one story line, one dated episode with a verbatim quote and its source.
 - Quote module: Flávio Limoncic, «O "nunca mais" não pode se referir somente aos judeus.» Full text in `research/testimonies/limoncic.md`.
 - Motion: per the `animate` skill. Rare-tier reading page. CSS transitions toggled by one IntersectionObserver; strong ease-out `cubic-bezier(0.23, 1, 0.32, 1)`; titles rise from a mask (800-900ms), images settle from scale 1.04, count-up once on axis 07 with the source printed under the number from the start. Reduced motion keeps fades, drops movement and count-up.
+- Mobile pass (2026-10-12): the hero fills the first screen, its band starting below the fixed bar, and stacks title → lede → "Feito por e para judeus brasileiros" → "Role para ler" pinned at the bottom (Alice asked for the hint last). Menu titles capped at 12vw so "Bolsonarismo" and the numbers fit; the modal × gets a solid disc because the text scrolls under it; the page behind any open dialog no longer scrolls; tap highlight off, `touch-action: manipulation` on links and buttons, press tint on episode rows. Checked in emulation at 375 x 812 and 320 x 568, not yet on a phone.
 
 ## Episodes on the covers
 

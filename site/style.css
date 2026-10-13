@@ -29,7 +29,12 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
+/* Page behind a modal (menu, testimony, episode) stays put; iOS scrolls it otherwise */
+html:has(dialog[open]) { overflow: hidden; }
+/* Touch: no double-tap wait on controls, no text selection on a long press */
+a, button { touch-action: manipulation; }
+button { -webkit-user-select: none; user-select: none; }
 body {
   background: var(--papel);
   color: var(--tinta);
@@ -119,6 +124,8 @@ a { color: inherit; }
 }
 @media (max-width: 767px) {
   .menu { width: 100vw; }
+  /* 7.2vh alone cut "Bolsonarismo" and pushed the numbers off a 375px phone */
+  .menu__t { font-size: min(64px, 7.2vh, 12vw); }
 }
 
 /* ---------- Hero ---------- */
@@ -177,7 +184,9 @@ a { color: inherit; }
 .scroll-hint span { color: var(--brasa); }
 
 @media (max-width: 767px) {
-  .hero { grid-template-rows: 38svh auto; min-height: 0; padding-bottom: 48px; }
+  /* Phone: the band starts below the fixed bar (it hid Lula's face); the hero fills the first screen,
+     with title, lede and credit stacked and "Role para ler" pinned last, at the bottom (Alice, 2026-10-12) */
+  .hero { grid-template-rows: 38svh 1fr; padding-top: var(--bar); }
   /* Phone: the two portraits carry the band, two lenses stay */
   .hero__t--l1, .hero__t--l3 { display: none; }
   .hero__t--lula   { left: 4%;  top: 8%;  width: 42%; --dx: 4cqw; }
@@ -185,11 +194,12 @@ a { color: inherit; }
   .hero__t--l2     { left: 38%; top: -10%; width: 22%; }
   .hero__t--l4     { left: 80%; top: -4%; width: 26%; }
   .hero__lab { font-size: 9px; padding: 5px 6px 4px; }
-  .hero__text { grid-template-columns: 1fr; align-content: start; gap: 32px; }
-  .hero__title, .hero__lede { justify-content: flex-start; }
-  .hero__title { order: -1; }
+  .hero__text { display: flex; flex-direction: column; padding-bottom: 24px; }
+  .hero__title, .hero__lede { display: contents; }
   .hero__title h1 { white-space: normal; margin-right: 0; font-size: 50px; }
-  .hero__lede p:first-child { font-size: 18px; }
+  .hero__lede p:first-child { order: 1; margin-top: 32px; font-size: 18px; }
+  .hero__lede .mono { order: 2; margin-top: 16px; }
+  .scroll-hint { order: 3; margin-top: auto; padding-top: 32px; }
 }
 
 /* ---------- Opening modules (Alice, Figma 2026-10-12) ---------- */
@@ -289,6 +299,8 @@ a { color: inherit; }
 .ep__data { font-size: 11px; opacity: 0.7; }
 .ep__seta { transition: transform 200ms var(--ease-out); }
 .ep:focus-visible { outline: 2px solid var(--fg); outline-offset: -2px; }
+/* Press feedback for touch, where the hover tint never shows */
+.ep:active { background: color-mix(in srgb, var(--fg) 10%, transparent); transition-duration: 0ms; }
 @media (hover: hover) and (pointer: fine) {
   .ep:hover { background: color-mix(in srgb, var(--fg) 7%, transparent); }
   .ep:hover .ep__seta { transform: translateX(4px); }
@@ -472,7 +484,8 @@ a { color: inherit; }
 .ep__fontes a { display: block; padding: 14px 0; color: inherit; text-decoration: none; font-size: 15px; line-height: 1.35; transition: color 200ms ease; }
 @media (hover: hover) and (pointer: fine) { .ep__fontes a:hover { color: var(--azul-3); } }
 @media (max-width: 767px) {
-  .depo__fechar { top: 8px; right: 8px; }
+  /* Solid disc: the text scrolls under the × on a phone */
+  .depo__fechar { top: 8px; right: 8px; background: var(--tinta); }
   .depo__corpo { display: block; padding: 64px var(--gutter) 80px; }
   .depo__lado { position: static; margin-bottom: 32px; }
   .depo__autor, .depo__meta { font-size: 16px; }
