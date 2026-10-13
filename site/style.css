@@ -215,7 +215,8 @@ a { color: inherit; }
   opacity: 0; transform: scale(1.04); transition: opacity 900ms var(--ease-out), transform 1200ms var(--ease-out); }
 .mod--gravura.is-in img { opacity: 1; transform: none; }
 
-.mod--cruz { min-height: 486px; display: grid; grid-template-columns: minmax(0, 596fr) minmax(0, 796fr); column-gap: var(--gutter); }
+/* padding-bottom keeps the ~88px under the text that min-height gave the shorter opening (script of 2026-10-13 is longer) */
+.mod--cruz { min-height: 486px; padding-bottom: 88px; display: grid; grid-template-columns: minmax(0, 596fr) minmax(0, 796fr); column-gap: var(--gutter); }
 .mod--cruz .abertura { grid-column: 2; }
 
 /* ---------- Quote (reference 2.3) ---------- */
@@ -269,6 +270,7 @@ a { color: inherit; }
 .capa__name .line { display: block; overflow: hidden; padding-bottom: 0.06em; }
 .capa__name .line > span { display: block; transform: translateY(105%); transition: transform 800ms var(--ease-out); }
 .capa__name .line:nth-child(2) > span { transition-delay: 60ms; }
+.capa__name .line:nth-child(3) > span { transition-delay: 120ms; }
 .capa.is-in .capa__name .line > span { transform: none; }
 
 .capa__img { position: relative; width: min(100%, 576px); aspect-ratio: 4 / 3; overflow: hidden; background: var(--tinta);
@@ -304,7 +306,7 @@ a { color: inherit; }
   width: 100%; padding: 16px 8px 16px 0; background: transparent; border: 0; color: inherit; text-align: left;
   font: inherit; cursor: pointer; transition: background-color 200ms ease;
 }
-.ep__data { font-size: 11px; opacity: 0.7; }
+.ep__data { font-size: 11px; opacity: 0.7; white-space: nowrap; }
 .ep__seta { transition: transform 200ms var(--ease-out); }
 .ep:focus-visible { outline: 2px solid var(--fg); outline-offset: -2px; }
 /* Press feedback for touch, where the hover tint never shows */
@@ -331,7 +333,10 @@ a { color: inherit; }
 /* Desktop: covers stack over each other with sticky alone (reference 2.4), only when a whole cover fits. */
 @media (min-width: 1024px) and (min-height: 720px) {
   .capa { position: sticky; top: 0; height: 100vh; min-height: 0; }
-  /* A long opening (axes 02 and 05) takes height from the photo, which crops shorter, so the cover still fits one screen */
+  /* A cover with five or more episodes (02 Lula, 05 Flávio, script of 2026-10-13) does not fit one screen: it grows
+     instead of clipping its list, and sticks once its bottom reaches the screen's bottom, as on smaller screens. */
+  .capa:has(.eixo-lista li:nth-child(5)) { top: min(0px, calc(100svh - var(--h, 100svh))); height: auto; min-height: 100vh; }
+  /* A long opening takes height from the photo first, which crops shorter */
   .capa__main { grid-template-rows: 1fr minmax(0, auto); min-height: 0; }
   .capa__img { max-height: 100%; }
 }
@@ -342,7 +347,8 @@ a { color: inherit; }
   .capa { min-height: 0; padding-bottom: 32px; }
   .capa__main { display: flex; flex-direction: column; gap: 24px; }
   .capa__fim { display: contents; }
-  .capa__name { order: 1; font-size: 56px; margin-top: 12px; }
+  /* Scales down on narrow phones so "Diga-me com" (axis 04) stays on one line at 320px */
+  .capa__name { order: 1; font-size: min(56px, 15.5vw); margin-top: 12px; }
   .capa__main > .abertura { order: 2; }
   .eixo-lista { order: 3; }
   .capa__img, .stats { order: 4; width: 100%; margin-top: 8px; }

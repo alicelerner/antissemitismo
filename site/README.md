@@ -78,6 +78,27 @@ Alice's new script (Google Doc "Textos") replaces the seven axes with: introduct
 - On desktop a long opening (02, 05) would push the cover past one screen; the photo now gives up height (crops shorter) instead: `.capa__main` rows `1fr minmax(0, auto)`, `min-height: 0`, `.capa__img { max-height: 100% }`.
 - CONIB May 2025: the doc linked Brasil Paralelo (not Tier 2); replaced by Poder360, "Entidade judaica critica 'falas antissemitas' de Lula", which dates the note 11 May 2025 (Lula in Moscow on the 10th). The dossier says 14 May; correct the dossier if Alice agrees.
 
+## Script of 2026-10-13 (branch `claude/atualizar-roteiro-site-aa2601`)
+
+The team's Google Doc "Textos" (Daniel Papaterra, Yael Berman, Pedro Zylbersztajn; all comment threads resolved) replaces the copy of the opening, the five covers and their episode lists. The team's text goes in with spelling and agreement fixes only ("mau cheiro", "se mantêm", "ao Estado de Israel", "nazifascistas", "vêm construindo", "antissemitismo", "antijudaicas", "são explícitos", "dos quatro anos em que"). Episode modals are Claude's, drawn from the dossier and the sources below; pending Alice.
+
+- Opening ("entre a cruz e a espada"): new paragraph on Flávio; Yael's split of the last paragraph into questions, as in the doc.
+- 01 Desconfiança: same three episodes. The doc still links Brasil Paralelo for May 2025; Poder360 stays.
+- 02 Lula: six episodes, newest first: Itamaraty seminar (Apr 2026), Planalto meeting plus Lottenberg's «não é nem nunca foi antissemita» (Jan 2026, O Globo/Lauro Jardim), Holocaust remembrance law (Jul 2024), 7 October plus Operação Voltando em Paz (Oct 2023), Knesset and Yad Vashem (Mar 2010), Peres (Nov 2009). Mercosul-Israel (Dec 2007, `A5-01`, verified) was cut by Claude when Alice capped every list at six episodes; the PF/Hezbollah episode (Nov 2023) is out because it is not in the doc.
+- 03 Bolsonarismo: Cabo Gilberto Silva on Versailles (Oct 2026, UOL), Adriana Dias (2021), Secom (May 2020), Alvim (Jan 2020). Budapeste and "podemos perdoar" are out.
+- 04 renamed "Diga-me com quem andas…", set on two lines, "Diga-me com / quem andas…" (Alice); on phones the cover names scale to `min(56px, 15.5vw)` so each line holds at 320px. Year ranges in the rows read "2022-2024" and do not wrap (the team's choice in the doc comments), line "AfD, Bannon e outros correligionários". AfD, Orbán (now with Hegedüs, 2022), Bannon. Musk is out. The episode label reads "04 Diga-me com quem andas".
+- 05 Flávio: CPMI (Sep 2023), Alvorada (Nov 2021), Filipe Martins (Mar 2021), Schindler's List (Mar 2021), Weintraub (May 2020). Jesus decree, AI-5 and Ustra are out.
+- Duplicates removed: Alvim and Secom were in both 03 and 05; they stay in 03 (Jair's government, where the doc lists them first), with the richer wording from 05. Frias's and Flávio's Schindler's List posts were two rows of the same video; merged into one.
+- Opening box: `padding-bottom: 88px` on desktop keeps the space under the text that `min-height` gave the shorter v1 text (Alice).
+- At most six episodes per cover (Alice).
+- Desktop: 02 and 05 no longer fit one screen. Covers with five or more episodes grow and stick once their bottom reaches the screen's bottom (`style.css`, `:has(li:nth-child(5))`), instead of clipping the list.
+
+Claims in the team's text that the dossier does not support, left as written for Alice and the team:
+- 02: "primeiro governo a constituir um grupo de trabalho ligado à Presidência": the dossier says no formal working group was announced (`A5-44`); nothing found on 2026-10-13.
+- 03: "a base de Jair Bolsonaro... era em grande medida composta por neonazistas... aos quais dedicou cartas, agradecimentos e homenagens públicas": rests on Adriana Dias's reading; the letter is `needs-second-source` (`A1-02`), and there is no evidence he sent it to those sites. "Copiado diretamente" also goes past the narrative rule (`00-narrative.md` IV).
+- 04: "Steve Bannon, que, dividindo palanque com Eduardo Bolsonaro, fez saudação nazista": Eduardo spoke at CPAC the next day, not on the same stage, and AP reports Bannon as "accused" (he says it was a wave). "Os ditadores Recep Erdogan e Viktor Orbán": both are elected; Erdogan is not in the dossier.
+- 03 episode Cabo Gilberto: one source (UOL column, reportagem). The doc's quotation marks around "onda nazista" are not his words; the row paraphrases.
+
 ## Footer (2026-10-12, branch `rodape`)
 
 Alice's line: «No dia 25, leve a memória com você pra urna. Vote por todos nós.» Full viewport height on `--azul-7` (first tried the flag's own `#0038B8`; Alice asked for a blue from the Figma palette), roman Fraunces Light up to 168px, sitting at the bottom. On top, a numbers band after the reference's methodology strip (test, branch `rodape-numeros`): "Metodologia / Por trás deste site", "250+ Fontes consultadas" (253 rows in `research/sources.md`, all statuses), "30+ Pessoas envolvidas" (Alice's number). It replaced the mono row "Feito por e para judeus brasileiros" / "Outubro 2026" (Alice, 2026-10-12). The sentence ends with a small Brazilian flag (`img/bandeira.svg`, Alice's file from `design/bandeira.svg`), cap-height, kept on the same line as "nós.". It rises from a mask on enter like the hero and cover titles (900ms strong ease-out, 80ms between sentences); reduced motion drops the movement.
