@@ -98,7 +98,7 @@ Last round, same doc, same day (diffed against the earlier read; only these chan
 - 03 episodes: Alvorada (Nov 2021) moves here from 05; new Mussolini episode (31 May 2020, Bolsonaro shares a video ending with "melhor viver um dia como leão que cem anos como cordeiro"), O Globo Sonar plus O Povo, both read on 2026-10-13; not yet in `research/sources.md`. The deputy Cabo Gilberto moves from 03 to 05. Result: 03 has 5 rows, 05 has 5.
 - 04: Musk back in, from dossier pair 8 (`A3-22`, `A3-33`, `A3-37`, all verified). The doc says "saudação nazista"; the episode follows the dossier rule and gives both readings (ADL: awkward gesture; JCPA: Nazi salute), never as fact.
 - 01, CONIB episode: the doc's new link (CNN Brasil) is a 1 Jun 2025 note, not the 11 May one; added as a second source, since the episode mentions the June criticism.
-- 01 second paragraph: the doc ends at "incorrem em antissemitismo."; the site keeps Alice's chat version, "antissemitismo explícito e desavergonhado".
+- 01 second paragraph: ends at "incorrem em antissemitismo.", as in the doc ("explícito e desavergonhado" dropped; Alice: use the doc as it stands).
 - 03 "em um volume sem precedentes" is a comparative claim the dossier does not measure.
 
 Claims in the team's text that the dossier does not support, left as written for Alice and the team:
