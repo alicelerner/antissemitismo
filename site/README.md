@@ -93,6 +93,14 @@ The team's Google Doc "Textos" (Daniel Papaterra, Yael Berman, Pedro Zylbersztaj
 - At most six episodes per cover (Alice).
 - Desktop: 02 and 05 no longer fit one screen. Covers with five or more episodes grow and stick once their bottom reaches the screen's bottom (`style.css`, `:has(li:nth-child(5))`), instead of clipping the list.
 
+Last round, same doc, same day (diffed against the earlier read; only these changed):
+- 03 text: "com cada vez mais alcance, desde o seu governo" (drops "e legitimação institucional") and ends "em um volume sem precedentes", as in the doc.
+- 03 episodes: Alvorada (Nov 2021) moves here from 05; new Mussolini episode (31 May 2020, Bolsonaro shares a video ending with "melhor viver um dia como leão que cem anos como cordeiro"), O Globo Sonar plus O Povo, both read on 2026-10-13; not yet in `research/sources.md`. The deputy Cabo Gilberto moves from 03 to 05. Result: 03 has 5 rows, 05 has 5.
+- 04: Musk back in, from dossier pair 8 (`A3-22`, `A3-33`, `A3-37`, all verified). The doc says "saudação nazista"; the episode follows the dossier rule and gives both readings (ADL: awkward gesture; JCPA: Nazi salute), never as fact.
+- 01, CONIB episode: the doc's new link (CNN Brasil) is a 1 Jun 2025 note, not the 11 May one; added as a second source, since the episode mentions the June criticism.
+- 01 second paragraph: ends at "incorrem em antissemitismo.", as in the doc ("explícito e desavergonhado" dropped; Alice: use the doc as it stands).
+- 03 "em um volume sem precedentes" is a comparative claim the dossier does not measure.
+
 Claims in the team's text that the dossier does not support, left as written for Alice and the team:
 - 02: "primeiro governo a constituir um grupo de trabalho ligado à Presidência": the dossier says no formal working group was announced (`A5-44`); nothing found on 2026-10-13.
 - 03: "a base de Jair Bolsonaro... era em grande medida composta por neonazistas... aos quais dedicou cartas, agradecimentos e homenagens públicas": rests on Adriana Dias's reading; the letter is `needs-second-source` (`A1-02`), and there is no evidence he sent it to those sites. "Copiado diretamente" also goes past the narrative rule (`00-narrative.md` IV).
