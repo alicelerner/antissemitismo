@@ -63,10 +63,14 @@ a { color: inherit; }
 }
 .bar__menu {
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
-  width: 516px; padding: 0 var(--gutter);
+  /* Proposal (branch menos-referencia): narrower than the reference's slab, and it names the axis being read (main.js).
+     Fixed width so the bar does not jump as the name changes; fits "03 Bolsonarismo". */
+  width: 288px; padding: 0 var(--gutter);
   background: var(--brasa); color: var(--tinta);
   border: 0; font: 400 18px/1 var(--sans); cursor: pointer;
 }
+.bar__atual { display: flex; align-items: baseline; gap: 12px; white-space: nowrap; }
+.bar__atual .mono { font-size: 11px; }
 .bar__menu i { font-style: normal; font-size: 22px; transition: transform 200ms var(--ease-out); }
 @media (max-width: 767px) { .bar__menu { flex: 1; width: auto; } }
 
@@ -79,12 +83,14 @@ a { color: inherit; }
   width: 592px; max-width: 100vw; height: 100dvh; max-height: none;
   background: var(--brasa); color: var(--tinta);
   display: flex; flex-direction: column;
-  clip-path: inset(0 0 calc(100% - var(--bar)) 0);
+  /* Closed shape = the bar (72px mark + 288px button), so the panel grows out of it */
+  --fechado: inset(0 max(0px, calc(100% - 360px)) calc(100% - var(--bar)) 0);
+  clip-path: var(--fechado);
   transition: clip-path 250ms var(--ease-drawer), overlay 250ms allow-discrete, display 250ms allow-discrete;
 }
 .menu:not([open]) { display: none; }
 .menu[open] { clip-path: inset(0 0 0 0); transition-duration: 450ms; }
-@starting-style { .menu[open] { clip-path: inset(0 0 calc(100% - var(--bar)) 0); } }
+@starting-style { .menu[open] { clip-path: var(--fechado); } }
 .menu::backdrop { background: transparent; }
 
 .menu__head {
@@ -123,7 +129,7 @@ a { color: inherit; }
   .menu li a:hover .menu__t { opacity: 0.6; }
 }
 @media (max-width: 767px) {
-  .menu { width: 100vw; }
+  .menu { width: 100vw; --fechado: inset(0 0 calc(100% - var(--bar)) 0); }
   /* 7.2vh alone cut "Bolsonarismo" and pushed the numbers off a 375px phone */
   .menu__t { font-size: min(64px, 7.2vh, 12vw); }
 }

@@ -36,6 +36,24 @@
   });
   document.querySelectorAll(".capa").forEach((c) => altura.observe(c));
 
+  // Bar names the axis being read (proposal): the highest cover crossing the middle of the screen, "Eixos" elsewhere.
+  const atual = document.querySelector(".bar__atual");
+  const lendo = new Set();
+  const nomeia = () => {
+    const capa = [...lendo].sort((a, b) => b.dataset.n - a.dataset.n)[0];
+    const html = capa
+      ? `<span class="mono">${capa.dataset.n.padStart(2, "0")}</span>${capa.querySelector(".capa__name .line:last-child").textContent}`
+      : "Eixos";
+    if (atual.innerHTML === html) return;
+    atual.innerHTML = html;
+    if (!reduce) atual.animate({ opacity: [0, 1] }, { duration: 200, easing: "cubic-bezier(0.23, 1, 0.32, 1)" });
+  };
+  const meio = new IntersectionObserver((entries) => {
+    for (const e of entries) e.isIntersecting ? lendo.add(e.target) : lendo.delete(e.target);
+    nomeia();
+  }, { rootMargin: "-50% 0px -50% 0px" });
+  document.querySelectorAll(".capa").forEach((c) => meio.observe(c));
+
   // Menu: native <dialog> for focus trap and Esc.
   const menu = document.getElementById("menu");
   const open = document.querySelector(".bar__menu");
