@@ -566,7 +566,7 @@ a { color: inherit; }
 .fim.is-in .fim__mark .line > span { opacity: 1; filter: none; }
 .fim .mono { color: rgba(255,255,255,0.7); }
 /* Numbers band (test): hairlines top and bottom, dividers between cells, as in the reference */
-.fim__numeros { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+.fim__numeros { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 0.8fr);
   border-top: 1px solid rgba(255,255,255,0.4); border-bottom: 1px solid rgba(255,255,255,0.4); }
 .fim__cel { display: flex; flex-direction: column; justify-content: space-between; gap: 32px; min-height: clamp(160px, 15vw, 216px); padding: 16px 16px 16px 0; }
 .fim__cel + .fim__cel { padding-left: 16px; border-left: 1px solid rgba(255,255,255,0.4); }
@@ -575,7 +575,7 @@ a { color: inherit; }
 .fim__leg { font-size: 18px; }
 /* Closing note (test, 2026-10-13): small text pinned to the bottom of the last cell */
 .fim__cel--nota { justify-content: flex-end; }
-.fim__nota { font-size: 13px; line-height: 1.45; color: rgba(255,255,255,0.7); max-width: 32em; text-wrap: pretty; }
+.fim__nota { font-size: 15px; line-height: 1.4; color: rgba(255,255,255,0.7); max-width: 32em; text-wrap: pretty; }
 @media (max-width: 767px) {
   .fim__numeros { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .fim__cel:first-child { grid-column: 1 / -1; min-height: 0; padding-right: 0; border-bottom: 1px solid rgba(255,255,255,0.4); }
