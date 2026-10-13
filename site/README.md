@@ -107,6 +107,25 @@ Claims in the team's text that the dossier does not support, left as written for
 - 04: "Steve Bannon, que, dividindo palanque com Eduardo Bolsonaro, fez saudação nazista": Eduardo spoke at CPAC the next day, not on the same stage, and AP reports Bannon as "accused" (he says it was a wave). "Os ditadores Recep Erdogan e Viktor Orbán": both are elected; Erdogan is not in the dossier.
 - 03 episode Cabo Gilberto: one source (UOL column, reportagem). The doc's quotation marks around "onda nazista" are not his words; the row paraphrases.
 
+## Episode texts from the team review (2026-10-13, branch `episodios-revisao-equipe`)
+
+Source of truth for copy, from now on (Alice): the two Google Docs, "Textos" (opening and covers) and "Textos internos dos episódios" (episode modals, id `1OAx1fLlZCHmtwsbDz_I4OtLixUIwb7h-IZofOa9nf_4`). Claude made the second doc from the modals; the team rewrote it and corrected the sources. The modals now follow it, with only typos and edit leftovers fixed ("sair.Celso", "concientização", "AfDcomo", "alegoulembrou" read as "alegou", ".." and an unmatched quotation mark in a source title, a Folha title pasted twice, the `st_source` tracking parameter).
+
+What changed, in short: several sentences cut (Itamaraty's silence on the IHRA, "Lula não se retratou", Hamas named on the 20th and 23rd, Herzl and Lieberman, Wajngarten, Alvim's dismissal, Gilberto's "nada a ver"); Peres's quote is now paraphrased in the text; Alvorada carries the full question and Bolsonaro's full answer; Adriana Dias now quotes the 2004 letter (Intercept), and the "no proof he sent it" caveat and her quote are gone; Secom dated 10 May; new or replaced sources across 02-05 (Congresso em Foco, Folha, TV Cultura, Intercept, Fantástico/g1, DW, BBC, UOL); Planalto episode retitled "Combate ao antissemitismo em pauta no Planalto".
+
+Calls made by Claude where the doc was ambiguous:
+- Peres: the doc keeps an attribution line ("Shimon Peres, 10 nov 2009") under a paragraph that no longer has a quote; dropped.
+- Mussolini: the doc links the date to the Facebook video; added as a source instead, since the date line is not a link on the site.
+- Fantástico/g1: the doc says 2021, the URL is 16 Jan 2022; dated 2022 and given g1's title.
+- Bare URLs (UOL Chico Alves, Folha opinion piece) got titles from their slugs; check the wording.
+
+For Alice and the team:
+- Musk: only the JCPA reading ("saudação nazista inequívoca") remains; the ADL's ("gesto desajeitado") was cut. Attributed, not stated as fact, but it departs from the dossier rule to give both readings.
+- Dias: the cut caveat was the reason the letter is `needs-second-source` (`A1-02`); the Intercept is now a second source for the letter's content, not for his having sent it.
+- Martins: "recebido com ceticismo por diversos analistas" rests on one opinion piece.
+- Alvorada: "sem repudiar ou corrigir" and "nem corrigiu o apoiador" say the same thing twice.
+- Open comment (Yael, not resolved): replace the two German AfD sources with DW Brasil. Not applied.
+
 ## Footer (2026-10-12, branch `rodape`)
 
 Alice's line: «No dia 25, leve a memória com você pra urna. Vote por todos nós.» Full viewport height on `--azul-7` (first tried the flag's own `#0038B8`; Alice asked for a blue from the Figma palette), roman Fraunces Light up to 168px, sitting at the bottom. On top, a numbers band after the reference's methodology strip (test, branch `rodape-numeros`): "Metodologia / Por trás deste site", "250+ Fontes consultadas" (253 rows in `research/sources.md`, all statuses), "30+ Pessoas envolvidas" (Alice's number). A fourth, narrower cell (0.8 of the others) closes the band with a small note on the expression "Bom pros judeus" (Alice's text, 2026-10-13): 15px, 70% white, its first line optically aligned to the top of the numerals; on mobile it takes a full row under the numbers. It replaced the mono row "Feito por e para judeus brasileiros" / "Outubro 2026" (Alice, 2026-10-12). The sentence ends with a small Brazilian flag (`img/bandeira.svg`, Alice's file from `design/bandeira.svg`), cap-height, kept on the same line as "nós.". It rises from a mask on enter like the hero and cover titles (900ms strong ease-out, 80ms between sentences); reduced motion drops the movement.
