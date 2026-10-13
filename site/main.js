@@ -36,6 +36,24 @@
   });
   document.querySelectorAll(".capa").forEach((c) => altura.observe(c));
 
+  // Bar names the axis being read (proposal): the highest cover crossing the middle of the screen, "Eixos" elsewhere.
+  const atual = document.querySelector(".bar__atual");
+  const lendo = new Set();
+  const nomeia = () => {
+    const capa = [...lendo].sort((a, b) => b.dataset.n - a.dataset.n)[0];
+    const html = capa
+      ? `<span class="mono">${capa.dataset.n.padStart(2, "0")}</span>${[...capa.querySelectorAll(".capa__name .line")].slice(1).map((l) => l.textContent).join(" ")}`
+      : "Eixos";
+    if (atual.innerHTML === html) return;
+    atual.innerHTML = html;
+    if (!reduce) atual.animate({ opacity: [0, 1] }, { duration: 200, easing: "cubic-bezier(0.23, 1, 0.32, 1)" });
+  };
+  const meio = new IntersectionObserver((entries) => {
+    for (const e of entries) e.isIntersecting ? lendo.add(e.target) : lendo.delete(e.target);
+    nomeia();
+  }, { rootMargin: "-50% 0px -50% 0px" });
+  document.querySelectorAll(".capa").forEach((c) => meio.observe(c));
+
   // Menu: native <dialog> for focus trap and Esc.
   const menu = document.getElementById("menu");
   const open = document.querySelector(".bar__menu");
@@ -113,15 +131,33 @@
     depo.addEventListener("cancel", (e) => { e.preventDefault(); fechar(); }); // Esc
   }
 
-  // Hero band: tiles open and close with clip-path from a random edge (prototype: design/hero/motion.html).
-  // Lula is never on screen without Flávio; Flávio may be alone. Lenses only close while 4+ tiles stay open.
+  // Hero band (proposal "revelação"). The slat wave is CSS; here each slat takes the next photo when it starts a new
+  // wave (opacity 0 at that moment), so every wave reveals a new photo. The candidates open and close from a random
+  // edge with clip-path, as in round 4. Lula is never on screen without Flávio; Flávio may be alone.
   const band = document.querySelector(".hero__band");
   if (band && !reduce) {
     const EASE_OUT = "cubic-bezier(0.23, 1, 0.32, 1)";
     const OPEN = "inset(0 0% 0 0%)";
     const CLOSED = ["inset(0 100% 0 0)", "inset(0 0 0 100%)", "inset(100% 0 0 0)", "inset(0 0 100% 0)"];
-    const MIN_OPEN = 4;
-    let openCount = 0, clock = 0, last = performance.now(), visible = true;
+    // Kristallnacht and Białystok. Białystok is a scan with a white border, so it is enlarged to hide it.
+    const FOTOS = [
+      { src: "img/hero/cristais1.jpg", pos: "50% 40%" },
+      { src: "img/hero/bialystok.jpg", pos: "50% 45%", scale: 1.12 },
+      { src: "img/hero/cristais2.jpeg", pos: "50% 55%" },
+      { src: "img/hero/cristais3.webp", pos: "50% 50%" },
+    ];
+    FOTOS.forEach((f) => { new Image().src = f.src; }); // warm the cache so a swap never shows an empty slat
+    band.querySelectorAll(".hero__slat").forEach((slat) => {
+      const img = slat.querySelector("img");
+      let n = 0;
+      slat.addEventListener("animationiteration", () => {
+        const f = FOTOS[++n % FOTOS.length];
+        img.src = f.src;
+        img.style.objectPosition = f.pos;
+        img.style.transform = f.scale ? `scale(${f.scale})` : "";
+      });
+    });
+    let clock = 0, last = performance.now(), visible = true;
     const waiters = [];
 
     // One clock that stops while the band is off screen, so waits and animations pause together
@@ -140,42 +176,83 @@
     const wait = (ms) => new Promise((resolve) => waiters.push({ at: clock + ms, resolve }));
     const rand = (a, b) => a + Math.random() * (b - a);
     const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
-    const clip = (tile, from, to, duration) => {
-      const a = tile.animate([{ clipPath: from }, { clipPath: to }], { duration, easing: EASE_OUT, fill: "forwards" });
+    const clip = (el, from, to, duration) => {
+      const a = el.animate([{ clipPath: from }, { clipPath: to }], { duration, easing: EASE_OUT, fill: "forwards" });
       if (!visible) a.pause();
       return a.finished.then(() => { a.commitStyles(); a.cancel(); });
     };
-    const open = (tile) => clip(tile, pick(CLOSED), OPEN, 1400);
-    const close = (tile) => clip(tile, OPEN, pick(CLOSED), 1100);
+    const open = (fig) => clip(fig, pick(CLOSED), OPEN, 1400);
+    const close = (fig) => clip(fig, OPEN, pick(CLOSED), 1100);
 
-    const lens = async (tile) => {
-      await wait(rand(200, 2600));
-      for (;;) {
-        openCount++; await open(tile);
-        await wait(rand(5000, 9000));
-        while (openCount <= MIN_OPEN) await wait(rand(800, 1600));
-        openCount--; await close(tile);
-        await wait(rand(1500, 4000));
-      }
+    // While both are closed, move each window to a new spot on the grid (Alice, 2026-10-13): a new column, at least
+    // two columns away from where it was, never overlapping the other, its name strip never off screen, and a new
+    // height that keeps the face inside the band through the whole drift.
+    const px = (v, H) => (v.endsWith("cqh") ? (parseFloat(v) * H) / 100 : parseFloat(v) || 0);
+    const place = (lula, flavio) => {
+      const st = getComputedStyle(band);
+      const cols = parseInt(st.getPropertyValue("--cols"), 10);
+      const H = band.clientHeight;
+      const phone = cols < 12;
+      const first = phone ? 0 : 1; // desktop names sit in the column left of the window
+      const last = cols - 2;
+      let cL, cF, tries = 0;
+      do {
+        cL = first + Math.floor(Math.random() * (last - first + 1));
+        cF = first + Math.floor(Math.random() * (last - first + 1));
+        tries++;
+      } while (tries < 200 && (Math.abs(cL - cF) < (phone ? 2 : 3) || Math.abs(cL - (+lula.dataset.col || -9)) < 2 || Math.abs(cF - (+flavio.dataset.col || -9)) < 2));
+      [[lula, cL], [flavio, cF]].forEach(([f, c]) => {
+        const dy = px(getComputedStyle(f).getPropertyValue("--dy").trim(), H);
+        const h = f.offsetHeight, pad = 0.03 * H;
+        const lo = pad + Math.max(0, -dy), hi = Math.max(lo, H - h - pad - Math.max(0, dy));
+        f.dataset.col = c;
+        f.style.left = `calc(${c} * 100% / var(--cols))`;
+        f.style.top = `${((lo + Math.random() * (hi - lo)) / H) * 100}%`;
+      });
     };
+
+    // Start from the CSS layout's columns; a switch between phone and desktop grids drops the inline spots
+    const colOf = (f) => {
+      const cols = parseInt(getComputedStyle(band).getPropertyValue("--cols"), 10);
+      return Math.round((f.offsetLeft + parseFloat(getComputedStyle(f).paddingLeft)) / (band.clientWidth / cols));
+    };
+    const reset = (figs) => figs.forEach((f) => { f.style.left = f.style.top = ""; f.dataset.col = colOf(f); });
+    const figs = [band.querySelector('[data-who="lula"]'), band.querySelector('[data-who="flavio"]')];
+    reset(figs);
+    matchMedia("(max-width: 767px)").addEventListener("change", () => reset(figs));
+
+    // Each figure's data-fotos lists its photos, comma-separated, each "path x% y% [zoom]": focal point for the square
+    // crop, and an optional zoom about that point so both candidates' heads come out the same size.
+    // While closed, it takes the next one. Same count for both keeps the rotation even.
+    const fotos = (f) => (f.dataset.fotos || "").split(",").map((x) => x.trim().split(/\s+/)).filter((x) => x[0]);
+    figs.forEach((f) => fotos(f).forEach(([src]) => { new Image().src = src; }));
+    const troca = (f, ciclo) => {
+      const lista = fotos(f);
+      if (!lista.length) return;
+      const [src, x = "50%", y = "30%", zoom] = lista[ciclo % lista.length];
+      const img = f.querySelector("img");
+      img.src = src;
+      img.style.objectPosition = img.style.transformOrigin = `${x} ${y}`;
+      img.style.transform = zoom ? `scale(${zoom})` : "";
+    };
+
+    figs.forEach((f) => troca(f, 0)); // the first photo gets its crop and zoom too
 
     const candidates = async (lula, flavio) => {
       await wait(400);
-      for (;;) {
-        openCount++; const flavioOpen = open(flavio);
+      for (let ciclo = 0; ; ciclo++) {
+        if (ciclo > 0) { place(lula, flavio); troca(lula, ciclo); troca(flavio, ciclo); } // first entrance keeps the CSS layout
+        const flavioOpen = open(flavio);
         await wait(rand(300, 600));
-        openCount++; await open(lula); await flavioOpen;
-        await wait(rand(14000, 18000));
-        openCount--; await close(lula);
+        await open(lula); await flavioOpen;
+        await wait(rand(5000, 7000)); // shorter hold so the spots change more often (Alice, 2026-10-13; was 14-18s)
+        await close(lula);
         await wait(rand(300, 700));
-        openCount--; await close(flavio);
-        await wait(rand(1200, 2000));
+        await close(flavio);
+        await wait(rand(800, 1400));
       }
     };
-
-    // On phones two lenses are hidden; only animate the ones on screen
-    band.querySelectorAll(".hero__tile--lens").forEach((t) => { if (t.offsetParent) lens(t); });
-    candidates(band.querySelector('[data-who="lula"]'), band.querySelector('[data-who="flavio"]'));
+    candidates(...figs);
   }
 
   // CTAs point to axis pages that do not exist yet.

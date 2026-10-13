@@ -9,13 +9,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Geist+Mono:wght@400&display=swap">
-<link rel="stylesheet" href="style.css?v=36">
+<link rel="stylesheet" href="style.css?v=45">
 </head>
 <body>
 
 <header class="bar">
   <a class="bar__mark" href="#topo">25.10</a>
-  <button class="bar__menu" type="button" aria-haspopup="dialog" aria-controls="menu">Eixos <i aria-hidden="true">+</i></button>
+  <button class="bar__menu" type="button" aria-haspopup="dialog" aria-controls="menu" aria-label="Eixos"><span class="bar__atual" aria-hidden="true">Eixos</span> <i aria-hidden="true">+</i></button>
 </header>
 
 <dialog class="menu" id="menu" aria-label="Eixos">
@@ -25,11 +25,11 @@
   </div>
   <nav class="menu__body">
     <ol>
-      <li><a href="#eixo-1"><span class="menu__mask"><span class="menu__t">Desconfiança<sup>01</sup></span></span></a></li>
-      <li><a href="#eixo-2"><span class="menu__mask"><span class="menu__t">Lula<sup>02</sup></span></span></a></li>
-      <li><a href="#eixo-3"><span class="menu__mask"><span class="menu__t">Bolsonarismo<sup>03</sup></span></span></a></li>
-      <li><a href="#eixo-4"><span class="menu__mask"><span class="menu__t">Diga-me com quem andas…<sup>04</sup></span></span></a></li>
-      <li><a href="#eixo-5"><span class="menu__mask"><span class="menu__t">Flávio<sup>05</sup></span></span></a></li>
+      <li><a href="#eixo-1"><span class="menu__mask"><span class="menu__t"><sup class="mono">01</sup>Desconfiança</span></span></a></li>
+      <li><a href="#eixo-2"><span class="menu__mask"><span class="menu__t"><sup class="mono">02</sup>Lula</span></span></a></li>
+      <li><a href="#eixo-3"><span class="menu__mask"><span class="menu__t"><sup class="mono">03</sup>Bolsonarismo</span></span></a></li>
+      <li><a href="#eixo-4"><span class="menu__mask"><span class="menu__t"><sup class="mono">04</sup><span>Diga-me com<br>quem andas…</span></span></span></a></li>
+      <li><a href="#eixo-5"><span class="menu__mask"><span class="menu__t"><sup class="mono">05</sup>Flávio</span></span></a></li>
     </ol>
     <p class="menu__legal mono">Feito por e para judeus brasileiros · 2026</p>
   </nav>
@@ -38,8 +38,8 @@
 <main id="topo">
 
   <section class="hero" data-reveal>
-    <!-- Animated band, built in design/hero (rounds 1-4, 2026-10-12): blurred Kristallnacht background,
-         pogrom "lenses" and the two candidates. Motion lives in main.js. -->
+    <!-- Animated band: blurred Kristallnacht background, pogrom slats and the two candidates.
+         Earlier version (floating lenses, rounds 1-4) in design/hero and on main. -->
     <div class="hero__band" aria-hidden="true">
       <svg width="0" height="0" class="hero__defs">
         <filter id="hero-duo" color-interpolation-filters="sRGB">
@@ -48,12 +48,26 @@
         </filter>
       </svg>
       <div class="hero__bg"><img src="img/hero/wiesbaden-1938.jpg" alt=""></div>
-      <div class="hero__t hero__t--l1"><div class="hero__tile hero__tile--lens"><img src="img/hero/pogrom.jpg" alt="" style="object-position:40% 20%"></div></div>
-      <div class="hero__t hero__t--lula"><div class="hero__tile" data-who="lula"><img src="img/hero/lula.jpg" alt="" style="object-position:58% 30%"><span class="hero__lab mono">Luiz Inácio Lula da Silva</span></div></div>
-      <div class="hero__t hero__t--l2"><div class="hero__tile hero__tile--lens"><img src="img/hero/pogrom.jpg" alt="" style="object-position:85% 50%"></div></div>
-      <div class="hero__t hero__t--flavio"><div class="hero__tile" data-who="flavio"><img src="img/hero/flavio.jpg" alt="" style="object-position:45% 35%"><span class="hero__lab mono">Flávio Bolsonaro</span></div></div>
-      <div class="hero__t hero__t--l3"><div class="hero__tile hero__tile--lens"><img src="img/hero/pogrom.jpg" alt="" style="object-position:15% 70%"></div></div>
-      <div class="hero__t hero__t--l4"><div class="hero__tile hero__tile--lens"><img src="img/hero/pogrom.jpg" alt="" style="object-position:70% 30%"></div></div>
+      <!-- Proposal "revelação" (branch menos-referencia): slats on a 12-column grid come into focus one by one, a wave
+           across one photo; each wave shows the next photo (Kristallnacht, Białystok). The candidates open from an edge
+           in grid-aligned windows, as before. Wave in CSS, photo swap and candidate cycle in main.js. -->
+      <div class="hero__slats">
+        <div class="hero__slat" style="--i:0"><div><img src="img/hero/cristais1.jpg" alt=""></div></div>
+        <div class="hero__slat" style="--i:1"><div><img src="img/hero/cristais1.jpg" alt=""></div></div>
+        <div class="hero__slat" style="--i:2"><div><img src="img/hero/cristais1.jpg" alt=""></div></div>
+        <div class="hero__slat" style="--i:3"><div><img src="img/hero/cristais1.jpg" alt=""></div></div>
+        <div class="hero__slat" style="--i:4"><div><img src="img/hero/cristais1.jpg" alt=""></div></div>
+        <div class="hero__slat" style="--i:5"><div><img src="img/hero/cristais1.jpg" alt=""></div></div>
+        <div class="hero__slat" style="--i:6"><div><img src="img/hero/cristais1.jpg" alt=""></div></div>
+        <div class="hero__slat" style="--i:7"><div><img src="img/hero/cristais1.jpg" alt=""></div></div>
+        <div class="hero__slat" style="--i:8"><div><img src="img/hero/cristais1.jpg" alt=""></div></div>
+        <div class="hero__slat" style="--i:9"><div><img src="img/hero/cristais1.jpg" alt=""></div></div>
+        <div class="hero__slat" style="--i:10"><div><img src="img/hero/cristais1.jpg" alt=""></div></div>
+        <div class="hero__slat" style="--i:11"><div><img src="img/hero/cristais1.jpg" alt=""></div></div>
+      </div>
+      <div class="hero__grade"></div>
+      <figure class="hero__p hero__p--lula" data-who="lula" data-fotos="img/hero/lula.jpg 58% 24% 1.6, img/hero/lula-2.jpg 50% 12% 1.7, img/hero/lula-3.jpg 38% 38% 1.4, img/hero/lula-4.jpeg 50% 16% 1.35, img/hero/lula-5.webp 53% 22% 2, img/hero/lula-6.jpg 56% 40% 1.1"><div class="hero__win"><img src="img/hero/lula.jpg" alt="" style="object-position:58% 30%"></div><figcaption class="hero__nome mono">Lula da Silva</figcaption></figure>
+      <figure class="hero__p hero__p--flavio" data-who="flavio" data-fotos="img/hero/flavio.jpg 44% 30% 1.45, img/hero/flavio-2.jpg 50% 30% 1.05, img/hero/flavio-3.jpg 50% 28% 1.45, img/hero/flavio-4.jpg 50% 20%, img/hero/flavio-5.jpg 42% 30% 1.45, img/hero/flavio-6.jpg 55% 28% 1.85"><div class="hero__win"><img src="img/hero/flavio.jpg" alt="" style="object-position:45% 35%"></div><figcaption class="hero__nome mono">Flávio Bolsonaro</figcaption></figure>
     </div>
     <div class="hero__text">
       <div class="hero__lede">
@@ -777,6 +791,6 @@
   </footer>
 </main>
 
-<script src="main.js?v=34"></script>
+<script src="main.js?v=41"></script>
 </body>
 </html>
