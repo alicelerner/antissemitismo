@@ -221,18 +221,22 @@
     reset(figs);
     matchMedia("(max-width: 767px)").addEventListener("change", () => reset(figs));
 
-    // Each figure's data-fotos lists its photos, comma-separated, each "path x% y%" (focal point for the crop).
+    // Each figure's data-fotos lists its photos, comma-separated, each "path x% y% [zoom]": focal point for the square
+    // crop, and an optional zoom about that point so both candidates' heads come out the same size.
     // While closed, it takes the next one. Same count for both keeps the rotation even.
     const fotos = (f) => (f.dataset.fotos || "").split(",").map((x) => x.trim().split(/\s+/)).filter((x) => x[0]);
     figs.forEach((f) => fotos(f).forEach(([src]) => { new Image().src = src; }));
     const troca = (f, ciclo) => {
       const lista = fotos(f);
-      if (lista.length < 2) return;
-      const [src, x = "50%", y = "30%"] = lista[ciclo % lista.length];
+      if (!lista.length) return;
+      const [src, x = "50%", y = "30%", zoom] = lista[ciclo % lista.length];
       const img = f.querySelector("img");
       img.src = src;
-      img.style.objectPosition = `${x} ${y}`;
+      img.style.objectPosition = img.style.transformOrigin = `${x} ${y}`;
+      img.style.transform = zoom ? `scale(${zoom})` : "";
     };
+
+    figs.forEach((f) => troca(f, 0)); // the first photo gets its crop and zoom too
 
     const candidates = async (lula, flavio) => {
       await wait(400);
