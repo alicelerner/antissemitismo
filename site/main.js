@@ -228,11 +228,11 @@
         const flavioOpen = open(flavio);
         await wait(rand(300, 600));
         await open(lula); await flavioOpen;
-        await wait(rand(14000, 18000));
+        await wait(rand(5000, 7000)); // shorter hold so the spots change more often (Alice, 2026-10-13; was 14-18s)
         await close(lula);
         await wait(rand(300, 700));
         await close(flavio);
-        await wait(rand(1200, 2000));
+        await wait(rand(800, 1400));
       }
     };
     candidates(...figs);

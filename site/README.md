@@ -98,7 +98,7 @@ Alice's line: «No dia 25, leve a memória com você pra urna. Vote por todos n�
 Alice worried the site reads as a copy of stateofaidesign. Analysis in `design/proposta-menos-referencia.md`. One commit per change.
 
 Alice's verdict, same day:
-- Hero "revelação": kept. Each time the candidates reopen, both move to a new grid spot (new column at least two away, never overlapping, new height inside the band). Grid slats come into focus in a wave; each wave reveals the next photo (`img/hero/cristais1.jpg`, `bialystok.jpg`, `cristais2.jpeg`, `cristais3.webp`, saved by Alice; Białystok enlarged 1.12 to hide its scan border). The candidates open and close from an edge with clip-path, as in round 4, the vertical name inside the clip. Sources, licences and credits of the four photos still to record. `pogrom.jpg` is no longer used by the band.
+- Hero "revelação": kept. Each time the candidates reopen (hold 5-7s, gap 0.8-1.4s), both move to a new grid spot; Lula labelled "Lula da Silva" so the name fits on phones (new column at least two away, never overlapping, new height inside the band). Grid slats come into focus in a wave; each wave reveals the next photo (`img/hero/cristais1.jpg`, `bialystok.jpg`, `cristais2.jpeg`, `cristais3.webp`, saved by Alice; Białystok enlarged 1.12 to hide its scan border). The candidates open and close from an edge with clip-path, as in round 4, the vertical name inside the clip. Sources, licences and credits of the four photos still to record. `pogrom.jpg` is no longer used by the band.
 - Focus-in entrances: kept (no objection).
 - Bar names the axis being read: kept, back to 516px so its right edge lines up with the cover images.
 - Menu index before the title: kept; the digits' tops meet the capitals at any size.
