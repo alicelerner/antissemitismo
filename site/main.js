@@ -184,9 +184,47 @@
     const open = (fig) => clip(fig, pick(CLOSED), OPEN, 1400);
     const close = (fig) => clip(fig, OPEN, pick(CLOSED), 1100);
 
+    // While both are closed, move each window to a new spot on the grid (Alice, 2026-10-13): a new column, at least
+    // two columns away from where it was, never overlapping the other, its name strip never off screen, and a new
+    // height that keeps the face inside the band through the whole drift.
+    const px = (v, H) => (v.endsWith("cqh") ? (parseFloat(v) * H) / 100 : parseFloat(v) || 0);
+    const place = (lula, flavio) => {
+      const st = getComputedStyle(band);
+      const cols = parseInt(st.getPropertyValue("--cols"), 10);
+      const H = band.clientHeight;
+      const phone = cols < 12;
+      const first = phone ? 0 : 1; // desktop names sit in the column left of the window
+      const last = cols - 2;
+      let cL, cF, tries = 0;
+      do {
+        cL = first + Math.floor(Math.random() * (last - first + 1));
+        cF = first + Math.floor(Math.random() * (last - first + 1));
+        tries++;
+      } while (tries < 200 && (Math.abs(cL - cF) < (phone ? 2 : 3) || Math.abs(cL - (+lula.dataset.col || -9)) < 2 || Math.abs(cF - (+flavio.dataset.col || -9)) < 2));
+      [[lula, cL], [flavio, cF]].forEach(([f, c]) => {
+        const dy = px(getComputedStyle(f).getPropertyValue("--dy").trim(), H);
+        const h = f.offsetHeight, pad = 0.03 * H;
+        const lo = pad + Math.max(0, -dy), hi = Math.max(lo, H - h - pad - Math.max(0, dy));
+        f.dataset.col = c;
+        f.style.left = `calc(${c} * 100% / var(--cols))`;
+        f.style.top = `${((lo + Math.random() * (hi - lo)) / H) * 100}%`;
+      });
+    };
+
+    // Start from the CSS layout's columns; a switch between phone and desktop grids drops the inline spots
+    const colOf = (f) => {
+      const cols = parseInt(getComputedStyle(band).getPropertyValue("--cols"), 10);
+      return Math.round((f.offsetLeft + parseFloat(getComputedStyle(f).paddingLeft)) / (band.clientWidth / cols));
+    };
+    const reset = (figs) => figs.forEach((f) => { f.style.left = f.style.top = ""; f.dataset.col = colOf(f); });
+    const figs = [band.querySelector('[data-who="lula"]'), band.querySelector('[data-who="flavio"]')];
+    reset(figs);
+    matchMedia("(max-width: 767px)").addEventListener("change", () => reset(figs));
+
     const candidates = async (lula, flavio) => {
       await wait(400);
-      for (;;) {
+      for (let ciclo = 0; ; ciclo++) {
+        if (ciclo > 0) place(lula, flavio); // the first entrance keeps the CSS layout
         const flavioOpen = open(flavio);
         await wait(rand(300, 600));
         await open(lula); await flavioOpen;
@@ -197,7 +235,7 @@
         await wait(rand(1200, 2000));
       }
     };
-    candidates(band.querySelector('[data-who="lula"]'), band.querySelector('[data-who="flavio"]'));
+    candidates(...figs);
   }
 
   // CTAs point to axis pages that do not exist yet.
