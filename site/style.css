@@ -185,7 +185,7 @@ a { color: inherit; }
 
 @media (max-width: 767px) {
   /* Phone: the band starts below the fixed bar (it hid Lula's face); the hero fills the first screen,
-     with title, lede and credit stacked and "Role para ler" pinned last, at the bottom (Alice, 2026-10-12) */
+     title and lede on top, the credit and "Role para ler" (last) together at the bottom (Alice, 2026-10-12) */
   .hero { grid-template-rows: 38svh 1fr; padding-top: var(--bar); }
   /* Phone: the two portraits carry the band, two lenses stay */
   .hero__t--l1, .hero__t--l3 { display: none; }
@@ -198,8 +198,8 @@ a { color: inherit; }
   .hero__title, .hero__lede { display: contents; }
   .hero__title h1 { white-space: normal; margin-right: 0; font-size: 50px; }
   .hero__lede p:first-child { order: 1; margin-top: 32px; font-size: 18px; }
-  .hero__lede .mono { order: 2; margin-top: 16px; }
-  .scroll-hint { order: 3; margin-top: auto; padding-top: 32px; }
+  .hero__lede .mono { order: 2; margin-top: auto; padding-top: 32px; }
+  .scroll-hint { order: 3; margin-top: 16px; }
 }
 
 /* ---------- Opening modules (Alice, Figma 2026-10-12) ---------- */
@@ -238,6 +238,9 @@ a { color: inherit; }
   display: flex; flex-direction: column;
   padding: var(--bar) var(--gutter) var(--gutter);
   min-height: 100vh;
+  /* Covers stack (reference 2.4) at every size. One taller than the screen sticks once its bottom reaches the
+     screen's bottom, so it is read whole before the next slides over it; --h is its height, set in main.js. */
+  position: sticky; top: min(0px, calc(100svh - var(--h, 100svh)));
 }
 .capa[data-n="1"] { --bg: var(--azul-1); }
 .capa[data-n="2"] { --bg: var(--azul-2); }
