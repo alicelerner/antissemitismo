@@ -30,6 +30,12 @@
     requestAnimationFrame(step);
   }
 
+  // Cover heights for the sticky stack (style.css, .capa). Kept current as fonts, images and width change.
+  const altura = new ResizeObserver((entries) => {
+    for (const e of entries) e.target.style.setProperty("--h", e.target.offsetHeight + "px");
+  });
+  document.querySelectorAll(".capa").forEach((c) => altura.observe(c));
+
   // Menu: native <dialog> for focus trap and Esc.
   const menu = document.getElementById("menu");
   const open = document.querySelector(".bar__menu");
