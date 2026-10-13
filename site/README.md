@@ -92,3 +92,7 @@ Alice's line: «No dia 25, leve a memória com você pra urna. Vote por todos n�
 5. Axis 04 line «O lema é dos integralistas de 1932» states where the slogan comes from, not that anyone is an integralist (`02 §A8`, rule in `00-narrative.md` IV). Check it reads that way.
 6. Axis 03 line «Sair sem explicar foi uma falha» is the site's own judgement, as the narrative asks (`00-narrative.md` III).
 7. Hero images (`img/hero/`): background is the Wiesbaden synagogue burning, 9 Nov 1938 (Center for Jewish History via Flickr Commons, "no known restrictions"), cropped and compressed. Lenses use the pogrom photo from Alice's Figma (source unknown). Portraits come from Alice's Figma; Lula's file carries EXIF copyright "Brenno Carvalho", Flávio's has no credit. Source, licence and credit for all three still to settle; where credits appear on the page is open.
+
+## Proposal: less like the reference (2026-10-13, branch `menos-referencia`)
+
+Alice worried the site reads as a copy of stateofaidesign. Analysis and the list of changes in `design/proposta-menos-referencia.md`. One commit per change, so each can be dropped: hero "revelação" (grid slats come into focus, candidates develop like prints), focus-in entrances, bar naming the axis being read, menu index before the title, carousel without accent bar or widening, footer numbers as a ledger. Not merged; pending Alice.

@@ -222,11 +222,12 @@ a { color: inherit; }
   /* Phone: the band starts below the fixed bar (it hid Lula's face); the hero fills the first screen,
      title and lede on top, the credit and "Role para ler" (last) together at the bottom (Alice, 2026-10-12) */
   .hero { grid-template-rows: 38svh 1fr; padding-top: var(--bar); }
-  /* Phone: four columns, so a portrait is two columns wide; names sit horizontally outside the window, Lula's under it, Flávio's over it */
-  .hero__band { --cols: 4; --step: 2.7s; }
-  .hero__slat:nth-child(n+5) { display: none; }
-  .hero__p--lula   { left: 0; top: 5%; --dy: 4cqh; }
-  .hero__p--flavio { left: 50%; top: 36%; --dy: -4cqh; }
+  /* Phone: five columns; each portrait two columns wide, the middle one left free for the pogrom.
+     Names sit horizontally outside the window, Lula's under it, Flávio's over it. */
+  .hero__band { --cols: 5; --step: 2.16s; }
+  .hero__slat:nth-child(n+6) { display: none; }
+  .hero__p--lula   { left: 0; top: 6%; --dy: 5cqh; }
+  .hero__p--flavio { left: 60%; top: 40%; --dy: -5cqh; }
   .hero__nome { writing-mode: horizontal-tb; transform: none; font-size: 9px; padding: 5px 6px 4px; }
   .hero__p--lula .hero__nome   { right: auto; left: 0; bottom: auto; top: 100%; }
   .hero__p--flavio .hero__nome { right: 0; bottom: 100%; }
