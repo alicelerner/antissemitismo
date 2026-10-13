@@ -124,7 +124,7 @@ For Alice and the team:
 - Dias: the cut caveat was the reason the letter is `needs-second-source` (`A1-02`); the Intercept is now a second source for the letter's content, not for his having sent it.
 - Martins: "recebido com ceticismo por diversos analistas" rests on one opinion piece.
 - Alvorada: "sem repudiar ou corrigir" and "nem corrigiu o apoiador" say the same thing twice.
-- Open comment (Yael, not resolved): replace the two German AfD sources with DW Brasil. Not applied.
+- AfD sources: the two German links (evangelisch.de, ZDF) replaced with DW Brasil at Yael's suggestion, approved by Alice the same day.
 
 ## Footer (2026-10-12, branch `rodape`)
 
