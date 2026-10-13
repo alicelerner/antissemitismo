@@ -80,7 +80,7 @@ Alice's new script (Google Doc "Textos") replaces the seven axes with: introduct
 
 ## Footer (2026-10-12, branch `rodape`)
 
-Alice's line: «No dia 25, leve a memória com você pra urna. Vote por todos nós.» Full viewport height on `--azul-7` (first tried the flag's own `#0038B8`; Alice asked for a blue from the Figma palette), roman Fraunces Light up to 168px, sitting at the bottom. Mono row on top: "Feito por e para judeus brasileiros" left, "Outubro 2026" right; the bottom meta row is gone. The sentence ends with a small Brazilian flag (`img/bandeira.svg`, Alice's file from `design/bandeira.svg`), cap-height, kept on the same line as "nós.". It rises from a mask on enter like the hero and cover titles (900ms strong ease-out, 80ms between sentences); reduced motion drops the movement.
+Alice's line: «No dia 25, leve a memória com você pra urna. Vote por todos nós.» Full viewport height on `--azul-7` (first tried the flag's own `#0038B8`; Alice asked for a blue from the Figma palette), roman Fraunces Light up to 168px, sitting at the bottom. On top, a numbers band after the reference's methodology strip (test, branch `rodape-numeros`): "Metodologia / Por trás deste site", "250+ Fontes consultadas" (253 rows in `research/sources.md`, all statuses), "30+ Pessoas envolvidas" (Alice's number). It replaced the mono row "Feito por e para judeus brasileiros" / "Outubro 2026" (Alice, 2026-10-12). The sentence ends with a small Brazilian flag (`img/bandeira.svg`, Alice's file from `design/bandeira.svg`), cap-height, kept on the same line as "nós.". It rises from a mask on enter like the hero and cover titles (900ms strong ease-out, 80ms between sentences); reduced motion drops the movement.
 
 ## Open
 
