@@ -131,8 +131,7 @@ a { color: inherit; }
 /* ---------- Hero ---------- */
 .hero { min-height: 100svh; display: grid; grid-template-rows: 48svh 1fr; padding-top: 0; }
 /* Band: prototype in design/hero/motion.html, round 4 (2026-10-12). Duotone tinta → azul-1 via #hero-duo.
-   Wrappers (.hero__bg, .hero__t) carry the drift; the filtered images inside them are rasterised once.
-   Tiles open and close with clip-path from main.js. */
+   Wrappers (.hero__bg, .hero__p) carry the drift; the filtered images inside them are rasterised once. */
 .hero__band {
   --ease-in-out-sine: cubic-bezier(0.37, 0, 0.63, 1); /* easeInOutSine: drift that never seems to stop */
   --duo: url(#hero-duo);
@@ -146,22 +145,50 @@ a { color: inherit; }
   from { transform: translate3d(-2%, 1.5%, 0) scale(1); }
   to   { transform: translate3d(2%, -1.5%, 0) scale(1.18); }
 }
-.hero__t { position: absolute; will-change: transform; animation: hero-drift var(--d) var(--ease-in-out-sine) infinite alternate; animation-delay: var(--dl, 0s); }
+/* Proposal "revelação" (branch menos-referencia, 2026-10-13). The band sits on a 12-column grid (4 on phones), drawn as
+   hairlines. Slats: each holds the same sharp pogrom photo, offset so the twelve line up as one picture; a CSS wave brings
+   one slat into focus after another (opacity only, off the main thread). Candidates: grid-aligned windows that develop
+   like prints, paper first, then the portrait (main.js). Names run vertically along each window's left edge. */
+.hero__band { --cols: 12; --step: 0.9s; }
+.hero__slat {
+  position: absolute; top: 0; bottom: 0; overflow: hidden;
+  left: calc(var(--i) * 100% / var(--cols)); width: calc(100% / var(--cols));
+  opacity: 0; will-change: opacity;
+  animation: hero-foco 16s linear infinite; animation-delay: calc(var(--i) * var(--step));
+}
+.hero__slat > div { position: absolute; top: 0; height: 100%; width: calc(var(--cols) * 100%); left: calc(var(--i) * -100%); }
+.hero__slat img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; filter: contrast(1.15) var(--duo) blur(.1cqw); }
+@keyframes hero-foco {
+  0%   { opacity: 0; animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
+  10%  { opacity: 1; }
+  28%  { opacity: 1; animation-timing-function: cubic-bezier(0.37, 0, 0.63, 1); }
+  40%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+.hero__grade {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to right, transparent calc(100% - 1px), rgba(233, 240, 252, .28) 0) 0 0 / calc(100% / var(--cols)) 100%;
+}
+.hero__p {
+  position: absolute; z-index: 2; margin: 0; width: calc(2 * 100% / var(--cols));
+  will-change: transform; animation: hero-drift var(--d) var(--ease-in-out-sine) infinite alternate; animation-delay: var(--dl, 0s);
+}
 @keyframes hero-drift {
   from { transform: translate3d(0, 0, 0); }
-  to   { transform: translate3d(var(--dx), var(--dy), 0); }
+  to   { transform: translate3d(0, var(--dy), 0); }
 }
-.hero__t--l1     { left: 3%;  top: 18%; width: 13%; aspect-ratio: 4/5; --d: 16s; --dx: 2cqw;    --dy: -1.4cqw; }
-.hero__t--lula   { left: 22%; top: 12%; width: 17%; aspect-ratio: 1;   --d: 19s; --dx: 6cqw;    --dy: .6cqw; z-index: 2; }
-.hero__t--l2     { left: 44%; top: -6%; width: 9%;  aspect-ratio: 1;   --d: 13s; --dx: -1.8cqw; --dy: 1.2cqw; }
-.hero__t--flavio { left: 58%; top: 30%; width: 17%; aspect-ratio: 1;   --d: 21s; --dl: -9s; --dx: -6cqw; --dy: -.6cqw; z-index: 2; }
-.hero__t--l3     { left: 80%; top: 8%;  width: 14%; aspect-ratio: 5/4; --d: 17s; --dx: -2.2cqw; --dy: 1.4cqw; }
-.hero__t--l4     { left: 91%; top: 60%; width: 10%; aspect-ratio: 1;   --d: 14s; --dx: -1.6cqw; --dy: -1.2cqw; }
-.hero__tile { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--papel); box-shadow: 0 0 0 1px rgba(255,255,255,.95); clip-path: inset(0 100% 0 0); }
-.hero__tile img { width: 100%; height: 100%; object-fit: cover; filter: var(--duo); }
-/* Lenses: white tile under a blurred photo, so the edges glow and the tile reads against the background (Alice's tip) */
-.hero__tile--lens img { transform: scale(1.08); filter: var(--duo) blur(.417cqw); }
-.hero__lab { position: absolute; left: 0; bottom: 0; background: var(--papel); color: var(--tinta); padding: .55cqw .8cqw .5cqw; font-size: clamp(9px, .82cqw, 13px); }
+.hero__p--lula   { left: calc(2 * 100% / var(--cols)); top: 10%; --d: 19s; --dy: 7cqh; }
+.hero__p--flavio { left: calc(7 * 100% / var(--cols)); top: 38%; --d: 21s; --dl: -9s; --dy: -7cqh; }
+.hero__win { position: relative; aspect-ratio: 1; overflow: hidden; }
+.hero__win img, .hero__papel { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero__win img { z-index: 1; object-fit: cover; filter: var(--duo); opacity: 0; }
+.hero__papel { background: var(--azul-1); opacity: 0; }
+.hero__nome {
+  position: absolute; right: 100%; bottom: 0; opacity: 0;
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  padding: .8cqw .45cqw; background: var(--tinta); color: var(--azul-1);
+  font-size: clamp(9px, .82cqw, 13px); white-space: nowrap;
+}
 
 .hero__text {
   display: grid; grid-template-columns: 1fr 2fr; gap: var(--gutter);
@@ -187,13 +214,14 @@ a { color: inherit; }
   /* Phone: the band starts below the fixed bar (it hid Lula's face); the hero fills the first screen,
      title and lede on top, the credit and "Role para ler" (last) together at the bottom (Alice, 2026-10-12) */
   .hero { grid-template-rows: 38svh 1fr; padding-top: var(--bar); }
-  /* Phone: the two portraits carry the band, two lenses stay */
-  .hero__t--l1, .hero__t--l3 { display: none; }
-  .hero__t--lula   { left: 4%;  top: 8%;  width: 42%; --dx: 4cqw; }
-  .hero__t--flavio { left: 52%; top: 34%; width: 42%; --dx: -4cqw; }
-  .hero__t--l2     { left: 38%; top: -10%; width: 22%; }
-  .hero__t--l4     { left: 80%; top: -4%; width: 26%; }
-  .hero__lab { font-size: 9px; padding: 5px 6px 4px; }
+  /* Phone: four columns, so a portrait is two columns wide; names sit horizontally outside the window, Lula's under it, Flávio's over it */
+  .hero__band { --cols: 4; --step: 2.7s; }
+  .hero__slat:nth-child(n+5) { display: none; }
+  .hero__p--lula   { left: 0; top: 5%; --dy: 4cqh; }
+  .hero__p--flavio { left: 50%; top: 36%; --dy: -4cqh; }
+  .hero__nome { writing-mode: horizontal-tb; transform: none; font-size: 9px; padding: 5px 6px 4px; }
+  .hero__p--lula .hero__nome   { right: auto; left: 0; bottom: auto; top: 100%; }
+  .hero__p--flavio .hero__nome { right: 0; bottom: 100%; }
   .hero__text { display: flex; flex-direction: column; padding-bottom: 24px; }
   .hero__title, .hero__lede { display: contents; }
   .hero__title h1 { white-space: normal; margin-right: 0; font-size: 50px; }
@@ -534,8 +562,9 @@ a { color: inherit; }
 /* ---------- Reduced motion: keep the fades, drop the movement ---------- */
 @media (prefers-reduced-motion: reduce) {
   .hero__title h1 .line > span, .capa__name .line > span, .fim__mark .line > span { transform: none !important; transition: none; }
-  .hero__bg, .hero__t { animation: none; }
-  .hero__tile { clip-path: none; }
+  .hero__bg, .hero__p, .hero__slat { animation: none; }
+  .hero__slat:nth-child(4n+2) { opacity: .9; }
+  .hero__win img, .hero__nome { opacity: 1; }
   .voz { transition: none !important; }
   .voz__mais { transform: none !important; }
   .depo__fechar svg, .ep__seta { transition: none; }
