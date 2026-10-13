@@ -273,6 +273,10 @@ a { color: inherit; }
 .capa.is-in .capa__img { opacity: 1; transform: none; }
 .capa__img img { width: 100%; height: 100%; object-fit: cover; }
 .capa__img figcaption { position: absolute; left: 8px; bottom: 8px; padding: 4px 6px; background: rgba(7,18,46,0.8); color: #fff; font: 400 10px/1 var(--mono); text-transform: uppercase; letter-spacing: 0.02em; }
+/* Cover images (Alice, 2026-10-12): the hero's duotone (#hero-duo, tinta → azul-1) plus a light static grain */
+.capa__img--duo img { filter: url(#hero-duo); }
+.capa__img--duo::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .32; mix-blend-mode: overlay;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
 
 .abertura { display: flex; flex-direction: column; gap: 32px; max-width: 594px; }
 /* Figma "Texto/Corpo": Neue Montreal 16 / 150%, no tracking, 16px between paragraphs */

@@ -86,7 +86,7 @@ Alice's line: «No dia 25, leve a memória com você pra urna. Vote por todos n�
 
 0. Opening line (date fixed to 2020 by Alice). The Mussolini episode (ICL, Oct 2026) is not in the dossier and needs a second source; ICL says "semelhante", the line says "imitaram". 
 
-1. Higgsfield: Seedream 5.0 Pro needs a paid plan. Prompts ready in `img/ilustracoes/prompts.md`.
+1. Cover images (2026-10-12, branch `claude/image-generation-planning-2210ba`): Alice turned down the generated collages (four Seedream 5.0 Flash tests, deleted with their prompts) and picked one image per cover, in the repo-root folder `capas/`. Copied to `img/capas/` (git-ignored, resized to 1200px max) and shown with the hero duotone (`url(#hero-duo)`, `--tinta` → `--azul-1`) plus a static grain overlay (`.capa__img--duo`). Cover figcaptions removed; credits will go elsewhere. Sources, credits and dossier status for these five images still to settle; `lula2.jpg` replaced `lula.jpg`; `desconfianca.jpg` is 400px and a manipulated image of real people.
 3. Limoncic: role line, photo, where the text was published. The page uses "Bisneto de Lea e Itec, vítimas do Holocausto", drawn from his own text; confirm with him.
 4. Image rights and credits: 03 and 04 lack photographer credits. All images are third-party; `site/img/episodios/` and `site/fonts/` are git-ignored until Alice decides what can go into the public repo.
 5. Axis 04 line «O lema é dos integralistas de 1932» states where the slogan comes from, not that anyone is an integralist (`02 §A8`, rule in `00-narrative.md` IV). Check it reads that way.

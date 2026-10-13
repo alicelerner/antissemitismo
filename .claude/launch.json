@@ -36,6 +36,18 @@
         "design/hero"
       ],
       "port": 8768
+    },
+    {
+      "name": "site-ilustracao",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8770",
+        "--directory",
+        "site"
+      ],
+      "port": 8770
     }
   ]
 }
