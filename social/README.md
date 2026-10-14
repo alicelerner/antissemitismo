@@ -16,7 +16,7 @@ Background `--azul-3` (#B4CAF0); `--azul-7` and `--brasa` were tried and rejecte
 | Item | Source | Feed (1080 x 1440) | Stories (1080 x 1920) |
 |---|---|---|---|
 | 1. The site in a browser window: hero, slow scrolls to the painting and covers 01 and 02, a cursor opens the Planalto episode, ~5 s on the modal | `01-hero.mjs`, `janela.html` | `01-hero-azul-3.mp4` (16 s) | `01-hero-azul-3-story.mp4` |
-| 2. The site on a phone: menu, "03 Bolsonarismo", the Alvorada episode, with iOS-style touch dots | `03-celular.mjs`, `celular.html` | `03-celular-azul-3.mp4` (14 s) | `03-celular-azul-3-story-completo.mp4` (29 s: also closes the episode and travels calmly through covers 04 and 05 to the footer line); `03-celular-azul-3-story.mp4` (14 s, ends on the episode) kept as the shorter option |
+| 2. The site on a phone: menu, "03 Bolsonarismo", the Alvorada episode, with iOS-style touch dots | `03-celular.mjs`, `celular.html` | `03-celular-azul-3.mp4` (14 s) | `03-celular-azul-3-story-completo.mp4` (26 s: about 1 s inside the episode, closes it, travels calmly through covers 04 and 05 to the footer line); `03-celular-azul-3-story.mp4` (14 s, ends on the episode) kept as the shorter option |
 | 3. Stories only: the site's flag near the bottom, the middle left free for Instagram's link sticker | `link.html`, `render.mjs` | none | `05-link-story.png` |
 
 File numbers follow the first five-slide plan; slides 2 (screen mosaic) and 4 (zoom on the 250+ / 30+ numbers and an episode's sources) were made and dropped by Alice.

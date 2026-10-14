@@ -108,7 +108,9 @@ if (recording) {
   await page.evaluate(flick, { by: row.y - 800 * 0.55, ms: completo ? 1200 : 1000 });
   await page.waitForTimeout(completo ? 800 : 500);
   await tap(page, page.locator("#eixo-3 [data-ep]").first());
-  await page.waitForTimeout(5500);                       // modal
+  // Modal: 5.5 s where the video ends on it; in the full route about 1 s once it has opened (650 ms), then close
+  // (Alice, 2026-10-13).
+  await page.waitForTimeout(completo ? 1700 : 5500);
   if (completo) {
     await tap(page, page.locator("dialog[open] .depo__fechar"));
     await page.waitForTimeout(1300);                     // the modal shrinks back into its row
