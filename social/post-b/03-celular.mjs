@@ -1,8 +1,10 @@
 // Post B, slide 3: the site in use on a phone, centred on --azul-3, 1080 x 1440 MP4.
-// Hero -> tap the bar, the menu opens -> tap "03 Bolsonarismo" -> short scroll -> tap the first episode, the modal opens.
+// Hero -> tap the bar, the menu opens -> tap "03 Bolsonarismo", then one of two routes:
+//   default   short scroll -> tap the first episode, the modal opens
+//   --rodape  scroll through covers 04 and 05 down to the footer line (test, Alice, 2026-10-13)
 // Needs the local site server (port 8766). Run from social/:
-//   node post-b/03-celular.mjs record                 capture
-//   node post-b/03-celular.mjs [from] [to] [speed] [bg] composite (default 1.5 60 1 azul-3)
+//   node post-b/03-celular.mjs record [--rodape]                 capture
+//   node post-b/03-celular.mjs [from] [to] [speed] [bg] [--rodape] composite (default 1.5 60 1 azul-3)
 // Add --story for the 1080 x 1920 stories version, with a larger phone.
 import { chromium } from "playwright";
 import { fileURLToPath } from "node:url";
@@ -11,13 +13,14 @@ import { screencast, compose, hex, format } from "./lib.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const out = path.resolve(here, "../out/post-b");
-const frames = path.join(out, "03-frames");
-const fmt = format(process.argv), argv = fmt.args;
+const fmt = format(process.argv), rodape = fmt.args.includes("--rodape"), argv = fmt.args.filter(a => a !== "--rodape");
+const route = rodape ? "-rodape" : "";
+const frames = path.join(out, `03-frames${route}`);
 const PHONE_W = fmt.story ? 720 : 600;
 const recording = argv[2] === "record";
 const bgName = recording ? "azul-3" : (argv[5] || "azul-3");
 const frame = path.join(out, `03-celular-${bgName}${fmt.suffix}.png`);
-const canvas = { w: 1080, h: fmt.H }, video = path.join(out, `03-celular-${bgName}${fmt.suffix}.mp4`);
+const canvas = { w: 1080, h: fmt.H }, video = path.join(out, `03-celular-${bgName}${fmt.suffix}${route}.mp4`);
 
 const browser = await chromium.launch();
 
@@ -60,6 +63,22 @@ async function flick({ by, ms }) {
   });
 }
 
+// Runs in the page: longer on-screen travel to a target, strong ease-in-out (the animate skill's curve).
+async function travel({ to, ms }) {
+  const b = (t, a, c) => 3 * a * t * (1 - t) ** 2 + 3 * c * t * t * (1 - t) + t ** 3;
+  const db = (t, a, c) => 3 * a * (1 - t) ** 2 + 6 * (c - a) * t * (1 - t) + 3 * (1 - c) * t * t;
+  const ease = x => { let t = x; for (let i = 0; i < 8; i++) t -= (b(t, .77, .175) - x) / (db(t, .77, .175) || 1e-6); return b(t, 0, 1); };
+  const from = scrollY, t0 = performance.now();
+  await new Promise(done => {
+    const step = now => {
+      const p = Math.min((now - t0) / ms, 1);
+      scrollTo(0, from + (to - from) * ease(p));
+      p < 1 ? requestAnimationFrame(step) : done();
+    };
+    requestAnimationFrame(step);
+  });
+}
+
 async function tap(page, locator) {
   const box = await locator.boundingBox();
   const x = box.x + Math.min(box.width / 2, 120), y = box.y + box.height / 2;
@@ -82,12 +101,26 @@ if (recording) {
   await tap(page, page.locator(".bar__menu"));
   await page.waitForTimeout(1800);                       // menu open
   await tap(page, page.locator('#menu a[href="#eixo-3"]'));
-  await page.waitForTimeout(2200);                       // cover 03, title rises
-  const row = await page.locator("#eixo-3 [data-ep]").first().boundingBox();
-  await page.evaluate(flick, { by: row.y - 800 * 0.55, ms: 1200 });
-  await page.waitForTimeout(900);
-  await tap(page, page.locator("#eixo-3 [data-ep]").first());
-  await page.waitForTimeout(5500);                       // modal
+  // Cover 03: 1 s, enough for the title to rise (was 2.2 s plus a long scroll: too long on 03, Alice).
+  await page.waitForTimeout(1000);
+  if (rodape) {
+    // Targets measured now, while 04 and 05 are still below and not stuck; tops sit under the site's bar.
+    const targets = await page.evaluate(() => {
+      const bar = document.querySelector(".bar").offsetHeight;
+      const top = id => document.getElementById(id).getBoundingClientRect().top + scrollY - bar;
+      return [top("eixo-4"), top("eixo-5"), document.documentElement.scrollHeight - innerHeight];
+    });
+    for (const [i, to] of targets.entries()) {
+      await page.evaluate(travel, { to, ms: 1300 });
+      await page.waitForTimeout(i < targets.length - 1 ? 1100 : 4000); // each cover, then the footer line
+    }
+  } else {
+    const row = await page.locator("#eixo-3 [data-ep]").first().boundingBox();
+    await page.evaluate(flick, { by: row.y - 800 * 0.55, ms: 1000 });
+    await page.waitForTimeout(500);
+    await tap(page, page.locator("#eixo-3 [data-ep]").first());
+    await page.waitForTimeout(5500);                     // modal
+  }
   const list = await stop();
   await browser.close();
   compose({ list, frame, hole, from: 1.5, bg: hex(bgName), canvas, file: video });

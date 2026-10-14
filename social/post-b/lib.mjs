@@ -17,29 +17,29 @@ export async function screencast(ctx, page, dir) {
   cdp.on("Page.screencastFrame", ({ data, metadata, sessionId }) => {
     const file = `f${String(shots.length).padStart(5, "0")}.jpg`;
     writeFileSync(path.join(dir, file), Buffer.from(data, "base64"));
-    shots.push({ file, t: metadata.timestamp });
+    shots.push({ file, t: metadata.timestamp, at: Date.now() / 1000 });
     cdp.send("Page.screencastFrameAck", { sessionId }).catch(() => {});
   });
   await cdp.send("Page.startScreencast", { format: "jpeg", quality: 92, everyNthFrame: 1 });
   return async () => {
-    // The screencast is silent while nothing changes, so a closing still would be lost: paint one invisible
-    // pixel to get a last frame stamped at the real end.
-    await page.evaluate(() => {
-      const d = document.createElement("div");
-      d.style.cssText = "position:fixed;left:0;top:0;width:1px;height:1px;opacity:.01;z-index:2147483647;pointer-events:none";
-      (document.querySelector("dialog[open]") || document.body).append(d);
-    });
-    await page.waitForTimeout(250);
+    // The screencast is silent while nothing changes, so a closing still has no frame after it: hold the last
+    // frame until now, measured on the wall clock it arrived by.
+    const end = Date.now() / 1000;
     await cdp.send("Page.stopScreencast");
     // Drop the blank frames before the site paints.
     const start = shots.findIndex((s, i) => i > 0 && s.t - shots[0].t > 0.3) - 1;
     const used = shots.slice(Math.max(start, 0));
     const list = `${dir}.txt`;
-    writeFileSync(list, used.map((s, i) => {
+    // Each JPEG opens as a one-frame image stream whose default 25 fps would round every shorter duration up to
+    // 40 ms and stretch the video; a high per-file framerate keeps the real timing.
+    const entry = (file, d) => `file '${path.join(dir, file)}'\noption framerate 1000\nduration ${d.toFixed(4)}`;
+    writeFileSync(list, "ffconcat version 1.0\n" + used.map((s, i) => {
       const next = used[i + 1];
-      return `file '${path.join(dir, s.file)}'\nduration ${next ? (next.t - s.t).toFixed(4) : 0.04}`;
-    }).join("\n") + `\nfile '${path.join(dir, used.at(-1).file)}'\n`);
-    const span = used.at(-1).t - used[0].t;
+      return entry(s.file, next ? next.t - s.t : end - s.at);
+    }).join("\n") + "\n" + entry(used.at(-1).file, 0.04) + "\n" + entry(used.at(-1).file, 0.04) + "\n");
+    // ffmpeg ignores the last entry's duration and repeats the previous interval instead, so the closing still is
+    // followed by two short copies: the repeated interval is then 40 ms, not the hold a second time.
+    const span = used.at(-1).t - used[0].t + (end - used.at(-1).at);
     console.log(`${used.length} frames over ${span.toFixed(1)}s (${(used.length / span).toFixed(1)} fps captured)`);
     return list;
   };
