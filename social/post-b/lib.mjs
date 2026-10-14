@@ -12,6 +12,23 @@ export const hex = name => PALETTE[name] || name.replace("#", "");
 export async function screencast(ctx, page, dir) {
   rmSync(dir, { recursive: true, force: true });
   mkdirSync(dir, { recursive: true });
+  // The screencast can drop the frame after a quick change (an episode closing) and then send nothing until the
+  // next change, so a stale frame stays on screen for a second or more. An invisible pixel that changes every
+  // 200 ms keeps frames coming. It sits at the top-left corner, over the site's --tinta bar block (or the --tinta
+  // modal), and flips between two colours one step apart; an almost transparent pixel was skipped by the
+  // compositor. It moves into an open dialog, which sits above the page in the top layer.
+  await page.addInitScript(() => {
+    addEventListener("DOMContentLoaded", () => {
+      const d = document.createElement("div");
+      d.style.cssText = "position:fixed;left:0;top:0;width:1px;height:1px;background:#07122e;z-index:2147483647;pointer-events:none";
+      let on = false;
+      setInterval(() => {
+        const host = document.querySelector("dialog[open]") || document.body;
+        if (d.parentNode !== host) host.append(d);
+        d.style.background = (on = !on) ? "#08122e" : "#07122e";
+      }, 200);
+    });
+  });
   const cdp = await ctx.newCDPSession(page);
   const shots = [];
   cdp.on("Page.screencastFrame", ({ data, metadata, sessionId }) => {
