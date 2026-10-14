@@ -128,6 +128,33 @@ For Alice and the team:
 
 Second pass, same day (branch `textos-rodada-2026-10-13b`): AfD episode adds the Museu do Holocausto to those who condemned the meeting, with its quote and the X post as a source. Applied as in the doc, spelling only ("aADL", "AfDcomo"). For the team: the post is dated 22 Jul 2021, four days before the Planalto meeting, and "tal figura parlamentar brasileira" most likely means Bia Kicis, so the museum did not condemn this meeting. Alice chose to publish as written.
 
+## Episode texts, second team round (2026-10-13, branch `textos-rodada-2026-10-13b`)
+
+Only "Textos internos dos episódios" changed (Yael Berman's edits); "Textos" untouched. Alice: the sources were checked by a fact checker, so the new ones were not reopened here.
+
+Changes:
+- 03 Dias: "um banner com uma foto de Bolsonaro".
+- 04 Orbán: drops "O governo húngaro disse que o tema era imigração."; Hegedüs line now quotes "nazista puro, digno de Goebbels". Sources: NYT added, Times of Israel credited to AFP, BBC replaces Telex.
+- 04 Bannon: Cpac spelled out; "fez uma saudação nazista ... e foi aplaudido pelo público" replaces "estendeu o braço ... disse que foi um aceno"; new ADL quote. Sources: Mother Jones headline, Folha, The Guardian (YouTube), ADL post, VEJA; AP removed.
+- 04 Musk: "endossou uma postagem que acusava judeus..." plus the post quoted. Sources: Nexo replaces Poder360 (Copacabana), JPost headline, Guardian, BBC News Brasil, CNN Brasil (YouTube); Jewish Insider 21 Jan removed.
+- 05 Cabo Gilberto: place "João Pessoa"; first paragraph rewritten, Versailles quote removed. Sources: Rádio Arapuan (Instagram), Jornal da Paraíba.
+- 05 Flávio CPMI: "(…)" in the IBI quote; Poder360 and Congresso em Foco added.
+- 05 Martins: date "2021 a 2024"; acquittal and its annulment dropped. ADL hate-symbol page added.
+- 05 Schindler: "executam judeus que se diziam trabalhadores essenciais"; Telegram sentence reworded; Museu do Holocausto now quoted in full.
+- 05 Weintraub: fuller CONIB quote; Folha source added.
+
+Calls:
+- Typos fixed: "com à ascensão" → "à ascensão"; lowercase "o Jewish Council" (already capitalised on the site); closing period added to the CONIB quote.
+- NYT dated "25 mar 2025" in the doc; the URL and the event are 2024, so 25 mar 2024.
+- VEJA and Jornal da Paraíba come without URL: listed as plain text (`.ep__semlink`, same spacing as the links). The doc should get their links.
+- Empty bullets and the leftover "Shimon Peres, 10 nov 2009" attribution (no quote) ignored, as before.
+
+For Alice:
+- Bannon: "fez uma saudação nazista" states as fact what AP reports as "accused" (Bannon says it was a wave); the dossier rule is to give both readings.
+- Musk: the ADL's first reading ("awkward gesture, not a Nazi salute") is out; only the JCPA reading remains, which reduces a contested reading to one side.
+- Martins: the 2021 acquittal and its 2023 annulment are out; the conviction is under appeal, which the text keeps ("Cabe recurso").
+- Open comment threads in the doc are Yael's change notes, already reflected in the text; none carries a pending suggestion.
+
 ## Footer (2026-10-12, branch `rodape`)
 
 Alice's line: «No dia 25, leve a memória com você pra urna. Vote por todos nós.» Full viewport height on `--azul-7` (first tried the flag's own `#0038B8`; Alice asked for a blue from the Figma palette), roman Fraunces Light up to 168px, sitting at the bottom. On top, a numbers band after the reference's methodology strip (test, branch `rodape-numeros`): "Metodologia / Por trás deste site", "250+ Fontes consultadas" (253 rows in `research/sources.md`, all statuses), "30+ Pessoas envolvidas" (Alice's number). A fourth, narrower cell (0.8 of the others) closes the band with a small note on the expression "Bom pros judeus" (Alice's text, 2026-10-13): 15px, 70% white, its first line optically aligned to the top of the numerals; on mobile it takes a full row under the numbers. It replaced the mono row "Feito por e para judeus brasileiros" / "Outubro 2026" (Alice, 2026-10-12). The sentence ends with a small Brazilian flag (`img/bandeira.svg`, Alice's file from `design/bandeira.svg`), cap-height, kept on the same line as "nós.". It rises from a mask on enter like the hero and cover titles (900ms strong ease-out, 80ms between sentences); reduced motion drops the movement.
