@@ -538,6 +538,7 @@ a { color: inherit; }
 .ep__fontes .mono { font-size: 11px; color: var(--azul-3); }
 .ep__fontes ul { list-style: none; margin-top: 8px; }
 .ep__fontes li { border-bottom: 1px solid rgba(255, 255, 255, 0.25); }
+.ep__fontes .ep__semlink { display: block; padding: 14px 0; font-size: 15px; line-height: 1.35; }
 .ep__fontes a { display: block; padding: 14px 0; color: inherit; text-decoration: none; font-size: 15px; line-height: 1.35; transition: color 200ms ease; }
 @media (hover: hover) and (pointer: fine) { .ep__fontes a:hover { color: var(--azul-3); } }
 @media (max-width: 767px) {
