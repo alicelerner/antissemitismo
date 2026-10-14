@@ -1,10 +1,11 @@
 // Post B, slide 3: the site in use on a phone, centred on --azul-3, 1080 x 1440 MP4.
-// Hero -> tap the bar, the menu opens -> tap "03 Bolsonarismo", then one of two routes:
-//   default   short scroll -> tap the first episode, the modal opens
-//   --rodape  scroll through covers 04 and 05 down to the footer line (test, Alice, 2026-10-13)
+// Hero -> tap the bar, the menu opens -> tap "03 Bolsonarismo" -> short scroll -> tap the first episode, the modal
+// opens. Then, with --completo (the stories version, Alice, 2026-10-13: "com calma, pode ser mais longo"): tap the x,
+// the modal closes, and the page travels through covers 04 and 05 to the footer line. Without it the video ends on
+// the modal (the feed version).
 // Needs the local site server (port 8766). Run from social/:
-//   node post-b/03-celular.mjs record [--rodape]                 capture
-//   node post-b/03-celular.mjs [from] [to] [speed] [bg] [--rodape] composite (default 1.5 60 1 azul-3)
+//   node post-b/03-celular.mjs record [--completo]                 capture
+//   node post-b/03-celular.mjs [from] [to] [speed] [bg] [--completo] composite (default 1.5 60 1 azul-3)
 // Add --story for the 1080 x 1920 stories version, with a larger phone.
 import { chromium } from "playwright";
 import { fileURLToPath } from "node:url";
@@ -13,8 +14,8 @@ import { screencast, compose, hex, format } from "./lib.mjs";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const out = path.resolve(here, "../out/post-b");
-const fmt = format(process.argv), rodape = fmt.args.includes("--rodape"), argv = fmt.args.filter(a => a !== "--rodape");
-const route = rodape ? "-rodape" : "";
+const fmt = format(process.argv), completo = fmt.args.includes("--completo"), argv = fmt.args.filter(a => a !== "--completo");
+const route = completo ? "-completo" : "";
 const frames = path.join(out, `03-frames${route}`);
 const PHONE_W = fmt.story ? 720 : 600;
 const recording = argv[2] === "record";
@@ -101,9 +102,16 @@ if (recording) {
   await tap(page, page.locator(".bar__menu"));
   await page.waitForTimeout(1800);                       // menu open
   await tap(page, page.locator('#menu a[href="#eixo-3"]'));
-  // Cover 03: 1 s, enough for the title to rise (was 2.2 s plus a long scroll: too long on 03, Alice).
-  await page.waitForTimeout(1000);
-  if (rodape) {
+  // Cover 03: 1 s on the first take was still long for the feed cut (2.2 s, Alice); the full route takes it calmer.
+  await page.waitForTimeout(completo ? 1500 : 1000);
+  const row = await page.locator("#eixo-3 [data-ep]").first().boundingBox();
+  await page.evaluate(flick, { by: row.y - 800 * 0.55, ms: completo ? 1200 : 1000 });
+  await page.waitForTimeout(completo ? 800 : 500);
+  await tap(page, page.locator("#eixo-3 [data-ep]").first());
+  await page.waitForTimeout(5500);                       // modal
+  if (completo) {
+    await tap(page, page.locator("dialog[open] .depo__fechar"));
+    await page.waitForTimeout(1300);                     // the modal shrinks back into its row
     // Targets measured now, while 04 and 05 are still below and not stuck; tops sit under the site's bar.
     const targets = await page.evaluate(() => {
       const bar = document.querySelector(".bar").offsetHeight;
@@ -111,15 +119,9 @@ if (recording) {
       return [top("eixo-4"), top("eixo-5"), document.documentElement.scrollHeight - innerHeight];
     });
     for (const [i, to] of targets.entries()) {
-      await page.evaluate(travel, { to, ms: 1300 });
-      await page.waitForTimeout(i < targets.length - 1 ? 1100 : 4000); // each cover, then the footer line
+      await page.evaluate(travel, { to, ms: 1600 });
+      await page.waitForTimeout(i < targets.length - 1 ? 1800 : 4500); // each cover, then the footer line
     }
-  } else {
-    const row = await page.locator("#eixo-3 [data-ep]").first().boundingBox();
-    await page.evaluate(flick, { by: row.y - 800 * 0.55, ms: 1000 });
-    await page.waitForTimeout(500);
-    await tap(page, page.locator("#eixo-3 [data-ep]").first());
-    await page.waitForTimeout(5500);                     // modal
   }
   const list = await stop();
   await browser.close();
