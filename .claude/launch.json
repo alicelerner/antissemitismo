@@ -48,6 +48,15 @@
         "site"
       ],
       "port": 8770
+    },
+    {
+      "name": "voz",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": [
+        "-c",
+        "cd \"$(git rev-parse --git-common-dir)/../.claude/worktrees/voz/site\" && exec python3 -m http.server 8774"
+      ],
+      "port": 8774
     }
   ]
 }
