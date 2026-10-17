@@ -1,0 +1,22 @@
+{
+  "id": "15-ig-andancaseducativas-lula-flavio-antissemitismo",
+  "tipo": "reel",
+  "veiculo": "Instagram @andancaseducativas",
+  "autor": "Giuliana Mordente",
+  "data": "2026-10-14",
+  "url": "https://www.instagram.com/reels/DeemWQKBzIt/",
+  "titulo": "Flavio é amigo da comunidade judaica? Lula é antissemita? Entenda essa discussão!",
+  "resumo": "Vídeo de 144 s, 720x1280, falado para a câmera com recortes de imprensa. Giuliana Mordente rebate 'judeu que é judeu vota em Flávio': lista o encontro de Bolsonaro com Beatrix von Storch (AfD), o discurso de Roberto Alvim, o convite a um neonazista na Câmara do Rio, a peça do PL que compara Flávio a Mussolini e os lemas 'Brasil acima de tudo' e 'Deus, Pátria e Família'; depois resume as posições de Lula sobre Israel e diz que a admiração bolsonarista é pelo Israel bíblico e por Netanyahu, não pelos judeus da diáspora. Capa: 'Lula é antissemita: entenda' sobre fundo roxo.",
+  "tier_dossie": "excluído como prova (rede social, opinião); voz judaica (confirmada por Alice em 2026-10-17)",
+  "capturado_em": "2026-10-17",
+  "origem_lista": "enviado por Alice em 2026-10-17",
+  "status_uso": "nao-verificado",
+  "arquivos": [
+    "legenda.txt",
+    "transcricao.txt",
+    "video.info.json",
+    "video.jpg",
+    "video.mp4"
+  ],
+  "notas": "transcricao.txt é transcrição automática local (whisper large-v3-turbo), não revisada."
+}
