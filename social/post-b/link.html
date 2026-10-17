@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<!--
+  Post B, stories only, closing slide: --azul-3 with the site's small Brazilian flag (site/img/bandeira.svg, the one
+  that closes the footer line) centred near the bottom, 1080 x 1920. The middle stays empty for Instagram's link
+  sticker, which Alice places when posting. History (Alice, 2026-10-13): the feed version, an enlarged address bar
+  with the domain over the flag, was dropped; so was a heart and a Star of David beside the flag.
+  Render with: node post-b/render.mjs link 05-link --story
+-->
+<style>
+  :root { --azul-3: #b4caf0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--azul-3); }
+  /* 300 px from the bottom keeps it clear of the stories reply bar. */
+  .bandeira { position: absolute; left: 50%; bottom: 300px; width: 128px; transform: translateX(-50%); }
+</style>
+</head>
+<body>
+  <img class="bandeira" src="../../site/img/bandeira.svg" alt="">
+</body>
+</html>
