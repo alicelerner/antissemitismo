@@ -50,6 +50,7 @@ Revised the same day at Alice's request:
 
 | Card | Item | Source | Image |
 |---|---|---|---|
+| Vídeo | Giuliana Mordente, Instagram reel, "Flavio é amigo da comunidade judaica? Lula é antissemita?", 14 out 2026 (added 2026-10-17, branch `voz-giuliana-mordente-lula-flavio`) | `materiais/15` | `img/vozes/giuliana-mordente-lula-flavio-2026.jpg` (reel cover) |
 | Vídeo | Carolina Bergier, Instagram reel, "minha identidade é menos importante que a minha humanidade", 15 out 2026 (added 2026-10-17, branch `voz-carolina-bergier-humanidade`) | `materiais/14` | `img/vozes/carolina-bergier-humanidade-2026.jpg` (reel cover) |
 | Depoimento | Flávio Limoncic, «O "nunca mais" não pode se referir somente aos judeus.» | `research/testimonies/limoncic.md` | none, typographic |
 | Vídeo | Kiko Goifman, Instagram reel, 25 out 2022 | `materiais/03` | `img/vozes/goifman-reel-2022.jpg` (reel frame) |
@@ -63,7 +64,7 @@ Open for this module:
 - These are voices, not evidence: every `materiais/` item is `nao-verificado`. Confirm that attributed opinion pieces may appear under the "only `verified`" rule.
 - Kiko Goifman: confirm he is Jewish before he sits under this heading; the card's extra line is the capture's own title, not his words.
 - Lia Vainer Schucman: role line given by Alice on 2026-10-12: «Professora da Universidade Federal de Santa Catarina, pesquisadora das relações raciais e integrante de iniciativas de enfrentamento ao antissemitismo.» Place of publication still unknown.
-- Six cards since 2026-10-17. Fernanda Yuki (`materiais/09`) and Célio Lima (`materiais/08`) were left out because nothing says they are Jewish.
+- Seven cards since 2026-10-17. Fernanda Yuki (`materiais/09`) and Célio Lima (`materiais/08`) were left out because nothing says they are Jewish.
 
 ## Test: episodes open in a modal on the cover (2026-10-12, branch `capa-desconfianca`)
 
