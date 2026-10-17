@@ -1,0 +1,22 @@
+{
+  "id": "14-ig-carolinabergier-memoria-humanidade",
+  "tipo": "reel",
+  "veiculo": "Instagram @carolinabergier",
+  "autor": "Carolina Bergier",
+  "data": "2026-10-15",
+  "url": "https://www.instagram.com/reels/DehI1aMR8-1/",
+  "titulo": "Reel: minha identidade é menos importante que a minha humanidade",
+  "resumo": "Vídeo de 173 s, 512x910, falado para a câmera. Carolina Bergier se apresenta como judia, diz achar infelizes algumas falas de Lula sobre Israel e o Holocausto, conta que a família sobreviveu na Polônia porque outras pessoas escolheram protegê-la e diz que a memória do Holocausto a chama a proteger também os outros, ao votar no dia 25. Comentários desativados pela autora. Capa: texto sobre fundo claro.",
+  "tier_dossie": "excluído como prova (rede social, opinião); voz judaica em primeira pessoa",
+  "capturado_em": "2026-10-17",
+  "origem_lista": "enviado por Alice em 2026-10-17",
+  "status_uso": "nao-verificado",
+  "arquivos": [
+    "legenda.txt",
+    "transcricao.txt",
+    "video.info.json",
+    "video.jpg",
+    "video.mp4"
+  ],
+  "notas": "transcricao.txt é transcrição automática local (whisper large-v3-turbo), não revisada."
+}
